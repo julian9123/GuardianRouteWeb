@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'" />
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" type="text/css" href="css/botones.css">
+        <link rel="stylesheet" href="http://fonts.googleapis.com/icon?family=Material+Icons">
+        <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,500,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="http://storage.googleapis.com/code.getmdl.io/1.0.1/material.teal-red.min.css" />
+        <script src="http://storage.googleapis.com/code.getmdl.io/1.0.1/material.min.js"></script>
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase-messaging.js"></script>
+        <title>Guardian Rutas</title>
+    </head>
+    <body>
+        <div class="mdl-layout mdl-js-layout mdl-color--grey-100">
+<!--            <main class="mdl-layout__content"> -->
+            <div class="tituloRecorrido"><br/><br/>Compartir c&oacute;digo ruta</div>
+            <div class="textoRegistro">
+                <p>Comparta este c&oacute;digo con los usuarios de la ruta.</p>
+                <br/><br/>
+                <output id="codigoRuta"></output>
+                <button class="mdl-button mdl-button--fab mdl-button--darkgray" onclick="window.plugins.socialsharing.share('Message only')"><i class="material-icons">contacts</i></button>
+            </div>
+            <div class="pieRecorridoBoton">
+                <button class="mdl-button mdl-button--fab mdl-button--darkgray" onclick="cambioPagina('seleccionRuta.html')"><i class="material-icons">forward</i></button>
+<!--                    <button class="mdl-button mdl-button--fab mdl-button--colored"><i class="material-icons">mode_edit</i></button> -->
+            </div>
+<!--            </main> -->
+        </div>
+        
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/conectar.js"></script>
+    </body>
+</html>

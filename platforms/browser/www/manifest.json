@@ -1,0 +1,12 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "Guardián Rutas",
+  "short_name": "Guardián Rutas",
+  "version": "com.controlderuta.guardianroutepweb",
+  "description": "Aplicacion para el control de rutas escolares.",
+  "author": "Julian Lopez Romero/Edwin Chamorro Charry",
+  "icons": [],
+  "orientation": "portrait",
+  "start_url": "index.html"
+}

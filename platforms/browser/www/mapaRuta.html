@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+    <html>
+      <head>
+        <title>Localizacion</title>
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="css/mapa.css">  
+        <link rel="stylesheet" type="text/css" href="css/menu.css">
+        <link rel="stylesheet" type="text/css" href="css/botones.css">  
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase-messaging.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>  
+        <script type="text/javascript" src="js/index.js"></script>  
+        <script type="text/javascript" src="js/conectar.js"></script>
+        <script type="text/javascript" src="js/consultar.js"></script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQ7J6-8VbDMfg12nPmEiNrvgbEhZGvIyA&callback=initMap"></script>
+        <script type="text/javascript" src="js/mapas.js"></script>
+      </head>
+      <body>
+        <header>
+            <nav>
+                <ul>
+                    <li class="encabezado-menu"><img src="img/android/drawable-mdpi/logoguardian.png" height="51" width="40"><br/>Guardian<br/>Control de Rutas</li>
+                    <li><a href="mapaRuta.html"><i class="material-icons md-dark noShowIcon">add_circle</i>
+                        <i class="material-icons md-light showIcon">add_circle</i> Agregar Ruta</a></li>
+                    <li><a href="mapaRuta.html"><i class="material-icons md-dark noShowIcon">remove_circle</i>
+                        <i class="material-icons md-light showIcon">remove_circle</i> Eliminar Ruta</a></li>
+                    <li><a href="mapaRuta.html"><i class="material-icons md-dark noShowIcon">search</i>
+                        <i class="material-icons md-light showIcon">search</i> Consultar Ruta</a></li>
+                    <li><a href="mapaRuta.html"><i class="material-icons md-dark noShowIcon">event_note</i>
+                        <i class="material-icons md-light showIcon">event_note</i> Reportes</a></li>
+                    <li><a href="cerrarSesion.html"><i class="material-icons md-dark noShowIcon">exit_to_app</i>
+                        <i class="material-icons md-light showIcon">exit_to_app</i> Salir</a></li>                    
+                </ul>
+            </nav>
+        </header>      
+        <div id="map" class="map"></div>
+      </body>
+    </html>

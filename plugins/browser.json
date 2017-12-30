@@ -1,0 +1,49 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-browsertab": {
+      "PACKAGE_NAME": "com.controlderuta.guardianroutepweb"
+    },
+    "cordova-plugin-compat": {
+      "PACKAGE_NAME": "com.controlderuta.guardianroutepweb"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "com.controlderuta.guardianroutepweb"
+    },
+    "cordova-plugin-local-notification": {
+      "PACKAGE_NAME": "com.controlderuta.guardianroutepweb"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.controlderuta.guardianroutepweb"
+    },
+    "cordova-plugin-x-socialsharing": {
+      "PACKAGE_NAME": "com.controlderuta.guardianroutepweb"
+    },
+    "cordova-universal-links-plugin": {
+      "PACKAGE_NAME": "com.controlderuta.guardianroutepweb"
+    },
+    "cordova-plugin-background-mode": {
+      "PACKAGE_NAME": "com.controlderuta.guardianroutepweb"
+    },
+    "cordova-plugin-buildinfo": {
+      "PACKAGE_NAME": "com.controlderuta.guardianroutepweb"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.controlderuta.guardianroutepweb"
+    },
+    "cordova-plugin-badge": {
+      "PACKAGE_NAME": "com.controlderuta.guardianroutepweb"
+    },
+    "es6-promise-plugin": {
+      "PACKAGE_NAME": "com.controlderuta.guardianroutepweb"
+    }
+  }
+}

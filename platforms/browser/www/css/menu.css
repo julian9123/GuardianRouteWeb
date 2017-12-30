@@ -1,0 +1,204 @@
+* {
+	padding: 0;
+	margin: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {background:#333333;}
+
+.menu_bar {
+	display:none;
+    background: #333333;
+    height: 5%;
+}
+
+header {
+	width: 100%;
+    background: #333333;
+}
+
+header nav {
+	background:#333333;
+	z-index:1000;
+	max-width: 1000px;
+	width: 100%;
+	margin: 0 auto;
+    height: 10%;
+}
+
+header nav ul {
+	list-style:none;
+}
+
+header nav ul li {
+	display:inline-block;
+	position: relative;
+}
+header nav ul li a:hover {
+    background: white;
+    color: black;
+}    
+header nav ul li a {
+	color:#fff;
+	display:block;
+	text-decoration:none;
+	padding: 20px;
+}
+
+header nav ul li a span {
+	margin-right: 10px;
+}
+/*
+header nav ul li:hover .children {
+	display:block;
+    background: white;
+    color: black;
+}
+*/
+header nav ul li .children {
+	display: none;
+	background:#011826;
+	position: absolute;
+	width: 150%;
+	z-index:1000;
+}
+
+header nav ul li .children li {
+	display:block;
+	overflow: hidden;
+	border-bottom: 1px solid rgba(255,255,255,.5);
+}
+
+header nav ul li .children li a {
+	display: block;
+}
+
+header nav ul li .children li a span {
+	float: right;
+	position: relative;
+	top:3px;
+	margin-right: 10px;
+	margin-left: 0px;
+}
+
+header nav ul li .caret {
+	position: relative;
+	top: 3px;
+	margin-left: 0px;
+	margin-right: 10px;
+}
+
+@media screen and (max-width: 800px) {
+	body {
+		padding-top: 0px;
+	}
+
+	.menu_bar {
+		display: inline-block;
+		width: 100%;
+		position: fixed;
+		top: 0;
+		background: #333333;
+        height: 10%;
+	}
+
+	.menu_bar .bt-menu {
+		display: inline;
+		padding: 20px;
+		color: #fff;
+		overflow: hidden;
+		font-size: 30px;
+		font-weight: bold;
+		text-decoration: none;
+	}
+
+	.menu_bar span {
+		float: right;
+		font-size: 25px;
+	}
+
+	header nav {
+		width: 80%;
+        height: 100%;
+/*		height: calc(100% - 200px); */
+		position: fixed;
+		right: 100%;
+		margin: 0;
+        top: 0;
+/*		overflow: scroll; */
+	}
+
+	header nav ul li {
+		display: block;
+		border-bottom:1px solid rgba(255,255,255,.5);
+        background: #333333;
+	}
+
+	header nav ul li a {
+		display: block;
+	}
+	header nav ul li a:hover {
+        background: white;
+        color: black;
+	}    
+    
+	header nav ul li .children {
+		width: 100%;
+		position: relative;
+	}
+
+	header nav ul li .children li a {
+		margin-right: 30px;
+	}
+
+	header nav ul li .caret {
+		float: left;
+	}
+    .boton{
+        display: block;
+        padding: 50px 0px 0px 0px;
+    }
+    .icono-bar{
+        left: 0;
+        margin-left: auto;
+        position: relative;
+        margin-top: auto;
+        margin-bottom: auto;
+        top: 0;
+    }    
+}
+.material-icons.md-light { 
+    color: white; 
+    text-align: right;
+    right: 0;
+    margin-right: auto;
+}
+.material-icons.md-dark { 
+    color: black;
+}
+
+.material-icons.md-light.showIcon {
+    color: white;
+    text-align: right;
+}
+
+.material-icons.md-light.showIcon:hover { 
+    color: #333333; 
+    text-align: right;
+}
+.material-icons.md-dark.noShowIcon { 
+    color: #333333;
+}
+.material-icons.md-dark.noShowIcon:mouseover { 
+    color: white;
+}
+.encabezado-menu{
+    background: #333333;
+    color: white;
+}
+.textoDerecha {
+    text-align: right;
+    position: absolute;
+}

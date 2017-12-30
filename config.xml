@@ -1,0 +1,398 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.controlderuta.guardianroutepweb" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <preference name="AllowInlineMediaPlayback" value="false" />
+    <preference name="BackupWebStorage" value="cloud" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="EnableViewportScale" value="false" />
+    <preference name="KeyboardDisplayRequiresUserAction" value="true" />
+    <preference name="MediaPlaybackRequiresUserAction" value="false" />
+    <preference name="SuppressesIncrementalRendering" value="false" />
+    <preference name="GapBetweenPages" value="0" />
+    <preference name="PageLength" value="0" />
+    <preference name="PaginationBreakingMode" value="page" />
+    <preference name="PaginationMode" value="unpaginated" />
+    <feature name="LocalStorage">
+        <param name="ios-package" value="CDVLocalStorage" />
+    </feature>
+    <feature name="HandleOpenUrl">
+        <param name="ios-package" value="CDVHandleOpenURL" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="IntentAndNavigationFilter">
+        <param name="ios-package" value="CDVIntentAndNavigationFilter" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="GestureHandler">
+        <param name="ios-package" value="CDVGestureHandler" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="PushNotification">
+        <param name="ios-package" value="PushPlugin" />
+    </feature>
+    <feature name="Vibration">
+        <param name="ios-package" value="CDVVibration" />
+    </feature>
+    <feature name="Device">
+        <param name="ios-package" value="CDVDevice" />
+    </feature>
+    <feature name="Accelerometer">
+        <param name="ios-package" value="CDVAccelerometer" />
+    </feature>
+    <feature name="Compass">
+        <param name="ios-package" value="CDVCompass" />
+    </feature>
+    <feature name="Contacts">
+        <param name="ios-package" value="CDVContacts" />
+    </feature>
+    <feature name="Camera">
+        <param name="ios-package" value="CDVCamera" />
+    </feature>
+    <preference name="CameraUsesGeolocation" value="false" />
+    <preference name="AndroidPersistentFileLocation" value="Internal" />
+    <feature name="File">
+        <param name="ios-package" value="CDVFile" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="Geolocation">
+        <param name="ios-package" value="CDVLocation" />
+    </feature>
+    <feature name="Globalization">
+        <param name="ios-package" value="CDVGlobalization" />
+    </feature>
+    <feature name="InAppBrowser">
+        <param name="ios-package" value="CDVInAppBrowser" />
+    </feature>
+    <feature name="Capture">
+        <param name="ios-package" value="CDVCapture" />
+    </feature>
+    <feature name="NetworkStatus">
+        <param name="ios-package" value="CDVConnection" />
+    </feature>
+    <feature name="SplashScreen">
+        <param name="ios-package" value="CDVSplashScreen" />
+    </feature>
+    <feature name="StatusBar">
+        <param name="ios-package" value="CDVStatusBar" />
+        <param name="onload" value="true" />
+    </feature>
+    <preference name="StatusBarOverlaysWebView" value="true" />
+    <preference name="StatusBarStyle" value="default" />
+    <feature name="Console">
+        <param name="ios-package" value="CDVLogger" />
+    </feature>
+    <feature name="FileTransfer">
+        <param name="ios-package" value="CDVFileTransfer" />
+    </feature>
+    <feature name="CDVWKWebViewEngine">
+        <param name="ios-package" value="CDVWKWebViewEngine" />
+    </feature>
+    <preference name="HeaderColor" value="#333333" />
+    <preference name="BackgroundColor" value="#333333" />
+    <preference name="Orientation" value="portrait" />
+    <name>Guardián Rutas</name>
+    <description>
+        Aplicacion para el control de rutas escolares.
+    </description>
+    <author email="comercial@controlderuta.com" href="http://guardianrutas.com/">
+        Julian Lopez Romero/Edwin Chamorro Charry
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+        <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="26" />
+        <preference name="AndroidLaunchMode" value="singleTask" />
+        <config-file parent="/*" target="AndroidManifest.xml">
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+            <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+            <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+            <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+            <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+            <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+        </config-file>
+        <abordaje platform="android" qualifier="hdpi" src="www/img/android/drawable-hdpi/abordaje.png" />
+        <avatar1 platform="android" qualifier="hdpi" src="www/img/android/drawable-hdpi/avatar1.png" />
+        <avatar10 platform="android" qualifier="hdpi" src="www/img/android/drawable-hdpi/avatar10.png" />
+        <avatar2 platform="android" qualifier="hdpi" src="www/img/android/drawable-hdpi/avatar2.png" />
+        <avatar3 platform="android" qualifier="hdpi" src="www/img/android/drawable-hdpi/avatar3.png" />
+        <avatar4 platform="android" qualifier="hdpi" src="www/img/android/drawable-hdpi/avatar4.png" />
+        <avatar5 platform="android" qualifier="hdpi" src="www/img/android/drawable-hdpi/avatar5.png" />
+        <avatar6 platform="android" qualifier="hdpi" src="www/img/android/drawable-hdpi/avatar6.png" />
+        <avatar7 platform="android" qualifier="hdpi" src="www/img/android/drawable-hdpi/avatar7.png" />
+        <avatar8 platform="android" qualifier="hdpi" src="www/img/android/drawable-hdpi/avatar8.png" />
+        <avatar9 platform="android" qualifier="hdpi" src="www/img/android/drawable-hdpi/avatar9.png" />
+        <avatarcir1 platform="android" qualifier="hdpi" src="www/img/android/drawable-hdpi/avatarcir1.png" />
+        <avatarcir2 platform="android" qualifier="hdpi" src="www/img/android/drawable-hdpi/avatarcir2.png" />
+        <avatarcir3 platform="android" qualifier="hdpi" src="www/img/android/drawable-hdpi/avatarcir3.png" />
+        <avatarcir4 platform="android" qualifier="hdpi" src="www/img/android/drawable-hdpi/avatarcir4.png" />
+        <avatarcir5 platform="android" qualifier="hdpi" src="www/img/android/drawable-hdpi/avatarcir5.png" />
+        <avatarcir6 platform="android" qualifier="hdpi" src="www/img/android/drawable-hdpi/avatarcir6.png" />
+        <avatarcir7 platform="android" qualifier="hdpi" src="www/img/android/drawable-hdpi/avatarcir7.png" />
+        <avatarcir8 platform="android" qualifier="hdpi" src="www/img/android/drawable-hdpi/avatarcir8.png" />
+        <back platform="android" qualifier="hdpi" src="www/img/android/drawable-hdpi/back.png" />
+        <backarrowwhite platform="android" qualifier="hdpi" src="www/img/android/drawable-hdpi/backarrowwhite.png" />
+        <backblack platform="android" qualifier="hdpi" src="www/img/android/drawable-hdpi/backblack.png" />
+        <boy platform="android" qualifier="hdpi" src="www/img/android/drawable-hdpi/boy.png" />
+        <checkok platform="android" qualifier="hdpi" src="www/img/android/drawable-hdpi/checkok.png" />
+        <contact platform="android" qualifier="hdpi" src="www/img/android/drawable-hdpi/contact.png" />
+        <crash platform="android" qualifier="hdpi" src="www/img/android/drawable-hdpi/crash.png" />
+        <edit platform="android" qualifier="hdpi" src="www/img/android/drawable-hdpi/edit.png" />
+        <engine platform="android" qualifier="hdpi" src="www/img/android/drawable-hdpi/engine.png" />
+        <iconroute platform="android" qualifier="hdpi" src="www/img/android/drawable-hdpi/iconroute.png" />
+        <logoapprutas platform="android" qualifier="hdpi" src="www/img/android/drawable-hdpi/logoapprutas.png" />
+        <logoguardian platform="android" qualifier="hdpi" src="www/img/android/drawable-hdpi/logoguardian.png" />
+        <logonombre platform="android" qualifier="hdpi" src="www/img/android/drawable-hdpi/logonombre.png" />
+        <marcaruta platform="android" qualifier="hdpi" src="www/img/android/drawable-hdpi/marcaruta.png" />
+        <marketend platform="android" qualifier="hdpi" src="www/img/android/drawable-hdpi/marketend.png" />
+        <mensaje platform="android" qualifier="hdpi" src="www/img/android/drawable-hdpi/mensaje.png" />
+        <menualert platform="android" qualifier="hdpi" src="www/img/android/drawable-hdpi/menualert.png" />
+        <menucall platform="android" qualifier="hdpi" src="www/img/android/drawable-hdpi/menucall.png" />
+        <menuchange platform="android" qualifier="hdpi" src="www/img/android/drawable-hdpi/menuchange.png" />
+        <menuchat platform="android" qualifier="hdpi" src="www/img/android/drawable-hdpi/menuchat.png" />
+        <menudrivers platform="android" qualifier="hdpi" src="www/img/android/drawable-hdpi/menudrivers.png" />
+        <menuminus platform="android" qualifier="hdpi" src="www/img/android/drawable-hdpi/menuminus.png" />
+        <menuplus platform="android" qualifier="hdpi" src="www/img/android/drawable-hdpi/menuplus.png" />
+        <menuusers platform="android" qualifier="hdpi" src="www/img/android/drawable-hdpi/menuusers.png" />
+        <phone platform="android" qualifier="hdpi" src="www/img/android/drawable-hdpi/phone.png" />
+        <photo platform="android" qualifier="hdpi" src="www/img/android/drawable-hdpi/photo.png" />
+        <pictuturetransition platform="android" qualifier="hdpi" src="www/img/android/drawable-hdpi/pictuturetransition.png" />
+        <play platform="android" qualifier="hdpi" src="www/img/android/drawable-hdpi/play.png" />
+        <right platform="android" qualifier="hdpi" src="www/img/android/drawable-hdpi/right.png" />
+        <stop platform="android" qualifier="hdpi" src="www/img/android/drawable-hdpi/stop.png" />
+        <telefono platform="android" qualifier="hdpi" src="www/img/android/drawable-hdpi/telefono.png" />
+        <traffic platform="android" qualifier="hdpi" src="www/img/android/drawable-hdpi/traffic.png" />
+        <abordaje platform="android" qualifier="mdpi" src="www/img/android/drawable-mdpi/abordaje.png" />
+        <avatar1 platform="android" qualifier="mdpi" src="www/img/android/drawable-mdpi/avatar1.png" />
+        <avatar10 platform="android" qualifier="mdpi" src="www/img/android/drawable-mdpi/avatar10.png" />
+        <avatar2 platform="android" qualifier="mdpi" src="www/img/android/drawable-mdpi/avatar2.png" />
+        <avatar3 platform="android" qualifier="mdpi" src="www/img/android/drawable-mdpi/avatar3.png" />
+        <avatar4 platform="android" qualifier="mdpi" src="www/img/android/drawable-mdpi/avatar4.png" />
+        <avatar5 platform="android" qualifier="mdpi" src="www/img/android/drawable-mdpi/avatar5.png" />
+        <avatar6 platform="android" qualifier="mdpi" src="www/img/android/drawable-mdpi/avatar6.png" />
+        <avatar7 platform="android" qualifier="mdpi" src="www/img/android/drawable-mdpi/avatar7.png" />
+        <avatar8 platform="android" qualifier="mdpi" src="www/img/android/drawable-mdpi/avatar8.png" />
+        <avatar9 platform="android" qualifier="mdpi" src="www/img/android/drawable-mdpi/avatar9.png" />
+        <avatarcir1 platform="android" qualifier="mdpi" src="www/img/android/drawable-mdpi/avatarcir1.png" />
+        <avatarcir2 platform="android" qualifier="mdpi" src="www/img/android/drawable-mdpi/avatarcir2.png" />
+        <avatarcir3 platform="android" qualifier="mdpi" src="www/img/android/drawable-mdpi/avatarcir3.png" />
+        <avatarcir4 platform="android" qualifier="mdpi" src="www/img/android/drawable-mdpi/avatarcir4.png" />
+        <avatarcir5 platform="android" qualifier="mdpi" src="www/img/android/drawable-mdpi/avatarcir5.png" />
+        <avatarcir6 platform="android" qualifier="mdpi" src="www/img/android/drawable-mdpi/avatarcir6.png" />
+        <avatarcir7 platform="android" qualifier="mdpi" src="www/img/android/drawable-mdpi/avatarcir7.png" />
+        <avatarcir8 platform="android" qualifier="mdpi" src="www/img/android/drawable-mdpi/avatarcir8.png" />
+        <back platform="android" qualifier="mdpi" src="www/img/android/drawable-mdpi/back.png" />
+        <backarrowwhite platform="android" qualifier="mdpi" src="www/img/android/drawable-mdpi/backarrowwhite.png" />
+        <backblack platform="android" qualifier="mdpi" src="www/img/android/drawable-mdpi/backblack.png" />
+        <boy platform="android" qualifier="mdpi" src="www/img/android/drawable-mdpi/boy.png" />
+        <checkok platform="android" qualifier="mdpi" src="www/img/android/drawable-mdpi/checkok.png" />
+        <contact platform="android" qualifier="mdpi" src="www/img/android/drawable-mdpi/contact.png" />
+        <crash platform="android" qualifier="mdpi" src="www/img/android/drawable-mdpi/crash.png" />
+        <edit platform="android" qualifier="mdpi" src="www/img/android/drawable-mdpi/edit.png" />
+        <engine platform="android" qualifier="mdpi" src="www/img/android/drawable-mdpi/engine.png" />
+        <iconroute platform="android" qualifier="mdpi" src="www/img/android/drawable-mdpi/iconroute.png" />
+        <logoapprutas platform="android" qualifier="mdpi" src="www/img/android/drawable-mdpi/logoapprutas.png" />
+        <logoguardian platform="android" qualifier="mdpi" src="www/img/android/drawable-mdpi/logoguardian.png" />
+        <logonombre platform="android" qualifier="mdpi" src="www/img/android/drawable-mdpi/logonombre.png" />
+        <marcaruta platform="android" qualifier="mdpi" src="www/img/android/drawable-mdpi/marcaruta.png" />
+        <marketend platform="android" qualifier="mdpi" src="www/img/android/drawable-mdpi/marketend.png" />
+        <mensaje platform="android" qualifier="mdpi" src="www/img/android/drawable-mdpi/mensaje.png" />
+        <menualert platform="android" qualifier="mdpi" src="www/img/android/drawable-mdpi/menualert.png" />
+        <menucall platform="android" qualifier="mdpi" src="www/img/android/drawable-mdpi/menucall.png" />
+        <menuchange platform="android" qualifier="mdpi" src="www/img/android/drawable-mdpi/menuchange.png" />
+        <menuchat platform="android" qualifier="mdpi" src="www/img/android/drawable-mdpi/menuchat.png" />
+        <menudrivers platform="android" qualifier="mdpi" src="www/img/android/drawable-mdpi/menudrivers.png" />
+        <menuminus platform="android" qualifier="mdpi" src="www/img/android/drawable-mdpi/menuminus.png" />
+        <menuplus platform="android" qualifier="mdpi" src="www/img/android/drawable-mdpi/menuplus.png" />
+        <menuusers platform="android" qualifier="mdpi" src="www/img/android/drawable-mdpi/menuusers.png" />
+        <phone platform="android" qualifier="mdpi" src="www/img/android/drawable-mdpi/phone.png" />
+        <photo platform="android" qualifier="mdpi" src="www/img/android/drawable-mdpi/photo.png" />
+        <pictuturetransition platform="android" qualifier="mdpi" src="www/img/android/drawable-mdpi/pictuturetransition.png" />
+        <play platform="android" qualifier="mdpi" src="www/img/android/drawable-mdpi/play.png" />
+        <right platform="android" qualifier="mdpi" src="www/img/android/drawable-mdpi/right.png" />
+        <stop platform="android" qualifier="mdpi" src="www/img/android/drawable-mdpi/stop.png" />
+        <telefono platform="android" qualifier="mdpi" src="www/img/android/drawable-mdpi/telefono.png" />
+        <traffic platform="android" qualifier="mdpi" src="www/img/android/drawable-mdpi/traffic.png" />
+        <abordaje platform="android" qualifier="xhdpi" src="www/img/android/drawable-xhdpi/abordaje.png" />
+        <avatar1 platform="android" qualifier="xhdpi" src="www/img/android/drawable-xhdpi/avatar1.png" />
+        <avatar10 platform="android" qualifier="xhdpi" src="www/img/android/drawable-xhdpi/avatar10.png" />
+        <avatar2 platform="android" qualifier="xhdpi" src="www/img/android/drawable-xhdpi/avatar2.png" />
+        <avatar3 platform="android" qualifier="xhdpi" src="www/img/android/drawable-xhdpi/avatar3.png" />
+        <avatar4 platform="android" qualifier="xhdpi" src="www/img/android/drawable-xhdpi/avatar4.png" />
+        <avatar5 platform="android" qualifier="xhdpi" src="www/img/android/drawable-xhdpi/avatar5.png" />
+        <avatar6 platform="android" qualifier="xhdpi" src="www/img/android/drawable-xhdpi/avatar6.png" />
+        <avatar7 platform="android" qualifier="xhdpi" src="www/img/android/drawable-xhdpi/avatar7.png" />
+        <avatar8 platform="android" qualifier="xhdpi" src="www/img/android/drawable-xhdpi/avatar8.png" />
+        <avatar9 platform="android" qualifier="xhdpi" src="www/img/android/drawable-xhdpi/avatar9.png" />
+        <avatarcir1 platform="android" qualifier="xhdpi" src="www/img/android/drawable-xhdpi/avatarcir1.png" />
+        <avatarcir2 platform="android" qualifier="xhdpi" src="www/img/android/drawable-xhdpi/avatarcir2.png" />
+        <avatarcir3 platform="android" qualifier="xhdpi" src="www/img/android/drawable-xhdpi/avatarcir3.png" />
+        <avatarcir4 platform="android" qualifier="xhdpi" src="www/img/android/drawable-xhdpi/avatarcir4.png" />
+        <avatarcir5 platform="android" qualifier="xhdpi" src="www/img/android/drawable-xhdpi/avatarcir5.png" />
+        <avatarcir6 platform="android" qualifier="xhdpi" src="www/img/android/drawable-xhdpi/avatarcir6.png" />
+        <avatarcir7 platform="android" qualifier="xhdpi" src="www/img/android/drawable-xhdpi/avatarcir7.png" />
+        <avatarcir8 platform="android" qualifier="xhdpi" src="www/img/android/drawable-xhdpi/avatarcir8.png" />
+        <back platform="android" qualifier="xhdpi" src="www/img/android/drawable-xhdpi/back.png" />
+        <backarrowwhite platform="android" qualifier="xhdpi" src="www/img/android/drawable-xhdpi/backarrowwhite.png" />
+        <backblack platform="android" qualifier="xhdpi" src="www/img/android/drawable-xhdpi/backblack.png" />
+        <boy platform="android" qualifier="xhdpi" src="www/img/android/drawable-xhdpi/boy.png" />
+        <checkok platform="android" qualifier="xhdpi" src="www/img/android/drawable-xhdpi/checkok.png" />
+        <contact platform="android" qualifier="xhdpi" src="www/img/android/drawable-xhdpi/contact.png" />
+        <crash platform="android" qualifier="xhdpi" src="www/img/android/drawable-xhdpi/crash.png" />
+        <edit platform="android" qualifier="xhdpi" src="www/img/android/drawable-xhdpi/edit.png" />
+        <engine platform="android" qualifier="xhdpi" src="www/img/android/drawable-xhdpi/engine.png" />
+        <iconroute platform="android" qualifier="xhdpi" src="www/img/android/drawable-xhdpi/iconroute.png" />
+        <logoapprutas platform="android" qualifier="xhdpi" src="www/img/android/drawable-xhdpi/logoapprutas.png" />
+        <logoguardian platform="android" qualifier="xhdpi" src="www/img/android/drawable-xhdpi/logoguardian.png" />
+        <logonombre platform="android" qualifier="xhdpi" src="www/img/android/drawable-xhdpi/logonombre.png" />
+        <marcaruta platform="android" qualifier="xhdpi" src="www/img/android/drawable-xhdpi/marcaruta.png" />
+        <marketend platform="android" qualifier="xhdpi" src="www/img/android/drawable-xhdpi/marketend.png" />
+        <mensaje platform="android" qualifier="xhdpi" src="www/img/android/drawable-xhdpi/mensaje.png" />
+        <menualert platform="android" qualifier="xhdpi" src="www/img/android/drawable-xhdpi/menualert.png" />
+        <menucall platform="android" qualifier="xhdpi" src="www/img/android/drawable-xhdpi/menucall.png" />
+        <menuchange platform="android" qualifier="xhdpi" src="www/img/android/drawable-xhdpi/menuchange.png" />
+        <menuchat platform="android" qualifier="xhdpi" src="www/img/android/drawable-xhdpi/menuchat.png" />
+        <menudrivers platform="android" qualifier="xhdpi" src="www/img/android/drawable-xhdpi/menudrivers.png" />
+        <menuminus platform="android" qualifier="xhdpi" src="www/img/android/drawable-xhdpi/menuminus.png" />
+        <menuplus platform="android" qualifier="xhdpi" src="www/img/android/drawable-xhdpi/menuplus.png" />
+        <menuusers platform="android" qualifier="xhdpi" src="www/img/android/drawable-xhdpi/menuusers.png" />
+        <phone platform="android" qualifier="xhdpi" src="www/img/android/drawable-xhdpi/phone.png" />
+        <photo platform="android" qualifier="xhdpi" src="www/img/android/drawable-xhdpi/photo.png" />
+        <pictuturetransition platform="android" qualifier="xhdpi" src="www/img/android/drawable-xhdpi/pictuturetransition.png" />
+        <play platform="android" qualifier="xhdpi" src="www/img/android/drawable-xhdpi/play.png" />
+        <right platform="android" qualifier="xhdpi" src="www/img/android/drawable-xhdpi/right.png" />
+        <stop platform="android" qualifier="xhdpi" src="www/img/android/drawable-xhdpi/stop.png" />
+        <telefono platform="android" qualifier="xhdpi" src="www/img/android/drawable-xhdpi/telefono.png" />
+        <traffic platform="android" qualifier="xhdpi" src="www/img/android/drawable-xhdpi/traffic.png" />
+        <abordaje platform="android" qualifier="xxhdpi" src="www/img/android/drawable-xxhdpi/abordaje.png" />
+        <avatar1 platform="android" qualifier="xxhdpi" src="www/img/android/drawable-xxhdpi/avatar1.png" />
+        <avatar10 platform="android" qualifier="xxhdpi" src="www/img/android/drawable-xxhdpi/avatar10.png" />
+        <avatar2 platform="android" qualifier="xxhdpi" src="www/img/android/drawable-xxhdpi/avatar2.png" />
+        <avatar3 platform="android" qualifier="xxhdpi" src="www/img/android/drawable-xxhdpi/avatar3.png" />
+        <avatar4 platform="android" qualifier="xxhdpi" src="www/img/android/drawable-xxhdpi/avatar4.png" />
+        <avatar5 platform="android" qualifier="xxhdpi" src="www/img/android/drawable-xxhdpi/avatar5.png" />
+        <avatar6 platform="android" qualifier="xxhdpi" src="www/img/android/drawable-xxhdpi/avatar6.png" />
+        <avatar7 platform="android" qualifier="xxhdpi" src="www/img/android/drawable-xxhdpi/avatar7.png" />
+        <avatar8 platform="android" qualifier="xxhdpi" src="www/img/android/drawable-xxhdpi/avatar8.png" />
+        <avatar9 platform="android" qualifier="xxhdpi" src="www/img/android/drawable-xxhdpi/avatar9.png" />
+        <avatarcir1 platform="android" qualifier="xxhdpi" src="www/img/android/drawable-xxhdpi/avatarcir1.png" />
+        <avatarcir2 platform="android" qualifier="xxhdpi" src="www/img/android/drawable-xxhdpi/avatarcir2.png" />
+        <avatarcir3 platform="android" qualifier="xxhdpi" src="www/img/android/drawable-xxhdpi/avatarcir3.png" />
+        <avatarcir4 platform="android" qualifier="xxhdpi" src="www/img/android/drawable-xxhdpi/avatarcir4.png" />
+        <avatarcir5 platform="android" qualifier="xxhdpi" src="www/img/android/drawable-xxhdpi/avatarcir5.png" />
+        <avatarcir6 platform="android" qualifier="xxhdpi" src="www/img/android/drawable-xxhdpi/avatarcir6.png" />
+        <avatarcir7 platform="android" qualifier="xxhdpi" src="www/img/android/drawable-xxhdpi/avatarcir7.png" />
+        <avatarcir8 platform="android" qualifier="xxhdpi" src="www/img/android/drawable-xxhdpi/avatarcir8.png" />
+        <back platform="android" qualifier="xxhdpi" src="www/img/android/drawable-xxhdpi/back.png" />
+        <backarrowwhite platform="android" qualifier="xxhdpi" src="www/img/android/drawable-xxhdpi/backarrowwhite.png" />
+        <backblack platform="android" qualifier="xxhdpi" src="www/img/android/drawable-xxhdpi/backblack.png" />
+        <boy platform="android" qualifier="xxhdpi" src="www/img/android/drawable-xxhdpi/boy.png" />
+        <checkok platform="android" qualifier="xxhdpi" src="www/img/android/drawable-xxhdpi/checkok.png" />
+        <contact platform="android" qualifier="xxhdpi" src="www/img/android/drawable-xxhdpi/contact.png" />
+        <crash platform="android" qualifier="xxhdpi" src="www/img/android/drawable-xxhdpi/crash.png" />
+        <edit platform="android" qualifier="xxhdpi" src="www/img/android/drawable-xxhdpi/edit.png" />
+        <engine platform="android" qualifier="xxhdpi" src="www/img/android/drawable-xxhdpi/engine.png" />
+        <iconroute platform="android" qualifier="xxhdpi" src="www/img/android/drawable-xxhdpi/iconroute.png" />
+        <logoapprutas platform="android" qualifier="xxhdpi" src="www/img/android/drawable-xxhdpi/logoapprutas.png" />
+        <logoguardian platform="android" qualifier="xxhdpi" src="www/img/android/drawable-xxhdpi/logoguardian.png" />
+        <logonombre platform="android" qualifier="xxhdpi" src="www/img/android/drawable-xxhdpi/logonombre.png" />
+        <marcaruta platform="android" qualifier="xxhdpi" src="www/img/android/drawable-xxhdpi/marcaruta.png" />
+        <marketend platform="android" qualifier="xxhdpi" src="www/img/android/drawable-xxhdpi/marketend.png" />
+        <mensaje platform="android" qualifier="xxhdpi" src="www/img/android/drawable-xxhdpi/mensaje.png" />
+        <menualert platform="android" qualifier="xxhdpi" src="www/img/android/drawable-xxhdpi/menualert.png" />
+        <menucall platform="android" qualifier="xxhdpi" src="www/img/android/drawable-xxhdpi/menucall.png" />
+        <menuchange platform="android" qualifier="xxhdpi" src="www/img/android/drawable-xxhdpi/menuchange.png" />
+        <menuchat platform="android" qualifier="xxhdpi" src="www/img/android/drawable-xxhdpi/menuchat.png" />
+        <menudrivers platform="android" qualifier="xxhdpi" src="www/img/android/drawable-xxhdpi/menudrivers.png" />
+        <menuminus platform="android" qualifier="xxhdpi" src="www/img/android/drawable-xxhdpi/menuminus.png" />
+        <menuplus platform="android" qualifier="xxhdpi" src="www/img/android/drawable-xxhdpi/menuplus.png" />
+        <menuusers platform="android" qualifier="xxhdpi" src="www/img/android/drawable-xxhdpi/menuusers.png" />
+        <phone platform="android" qualifier="xxhdpi" src="www/img/android/drawable-xxhdpi/phone.png" />
+        <photo platform="android" qualifier="xxhdpi" src="www/img/android/drawable-xxhdpi/photo.png" />
+        <pictuturetransition platform="android" qualifier="xxhdpi" src="www/img/android/drawable-xxhdpi/pictuturetransition.png" />
+        <play platform="android" qualifier="xxhdpi" src="www/img/android/drawable-xxhdpi/play.png" />
+        <right platform="android" qualifier="xxhdpi" src="www/img/android/drawable-xxhdpi/right.png" />
+        <stop platform="android" qualifier="xxhdpi" src="www/img/android/drawable-xxhdpi/stop.png" />
+        <telefono platform="android" qualifier="xxhdpi" src="www/img/android/drawable-xxhdpi/telefono.png" />
+        <traffic platform="android" qualifier="xxhdpi" src="www/img/android/drawable-xxhdpi/traffic.png" />
+        <abordaje platform="android" qualifier="xxxhdpi" src="www/img/android/drawable-xxxhdpi/abordaje.png" />
+        <avatar1 platform="android" qualifier="xxxhdpi" src="www/img/android/drawable-xxxhdpi/avatar1.png" />
+        <avatar10 platform="android" qualifier="xxxhdpi" src="www/img/android/drawable-xxxhdpi/avatar10.png" />
+        <avatar2 platform="android" qualifier="xxxhdpi" src="www/img/android/drawable-xxxhdpi/avatar2.png" />
+        <avatar3 platform="android" qualifier="xxxhdpi" src="www/img/android/drawable-xxxhdpi/avatar3.png" />
+        <avatar4 platform="android" qualifier="xxxhdpi" src="www/img/android/drawable-xxxhdpi/avatar4.png" />
+        <avatar5 platform="android" qualifier="xxxhdpi" src="www/img/android/drawable-xxxhdpi/avatar5.png" />
+        <avatar6 platform="android" qualifier="xxxhdpi" src="www/img/android/drawable-xxxhdpi/avatar6.png" />
+        <avatar7 platform="android" qualifier="xxxhdpi" src="www/img/android/drawable-xxxhdpi/avatar7.png" />
+        <avatar8 platform="android" qualifier="xxxhdpi" src="www/img/android/drawable-xxxhdpi/avatar8.png" />
+        <avatar9 platform="android" qualifier="xxxhdpi" src="www/img/android/drawable-xxxhdpi/avatar9.png" />
+        <avatarcir1 platform="android" qualifier="xxxhdpi" src="www/img/android/drawable-xxxhdpi/avatarcir1.png" />
+        <avatarcir2 platform="android" qualifier="xxxhdpi" src="www/img/android/drawable-xxxhdpi/avatarcir2.png" />
+        <avatarcir3 platform="android" qualifier="xxxhdpi" src="www/img/android/drawable-xxxhdpi/avatarcir3.png" />
+        <avatarcir4 platform="android" qualifier="xxxhdpi" src="www/img/android/drawable-xxxhdpi/avatarcir4.png" />
+        <avatarcir5 platform="android" qualifier="xxxhdpi" src="www/img/android/drawable-xxxhdpi/avatarcir5.png" />
+        <avatarcir6 platform="android" qualifier="xxxhdpi" src="www/img/android/drawable-xxxhdpi/avatarcir6.png" />
+        <avatarcir7 platform="android" qualifier="xxxhdpi" src="www/img/android/drawable-xxxhdpi/avatarcir7.png" />
+        <avatarcir8 platform="android" qualifier="xxxhdpi" src="www/img/android/drawable-xxxhdpi/avatarcir8.png" />
+        <back platform="android" qualifier="xxxhdpi" src="www/img/android/drawable-xxxhdpi/back.png" />
+        <backarrowwhite platform="android" qualifier="xxxhdpi" src="www/img/android/drawable-xxxhdpi/backarrowwhite.png" />
+        <backblack platform="android" qualifier="xxxhdpi" src="www/img/android/drawable-xxxhdpi/backblack.png" />
+        <boy platform="android" qualifier="xxxhdpi" src="www/img/android/drawable-xxxhdpi/boy.png" />
+        <checkok platform="android" qualifier="xxxhdpi" src="www/img/android/drawable-xxxhdpi/checkok.png" />
+        <contact platform="android" qualifier="xxxhdpi" src="www/img/android/drawable-xxxhdpi/contact.png" />
+        <crash platform="android" qualifier="xxxhdpi" src="www/img/android/drawable-xxxhdpi/crash.png" />
+        <edit platform="android" qualifier="xxxhdpi" src="www/img/android/drawable-xxxhdpi/edit.png" />
+        <engine platform="android" qualifier="xxxhdpi" src="www/img/android/drawable-xxxhdpi/engine.png" />
+        <iconroute platform="android" qualifier="xxxhdpi" src="www/img/android/drawable-xxxhdpi/iconroute.png" />
+        <logoapprutas platform="android" qualifier="xxxhdpi" src="www/img/android/drawable-xxxhdpi/logoapprutas.png" />
+        <logoguardian platform="android" qualifier="xxxhdpi" src="www/img/android/drawable-xxxhdpi/logoguardian.png" />
+        <logonombre platform="android" qualifier="xxxhdpi" src="www/img/android/drawable-xxxhdpi/logonombre.png" />
+        <marcaruta platform="android" qualifier="xxxhdpi" src="www/img/android/drawable-xxxhdpi/marcaruta.png" />
+        <marketend platform="android" qualifier="xxxhdpi" src="www/img/android/drawable-xxxhdpi/marketend.png" />
+        <mensaje platform="android" qualifier="xxxhdpi" src="www/img/android/drawable-xxxhdpi/mensaje.png" />
+        <menualert platform="android" qualifier="xxxhdpi" src="www/img/android/drawable-xxxhdpi/menualert.png" />
+        <menucall platform="android" qualifier="xxxhdpi" src="www/img/android/drawable-xxxhdpi/menucall.png" />
+        <menuchange platform="android" qualifier="xxxhdpi" src="www/img/android/drawable-xxxhdpi/menuchange.png" />
+        <menuchat platform="android" qualifier="xxxhdpi" src="www/img/android/drawable-xxxhdpi/menuchat.png" />
+        <menudrivers platform="android" qualifier="xxxhdpi" src="www/img/android/drawable-xxxhdpi/menudrivers.png" />
+        <menuminus platform="android" qualifier="xxxhdpi" src="www/img/android/drawable-xxxhdpi/menuminus.png" />
+        <menuplus platform="android" qualifier="xxxhdpi" src="www/img/android/drawable-xxxhdpi/menuplus.png" />
+        <menuusers platform="android" qualifier="xxxhdpi" src="www/img/android/drawable-xxxhdpi/menuusers.png" />
+        <phone platform="android" qualifier="xxxhdpi" src="www/img/android/drawable-xxxhdpi/phone.png" />
+        <photo platform="android" qualifier="xxxhdpi" src="www/img/android/drawable-xxxhdpi/photo.png" />
+        <pictuturetransition platform="android" qualifier="xxxhdpi" src="www/img/android/drawable-xxxhdpi/pictuturetransition.png" />
+        <play platform="android" qualifier="xxxhdpi" src="www/img/android/drawable-xxxhdpi/play.png" />
+        <right platform="android" qualifier="xxxhdpi" src="www/img/android/drawable-xxxhdpi/right.png" />
+        <stop platform="android" qualifier="xxxhdpi" src="www/img/android/drawable-xxxhdpi/stop.png" />
+        <telefono platform="android" qualifier="xxxhdpi" src="www/img/android/drawable-xxxhdpi/telefono.png" />
+        <traffic platform="android" qualifier="xxxhdpi" src="www/img/android/drawable-xxxhdpi/traffic.png" />
+        <icon density="hdpi" height="258" platform="android" src="www/img/logo.png" width="258" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+        <icon density="hdpi" height="258" platform="ios" src="www/img/logo.png" width="258" />
+    </platform>
+    <universal-links>
+        <host name="juliancorp-9123.app.goo.gl" scheme="https" />
+        <host name="juliancorp-9123.firebaseapp.com" scheme="https">
+            <path url="/__/auth/callback" />
+        </host>
+    </universal-links>
+    <engine name="browser" spec="^5.0.1" />
+    <plugin name="cordova-plugin-whitelist" spec="^1.3.3" />
+    <plugin name="cordova-universal-links-plugin" spec="^1.2.1" />
+    <plugin name="cordova-plugin-browsertab" spec="^0.2.0" />
+    <plugin name="cordova-plugin-inappbrowser" spec="^1.7.2" />
+    <plugin name="cordova-plugin-local-notification" spec="^0.9.0-beta.1" />
+    <plugin name="cordova-plugin-compat" spec="^1.2.0" />
+    <plugin name="cordova-plugin-x-socialsharing" spec="^5.2.1" />
+    <plugin name="cordova-plugin-background-mode" spec="^0.7.2" />
+    <plugin name="cordova-plugin-buildinfo" spec="^2.0.1" />
+</widget>
