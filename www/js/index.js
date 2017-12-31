@@ -117,3 +117,27 @@ function cerrarPopUp() {
     var $popUp = $('#mensajeError');
     $popUp[0].close();
 }
+
+function campoDiligenciado(etiqueta) {
+//    $("formulario__label").css("margin-top", "-125px");
+//    $("#" + etiqueta).css("margin-top", "-125px");
+//    alert("etiqueta:" + $('#txt' + etiqueta ).val().length);
+    if( $('#txt' + etiqueta ).val().length > 0 ) {
+        if( etiqueta == "Celular" ) {
+            $('#lbl' + etiqueta ).removeClass("formulario__label_cel");
+            $('#lbl' + etiqueta ).addClass("formulario__label_cel_lleno");
+        } else {
+            $('#lbl' + etiqueta ).removeClass("formulario__label");
+            $('#lbl' + etiqueta ).addClass("formulario__label_lleno");
+        }
+    } else {
+        if( etiqueta == "Celular" ) {
+            $('#lbl' + etiqueta ).removeClass("formulario__label_cel_lleno");
+            $('#lbl' + etiqueta ).addClass("formulario__label_cel");
+        } else {
+            $('#lbl' + etiqueta ).removeClass("formulario__label_lleno");
+            $('#lbl' + etiqueta ).addClass("formulario__label");
+        }        
+    }
+//    
+}

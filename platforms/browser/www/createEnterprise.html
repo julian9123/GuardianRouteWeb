@@ -32,10 +32,10 @@
             <div class="tituloRecorrido"><br/><br/>Registro Personal</div>
             <div class="textoRegistro">
                 <form action="" class="formulario">
-                    <input type="text" class="formulario__input" id="txtNombres" maxlength="50" size="50">
-                    <label for="" class="formulario__label">Nombres</label>
-                    <input type="text" class="formulario__input" id="txtApellidos" maxlength="50" size="50">
-                    <label for="" class="formulario__label">Apellidos</label>
+                    <input type="text" class="formulario__input" id="txtNombres" maxlength="50" size="50" onkeyup="campoDiligenciado('Nombres')">
+                    <label for="" class="formulario__label" id="lblNombres">Nombres</label>
+                    <input type="text" class="formulario__input" id="txtApellidos" maxlength="50" size="50" onkeyup="campoDiligenciado('Apellidos')">
+                    <label for="" class="formulario__label" id="lblApellidos">Apellidos</label>
                     <select id="paisCelular" class="formulario__input_pais">
                         <option value="">Indicativo</option>
                         <script language=javascript>
@@ -44,10 +44,10 @@
                             }
                         </script>
                     </select>
-                    <input type="text" class="formulario__input_cel" id="txtCelular" size="10" max="10" maxlength="10">
-                    <label for="" class="formulario__label_cel">Celular</label>
-                    <input type="text" class="formulario__input" id="txtRuta" size="10" max="10" maxlength="10" >
-                    <label for="" class="formulario__label">Ruta Empresa</label>
+                    <input type="text" class="formulario__input_cel" id="txtCelular" size="10" maxlength="10" onkeyup="campoDiligenciado('Celular')">
+                    <label for="" class="formulario__label_cel" id="lblCelular">Celular</label>
+                    <input type="text" class="formulario__input" id="txtRuta" size="10" max="10" maxlength="10" onkeyup="campoDiligenciado('Ruta')">
+                    <label for="" class="formulario__label" id="lblRuta">Ruta Empresa</label>
                 </form>
                         <dialog id="mensajeError" class="site-dialog">
                             <header class="dialog-header">

@@ -49,21 +49,21 @@ body {
     width: 30%;
 }
 .formulario__input_cel {
-    padding: 20px;
+    padding: 18px;
+    display: inline-block;
     background: rgba(0,0,0,0.1);
     border: 1px solid rgba(0,0,0,0.3);
     margin-bottom: 40px;
     width: 60%;
-    display: inline-block;
 }
 .formulario__input:focus {
   outline: 1px solid rgba(0,0,0,0.7);
 }
 .formulario__input:focus + .formulario__label{
-  margin-top: -135px;
+  margin-top: -125px;
 }
 .formulario__input:focus + .formulario__label_cel{
-  margin-top: -135px;
+  margin-top: -125px;
 }
 
 
@@ -71,16 +71,16 @@ body {
   outline: 1px solid rgba(0,0,0,0.7);
 }
 .formulario__input_cel:focus + .formulario__label_cel{
-  margin-top: -135px;
+  margin-top: -125px;
 }
 .formulario__input_cel:focus + .formulario__label_cel{
-  margin-top: -135px;
+  margin-top: -125px;
 }
 
 .formulario__label {
     padding-left: 15px;
     position: absolute;
-    margin-top: -85px;
+    margin-top: -90px;
 /*    z-index: -20; */
     color: rgba(0,0,0,0.5);
     transition: all 0.2s;
@@ -88,7 +88,7 @@ body {
 .formulario__label_cel {
     padding-left: 15px;
     position: absolute;
-    margin-top: -85px;
+    margin-top: -90px;
 /*    z-index: -20; */
     color: rgba(0,0,0,0.5);
     transition: all 0.2s;
@@ -104,7 +104,7 @@ body {
   border: none;
 }
 .fijar {
-  margin-top: -135px;
+  margin-top: -125px;
 }
 .formulario__divoutput {
     padding: 20px;
@@ -122,4 +122,23 @@ body {
     width: 93%;
     display: block;
     margin-top: 1%;
+}
+.formulario__label_cel_lleno {
+    padding-left: 15px;
+    position: absolute;
+    margin-top: -125px;
+/*    z-index: -20; */
+    color: rgba(0,0,0,0.5);
+    transition: all 0.2s;
+    width: 60%;
+    display: block;
+    left: 33%;
+}
+.formulario__label_lleno {
+    padding-left: 15px;
+    position: absolute;
+    margin-top: -125px;
+/*    z-index: -20; */
+    color: rgba(0,0,0,0.5);
+    transition: all 0.2s;
 }
