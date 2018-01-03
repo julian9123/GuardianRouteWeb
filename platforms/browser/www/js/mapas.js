@@ -13,6 +13,7 @@ var markers = [];
 $(document).ready(function() {
 //    alert('Mensaje index.html');
 //    concurrentMapa();
+    cnsMovRutasDetalleXX();
 });
 var app = {
     initialize: function() {

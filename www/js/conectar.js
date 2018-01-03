@@ -26,7 +26,7 @@ function conectar() {
 //            console.log("Intento 2" + myUserId);
             user.getIdToken().then( function( accessToken ) {
                 if( contador > 0 || intentos > 0 ) { return; }
-                cnsEmpresaCreada();
+                cnsUsuarioEmpresa();
                 if( registrado > 0 ) { 
                     cambioPagina("mapaRuta.html");
                     return;

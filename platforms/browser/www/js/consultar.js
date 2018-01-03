@@ -1,5 +1,7 @@
 var fecha;
-var myUserId;
+var posRuta = new Object();
+var gpRutas = [];
+//var myUserId;
 
 function d2(n) {
     if(n<9) return "0"+n;
@@ -18,27 +20,40 @@ function guardarPosicion(position) {
     }
     contador++;
     formatoFecha();
-    initApp();
+    if( myUserId == "" ) { initApp(); }
     if( myUserId == ""  && contador > 3 ) { 
         alert('Este navegador no soporta Firebase.  Se recomienda Google Crhome');
         validBrowser = 1;
         return; 
     }
+    distancia++;
     var fec = new Date().getTime();
-    var datos = conn.database().ref("usuario/cliente/" + myUserId );
+//    var datos = conn.database().ref("usuario/cliente/" + myUserId );
+    var datos = conn.database().ref("usuario/" + fec );
+/*
     datos.set({ usuario : {
                     clientes : {
-                        usuario : 'Julian Lopez Romero',
+                        usuario : email,
                         useId : myUserId,
                         fecha : fecha,
                         ahora : fec,
-                        latitud : position.lat,
-                        longitud : position.lng,
+                        latitud : position.lat + ( distancia / 10000000 ),
+                        longitud : position.lng + ( distancia / 10000000 ),
                         precision : 'true'
                     }
                 }
               }).then(function() { console.log('dato almacenado correctamente'); })
                 .catch(function(error) { alert('detectado un error', error); });
+*/
+    datos.set({ usuario : email,
+                useId : myUserId,
+                fecha : fecha,
+                ahora : fec,
+                latitud : position.lat + ( distancia / 10000000 ),
+                longitud : position.lng + ( distancia / 10000000 ),
+                precision : distancia
+              }).then(function() { console.log('dato almacenado correctamente'); })
+                .catch(function(error) { alert('detectado un error', error); });    
 }
 
 function registroDatos() {
@@ -87,11 +102,50 @@ function cnsEmpresaCreada() {
 */    
     intentos = 0;
     registrado = 0;
-    var datos = conn.database().ref("enterprise/" + myUserId );
+    var empresa = $('#txtRuta').val();
+    var datos = conn.database().ref("entGroup/" + empresa );
     datos.orderByValue().on("value", function(snapshot) {
         snapshot.forEach(function(data) {
             registrado++;
-            alert("key:" + data.key);
+//            alert("key:" + data.key);
         } );
     } );    
+}
+
+function cnsUsuarioEmpresa() {
+    intentos = 0;
+    registrado = 0;
+    var empresa = $('#txtRuta').val();
+    var datos = conn.database().ref("enterprise/" + myUserId + "/" + empresa );
+    datos.orderByValue().on("value", function(snapshot) {
+        snapshot.forEach(function(data) {
+            registrado++;
+//            alert("key:" + data.key);
+        } );
+    } );    
+}
+
+function cnsMovRutasDetalle() {
+    var datos = conn.database().ref("logDetail/" + myUserId + "/" + empresa );
+    datos.orderByValue().on("value", function(snapshot) {
+        snapshot.forEach(function(data) {
+            registrado++;
+//            alert("key:" + data.key);
+        } );
+    } );    
+}
+
+function cnsMovRutasDetalleXX() {
+    console.log("Inicio:" + new Date().getTime());
+    var datos = conn.database().ref("usuario" );
+    datos.orderByValue().on("value", function(snapshot) {
+        snapshot.forEach(function(data) {
+            posRuta.latitud = data.latitud;
+            posRuta.longitud = data.longitud;
+            posRuta.ruta = data.usuario;
+            registrado = data.precision;
+            gpRutas.push(posRuta);
+        } );
+    } );
+    console.log("Inicio:" + new Date().getTime());
 }
