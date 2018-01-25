@@ -17,17 +17,14 @@ var msg = conn.messaging();
 function conectar() {
     autor.onAuthStateChanged( function( user ) {
         if ( user ) {
-        // User is signed in.
             displayName = user.displayName;
             email = user.email;
             photoURL = user.photoURL;
             myUserId = user.uid;
             phoneNumber = user.phoneNumber;
-//            console.log("Intento 2" + myUserId);
             user.getIdToken().then( function( accessToken ) {
                 if( contador > 0 || intentos > 0 ) { return; }
-                cnsUsuarioEmpresa();
-                if( registrado > 0 ) { 
+                if( registrado > 0 ) {
                     cambioPagina("mapaRuta.html");
                     return;
                 } else {
@@ -58,27 +55,18 @@ function conectar() {
 }
 
 function initApp() {
-/*
-    if( myUserId != "" ) {
-        console.log("Intento 1" + myUserId);
-        return; 
-    }
-*/  
     if( autor.currentUser )  {
         myUserId = autor.currentUser.uid;
-        console.log("Intento 3" + myUserId);
-//                return myUserId;
+//        console.log("Intento 3" + myUserId);
     }
     autor.onAuthStateChanged( function( user ) {
         if ( user ) {
-        // User is signed in.
             displayName = user.displayName;
             email = user.email;
             photoURL = user.photoURL;
             myUserId = user.uid;
             phoneNumber = user.phoneNumber;
-            console.log("Intento 2" + myUserId);
-//            return myUserId;
+//            console.log("Intento 2" + myUserId);
 /*            
             user.getIdToken().then( function( accessToken ) {
                 if( contador > 0 || intentos > 0 ) { return; }
@@ -93,8 +81,7 @@ function initApp() {
         } else {
             if( autor.currentUser )  {
                 myUserId = autor.currentUser.uid;
-                console.log("Intento 3" + myUserId);
-//                return myUserId;
+//                console.log("Intento 3" + myUserId);
             }
         }
     }, function( error ) {

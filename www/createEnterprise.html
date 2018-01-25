@@ -5,9 +5,11 @@
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" type="text/css" href="css/mapa.css">  
+        <link rel="stylesheet" type="text/css" href="css/menu.css">
         <link rel="stylesheet" type="text/css" href="css/botones.css">
         <link rel="stylesheet" type="text/css" href="css/formulario.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
         <link rel="stylesheet" href="http://fonts.googleapis.com/icon?family=Material+Icons">
         <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,500,400italic,700,700italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="http://storage.googleapis.com/code.getmdl.io/1.0.1/material.teal-red.min.css" />
@@ -26,7 +28,7 @@
         <script type="text/javascript" src="js/paises.js"></script>
         <title>Guardian Rutas</title>
     </head>
-    <body>
+    <body onload="cnsUserExistEnt()">
         <div class="mdl-layout mdl-js-layout mdl-color--grey-100">
 <!--            <main class="mdl-layout__content"> -->
             <div class="tituloRecorrido"><br/><br/>Registro Personal</div>
@@ -46,31 +48,65 @@
                     </select>
                     <input type="text" class="formulario__input_cel" id="txtCelular" size="10" maxlength="10" onkeyup="campoDiligenciado('Celular')">
                     <label for="" class="formulario__label_cel" id="lblCelular">Celular</label>
-                    <input type="text" class="formulario__input" id="txtRuta" size="10" max="10" maxlength="10" onkeyup="campoDiligenciado('Ruta')">
-                    <label for="" class="formulario__label" id="lblRuta">Ruta Empresa</label>
+                    <input type="text" class="formulario__input" id="txtCodRuta" size="11" max="11" maxlength="11" onkeyup="campoDiligenciado('CodRuta')">
+                    <label for="" class="formulario__label" id="lblCodRuta">Ruta Empresa</label>
                 </form>
-                        <dialog id="mensajeError" class="site-dialog">
-                            <header class="dialog-header">
-                                <img src="img/android/drawable-mdpi/logoapprutas.png" height="51" width="51" style="display: in-line" class="imagen">
-                                <b><p class="texto">Faltan Datos</p></b>
-                            </header>
-                            <div class="dialog-content">
-                                <output id="estadoFormulario"></output>
+                <dialog id="m-msjError" class="site-dialog">
+                    <div class="headerForm">
+                        <div class="headerDialog">
+                            <div class="headerImage">
+                                <img src="img/android/drawable-mdpi/logoapprutas.png" height="51" width="51">
                             </div>
+                            <div class="headerTitle">
+                                <h1><p class="textoHeader">Faltan Datos</p></h1>
+                            </div>
+                        </div>
+                        <div class="formularioDialog">
+                        <br/>
+                            <br/>
+                            <div id="dataError1" style="visibility: hidden; display:inline;"></div>
+                            <div id="dataError2" style="visibility: hidden; display:inline;"></div>
+                            <div id="dataError3" style="visibility: hidden; display:inline;"></div>
+                            <div id="dataError4" style="visibility: hidden; display:inline;"></div>
+                            <div id="dataError5" style="visibility: hidden; display:inline;"></div>
+                            <div id="dataError6" style="visibility: hidden; display:inline;"></div>
+                            <br/>
                             <div class="btn-group cf">
-                                <button id="cancel" onclick="cerrarPopUp()">Continuar</button>
+                                <button class="btn_add" id="btnContinuar" onclick="closePopUp('m-msjError')">Continuar</button>
                             </div>
-                        </dialog>
-                </div>
+                        </div>
+                    </div>
+<!--                    
+                    <header class="dialog-header">
+                        <img src="img/android/drawable-mdpi/logoapprutas.png" height="51" width="51" style="display: in-line" class="imagen">
+                        <b><p class="texto">Faltan Datos</p></b>
+                    </header>
+                    <div class="dialog-content">
+                        <output id="estadoFormulario"></output>
+                    </div>
+                    <div class="btn-group cf">
+                        <button id="cancel" onclick="cerrarPopUp()">Continuar</button>
+                    </div>
+-->
+                </dialog>
             </div>
-            <div class="pieRecorridoBoton">
-                <button class="mdl-button mdl-js-button mdl-js-ripple-effect boton-stilo" onclick="registroDatos()">Continuar</button>
+        </div>
+        <div class="pieRecorridoBoton">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect boton-stilo" onclick="registroDatos()">Continuar</button>
 <!--
                 <button class="mdl-button mdl-button--fab mdl-button--darkgray" ><i class="material-icons">forward</i></button>
 -->
 <!--                    <button class="mdl-button mdl-button--fab mdl-button--colored"><i class="material-icons">mode_edit</i></button> -->
-            </div>
+        </div>
 <!--            </main> -->
         </div>
+        <script>
+//            $('#m-msjError').close();
+//            var $continuar = $('#btnContinuar'),
+//            $modal = $('#m-msjError');
+//            $continuar.on('click', function() {
+//                $modal[0].dialogo("close");
+//            });
+        </script>
     </body>
 </html>

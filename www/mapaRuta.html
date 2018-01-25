@@ -6,14 +6,18 @@
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="css/mapa.css">  
         <link rel="stylesheet" type="text/css" href="css/menu.css">
-        <link rel="stylesheet" type="text/css" href="css/botones.css">  
+        <link rel="stylesheet" type="text/css" href="css/botones.css">
+        <link rel="stylesheet" type="text/css" href="css/formulario.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,500,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="http://storage.googleapis.com/code.getmdl.io/1.0.1/material.teal-red.min.css" />
+        <script src="http://storage.googleapis.com/code.getmdl.io/1.0.1/material.min.js"></script>          
         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase-auth.js"></script>
         <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase-database.js"></script>
         <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase-messaging.js"></script>
-        <script type="text/javascript" src="cordova.js"></script>  
+        <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>  
         <script type="text/javascript" src="js/conectar.js"></script>
         <script type="text/javascript" src="js/consultar.js"></script>
@@ -24,20 +28,203 @@
         <header>
             <nav>
                 <ul>
-                    <li class="encabezado-menu"><img src="img/android/drawable-mdpi/logoguardian.png" height="51" width="40"><br/>Guardian<br/>Control de Rutas</li>
-                    <li><a href="mapaRuta.html"><i class="material-icons md-dark noShowIcon">add_circle</i>
-                        <i class="material-icons md-light showIcon">add_circle</i> Agregar Ruta</a></li>
-                    <li><a href="mapaRuta.html"><i class="material-icons md-dark noShowIcon">remove_circle</i>
-                        <i class="material-icons md-light showIcon">remove_circle</i> Eliminar Ruta</a></li>
-                    <li><a href="mapaRuta.html"><i class="material-icons md-dark noShowIcon">search</i>
-                        <i class="material-icons md-light showIcon">search</i> Consultar Ruta</a></li>
-                    <li><a href="mapaRuta.html"><i class="material-icons md-dark noShowIcon">event_note</i>
-                        <i class="material-icons md-light showIcon">event_note</i> Reportes</a></li>
-                    <li><a href="cerrarSesion.html"><i class="material-icons md-dark noShowIcon">exit_to_app</i>
-                        <i class="material-icons md-light showIcon">exit_to_app</i> Salir</a></li>                    
+<!--                    <li class="encabezado-menu"><img src="img/android/drawable-mdpi/logoguardian.png" height="51" width="40"><br/>Guardian<br/>Control de Rutas</li>-->
+                    <li onmouseover="menuSeleccionado('addRuta')" onmouseout="menuNoSeleccionado('addRuta')" onclick="abrirOpcionModal('m-AddRoute')">
+                        <a href="#"><i class="material-icons md-light ShowIcon" id="addRuta" onclick="">add_circle</i>
+                            <p class="letraMenu">Agregar Ruta</p>
+                        </a>
+                    </li>
+                    <li onmouseover="menuSeleccionado('remRuta')" onmouseout="menuNoSeleccionado('remRuta')" onclick="strDataRoute(); abrirOpcionModal('m-RemoveRoute');">
+                        <a href="#"><i class="material-icons md-light showIcon" id="remRuta">remove_circle</i>
+                            <p class="letraMenu">Eliminar Ruta</p>
+                        </a>
+                    </li>
+                    <li onmouseover="menuSeleccionado('consultaRuta')" onmouseout="menuNoSeleccionado('consultaRuta')" onclick="abrirOpcionModal('m-SearchRoute')">
+                        <a href="#"><i class="material-icons md-light showIcon" id="consultaRuta" >search</i>
+                            <p class="letraMenu">Consultar Ruta</p>
+                        </a>
+                    </li>
+                    <li onmouseover="menuSeleccionado('streamingRuta')" onmouseout="menuNoSeleccionado('streamingRuta')" onclick="abrirOpcionModal('m-VideoRoute')">
+                        <a href="#"><i class="material-icons md-light showIcon" id="streamingRuta" >videocam</i>
+                            <p class="letraMenu">Ruta en Vivo</p>
+                        </a>
+                    </li>                    
+                    
+                    
+                    <li onmouseover="menuSeleccionado('reportes')" onmouseout="menuNoSeleccionado('reportes')">
+                        <a href="#"><i class="material-icons md-light showIcon" id="reportes">event_note</i>
+                            <p class="letraMenu">Reportes</p>
+                        </a>
+                    </li>
+                    <li onmouseover="menuSeleccionado('salir')" onmouseout="menuNoSeleccionado('salir')">
+                        <a href="cerrarSesion.html"><i class="material-icons md-light showIcon" id="salir">exit_to_app</i>
+                            <p class="letraMenu">Salir</p>
+                        </a>
+                    </li>
                 </ul>
             </nav>
-        </header>      
+        </header>
         <div id="map" class="map"></div>
+        <dialog id="m-AddRoute" class="site-dialog">
+            <div class="headerForm">
+                <div class="headerDialog">
+                    <div class="headerImage">
+                        <img src="img/android/drawable-mdpi/logoapprutas.png" height="51" width="51">
+                    </div>
+                    <div class="headerTitle">
+                    <h1><p class="textoHeader">Agregar Ruta</p></h1>
+                    </div>
+                </div>
+                <br/>
+                <div class="formularioDialog">
+                    <br/>
+                    <input type="text" class="formulario__inputDialog" id="txtRuta" size="8" max="8" maxlength="8" onkeyup="campoDiligenciado('Ruta')">
+                    <label for="" class="formulario__labelDialog" id="lblRuta">Ruta</label>
+                    <div id="routeFind"></div>
+                    <br/>
+                    <div class="btn-group cf">
+                        <button class="btn_add" id="btnARDialog" onclick="addRoute()">Adicionar</button>
+                        <button class="btn_cancel" onclick="closePopUp('m-AddRoute')">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </dialog>
+        <dialog id="m-RemoveRoute" class="site-dialog">
+            <div class="headerForm">
+                <div class="headerDialog">
+                    <div class="headerImage">
+                        <img src="img/android/drawable-mdpi/logoapprutas.png" height="51" width="51">
+                    </div>
+                    <div class="headerTitle">
+                    <h1><p class="textoHeader">Eliminar Ruta</p></h1>
+                    </div>
+                </div>
+                <br/>
+                <div class="formularioDialog">
+                    <br/>
+                    <input type="text" class="formulario__inputDialog" id="txtRutaRem" size="8" max="8" maxlength="8" onkeyup="campoDiligenciado('RutaRem')">
+                    <label for="" class="formulario__labelDialog" id="lblRutaRem">Ruta</label>
+                    <div id="routeFindRem"></div>
+                    <br/>
+                    <div class="btn-group cf">
+                        <button class="btn_add" id="btnARDialog" onclick="remRoute()">Eliminar</button>
+                        <button class="btn_cancel" onclick="closePopUp('m-RemoveRoute')">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </dialog>
+        <dialog id="m-SearchRoute" class="site-dialog">
+            <div class="headerForm">
+                <div class="headerDialog">
+                    <div class="headerImage">
+                        <img src="img/android/drawable-mdpi/logoapprutas.png" height="51" width="51">
+                    </div>
+                    <div class="headerTitle">
+                    <h1><p class="textoHeader">Consultar Info Ruta</p></h1>
+                    </div>
+                </div>
+                <br/>
+                <div class="formularioDialog">
+                    <br/>
+                    <input type="text" class="formulario__inputDialog" id="txtRutaCns" size="8" max="8" maxlength="8" onkeyup="campoDiligenciado('RutaCns')">
+                    <label for="" class="formulario__labelDialog" id="lblRutaCns">Ruta</label>
+                    <div id="nomCoductor" style="text-align: center; color: #000000;">Conductor: </div>
+                    <div id="nomRuta" style="text-align: center; color: #000000;">Ruta: </div>
+                    <div id="placaRuta" style="text-align: center; color: #000000;">Placa: </div>
+                    <div id="placaRuta" style="text-align: center; color: #000000;">Marca: </div>
+                    <div id="placaRuta" style="text-align: center; color: #000000;">Modelo: </div>
+                    <div id="distanciaRuta" style="text-align: center; color: #000000;">Distancia Recorrida: Km</div>
+                    <div id="kiloRuta" style="text-align: center; color: #000000;">Velocidad Promedio: Km/H</div>
+                    <div id="fechaRuta" style="text-align: center; color: #000000;">Fecha Inicio: </div>
+                    <br/>
+                    <div class="btn-group cf">
+                        <button class="btn_add" id="btnCnsDialog" onclick="cnsDataRoute()">Consultar</button>
+                        <button class="btn_cancel" onclick="strDataRoute(); closePopUp('m-SearchRoute');">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </dialog>  
+
+          
+          
+          
+          
+        <dialog id="m-VideoRoute" class="site-dialog">
+            <div class="headerFormVideo">
+                <div class="headerDialog">
+                    <div class="headerImage">
+                        <img src="img/android/drawable-mdpi/logoapprutas.png" height="51" width="51">
+                    </div>
+                    <div class="headerTitle">
+                    <h1><p class="textoHeader">Ruta en Vivo</p></h1>
+                    </div>
+                </div>
+                <br/>
+                <div class="formularioDialog">
+                    <br/>
+                    <input type="text" class="formulario__inputDialog" id="txtRutaCns" size="8" max="8" maxlength="8" onkeyup="campoDiligenciado('RutaCns')">
+                    <label for="" class="formulario__labelDialog" id="lblRutaCns">Ruta</label>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLx0sYbCqOb8TBPRdmBHs5Iftvv9TPboYG" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    <br/>
+                    <div class="btn-group cf">
+                        <button class="btn_add" id="btnCnsDialog" onclick="cnsDataRoute()">Consultar</button>
+                        <button class="btn_cancel" onclick="strDataRoute(); closePopUp('m-VideoRoute');">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </dialog>          
+          
+          
+          
+          
+          
+          
+          
+        <dialog id="m-CnfRemRoute" class="site-dialog">
+            <div class="headerForm">
+                <div class="headerDialog">
+                    <div class="headerImage">
+                        <img src="img/android/drawable-mdpi/logoapprutas.png" height="51" width="51">
+                    </div>
+                    <div class="headerTitle">
+                    <h1><p class="textoHeader">Confirmación</p></h1>
+                    </div>
+                </div>
+                <br/>
+                <div class="formularioDialogAlert">
+                    <br/>
+                    <div style="text-align: center; color: #000000;">Recuerde que una vez efectuado el proceso</div>
+                    <div style="text-align: center; color: #000000;">Los datos de la ruta relacionada a la empresa</div>
+                    <div style="text-align: center; color: #000000;">No se podran recuperar</div>
+                    <div style="text-align: center; color: #000000;">Desea eliminar la ruta?</div>
+                    <br/>
+                    <div class="btn-group cf">
+                        <button class="btn_add" id="btnCnfDialog" onclick="confirmaRemRoute()">Eliminar</button>
+                        <button class="btn_cancel" onclick="closePopUp('m-CnfRemRoute')">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </dialog>          
+        <dialog id="m-MsjAds" class="site-dialog">
+            <div class="headerForm">
+                <div class="headerDialog">
+                    <div class="headerImage">
+                        <img src="img/android/drawable-mdpi/logoapprutas.png" height="51" width="51">
+                    </div>
+                    <div class="headerTitle">
+                    <h1><p class="textoHeader">Advertencia</p></h1>
+                    </div>
+                </div>
+                <br/>
+                <div class="formularioDialogAlert">
+                    <br/>
+                    <b><div id="msjAds"></div></b>
+                    <br/>
+                    <div class="btn-group cf">
+                        <button class="btn_cancel" onclick="closePopUp('m-MsjAds')">Continuar</button>
+                    </div>
+                </div>
+            </div>
+        </dialog>  
       </body>
     </html>

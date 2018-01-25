@@ -12,11 +12,20 @@ body {background:#333333;}
 	display:none;
     background: #333333;
     height: 5%;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 header {
-	width: 100%;
+	width: 50%;
     background: #333333;
+    text-align: center;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    position: fixed;
+    z-index: 100;
+    opacity: 0.2;
 }
 
 header nav {
@@ -30,6 +39,8 @@ header nav {
 
 header nav ul {
 	list-style:none;
+    display: flex;
+    align-content: space-between;
 }
 
 header nav ul li {
@@ -44,7 +55,6 @@ header nav ul li a {
 	color:#fff;
 	display:block;
 	text-decoration:none;
-	padding: 20px;
 }
 
 header nav ul li a span {
@@ -201,4 +211,65 @@ header nav ul li .caret {
 .textoDerecha {
     text-align: right;
     position: absolute;
+}
+
+@keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+@-webkit-keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+
+.blink {
+/*    animation: fade 3000ms infinite;
+    -webkit-animation: fade 3000ms infinite;*/
+}
+
+header:hover {
+    opacity: 1;
+    transition: opacity 0.9s ease-in-out;
+}
+
+.headerForm {
+    top: 25%;
+	width: 30%;
+    background: #333333;
+    text-align: center;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    position: fixed;
+    opacity: 1;
+    color: white;
+}
+
+.letraMenu {
+    font-size: 18px;
+    display: inline-block;
+    top: 0;
+    bottom: 0;
+    margin-top: auto;
+    vertical-align: middle;
+    margin: 0 0 0;
+    letter-spacing: 2px;
+}
+
+.headerFormVideo {
+    top: 15%;
+	width: 30%;
+    background: #333333;
+    text-align: center;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    position: fixed;
+    opacity: 1;
+    color: white;
 }

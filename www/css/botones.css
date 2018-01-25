@@ -26,3 +26,31 @@
 .boton-stilo{
     font-size: 18px;
 }
+
+.btn_add {
+    padding: 10px;
+    background: #E6E6E6;
+    color: #333333;
+    border-radius: 6px;
+    border: 2px solid #424242;
+    font-weight: 600;
+}
+
+.btn_add:hover {
+    background: #424242;
+    color: #FFFFFF;
+}
+
+.btn_cancel {
+    padding: 10px;
+    background: #E6E6E6;
+    color: #333333;
+    border-radius: 6px;
+    border: 2px solid #424242;
+    font-weight: 600;
+}
+
+.btn_cancel:hover {
+    background: #8A0808;
+    color: #FFFFFF;
+}

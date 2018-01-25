@@ -1,3 +1,4 @@
+'use strict';
 var myUserId = "";
 var tokenSesion;
 var myUser;
@@ -17,6 +18,10 @@ var codRuta;
 var registrado = 0;
 var intentos = 0;
 var distancia = 0;
+var iconoSel = "", entUser = "", entRoute = "" 
+var entCode = "";
+var enterpriseUser = "";
+
 $(document).ready(function() {
 //    alert('Mensaje index.html');
 });
@@ -78,8 +83,8 @@ function ocultarMenu() {
     });
 }
 
-function abrir() { 
-    open('pruebaPopup.html','','top=300,left=300,width=300,height=300') ; 
+function openPopUp(pagina) { 
+    open(pagina,'','top=300,left=300,width=300,height=300') ; 
 } 
 
 var inputs = document.getElementsByClassName('formulario__input');
@@ -107,7 +112,7 @@ function obtenercodEmp() {
 
 function menorCero( valor ) {
     if( valor < 10 ) {
-        return valor += "0" + valor;
+        return valor = "0" + valor;
     } else {
         return valor;
     }
@@ -127,6 +132,9 @@ function campoDiligenciado(etiqueta) {
         if( etiqueta == "Celular" ) {
             $('#lbl' + etiqueta ).removeClass("formulario__label_cel");
             $('#lbl' + etiqueta ).addClass("formulario__label_cel_lleno");
+        } else if( etiqueta.substr(0,4).trim() == "Ruta" ) {
+            $('#lbl' + etiqueta ).removeClass("formulario__labelDialog");
+            $('#lbl' + etiqueta ).addClass("formulario__labelDialog_lleno");
         } else {
             $('#lbl' + etiqueta ).removeClass("formulario__label");
             $('#lbl' + etiqueta ).addClass("formulario__label_lleno");
@@ -135,12 +143,42 @@ function campoDiligenciado(etiqueta) {
         if( etiqueta == "Celular" ) {
             $('#lbl' + etiqueta ).removeClass("formulario__label_cel_lleno");
             $('#lbl' + etiqueta ).addClass("formulario__label_cel");
+        } else if( etiqueta.substr(0,4).trim() == "Ruta" ) {
+            $('#lbl' + etiqueta ).removeClass("formulario__labelDialog_lleno");
+            $('#lbl' + etiqueta ).addClass("formulario__labelDialog");            
         } else {
             $('#lbl' + etiqueta ).removeClass("formulario__label_lleno");
             $('#lbl' + etiqueta ).addClass("formulario__label");
         }        
     }
-//    
+    if( $('#txt' + etiqueta ).val().length > 6 && etiqueta.substr(0,4).trim() == "Ruta" ) {
+        var alphaLow = "abcdefghijklmnopqrstuvwxyz";
+        var alphaUp = "abcdefghijklmnopqrstuvwxyz".toLocaleUpperCase();
+        var number = "0123456789";
+        var routeCode = "";
+        var tmpLetra = ""
+        var texto = $('#txt' + etiqueta ).val();
+        for( var i = 0; i < texto.length; i++ ) {
+            var letra = texto.charAt(i);
+            for( var j = 0; j < alphaLow.length; j++ ) {
+                if( letra == alphaLow.charAt(j) ) {
+                    tmpLetra = letra.toLocaleUpperCase();
+                }
+            }
+            for( var j = 0; j < alphaUp.length; j++ ) {
+                if( letra == alphaUp.charAt(j) ) {
+                    tmpLetra = letra;
+                }
+            }            
+            for( var j = 0; j < number.length; j++ ) {
+                if( letra == number.charAt(j) ) {
+                    tmpLetra = letra;
+                }
+            }
+            routeCode += tmpLetra;
+        }
+        csnRouteEnt(routeCode);
+    }
 }
 
 /**
@@ -157,13 +195,56 @@ function campoDiligenciado(etiqueta) {
  *
  **/
 
+function rad(x) {
+    if(x == 0 ) { return 0; }
+    return x*Math.PI/180;
+}
+
 function getKilometros(lat1,lon1,lat2,lon2) {
-    rad = function(x) {return x*Math.PI/180;}
     var R = 6378.137; //Radio de la tierra en km
     var dLat = rad( lat2 - lat1 );
     var dLong = rad( lon2 - lon1 );
+//    console.log("getK " + dLat + ":" + dLong);
     var a = Math.sin(dLat/2) * Math.sin(dLat/2) + Math.cos(rad(lat1)) * Math.cos(rad(lat2)) * Math.sin(dLong/2) * Math.sin(dLong/2);
+//    console.log("getKA " + a);
     var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+//    console.log("getKC " + c);
     var d = R * c;
-    return d.toFixed(3); //Retorna tres decimales
+//    console.log("getKR " + R);
+//    console.log("PosGeo:" + d);
+    return d; //Retorna tres decimales
+}
+
+function menuSeleccionado(iconoNuevo) {
+    $('#' + iconoNuevo ).removeClass("md-light");
+    $('#' + iconoNuevo ).addClass("md-dark");
+}
+function menuNoSeleccionado(iconoNuevo) {
+    $('#' + iconoNuevo ).removeClass("md-dark");
+    $('#' + iconoNuevo ).addClass("md-light");
+}
+
+function abrirOpcionModal(modal) {
+    var $popUp = $('#' + modal);
+    $popUp[0].showModal();
+}
+
+function closePopUp(modal) {
+    var $popUp = $('#' + modal);
+    $popUp[0].close();
+}
+
+function cargaDatos() {
+    cnsUserEnt();
+    $("#txtNombres").val(userName);
+    alert($("#txtNombres").val());
+    $("#txtApellidos").val(userLastName);
+    $("#txtCelular").val(userCellPhone);
+}
+
+function espera( ms ) {
+    var d = new Date();
+    var d2 = null;
+    do { d2 = new Date(); }
+    while( d2 - d < ms );
 }
