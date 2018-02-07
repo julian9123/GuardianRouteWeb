@@ -153,14 +153,18 @@ mark {
   margin-left: 20px;
 }
 .site-dialog {
-  overflow: hidden;
-  width: 95%;
-  max-width: 500px;
-  padding: 0;
-  border-width: 0;
-  border-radius: 5px;
-  background: transparent;
-  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    width: 95%;
+    height: 100%;
+    right: 0px;
+    top: 0px;
+    position: relative;
+    max-width: 500px;
+    padding: 0;
+    border-width: 0;
+    border-radius: 5px;
+    background: transparent;
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.3);
 }
 .site-dialog h1 {
   font-size: 16px;

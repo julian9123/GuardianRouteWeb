@@ -16,7 +16,7 @@ body {background:#333333;}
 }
 
 header {
-	width: 50%;
+	width: 65%;
     background: #333333;
     text-align: center;
     left: 0;
@@ -236,28 +236,29 @@ header:hover {
 }
 
 .headerForm {
-    top: 25%;
-	width: 30%;
+    top: 0%;
+    height: 100%;
+	width: 25%;
     background: #333333;
     text-align: center;
     left: 0;
     right: 0;
     margin-left: auto;
-    margin-right: auto;
     position: fixed;
     opacity: 1;
     color: white;
 }
 
 .letraMenu {
-    font-size: 18px;
+    font-size: 14px;
     display: inline-block;
     top: 0;
     bottom: 0;
     margin-top: auto;
     vertical-align: middle;
     margin: 0 0 0;
-    letter-spacing: 2px;
+    padding: 0px 1px 0px 1px;
+    letter-spacing: 1px;
 }
 
 .headerFormVideo {
@@ -272,4 +273,9 @@ header:hover {
     position: fixed;
     opacity: 1;
     color: white;
+}
+
+.liClass {
+    background-color: #333333;
+    font-size: 18px;
 }

@@ -302,7 +302,9 @@ function addRoute() {
         } );
     }, function( errorObj ) {
         console.log("Error:" + errorObj.code);
-    } );    
+        return;
+    } );
+    listVehicle();
 }
 
 function cnsRouteExistEnt(myUseridTmp, routeCodeTmp) {
@@ -312,12 +314,10 @@ function cnsRouteExistEnt(myUseridTmp, routeCodeTmp) {
         snapshot.forEach( function( data ) {
             var empresa = data.key;
             entUser = empresa;
-            console.log("Existe Empresa:" + entUser);
             var datosX = conn.database().ref("entRoute/" + entUser + "/" + routeCodeTmp );
             datosX.orderByValue().on( "value", function( snapshotX ) {
                 snapshotX.forEach( function( dataX ) {
                     registrado = 1;
-                    console.log("Ruta Existe:" + dataX.key);
                     siExiste = "S";
                 } );
             } );    
@@ -350,6 +350,17 @@ function confirmaRemRoute() {
     var routeCode = $("#txtRutaRem").val();
     remRouteEnt(routeCode);
     closePopUp('m-CnfRemRoute');
+    $("#txtRutaRem").val("");
+    var lista = document.getElementById("listaVehiculosDel").getElementsByTagName("li");
+    console.log("lista.length:" + lista.length);
+    for (var i = 0; i < lista.length; i++ ) {
+        if(lista[i].innerHTML.includes(routeCode)) {
+            var nodo = routeCode + "ld";
+            var child = document.getElementById(nodo);
+//            var node = document.getElementById(nodo).parentNode.remove();//            var node = document.getElementById(nodo).parentNode.remove();
+            child.parentNode.removeChild(child);
+        }
+    }
 }
 
 function remRoute() {
@@ -369,6 +380,12 @@ function remRoute() {
     csnRouteEnt(routeCode);
     if( siExiste == "N" ) { return; }
     abrirOpcionModal('m-CnfRemRoute');
+}
+
+function remRouteList(routeCode) {
+    campoDiligenciado('RutaRem');
+    $("#txtRutaRem").val(routeCode);
+    remRoute();
 }
     
 function remRouteEnt(routeCode) {
@@ -554,4 +571,27 @@ function cnsDataRoute() {
     elem.textContent = "Velocidad Promedio: " + intentos.toPrecision(3) + " Km/H";
 //    console.log("Distancia Recorrida Final:" + intentos.toPrecision(3) + " Km");
 //    console.log("Tiempo Final Final:" + parseFloat( ( contTiempo / 20 ) / 60 ).toPrecision(2) + " Horas" );
+}
+
+function cnsUrlRoute() {
+    var route = $('#txtRutaUrl').val();
+    if( route == "" ){ return; }
+    console.log("Ruta:" + markers.length);
+    if( markers.includes(route) ) {
+        console.log("RutaS:" + markers.includes(route));
+        for( var x in markers ) {
+            console.log("RutaM:" + markers[x].ruta);
+            if( markers[x].ruta == route ) {
+                console.log("URlM:" + markers[x].url);
+                var url = "<iframe width='560' height='315' src='" + markers[x].url + "' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>";
+                
+            }
+        }
+//        https://www.youtube.com/embed/videoseries?list=PLx0sYbCqOb8TBPRdmBHs5Iftvv9TPboYG
+    } else {
+        var elem = document.getElementById("youtubeFrame");
+        elem.textContent = "Ruta " + route + " no pertenece a la empresa";
+        elem.setAttribute("style", "color: #DF0101");
+    }
+
 }

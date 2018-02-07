@@ -9,10 +9,10 @@
         <link rel="stylesheet" type="text/css" href="css/botones.css">
         <link rel="stylesheet" type="text/css" href="css/formulario.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,500,400italic,700,700italic' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="http://storage.googleapis.com/code.getmdl.io/1.0.1/material.teal-red.min.css" />
-        <script src="http://storage.googleapis.com/code.getmdl.io/1.0.1/material.min.js"></script>          
-        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,500,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.1/material.teal-red.min.css" />
+        <script src="https://storage.googleapis.com/code.getmdl.io/1.0.1/material.min.js"></script>          
+        <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
         <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase-auth.js"></script>
         <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase-database.js"></script>
@@ -29,28 +29,36 @@
             <nav>
                 <ul>
 <!--                    <li class="encabezado-menu"><img src="img/android/drawable-mdpi/logoguardian.png" height="51" width="40"><br/>Guardian<br/>Control de Rutas</li>-->
-                    <li onmouseover="menuSeleccionado('addRuta')" onmouseout="menuNoSeleccionado('addRuta')" onclick="abrirOpcionModal('m-AddRoute')">
+                    <li onmouseover="menuSeleccionado('addRuta')" onmouseout="menuNoSeleccionado('addRuta')" onclick="listVehicle(); abrirOpcionModal('m-AddRoute');">
                         <a href="#"><i class="material-icons md-light ShowIcon" id="addRuta" onclick="">add_circle</i>
-                            <p class="letraMenu">Agregar Ruta</p>
+                            <p class="letraMenu">Registrar Vehículo</p>
                         </a>
                     </li>
-                    <li onmouseover="menuSeleccionado('remRuta')" onmouseout="menuNoSeleccionado('remRuta')" onclick="strDataRoute(); abrirOpcionModal('m-RemoveRoute');">
+                    <li onmouseover="menuSeleccionado('remRuta')" onmouseout="menuNoSeleccionado('remRuta')" onclick="listVehicleDelete(); strDataRoute(); abrirOpcionModal('m-RemoveRoute');">
                         <a href="#"><i class="material-icons md-light showIcon" id="remRuta">remove_circle</i>
-                            <p class="letraMenu">Eliminar Ruta</p>
+                            <p class="letraMenu">Inactivar Vehículo</p>
                         </a>
                     </li>
-                    <li onmouseover="menuSeleccionado('consultaRuta')" onmouseout="menuNoSeleccionado('consultaRuta')" onclick="abrirOpcionModal('m-SearchRoute')">
-                        <a href="#"><i class="material-icons md-light showIcon" id="consultaRuta" >search</i>
-                            <p class="letraMenu">Consultar Ruta</p>
+                    <li onmouseover="menuSeleccionado('reasigRuta')" onmouseout="menuNoSeleccionado('reasigRuta')" onclick="strDataRoute(); abrirOpcionModal('m-RemoveRoute');">
+                        <a href="#"><i class="material-icons md-light showIcon" id="reasigRuta">cached</i>
+                            <p class="letraMenu">Reasignar Ruta</p>
                         </a>
                     </li>
-                    <li onmouseover="menuSeleccionado('streamingRuta')" onmouseout="menuNoSeleccionado('streamingRuta')" onclick="abrirOpcionModal('m-VideoRoute')">
-                        <a href="#"><i class="material-icons md-light showIcon" id="streamingRuta" >videocam</i>
-                            <p class="letraMenu">Ruta en Vivo</p>
+                    <li onmouseover="menuSeleccionado('suscripRuta')" onmouseout="menuNoSeleccionado('suscripRuta')" onclick="strDataRoute(); abrirOpcionModal('m-RemoveRoute');">
+                        <a href="#"><i class="material-icons md-light showIcon" id="suscripRuta">subscriptions</i>
+                            <p class="letraMenu">Asignar Ruta a Colegio</p>
                         </a>
                     </li>                    
-                    
-                    
+                    <li onmouseover="menuSeleccionado('notifRuta')" onmouseout="menuNoSeleccionado('notifRuta')" onclick="strDataRoute(); abrirOpcionModal('m-RemoveRoute');">
+                        <a href="#"><i class="material-icons md-light showIcon" id="notifRuta">add_alert</i>
+                            <p class="letraMenu">Enviar Notificación</p>
+                        </a>
+                    </li>                                        
+                    <li onmouseover="menuSeleccionado('consultaRuta')" onmouseout="menuNoSeleccionado('consultaRuta')" onclick="abrirOpcionModal('m-SearchRoute')">
+                        <a href="#"><i class="material-icons md-light showIcon" id="consultaRuta" >search</i>
+                            <p class="letraMenu">Consultar Vehículo</p>
+                        </a>
+                    </li>
                     <li onmouseover="menuSeleccionado('reportes')" onmouseout="menuNoSeleccionado('reportes')">
                         <a href="#"><i class="material-icons md-light showIcon" id="reportes">event_note</i>
                             <p class="letraMenu">Reportes</p>
@@ -72,20 +80,26 @@
                         <img src="img/android/drawable-mdpi/logoapprutas.png" height="51" width="51">
                     </div>
                     <div class="headerTitle">
-                    <h1><p class="textoHeader">Agregar Ruta</p></h1>
+                    <h1><p class="textoHeader">Agregar Vehículo</p></h1>
                     </div>
                 </div>
                 <br/>
                 <div class="formularioDialog">
                     <br/>
                     <input type="text" class="formulario__inputDialog" id="txtRuta" size="8" max="8" maxlength="8" onkeyup="campoDiligenciado('Ruta')">
-                    <label for="" class="formulario__labelDialog" id="lblRuta">Ruta</label>
+                    <label for="" class="formulario__labelDialog" id="lblRuta">Placa</label>
                     <div id="routeFind"></div>
                     <br/>
                     <div class="btn-group cf">
-                        <button class="btn_add" id="btnARDialog" onclick="addRoute()">Adicionar</button>
+                        <button class="btn_add" id="btnARDialog" onclick="addRoute(); listVehicle();">Adicionar</button>
                         <button class="btn_cancel" onclick="closePopUp('m-AddRoute')">Cancelar</button>
                     </div>
+                </div>
+                <div>
+                    <ul id="listaVehiculos">
+                        <li><b>Vehiculos</b></li>
+                        <li>Placa - Ruta - Nombre Ruta</li>
+                    </ul>                    
                 </div>
             </div>
         </dialog>
@@ -96,14 +110,14 @@
                         <img src="img/android/drawable-mdpi/logoapprutas.png" height="51" width="51">
                     </div>
                     <div class="headerTitle">
-                    <h1><p class="textoHeader">Eliminar Ruta</p></h1>
+                    <h1><p class="textoHeader">Eliminar Vehículo</p></h1>
                     </div>
                 </div>
                 <br/>
                 <div class="formularioDialog">
                     <br/>
                     <input type="text" class="formulario__inputDialog" id="txtRutaRem" size="8" max="8" maxlength="8" onkeyup="campoDiligenciado('RutaRem')">
-                    <label for="" class="formulario__labelDialog" id="lblRutaRem">Ruta</label>
+                    <label for="" class="formulario__labelDialog" id="lblRutaRem">Placa</label>
                     <div id="routeFindRem"></div>
                     <br/>
                     <div class="btn-group cf">
@@ -111,6 +125,12 @@
                         <button class="btn_cancel" onclick="closePopUp('m-RemoveRoute')">Cancelar</button>
                     </div>
                 </div>
+                <div>
+                    <ul id="listaVehiculosDel">
+                        <li class="liClass"><b>Vehiculos</b></li>
+                        <li>Placa - Ruta - Nombre Ruta</li>
+                    </ul>                    
+                </div>                
             </div>
         </dialog>
         <dialog id="m-SearchRoute" class="site-dialog">
@@ -120,7 +140,7 @@
                         <img src="img/android/drawable-mdpi/logoapprutas.png" height="51" width="51">
                     </div>
                     <div class="headerTitle">
-                    <h1><p class="textoHeader">Consultar Info Ruta</p></h1>
+                    <h1><p class="textoHeader">Consultar Información<br/>Vehículo</p></h1>
                     </div>
                 </div>
                 <br/>
@@ -162,12 +182,12 @@
                 <br/>
                 <div class="formularioDialog">
                     <br/>
-                    <input type="text" class="formulario__inputDialog" id="txtRutaCns" size="8" max="8" maxlength="8" onkeyup="campoDiligenciado('RutaCns')">
-                    <label for="" class="formulario__labelDialog" id="lblRutaCns">Ruta</label>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLx0sYbCqOb8TBPRdmBHs5Iftvv9TPboYG" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    <input type="text" class="formulario__inputDialog" id="txtRutaUrl" size="8" max="8" maxlength="8" onkeyup="campoDiligenciado('RutaUrl')">
+                    <label for="" class="formulario__labelDialog" id="lblRutaUrl">Ruta</label>
+                    <div id="youtubeFrame"></div>
                     <br/>
                     <div class="btn-group cf">
-                        <button class="btn_add" id="btnCnsDialog" onclick="cnsDataRoute()">Consultar</button>
+                        <button class="btn_add" id="btnCnsDialog" onclick="cnsUrlRoute()">Ver Video En Vivo</button>
                         <button class="btn_cancel" onclick="strDataRoute(); closePopUp('m-VideoRoute');">Cancelar</button>
                     </div>
                 </div>

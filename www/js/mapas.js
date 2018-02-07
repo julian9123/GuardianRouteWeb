@@ -1,3 +1,5 @@
+'use strict';
+
 var map;
 var myLat = 4.7513308,
     myLong = -74.0651812,
@@ -8,8 +10,8 @@ var myLat = 4.7513308,
     streetPlace;
 var infoWindow;
 var options;
-var obj = new Object();
 var markers = [];
+var markersDup = [];
 var rutas = [];
 $(document).ready(function() {
 
@@ -59,6 +61,7 @@ function myPositions() {
                     var ruta = x.routeCode;
                     var objE = new Object();
                     objE = ruta.toUpperCase();
+//                    objE = minToMayus(ruta);
                     rutas.push(objE);
             } );
         } );
@@ -67,27 +70,51 @@ function myPositions() {
     datos.orderByValue().on("value", function(snapshot) {
         snapshot.forEach(function(data) {
             var rutaCns = data.key;
+//            markers.slice(0, markers.length);
             rutaCns = rutaCns.toUpperCase();
             if( rutas.includes(rutaCns) ) {
+                var obj = new Object();
                 obj.ruta = data.key;
                 var reg = data.val();
                 obj.longitud = reg.longitud;
                 obj.latitud = reg.latitud;
                 obj.nombre = reg.nombre;
+                obj.url = "https://www.youtube.com/watch?v=bmtbg5b7_Aw";
                 markers.push(obj);
-                marcador = new google.maps.Marker({ position: new google.maps.LatLng(obj.latitud, obj.longitud), map: map, 
-                                                 title: 'Ruta:' + obj.nombre, icon: image, shape: shape });
+                marcador = new google.maps.Marker({ position: new google.maps.LatLng(obj.latitud, obj.longitud), 
+                                                    map: map, 
+                                                    title: 'Ruta:' + obj.nombre, 
+                                                    icon: image, 
+                                                    shape: shape,
+                                                    animation: google.maps.Animation.DROP });
+                google.maps.event.addListener(marcador, 'click', (function(marker, i) {
+                    return function() {
+                        infowindow.setContent('Ruta:' + obj.nombre);
+                        
+//                        infowindow.open(map, marker);
+//                        console.log("obj.nombre:" + JSON.stringify(marker) + " i:" + i);
+                  }
+    })(marcador, i));
+                
             }
         } );
     } );
+    markers = eliminarObjetosDuplicados(markers, "ruta");
     if( rutas.length <= 0 ){ return; }
-    google.maps.event.addListener(marcador, 'click', (function(marker, i) {
-        return function() {
-            infowindow.setContent('Ruta:' + obj.nombre);
-            infowindow.open(map, marker);
-      }
-    })(marcador, i));
     google.maps.event.addDomListener(window, 'load', initMap);
+}
+
+function eliminarObjetosDuplicados(arr, prop) {
+     var nuevoArray = [];
+     var lookup  = {};
+ 
+     for (var i in arr) {
+         lookup[arr[i][prop]] = arr[i];
+     }
+     for (i in lookup) {
+         nuevoArray.push(lookup[i]);
+     }
+     return nuevoArray;
 }
 
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
@@ -114,4 +141,52 @@ function posicionActual() {
     } else {
         handleLocationError(false, infoWindow, map.getCenter());
     }
+}
+
+function listVehicle() {
+    var estilo;
+    var j = 0;
+    for(var x = 0; x < markers.length; x++ ) {
+        j = x + 1;
+        var liNew = document.createElement("li");
+        liNew.id = markers[x].ruta + "la";
+//        var textLi = "&nbsp;" + j + ". ASD11" + x + " - " + markers[x].ruta + " - " + markers[x].nombre;
+        var textLi = j + ". ASD11" + x + " - " + markers[x].ruta + " - " + markers[x].nombre;
+        if(find_li(textLi, "listaVehiculos")) {
+//            if( ( j % 2 ) == 0 ) { estilo = "text-align: left; font-size: 12px; background-color: #333333; color: #FFFFFF;"; }
+//            else { estilo = "text-align: left; font-size: 12px; background-color: #FFFFFF; color: #333333;"; }
+            liNew.innerHTML = textLi;
+            liNew.setAttribute("style", "text-align: left; font-size: 12px;");
+            document.getElementById("listaVehiculos").appendChild(liNew);
+        }
+    }
+}
+
+function listVehicleDelete() {
+    for(var x = 0; x < markers.length; x++ ) {
+        var liNew = document.createElement("li");
+        liNew.id = markers[x].ruta + "ld";
+//        var textLi = "&nbsp;" + 1+x + ". ASD11" + x + " - " + markers[x].ruta + " - " + markers[x].nombre;
+        var textLi = 1+x + ". ASD11" + x + " - " + markers[x].ruta + " - " + markers[x].nombre;        
+        var btnClick = " <button class='btn_add' id='" + markers[x].ruta + "' onclick='remRouteList(this.id)'>Eliminar</button>";
+        if(find_li(textLi, "listaVehiculosDel")) {
+            liNew.innerHTML = textLi + btnClick;
+            liNew.setAttribute("style", "text-align: left; font-size: 12px;");
+            document.getElementById("listaVehiculosDel").appendChild(liNew);
+        }
+    }
+}
+
+/**
+ * Funcion que busca si existe ya el <li> dentrol del <ul>
+ * Devuelve true si no existe.
+ */
+function find_li(content, list) {
+    var lista = document.getElementById(list).getElementsByTagName("li");
+        for (var i = 0; i < lista.length; i++ ) {
+        if(lista[i].innerHTML.includes(content)) {
+            return false;
+        }
+    }
+    return true;
 }

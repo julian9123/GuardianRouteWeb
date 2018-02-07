@@ -248,3 +248,32 @@ function espera( ms ) {
     do { d2 = new Date(); }
     while( d2 - d < ms );
 }
+
+function minToMayus(textMin) {
+    var alphaLow = "abcdefghijklmnopqrstuvwxyz";
+    var alphaUp = "abcdefghijklmnopqrstuvwxyz".toLocaleUpperCase();
+    var number = "0123456789";
+    var routeCode = "";
+    var tmpLetra = ""
+    var texto = textMin;
+    for( var i = 0; i < texto.length; i++ ) {
+        var letra = texto.charAt(i);
+        for( var j = 0; j < alphaLow.length; j++ ) {
+            if( letra == alphaLow.charAt(j) ) {
+                tmpLetra = letra.toLocaleUpperCase();
+            }
+        }
+        for( var j = 0; j < alphaUp.length; j++ ) {
+            if( letra == alphaUp.charAt(j) ) {
+                tmpLetra = letra;
+            }
+        }            
+        for( var j = 0; j < number.length; j++ ) {
+            if( letra == number.charAt(j) ) {
+                tmpLetra = letra;
+            }
+        }
+        routeCode += tmpLetra;
+    }
+    return routeCode;
+}
