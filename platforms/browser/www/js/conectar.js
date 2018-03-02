@@ -1,3 +1,4 @@
+/*
 var config = {
                 apiKey: 'AIzaSyB5lqBfnODzRWdigNjIdmLBUIvsUmW13uk',
                 authDomain: 'juliancorp-9123.firebaseapp.com',
@@ -5,6 +6,14 @@ var config = {
                 storageBucket: 'juliancorp-9123.appspot.com',
                 messagingSenderId: '1085529323533'
              };
+*/
+var config = {
+    apiKey: 'AIzaSyD0s53gqHP_mjfiy2qLAgH2GXe9VGZslFo',
+    authDomain: 'gardianapps.firebaseapp.com',
+    databaseURL: 'https://gardianapps.firebaseio.com/',
+    storageBucket: 'gardianapps.appspot.com',
+    messagingSenderId: '435530095671'
+};
 var conn = firebase.initializeApp(config);
 var proveedor = new firebase.auth.GoogleAuthProvider();
 proveedor.addScope('https://www.googleapis.com/auth/contacts.readonly');

@@ -86,8 +86,8 @@
                 <br/>
                 <div class="formularioDialog">
                     <br/>
-                    <input type="text" class="formulario__inputDialog" id="txtRuta" size="8" max="8" maxlength="8" onkeyup="campoDiligenciado('Ruta')">
-                    <label for="" class="formulario__labelDialog" id="lblRuta">Placa</label>
+                    <input type="text" class="formulario__inputDialog" id="txtRuta" size="6" max="6" maxlength="6" onkeyup="campoDiligenciado('Ruta')">
+                    <label class="formulario__labelDialog" id="lblRuta">Placa</label>
                     <div id="routeFind"></div>
                     <br/>
                     <div class="btn-group cf">
@@ -96,9 +96,9 @@
                     </div>
                 </div>
                 <div>
-                    <ul id="listaVehiculos">
-                        <li><b>Vehiculos</b></li>
-                        <li>Placa - Ruta - Nombre Ruta</li>
+                    <ul id="listaVehiculos" style="overflow: auto";>
+                        <li id="titulo"><b>VEHICULOS</b></li>
+                        <li id="columnas"><b>Placa - Ruta - Nombre</b></li>
                     </ul>                    
                 </div>
             </div>
@@ -117,18 +117,18 @@
                 <div class="formularioDialog">
                     <br/>
                     <input type="text" class="formulario__inputDialog" id="txtRutaRem" size="8" max="8" maxlength="8" onkeyup="campoDiligenciado('RutaRem')">
-                    <label for="" class="formulario__labelDialog" id="lblRutaRem">Placa</label>
+                    <label class="formulario__labelDialog" id="lblRutaRem">Placa</label>
                     <div id="routeFindRem"></div>
                     <br/>
                     <div class="btn-group cf">
-                        <button class="btn_add" id="btnARDialog" onclick="remRoute()">Eliminar</button>
+                        <button class="btn_add" id="btnRmDialog" onclick="remRoute()">Eliminar</button>
                         <button class="btn_cancel" onclick="closePopUp('m-RemoveRoute')">Cancelar</button>
                     </div>
                 </div>
                 <div>
                     <ul id="listaVehiculosDel">
-                        <li class="liClass"><b>Vehiculos</b></li>
-                        <li>Placa - Ruta - Nombre Ruta</li>
+                        <li id="tituloDel"><b>Vehiculos</b></li>
+                        <li id="columnasDel">Placa - Ruta - Nombre Ruta</li>
                     </ul>                    
                 </div>                
             </div>
@@ -140,27 +140,25 @@
                         <img src="img/android/drawable-mdpi/logoapprutas.png" height="51" width="51">
                     </div>
                     <div class="headerTitle">
-                    <h1><p class="textoHeader">Consultar Información<br/>Vehículo</p></h1>
+                    <h1><p class="textoHeader">Consultar Detalle<br/>Vehículo</p></h1>
                     </div>
                 </div>
                 <br/>
                 <div class="formularioDialog">
                     <br/>
                     <input type="text" class="formulario__inputDialog" id="txtRutaCns" size="8" max="8" maxlength="8" onkeyup="campoDiligenciado('RutaCns')">
-                    <label for="" class="formulario__labelDialog" id="lblRutaCns">Ruta</label>
-                    <div id="nomCoductor" style="text-align: center; color: #000000;">Conductor: </div>
-                    <div id="nomRuta" style="text-align: center; color: #000000;">Ruta: </div>
-                    <div id="placaRuta" style="text-align: center; color: #000000;">Placa: </div>
-                    <div id="placaRuta" style="text-align: center; color: #000000;">Marca: </div>
-                    <div id="placaRuta" style="text-align: center; color: #000000;">Modelo: </div>
-                    <div id="distanciaRuta" style="text-align: center; color: #000000;">Distancia Recorrida: Km</div>
-                    <div id="kiloRuta" style="text-align: center; color: #000000;">Velocidad Promedio: Km/H</div>
-                    <div id="fechaRuta" style="text-align: center; color: #000000;">Fecha Inicio: </div>
+                    <label  class="formulario__labelDialog" id="lblRutaCns">Ruta</label>
                     <br/>
                     <div class="btn-group cf">
                         <button class="btn_add" id="btnCnsDialog" onclick="cnsDataRoute()">Consultar</button>
                         <button class="btn_cancel" onclick="strDataRoute(); closePopUp('m-SearchRoute');">Cancelar</button>
                     </div>
+                </div>
+                <div>
+                    <ul id="listaVehiculosCns" style="overflow: auto;">
+                        <li id="tituloCns"><b>VEHICULOS</b></li>
+                        <li id="columnasCns"><b>Placa - Ruta - Nombre</b></li>
+                    </ul>
                 </div>
             </div>
         </dialog>  
@@ -169,7 +167,7 @@
           
           
           
-        <dialog id="m-VideoRoute" class="site-dialog">
+        <dialog id="m-ChangeRoute" class="site-dialog">
             <div class="headerFormVideo">
                 <div class="headerDialog">
                     <div class="headerImage">
@@ -183,11 +181,11 @@
                 <div class="formularioDialog">
                     <br/>
                     <input type="text" class="formulario__inputDialog" id="txtRutaUrl" size="8" max="8" maxlength="8" onkeyup="campoDiligenciado('RutaUrl')">
-                    <label for="" class="formulario__labelDialog" id="lblRutaUrl">Ruta</label>
+                    <label class="formulario__labelDialog" id="lblRutaUrl">Ruta</label>
                     <div id="youtubeFrame"></div>
                     <br/>
                     <div class="btn-group cf">
-                        <button class="btn_add" id="btnCnsDialog" onclick="cnsUrlRoute()">Ver Video En Vivo</button>
+                        <button class="btn_add" id="btnLiveDialog" onclick="cnsUrlRoute()">Ver Video En Vivo</button>
                         <button class="btn_cancel" onclick="strDataRoute(); closePopUp('m-VideoRoute');">Cancelar</button>
                     </div>
                 </div>
@@ -224,7 +222,32 @@
                     </div>
                 </div>
             </div>
-        </dialog>          
+        </dialog>
+
+        <dialog id="m-CnfAddRoute" class="site-dialog">
+            <div class="headerForm">
+                <div class="headerDialog">
+                    <div class="headerImage">
+                        <img src="img/android/drawable-mdpi/logoapprutas.png" height="51" width="51">
+                    </div>
+                    <div class="headerTitle">
+                        <h1><p class="textoHeader">Confirmación</p></h1>
+                    </div>
+                </div>
+                <br/>
+                <div class="formularioDialogAlert">
+                    <br/>
+                    <div style="text-align: center; color: #000000;">Desea crear el vehículo y</div>
+                    <div style="text-align: center; color: #000000;">Relacionarlo con la empresa?</div>
+                    <br/>
+                    <div class="btn-group cf">
+                        <button class="btn_add" id="btnCnfAddDialog" onclick="confirmaAddRoute()">Crear</button>
+                        <button class="btn_cancel" onclick="closePopUp('m-CnfAddRoute')">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </dialog>
+
         <dialog id="m-MsjAds" class="site-dialog">
             <div class="headerForm">
                 <div class="headerDialog">
@@ -245,6 +268,6 @@
                     </div>
                 </div>
             </div>
-        </dialog>  
+        </dialog>
       </body>
-    </html>
+</html>

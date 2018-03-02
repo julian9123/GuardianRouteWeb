@@ -1,35 +1,43 @@
 {
   "project_info": {
-    "project_number": "1085529323533",
-    "firebase_url": "https://juliancorp-9123.firebaseio.com",
-    "project_id": "juliancorp-9123",
-    "storage_bucket": "juliancorp-9123.appspot.com"
+    "project_number": "435530095671",
+    "firebase_url": "https://gardianapps.firebaseio.com",
+    "project_id": "gardianapps",
+    "storage_bucket": "gardianapps.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1085529323533:android:e2ff4a48433aa2a4",
+        "mobilesdk_app_id": "1:435530095671:android:42444b7b7db5f0f9",
         "android_client_info": {
-          "package_name": "com.juliancorp.dbprueba"
+          "package_name": "com.controlderuta.guardianruta"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1085529323533-qehlvsc9mbr5pksalbo0knfjm9g3c1h0.apps.googleusercontent.com",
+          "client_id": "435530095671-03r6pa8pigs3djkp1f7ovm2r4eq2ur6i.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.juliancorp.dbprueba",
-            "certificate_hash": "ffcfa368d014326cd88cbae004c3ee7f220d4aef"
+            "package_name": "com.controlderuta.guardianruta",
+            "certificate_hash": "f0e59be9bb9edc070b156b319f38ff073b6de0e9"
           }
         },
         {
-          "client_id": "1085529323533-6phce0c6hc43lfbicp73cooi9a362uvf.apps.googleusercontent.com",
+          "client_id": "435530095671-ctbhf8u584p2tn2l2c7bscpga7kap5f7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.controlderuta.guardianruta",
+            "certificate_hash": "1b8206cd5241b89ae71e397fecd29b0a94423d40"
+          }
+        },
+        {
+          "client_id": "435530095671-0ovl7mctorg7dvcc1n8qi1veclk0722p.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyB5lqBfnODzRWdigNjIdmLBUIvsUmW13uk"
+          "current_key": "AIzaSyAnLmn2JElVRRAmfNhuCtqFzNAZ0nv-jJI"
         }
       ],
       "services": {
@@ -40,16 +48,8 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "1085529323533-6phce0c6hc43lfbicp73cooi9a362uvf.apps.googleusercontent.com",
+              "client_id": "435530095671-0ovl7mctorg7dvcc1n8qi1veclk0722p.apps.googleusercontent.com",
               "client_type": 3
-            },
-            {
-              "client_id": "1085529323533-afjdsc6a1998p8di411ol5ld67jqip05.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.juliancorp.dbpruebaios",
-                "app_store_id": "123456789"
-              }
             }
           ]
         },
@@ -60,28 +60,36 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1085529323533:android:bf21ee95c8afec20",
+        "mobilesdk_app_id": "1:435530095671:android:b40f3c3f0393ff06",
         "android_client_info": {
-          "package_name": "com.juliancorp.pushapp"
+          "package_name": "com.controlderuta.guardianpadres"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1085529323533-9lml808t8gqvciiol780k09l04q9rl70.apps.googleusercontent.com",
+          "client_id": "435530095671-4ns21j5j0go706tlrpvjr7qp0tcj6e3f.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.juliancorp.pushapp",
-            "certificate_hash": "ffcfa368d014326cd88cbae004c3ee7f220d4aef"
+            "package_name": "com.controlderuta.guardianpadres",
+            "certificate_hash": "f0a0957e2cf2fd9c78b008a6d2722d85519351c3"
           }
         },
         {
-          "client_id": "1085529323533-6phce0c6hc43lfbicp73cooi9a362uvf.apps.googleusercontent.com",
+          "client_id": "435530095671-5880ioapv2hct3bjo42p1pv9c5pcr2br.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.controlderuta.guardianpadres",
+            "certificate_hash": "1b8206cd5241b89ae71e397fecd29b0a94423d40"
+          }
+        },
+        {
+          "client_id": "435530095671-0ovl7mctorg7dvcc1n8qi1veclk0722p.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyB5lqBfnODzRWdigNjIdmLBUIvsUmW13uk"
+          "current_key": "AIzaSyAnLmn2JElVRRAmfNhuCtqFzNAZ0nv-jJI"
         }
       ],
       "services": {
@@ -92,16 +100,8 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "1085529323533-6phce0c6hc43lfbicp73cooi9a362uvf.apps.googleusercontent.com",
+              "client_id": "435530095671-0ovl7mctorg7dvcc1n8qi1veclk0722p.apps.googleusercontent.com",
               "client_type": 3
-            },
-            {
-              "client_id": "1085529323533-afjdsc6a1998p8di411ol5ld67jqip05.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.juliancorp.dbpruebaios",
-                "app_store_id": "123456789"
-              }
             }
           ]
         },
@@ -112,28 +112,28 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1085529323533:android:a1f2b92325f51339",
+        "mobilesdk_app_id": "1:435530095671:android:50a8d7296418b162",
         "android_client_info": {
-          "package_name": "com.juliancorp.guardianapp"
+          "package_name": "com.guardianrutas.guardianemployee"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1085529323533-leiu830958gvnc4liv6hmv3nbbriq3jj.apps.googleusercontent.com",
+          "client_id": "435530095671-5f6dj2gr59l0ng06ds4o8lnvld63npsq.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.juliancorp.guardianapp",
-            "certificate_hash": "ffcfa368d014326cd88cbae004c3ee7f220d4aef"
+            "package_name": "com.guardianrutas.guardianemployee",
+            "certificate_hash": "1b8206cd5241b89ae71e397fecd29b0a94423d40"
           }
         },
         {
-          "client_id": "1085529323533-6phce0c6hc43lfbicp73cooi9a362uvf.apps.googleusercontent.com",
+          "client_id": "435530095671-0ovl7mctorg7dvcc1n8qi1veclk0722p.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyB5lqBfnODzRWdigNjIdmLBUIvsUmW13uk"
+          "current_key": "AIzaSyAnLmn2JElVRRAmfNhuCtqFzNAZ0nv-jJI"
         }
       ],
       "services": {
@@ -144,68 +144,8 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "1085529323533-6phce0c6hc43lfbicp73cooi9a362uvf.apps.googleusercontent.com",
+              "client_id": "435530095671-0ovl7mctorg7dvcc1n8qi1veclk0722p.apps.googleusercontent.com",
               "client_type": 3
-            },
-            {
-              "client_id": "1085529323533-afjdsc6a1998p8di411ol5ld67jqip05.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.juliancorp.dbpruebaios",
-                "app_store_id": "123456789"
-              }
-            }
-          ]
-        },
-        "ads_service": {
-          "status": 2
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:1085529323533:android:7a7b5bacd905ef5e",
-        "android_client_info": {
-          "package_name": "com.controlderuta.guardianroutep"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "1085529323533-3cojnt6g8jcin12q48m36g16qst93cb5.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.controlderuta.guardianroutep",
-            "certificate_hash": "ffcfa368d014326cd88cbae004c3ee7f220d4aef"
-          }
-        },
-        {
-          "client_id": "1085529323533-6phce0c6hc43lfbicp73cooi9a362uvf.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyB5lqBfnODzRWdigNjIdmLBUIvsUmW13uk"
-        }
-      ],
-      "services": {
-        "analytics_service": {
-          "status": 1
-        },
-        "appinvite_service": {
-          "status": 2,
-          "other_platform_oauth_client": [
-            {
-              "client_id": "1085529323533-6phce0c6hc43lfbicp73cooi9a362uvf.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "1085529323533-afjdsc6a1998p8di411ol5ld67jqip05.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.juliancorp.dbpruebaios",
-                "app_store_id": "123456789"
-              }
             }
           ]
         },

@@ -21,8 +21,8 @@ body {
         color-stop(0.51, #E4E4E4)
     );
     background-attachment:fixed;
-*/    
-    font-family: 'Garamond', serif;
+*/
+    font-family: 'Roboto', regular;
     font-size:12px;
     height:100%;
     margin:0px;
@@ -492,4 +492,24 @@ h1 {
 .botonBorrar{
     text-align: right;
     right: 5%;
+}
+
+.imgDivImages {
+    overflow: hidden;
+    width: 100%;
+    margin-top: 15%;
+    color: #FFFFFF;
+}
+.imgDivSchool {
+    float: left;
+    height: 20%;
+    width: 50%;
+    font-size: large;
+}
+
+.imgDivEnterprise {
+    float: right;
+    height: 20%;
+    width: 50%;
+    font-size: large;
 }

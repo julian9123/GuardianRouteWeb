@@ -151,7 +151,7 @@ function campoDiligenciado(etiqueta) {
             $('#lbl' + etiqueta ).addClass("formulario__label");
         }        
     }
-    if( $('#txt' + etiqueta ).val().length > 6 && etiqueta.substr(0,4).trim() == "Ruta" ) {
+    if( $('#txt' + etiqueta ).val().length > 5 && etiqueta.substr(0,4).trim() == "Ruta" ) {
         var alphaLow = "abcdefghijklmnopqrstuvwxyz";
         var alphaUp = "abcdefghijklmnopqrstuvwxyz".toLocaleUpperCase();
         var number = "0123456789";

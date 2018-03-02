@@ -380,8 +380,8 @@
         <icon density="hdpi" height="258" platform="ios" src="www/img/logo.png" width="258" />
     </platform>
     <universal-links>
-        <host name="juliancorp-9123.app.goo.gl" scheme="https" />
-        <host name="juliancorp-9123.firebaseapp.com" scheme="https">
+        <host name="gardianapps.app.goo.gl" scheme="https" />
+        <host name="gardianapps.firebaseapp.com" scheme="https">
             <path url="/__/auth/callback" />
         </host>
     </universal-links>

@@ -11,6 +11,7 @@ var plateRoute = "";
 var nameRoute = "";
 var codDriverRoute = "";
 var intCnsRoute = 0;
+var lastRouteAdded = "";
 
 function d2(n) {
     if(n<9) return "0"+n;
@@ -111,20 +112,21 @@ function registroDatos() {
         }
     }
     if( userName != "" && userLastName != "" && userCellPhone != "" && codRutaTmp != "" && paisSel != "" ) {
-        initApp();
+        if( myUserId == "" ){ initApp(); }
+        if( myUserId == "" ){ initApp(); }
+        if( myUserId == "" ){ initApp(); }
         var datos = conn.database().ref("entUser/" + myUserId + "/" + codRutaTmp );
-        alert("datos:" + datos);
         datos.set({ userName : userName,
                     userlastName : userLastName,
                     userCellPhone : userCellPhone,
                     paisSel : paisSel
                   }).then( function() { 
-                        alert('dato almacenado correctamente'); 
+                        console.log('dato almacenado correctamente');
                         cambioPagina('mapaRuta.html');
                         return;
                     } )
-                    .catch(function(error) { 
-                        alert('detectado un error', error); 
+                    .catch(function(error) {
+                        console.log('detectado un error', error);
                     });    
     } else {
         abrirOpcionModal("m-msjError");
@@ -169,7 +171,6 @@ function cnsUsuarioEmpresa() {
             for( var x in data.val() ) {
                 var empresa = x;
             }
-//            console.log(empresa);
             entUser = empresa;
         } );
     } );    
@@ -207,31 +208,30 @@ function cnsMovRutasDetalleXX() {
 
 function csnRouteEnt(ruta) {
     var srRoute = 0;
-    var datos = conn.database().ref("travel/" + ruta);
+    var datos = conn.database().ref("datacar/" + ruta);
     datos.orderByValue().on("value", function(snapshot) {
         snapshot.forEach(function(data) {
-            if( data.key == "nombre" ) {
-                srRoute = 1;                
-                var elem = document.getElementById("routeFind");
-                elem.textContent = "Ruta encontrada: " + data.val();
-                elem.setAttribute("style", "color: #000000");
-                var elemB = document.getElementById("btnARDialog");
-                elemB.removeAttribute("disabled");
-                var elemR = document.getElementById("routeFindRem");
-                elemR.textContent = "Ruta encontrada: " + data.val();
-                elemR.setAttribute("style", "color: #000000");
-            }
+            srRoute = 1;
+            var elem = document.getElementById("routeFind");
+            elem.textContent = "Vehiculo encontrado: " + ruta;
+            elem.setAttribute("style", "color: #000000");
+            var elemB = document.getElementById("btnARDialog");
+            elemB.removeAttribute("disabled");
+            var elemR = document.getElementById("routeFindRem");
+            elemR.textContent = "Vehiculo encontrado: " + ruta;
+            elemR.setAttribute("style", "color: #000000");
         } );
     } );    
     if( srRoute == 0 ) {
         var elemD = document.getElementById("routeFind");
-        elemD.textContent = "Ruta no encontrada";
+        elemD.textContent = "Vehiculo no encontrado";
         elemD.setAttribute("style", "color: #DF0101");
         var elemB = document.getElementById("btnARDialog");
         elemB.setAttribute("disabled", "true");
         var elemDR = document.getElementById("routeFindRem");
-        elemDR.textContent = "Ruta no encontrada";
+        elemDR.textContent = "Vehiculo no encontrado";
         elemDR.setAttribute("style", "color: #DF0101");
+        abrirOpcionModal('m-CnfAddRoute');
     }
 }
 
@@ -247,7 +247,6 @@ function cnsUserEnt() {
         snapshot.forEach( function( data ) {
             entUser = data.key;
             registrado = 1;            
-            console.log("key:" + entUser);
         } );
     }, function( errorObj ) {
         console.log("Error:" + errorObj.code);
@@ -276,11 +275,17 @@ function addRoute() {
     if( entCode == "" ) { cnsUserEnt(); }
     if( entCode == "" ) { cnsUserEnt(); }
     var routeCode = $("#txtRuta").val();
+    routeCode = minToMayus(routeCode);
     cnsRouteExistEnt(myUserId, routeCode);
     if( registrado > 0 ) {
         msjAlert("Ruta " + routeCode + " ya fue registrada", 2);
         return;
     }
+    if( lastRouteAdded == routeCode ) {
+        console.log("UltimaRuta:"+lastRouteAdded);
+        return;
+    }
+    console.log("UltimaRuta:"+lastRouteAdded);
     csnRouteEnt(routeCode);
     var datos = conn.database().ref("entUser/" + myUserId );
     datos.orderByValue().on("value", function( snapshot ) {
@@ -351,11 +356,16 @@ function confirmaRemRoute() {
     remRouteEnt(routeCode);
     closePopUp('m-CnfRemRoute');
     $("#txtRutaRem").val("");
-    var lista = document.getElementById("listaVehiculosDel").getElementsByTagName("li");
-    console.log("lista.length:" + lista.length);
-    for (var i = 0; i < lista.length; i++ ) {
-        if(lista[i].innerHTML.includes(routeCode)) {
-            var nodo = routeCode + "ld";
+    var list = document.getElementById("listaVehiculosDel").getElementsByTagName("li");
+    remFile(list, routeCode);
+    var list = document.getElementById("listaVehiculos").getElementsByTagName("li");
+    remFile(list, routeCode);
+}
+
+function remFile(list, routeCode) {
+    for (var i = 0; i < list.length; i++ ) {
+        if(list[i].innerHTML.includes(routeCode)) {
+            var nodo = list[i].getAttribute("id");
             var child = document.getElementById(nodo);
 //            var node = document.getElementById(nodo).parentNode.remove();//            var node = document.getElementById(nodo).parentNode.remove();
             child.parentNode.removeChild(child);
@@ -451,6 +461,7 @@ function cnsUserExistEnt() {
 }
 
 function strDataRoute() {
+    return;
     var elem = document.getElementById("placaRuta");
     elem.textContent = "Placa: ";
     var elem = document.getElementById("nomCoductor");
@@ -466,6 +477,7 @@ function strDataRoute() {
     plateRoute = "";
     nameRoute = "";
 }
+
 function cnsDataRoute() {
     intentos = 0;
     registrado = 0;
@@ -594,4 +606,44 @@ function cnsUrlRoute() {
         elem.setAttribute("style", "color: #DF0101");
     }
 
+}
+
+function createEnterprise() {
+    formatoFecha();
+    obtenercodEmp();
+    console.log(codRuta);
+    if(codRuta == ""){ return; }
+    var datos = conn.database().ref("entGroup/" + codRuta );
+    datos.set({  dir: "Calle " + codRuta,
+                 est: 1,
+                 fecreg: fecha,
+                 nit: "80000000",
+                 tel: "300456889",
+                 nom: "Empresa " + codRuta,
+                 entCode: codRuta
+    }).then( function() {
+        msjAlert("dato almacenado correctamente", 1);
+        $("#txtRuta").val("");
+    }).catch(function(error) {
+            msjAlert("Error al guardar los datos: " + error, 2);
+    });
+}
+
+function confirmaAddRoute() {
+    var newCar = $('#txtRuta').val();
+    if( newCar.trim() == "" ){ return; }
+    newCar = minToMayus(newCar);
+    var datos = conn.database().ref("datacar/" + newCar );
+    datos.set({ coderoute : "",
+                distancia : 0,
+                latitud: myLat,
+                longitud: myLong
+    }).then( function() {
+        msjAlert("dato almacenado correctamente", 1);
+    }).catch(function(error) {
+        msjAlert("Error al guardar los datos: " + error, 2);
+        return;
+    });
+    lastRouteAdded = newCar;
+    addRoute();
 }

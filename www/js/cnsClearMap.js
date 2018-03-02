@@ -442,14 +442,14 @@ function remRouteEnt(routeCode) {
 */    
 }
 
-function cnsUserExistEnt() {
+function cnsUserExistShc() {
     intentos = 0;
     registrado = 0;
     initApp();
     if( myUserId == "" ) { initApp(); }
     if( myUserId == "" ) { initApp(); }
     if( myUserId == "" ) { initApp(); }
-    var datos = conn.database().ref( "entUser/" + myUserId );
+    var datos = conn.database().ref( "schUser/" + myUserId );
     datos.orderByValue().on( "value", function( snapshot ) {
         snapshot.forEach( function( data ) {
             registrado++;
@@ -459,6 +459,7 @@ function cnsUserExistEnt() {
         } );
     } );    
 }
+
 
 function strDataRoute() {
     return;

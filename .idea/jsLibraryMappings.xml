@@ -2,7 +2,5 @@
 <project version="4">
   <component name="JavaScriptLibraryMappings">
     <file url="file://$PROJECT_DIR$" libraries="{GuardianRouteWeb/node_modules}" />
-    <file url="file://$PROJECT_DIR$/platforms/browser/cordova" libraries="{GuardianRouteWeb/platforms/browser/cordova/node_modules}" />
-    <file url="file://$PROJECT_DIR$/plugins/cordova-universal-links-plugin" libraries="{GuardianRouteWeb/plugins/cordova-universal-links-plugin/node_modules}" />
   </component>
 </project>
