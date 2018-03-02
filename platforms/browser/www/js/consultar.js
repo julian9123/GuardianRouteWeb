@@ -610,7 +610,7 @@ function cnsUrlRoute() {
 
 function createEnterprise() {
     formatoFecha();
-    obtenercodEmp();
+    obtenercodEmp("EMP");
     console.log(codRuta);
     if(codRuta == ""){ return; }
     var datos = conn.database().ref("entGroup/" + codRuta );

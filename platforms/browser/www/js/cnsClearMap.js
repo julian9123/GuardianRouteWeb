@@ -328,6 +328,7 @@ function cnsRouteExistEnt(myUseridTmp, routeCodeTmp) {
 function cnsSchGroup(codSchool) {
     intentos = 0;
     registrado = 0;
+    initApp();
     if( myUserId == "" ){ initApp(); }
     if( myUserId == "" ){ initApp(); }
     if( myUserId == "" ){ initApp(); }

@@ -23,7 +23,7 @@ proveedor.addScope('openid');
 var autor = conn.auth();
 var msg = conn.messaging();
 //Conexion con  persistencia
-function conectar() {
+function conectar(opt) {
     autor.onAuthStateChanged( function( user ) {
         if ( user ) {
             displayName = user.displayName;
@@ -34,24 +34,28 @@ function conectar() {
             user.getIdToken().then( function( accessToken ) {
                 if( contador > 0 || intentos > 0 ) { return; }
                 if( registrado > 0 ) {
-                    cambioPagina("mapaRuta.html");
-                    return;
+                    if( opt == "Ent" )
+                        cambioPagina("mapaRuta.html");
+                    if( opt == "Sch" )
+                        cambioPagina("mapaRutaSchool.html");
                 } else {
-                    cambioPagina("createEnterprise.html");
-                    return;
+                    if( opt == "Ent" )
+                        cambioPagina("createEnterprise.html");
+                    if( opt == "Sch" )
+                        cambioPagina("createUserSchool.html");
                 }
+                showOptions();
             } );
         } 
     } );
 //Valida si hay conexion
     var uiConfig = {
-        signInSuccessUrl: 'mapaRuta.html',
+        signInSuccessUrl: '#',
         signInOptions: [
           firebase.auth.GoogleAuthProvider.PROVIDER_ID,
 /*
-            firebase.auth.FacebookAuthProvider.PROVIDER_ID
-
-            firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+          firebase.auth.FacebookAuthProvider.PROVIDER_ID
+          firebase.auth.TwitterAuthProvider.PROVIDER_ID,
           firebase.auth.GithubAuthProvider.PROVIDER_ID,
           firebase.auth.EmailAuthProvider.PROVIDER_ID,
           firebase.auth.PhoneAuthProvider.PROVIDER_ID
@@ -60,7 +64,14 @@ function conectar() {
         tosUrl: 'http://guardianrutas.com/politicas-y-condiciones-de-uso-guardian-app-padres/'
       };
     var ui = new firebaseui.auth.AuthUI(autor);
-    ui.start('#firebaseui-auth-container', uiConfig);    
+    ui.start('#firebaseui-auth-container', uiConfig);
+    if(opt == ""){
+        $('#imgDivImg').hide();
+    }
+}
+
+function showOptions() {
+    $('#imgDivImg').show();
 }
 
 function initApp() {

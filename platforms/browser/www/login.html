@@ -5,6 +5,7 @@
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,500,400italic,700,700italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="css/index.css">
         <script src="https://apis.google.com/js/platform.js" async defer></script>
         <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
@@ -12,10 +13,6 @@
         <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-auth.js"></script>
         <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-database.js"></script>
         <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-messaging.js"></script>
-<!--        <script src="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.js"></script>
-            <script src="https://www.gstatic.com/firebasejs/ui/2.5.1/firebase-ui-auth__es.js"></script>
-            <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.css" />
--->
         <script src="https://cdn.firebase.com/libs/firebaseui/2.6.1/firebaseui.js"></script>
         <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.6.1/firebaseui.css" />
         <script src="https://www.gstatic.com/firebasejs/ui/2.6.1/firebase-ui-auth__es.js"></script>
@@ -26,20 +23,33 @@
         <script type="text/javascript" src="js/consultar.js"></script>
         <title>Guardian Rutas</title>
     </head>
-    <body onload="conectar()">
+    <body onload="conectar('')">
         <div class="fondoGuardian2">
             <div class="fondoIntermedio">
                 <div class="logoGuardianTexto2">
-                <div class="loginGoogle2">
-                    <table class="tablaBoton">
-                        <tr class="filaBoton">
-                            <td><div id="firebaseui-auth-container" onclick="cambioPagina('validaLogin.html');"></div></td>
-                        </tr>
-                    </table>                            
+                    <div id="imgDivImg" class="imgDivImages">
+                        <div class="imgDivSchool" onclick="conectar('Sch');">
+                            <img src="img/images/School.jpg">
+                            <br/><br/>
+                            Colegios
+                        </div>
+                        <div class="imgDivEnterprise" onclick="conectar('Ent');">
+                            <img src="img/images/School.jpg">
+                            <br/>
+                            Empresa <br/>de Transporte
+                        </div>
+                    </div>
+                    <div class="loginGoogle2">
+                        <table class="tablaBoton">
+                            <tr class="filaBoton">
+                                <td><div id="firebaseui-auth-container"></div></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="termino" class="terminos"><div class="texto-terminos"><b>Al registrarme, declaro que soy mayor de edad y acepto las</b></div></div>
+                    <br>
+                    <div id="condicion" class="condiciones"><div class="texto-terminos"><b><a href="http://guardianrutas.com/politicas-y-condiciones-de-uso-guardian-app-padres/"><u>Políticas de privacidad, Terminos y Condiciones de uso</u></a></b></div></div>
                 </div>
-                <div id="termino" class="terminos"><div class="texto-terminos"><b>Al registrarme, declaro que soy mayor de edad y acepto las</b></div></div>
-                <br>
-                <div id="condicion" class="condiciones"><div class="texto-terminos"><b><a href="http://guardianrutas.com/politicas-y-condiciones-de-uso-guardian-app-padres/"><u>Políticas de privacidad, Terminos y Condiciones de uso</u></a></b></div></div>
             </div>
         </div>
     </body>

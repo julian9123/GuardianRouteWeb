@@ -44,18 +44,18 @@ function conectar(opt) {
                     if( opt == "Sch" )
                         cambioPagina("createUserSchool.html");
                 }
+                showOptions();
             } );
         } 
     } );
 //Valida si hay conexion
     var uiConfig = {
-        signInSuccessUrl: 'mapaRuta.html',
+        signInSuccessUrl: '#',
         signInOptions: [
           firebase.auth.GoogleAuthProvider.PROVIDER_ID,
 /*
-            firebase.auth.FacebookAuthProvider.PROVIDER_ID
-
-            firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+          firebase.auth.FacebookAuthProvider.PROVIDER_ID
+          firebase.auth.TwitterAuthProvider.PROVIDER_ID,
           firebase.auth.GithubAuthProvider.PROVIDER_ID,
           firebase.auth.EmailAuthProvider.PROVIDER_ID,
           firebase.auth.PhoneAuthProvider.PROVIDER_ID
@@ -64,7 +64,14 @@ function conectar(opt) {
         tosUrl: 'http://guardianrutas.com/politicas-y-condiciones-de-uso-guardian-app-padres/'
       };
     var ui = new firebaseui.auth.AuthUI(autor);
-    ui.start('#firebaseui-auth-container', uiConfig);    
+    ui.start('#firebaseui-auth-container', uiConfig);
+    if(opt == ""){
+        $('#imgDivImg').hide();
+    }
+}
+
+function showOptions() {
+    $('#imgDivImg').show();
 }
 
 function initApp() {

@@ -13,10 +13,6 @@
         <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-auth.js"></script>
         <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-database.js"></script>
         <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-messaging.js"></script>
-<!--        <script src="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.js"></script>
-            <script src="https://www.gstatic.com/firebasejs/ui/2.5.1/firebase-ui-auth__es.js"></script>
-            <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.css" />
--->
         <script src="https://cdn.firebase.com/libs/firebaseui/2.6.1/firebaseui.js"></script>
         <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.6.1/firebaseui.css" />
         <script src="https://www.gstatic.com/firebasejs/ui/2.6.1/firebase-ui-auth__es.js"></script>
@@ -27,11 +23,11 @@
         <script type="text/javascript" src="js/consultar.js"></script>
         <title>Guardian Rutas</title>
     </head>
-    <body>
+    <body onload="conectar('')">
         <div class="fondoGuardian2">
             <div class="fondoIntermedio">
                 <div class="logoGuardianTexto2">
-                    <div class="imgDivImages">
+                    <div id="imgDivImg" class="imgDivImages">
                         <div class="imgDivSchool" onclick="conectar('Sch');">
                             <img src="img/images/School.jpg">
                             <br/><br/>
@@ -46,7 +42,7 @@
                     <div class="loginGoogle2">
                         <table class="tablaBoton">
                             <tr class="filaBoton">
-                                <td><div id="firebaseui-auth-container" onclick="cambioPagina('validaLogin.html');"></div></td>
+                                <td><div id="firebaseui-auth-container"></div></td>
                             </tr>
                         </table>
                     </div>

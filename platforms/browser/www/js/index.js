@@ -98,9 +98,8 @@ for (var i = 0; i < inputs.length; i++) {
   });
 }
 
-function obtenercodEmp() {
-    codRuta = "EMP";
-    var numero;
+function obtenercodEmp(opt) {
+    codRuta = opt;
     codRuta += String.fromCharCode(Math.floor((Math.random() * (122 - 97)+97) + 1));
     codRuta += String.fromCharCode(Math.floor((Math.random() * (122 - 97)+97) + 1));
     codRuta += String.fromCharCode(Math.floor((Math.random() * (122 - 97)+97) + 1));

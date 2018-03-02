@@ -249,6 +249,20 @@ header:hover {
     color: white;
 }
 
+.headerFormPopUp {
+    top: 25%;
+    width: 30%;
+    background: #333333;
+    text-align: center;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    position: fixed;
+    opacity: 1;
+    color: white;
+}
+
 .letraMenu {
     font-size: 12px;
     display: inline-block;
