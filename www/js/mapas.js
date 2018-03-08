@@ -7,6 +7,7 @@ var infoWindow;
 var options;
 var markers = [];
 var markersDup = [];
+var varUrlRet = [];
 var rutas = [];
 var errorMap = 0;
 var centerMap = 0;
@@ -40,6 +41,7 @@ var app = {
 app.initialize();
 
 function initMap() {
+    map = null;
     map = new google.maps.Map( document.getElementById('map'),
                                { center: {lat: myLat, lng: myLong},
                                   zoom: 10,
@@ -190,12 +192,22 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 }
 
 function posicionActual() {
+    var getVar = {};
+    getVar = getGET();
+    if (getVar != undefined) {
+        var dataUrl = getVar;
+        if( dataUrl[0] != undefined ) codeRouteSel = dataUrl[0];
+        if( dataUrl[1] != undefined ) nameRouteSel = dataUrl[1];
+        if( dataUrl[2] != undefined ) plateRouteSel = dataUrl[2];
+        if( dataUrl[3] != undefined ) typeRouteMap = dataUrl[3];
+    } else {
+        typeRouteMap = 0;
+    }
     if( typeRouteMap == 0 ) {
         myPositions();
     } else {
         mapUsersRoute();
     }
-
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
             var pos = {
@@ -245,7 +257,7 @@ function listVehicleCns() {
         var variables = "'" + markers[x].placa + "', '" + markers[x].ruta + "', '" + markers[x].nombre + "'";
         var ventanaCns = "'" + "m-SearchRoute" + "'";
 //        console.log(variables);
-        var btnClick = ' <button class="btn_add" id="' + markers[x].ruta + '" onclick="closePopUp(' + ventanaCns + '); startSelectRoute(' + variables + ');">Ver Usuarios</button>';
+        var btnClick = ' <button class="btn_add spaceList" id="' + markers[x].ruta + '" onclick="closePopUp(' + ventanaCns + '); startSelectRoute(' + variables + ');">Ver Usuarios</button>';
 //        console.log("Marker:"+markers[x].ruta);
         if(find_li(textLi, "listaVehiculosCns")) {
             liNew = document.createElement("li");
@@ -282,7 +294,7 @@ function listVehicleDelete() {
         var liNew = document.createElement("li");
         liNew.id = markers[x].ruta + "ld";
         var textLi = markers[x].ruta + " - " + markers[x].nombre;
-        var btnClick = " <button class='btn_add' id='" + markers[x].placa + "' onclick='remRouteList(this.id)'>Eliminar</button>";
+        var btnClick = " <button class='btn_add spaceList' id='" + markers[x].placa + "' onclick='remRouteList(this.id)'>Eliminar</button>";
         if(find_li(textLi, "listaVehiculosDel")) {
             liNew.innerHTML = "&nbsp;ASD11" + x + " - " + textLi + btnClick;
             document.getElementById("listaVehiculosDel").appendChild(liNew);
@@ -365,14 +377,12 @@ function setMapOnAll() {
 }
 
 function setMapOnSelRoute() {
-/*
     for (var i = 0; i < markersDup.length; i++) {
         if( markersDup[i].ruta == codeRouteSel ) {
             markersDup[i].setMap(null);
             console.log("Borrando:" + codeRouteSel);
         }
     }
-*/
 }
 
 function deleteLi(list) {
@@ -403,6 +413,7 @@ function mapUsersRoute() {
             obj.longitud = dataUsers.longitud;
             obj.phone = dataUsers.phone;
             obj.id = dataUsers.id;
+            obj.stoped = dataUsers.stoped;
             markers.push(obj);
         });
     });
@@ -418,7 +429,6 @@ function mapUsersRoute() {
 }
 
 function myPositionsRefreshChild(positions) {
-//    var shape = {coords: [1, 1, 1, 20, 18, 20, 18, 1], type: 'poly'};
     for (var i = 0; i < positions.length; i++) {
         var pos = positions[i];
         var image = {
@@ -432,7 +442,7 @@ function myPositionsRefreshChild(positions) {
         var marcador = new google.maps.Marker( {
             position: myLatlng,
             map: map,
-            title: 'Usuario:' + pos.nombre,
+            title: 'Usuario: ' + pos.nombre + " Parada: " + pos.stoped,
             icon: image,
             shape: shape,
             zIndex: i
@@ -442,19 +452,16 @@ function myPositionsRefreshChild(positions) {
 }
 
 function myPositionRefreshRoute() {
-//    var shape = {coords: [1, 1, 1, 20, 18, 20, 18, 1], type: 'poly'};
     var shape = {coords: [0, 0, 50], type: 'circle'};
-
     var image = {
         url: '../img/android/drawable-mdpi/marcaruta.png',
         size: new google.maps.Size(39, 39),
         origin: new google.maps.Point(0, 0),
         anchor: new google.maps.Point(0, 39)
     };
-//    setMapOnSelRoute();
+    setMapOnSelRoute();
     var obj = new Object();
     var datos = conn.database().ref("datacar/" + plateRouteSel);
-//    console.log("datos:  "+datos);
     datos.orderByValue().on("value", function (snapshot) {
         snapshot.forEach(function (data) {
             var reg = data.val();
@@ -462,14 +469,11 @@ function myPositionRefreshRoute() {
             if( data.key == 'latitud' ) { obj.latitud = reg }
             if( data.key == 'marca' ) { obj.phone = reg }
             if( data.key == 'velocidad' ) { obj.id = reg }
-//            console.log(JSON.stringify(reg));
             obj.nombre = nameRouteSel;
             obj.icon = 'marcaruta.png';
-//            console.log(reg.latitud + ";" + reg.longitud);
         });
     });
     if( obj.latitud == undefined ){ return; }
-//    console.log(obj.latitud + ":" + obj.longitud);
     var myLatlng = new google.maps.LatLng(obj.latitud, obj.longitud);
     var marcador = new google.maps.Marker({
         position: myLatlng,
@@ -482,7 +486,6 @@ function myPositionRefreshRoute() {
     markersDup.push(marcador);
     markersDup = eliminarObjetosDuplicados(markersDup, "nombre");
     limitLoops = 10;
-//    console.log("Despues:"+markersDup.length);
     if(centerMap > limitLoops && markersDup.length > 0) {
         map.setCenter(myLatlng);
 /*
@@ -503,9 +506,48 @@ function startSelectRoute(plateRoute, codeRoute, nameRoute) {
     codeRouteSel = codeRoute;
     nameRouteSel = nameRoute;
     plateRouteSel = plateRoute;
+
+/*
+    var datos = conn.database().ref("entGroup/" + codRuta );
+    datos.set({  dir: "Calle " + codRuta,
+        est: 1,
+        fecreg: fecha,
+        nit: "80000000",
+        tel: "300456889",
+        nom: "Empresa " + codRuta,
+        entCode: codRuta
+    }).then( function() {
+        msjAlert("dato almacenado correctamente", 1);
+        $("#txtRuta").val("");
+    }).catch(function(error) {
+        msjAlert("Error al guardar los datos: " + error, 2);
+    });
+*/
     typeRouteMap = 1;
     markers = [];
     markersDup = [];
     rutas = [];
-    initMap();
+    var url = "mapRouteDetail.html?routeSel=" + codeRouteSel + "&routeName=" + nameRouteSel + "&routePlate=" + plateRouteSel + "&typeRouteMap=" + typeRouteMap;
+    openeNewTab(url);
+}
+
+function openeNewTab(url) {
+    var a = document.createElement("a");
+    a.target = "_blank";
+    a.href = url;
+    a.click();
+}
+
+function getGET() {
+    var loc = document.location.href;
+    if( loc.indexOf('?') > 0 )
+    {
+        var getString = loc.split('?')[1];
+        var GET = getString.split('&');
+        for(var i = 0, l = GET.length; i < l; i++){
+            var tmp = GET[i].split('=');
+            varUrlRet.push(unescape(decodeURI(tmp[1])));
+        }
+        return varUrlRet;
+    }
 }

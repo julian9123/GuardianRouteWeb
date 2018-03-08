@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+    <html>
+      <head>
+        <title>Localizacion</title>
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="css/mapa.css">  
+        <link rel="stylesheet" type="text/css" href="css/menu.css">
+        <link rel="stylesheet" type="text/css" href="css/botones.css">
+        <link rel="stylesheet" type="text/css" href="css/formulario.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,500,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.1/material.teal-red.min.css" />
+        <script src="https://storage.googleapis.com/code.getmdl.io/1.0.1/material.min.js"></script>          
+        <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase-messaging.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>  
+        <script type="text/javascript" src="js/conectar.js"></script>
+        <script type="text/javascript" src="js/consultar.js"></script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQ7J6-8VbDMfg12nPmEiNrvgbEhZGvIyA&callback=initMap"></script>
+        <script type="text/javascript" src="js/mapas.js"></script>
+      </head>
+      <body onload="initMap();">
+        <header>
+            <nav>
+                <ul>
+                    <li onmouseover="menuSeleccionado('addRuta')" onmouseout="menuNoSeleccionado('addRuta')" onclick="listVehicle(); abrirOpcionModal('m-SearchRoute');">
+                        <a href="#"><i class="material-icons md-light ShowIcon" id="addRuta" onclick="">search</i>
+                            <p class="letraMenu">Consultar Otras Rutas</p>
+                        </a>
+                    </li>
+                    <li onmouseover="menuSeleccionado('salir')" onmouseout="menuNoSeleccionado('salir')" onclick="window.close();">
+                        <a href="javascript:void(0)"><i class="material-icons md-light showIcon" id="salir">reply</i>
+                            <p class="letraMenu">Volver</p>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <div id="map" class="map"></div>
+        <dialog id="m-SearchRoute" class="site-dialog">
+            <div class="headerForm">
+                <div class="headerDialog">
+                    <div class="headerImage">
+                        <img src="img/android/drawable-mdpi/logoapprutas.png" height="51" width="51">
+                    </div>
+                    <div class="headerTitle">
+                    <h1><p class="textoHeader">Consultar Detalle<br/>Vehículo</p></h1>
+                    </div>
+                </div>
+                <br/>
+                <div class="formularioDialog">
+                    <br/>
+                    <input type="text" class="formulario__inputDialog" id="txtRutaCns" size="8" max="8" maxlength="8" onkeyup="campoDiligenciado('RutaCns')">
+                    <label  class="formulario__labelDialog" id="lblRutaCns">Ruta</label>
+                    <br/>
+                    <div class="btn-group cf">
+                        <button class="btn_add" id="btnCnsDialog" onclick="cnsDataRoute()">Consultar</button>
+                        <button class="btn_cancel" onclick="strDataRoute(); closePopUp('m-SearchRoute');">Cancelar</button>
+                    </div>
+                </div>
+                <div>
+                    <ul id="listaVehiculosCns" style="overflow: auto;">
+                        <li id="tituloCns"><b>VEHICULOS</b></li>
+                        <li id="columnasCns"><b>Placa - Ruta - Nombre</b></li>
+                    </ul>
+                </div>
+            </div>
+        </dialog>  
+        <dialog id="m-MsjAds" class="site-dialog">
+            <div class="headerForm">
+                <div class="headerDialog">
+                    <div class="headerImage">
+                        <img src="img/android/drawable-mdpi/logoapprutas.png" height="51" width="51">
+                    </div>
+                    <div class="headerTitle">
+                    <h1><p class="textoHeader">Advertencia</p></h1>
+                    </div>
+                </div>
+                <br/>
+                <div class="formularioDialogAlert">
+                    <br/>
+                    <b><div id="msjAds"></div></b>
+                    <br/>
+                    <div class="btn-group cf">
+                        <button class="btn_cancel" onclick="closePopUp('m-MsjAds')">Continuar</button>
+                    </div>
+                </div>
+            </div>
+        </dialog>
+      </body>
+</html>
