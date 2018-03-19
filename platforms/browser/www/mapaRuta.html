@@ -21,14 +21,14 @@
         <script type="text/javascript" src="js/index.js"></script>  
         <script type="text/javascript" src="js/conectar.js"></script>
         <script type="text/javascript" src="js/consultar.js"></script>
+
         <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQ7J6-8VbDMfg12nPmEiNrvgbEhZGvIyA&callback=initMap"></script>
         <script type="text/javascript" src="js/mapas.js"></script>
       </head>
       <body>
-        <header>
+        <header style="width: 35%;">
             <nav>
                 <ul>
-<!--                    <li class="encabezado-menu"><img src="img/android/drawable-mdpi/logoguardian.png" height="51" width="40"><br/>Guardian<br/>Control de Rutas</li>-->
                     <li onmouseover="menuSeleccionado('addRuta')" onmouseout="menuNoSeleccionado('addRuta')" onclick="listVehicle(); abrirOpcionModal('m-AddRoute');">
                         <a href="#"><i class="material-icons md-light ShowIcon" id="addRuta" onclick="">add_circle</i>
                             <p class="letraMenu">Registrar Vehículo</p>
@@ -39,6 +39,8 @@
                             <p class="letraMenu">Inactivar Vehículo</p>
                         </a>
                     </li>
+<!--
+
                     <li onmouseover="menuSeleccionado('reasigRuta')" onmouseout="menuNoSeleccionado('reasigRuta')" onclick="strDataRoute(); abrirOpcionModal('m-RemoveRoute');">
                         <a href="#"><i class="material-icons md-light showIcon" id="reasigRuta">cached</i>
                             <p class="letraMenu">Reasignar Ruta</p>
@@ -48,22 +50,25 @@
                         <a href="#"><i class="material-icons md-light showIcon" id="suscripRuta">subscriptions</i>
                             <p class="letraMenu">Asignar Ruta a Colegio</p>
                         </a>
-                    </li>                    
-                    <li onmouseover="menuSeleccionado('notifRuta')" onmouseout="menuNoSeleccionado('notifRuta')" onclick="strDataRoute(); abrirOpcionModal('m-RemoveRoute');">
+                    </li>
+-->
+                    <li onmouseover="menuSeleccionado('notifRuta')" onmouseout="menuNoSeleccionado('notifRuta')" onclick="strDataRoute(); abrirOpcionModal('m-NotifyRoute');">
                         <a href="#"><i class="material-icons md-light showIcon" id="notifRuta">add_alert</i>
                             <p class="letraMenu">Enviar Notificación</p>
                         </a>
-                    </li>                                        
-                    <li onmouseover="menuSeleccionado('consultaRuta')" onmouseout="menuNoSeleccionado('consultaRuta')" onclick="abrirOpcionModal('m-SearchRoute')">
+                    </li>
+                    <li onmouseover="menuSeleccionado('consultaRuta')" onmouseout="menuNoSeleccionado('consultaRuta')" onclick="abrirOpcionModal('m-SearchRoute'); listVehicleCns();">
                         <a href="#"><i class="material-icons md-light showIcon" id="consultaRuta" >search</i>
                             <p class="letraMenu">Consultar Vehículo</p>
                         </a>
                     </li>
+<!--
                     <li onmouseover="menuSeleccionado('reportes')" onmouseout="menuNoSeleccionado('reportes')">
                         <a href="#"><i class="material-icons md-light showIcon" id="reportes">event_note</i>
                             <p class="letraMenu">Reportes</p>
                         </a>
                     </li>
+-->
                     <li onmouseover="menuSeleccionado('salir')" onmouseout="menuNoSeleccionado('salir')">
                         <a href="cerrarSesion.html"><i class="material-icons md-light showIcon" id="salir">exit_to_app</i>
                             <p class="letraMenu">Salir</p>
@@ -99,7 +104,7 @@
                     <ul id="listaVehiculos" style="overflow: auto";>
                         <li id="titulo"><b>VEHICULOS</b></li>
                         <li id="columnas"><b>Placa - Ruta - Nombre</b></li>
-                    </ul>                    
+                    </ul>
                 </div>
             </div>
         </dialog>
@@ -129,8 +134,8 @@
                     <ul id="listaVehiculosDel">
                         <li id="tituloDel"><b>Vehiculos</b></li>
                         <li id="columnasDel">Placa - Ruta - Nombre Ruta</li>
-                    </ul>                    
-                </div>                
+                    </ul>
+                </div>
             </div>
         </dialog>
         <dialog id="m-SearchRoute" class="site-dialog">
@@ -150,7 +155,7 @@
                     <label  class="formulario__labelDialog" id="lblRutaCns">Ruta</label>
                     <br/>
                     <div class="btn-group cf">
-                        <button class="btn_add" id="btnCnsDialog" onclick="cnsDataRoute()">Consultar</button>
+                        <button class="btn_add" id="btnCnsDialog" onclick="listVehicleCns()">Consultar</button>
                         <button class="btn_cancel" onclick="strDataRoute(); closePopUp('m-SearchRoute');">Cancelar</button>
                     </div>
                 </div>
@@ -161,12 +166,12 @@
                     </ul>
                 </div>
             </div>
-        </dialog>  
+        </dialog>
 
-          
-          
-          
-          
+
+
+
+
         <dialog id="m-ChangeRoute" class="site-dialog">
             <div class="headerFormVideo">
                 <div class="headerDialog">
@@ -190,14 +195,14 @@
                     </div>
                 </div>
             </div>
-        </dialog>          
-          
-          
-          
-          
-          
-          
-          
+        </dialog>
+
+
+
+
+
+
+
         <dialog id="m-CnfRemRoute" class="site-dialog">
             <div class="headerForm">
                 <div class="headerDialog">
@@ -249,7 +254,7 @@
         </dialog>
 
         <dialog id="m-MsjAds" class="site-dialog">
-            <div class="headerForm">
+            <div class="headerFormPopUp">
                 <div class="headerDialog">
                     <div class="headerImage">
                         <img src="img/android/drawable-mdpi/logoapprutas.png" height="51" width="51">
@@ -265,6 +270,19 @@
                     <br/>
                     <div class="btn-group cf">
                         <button class="btn_cancel" onclick="closePopUp('m-MsjAds')">Continuar</button>
+                    </div>
+                </div>
+            </div>
+        </dialog>
+       <dialog id="m-NotifyRoute" class="site-dialog">
+            <div class="headerFormBottom">
+                <p class="textoHeader" style="font-size: 15px;">Notificaciones</p>
+                <div class="formularioDialogNotify">
+                    <img src="img/android/drawable-mdpi/logoapprutas.png" height="51" width="51">
+                    <input type="text" id="notificacion" style="vertical-align: -webkit-baseline-middle; margin-left: 1%; height: 20%; margin-top: 3%; width: 70%;">
+                    <div class="btn-group cf" style="margin-left: 1%; display: inline-flex;">
+                        <button class="btn_add" onclick="sendNotification('forAll'); closePopUp('m-NotifyRoute')" style="margin: 7px;">Enviar</button>
+                        <button class="btn_cancel" onclick="closePopUp('m-NotifyRoute')" style="margin: 7px;">Cancelar</button>
                     </div>
                 </div>
             </div>

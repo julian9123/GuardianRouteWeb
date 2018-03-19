@@ -25,12 +25,12 @@
         <script type="text/javascript" src="js/mapas.js"></script>
       </head>
       <body onload="initMap();">
-        <header>
+        <header style="width: 15%;">
             <nav>
                 <ul>
-                    <li onmouseover="menuSeleccionado('addRuta')" onmouseout="menuNoSeleccionado('addRuta')" onclick="listVehicle(); abrirOpcionModal('m-SearchRoute');">
-                        <a href="#"><i class="material-icons md-light ShowIcon" id="addRuta" onclick="">search</i>
-                            <p class="letraMenu">Consultar Otras Rutas</p>
+                    <li onmouseover="menuSeleccionado('notificar')" onmouseout="menuNoSeleccionado('notificar')" onclick="abrirOpcionModal('m-NotifyRoute');">
+                        <a href="javascript:void(0)"><i class="material-icons md-light showIcon" id="notificar">add_alert</i>
+                            <p class="letraMenu">Enviar Notificación</p>
                         </a>
                     </li>
                     <li onmouseover="menuSeleccionado('salir')" onmouseout="menuNoSeleccionado('salir')" onclick="window.close();">
@@ -72,13 +72,13 @@
             </div>
         </dialog>  
         <dialog id="m-MsjAds" class="site-dialog">
-            <div class="headerForm">
+            <div class="headerFormPopUp">
                 <div class="headerDialog">
                     <div class="headerImage">
                         <img src="img/android/drawable-mdpi/logoapprutas.png" height="51" width="51">
                     </div>
                     <div class="headerTitle">
-                    <h1><p class="textoHeader">Advertencia</p></h1>
+                    <h1><p class="textoHeader">Confirmación</p></h1>
                     </div>
                 </div>
                 <br/>
@@ -92,5 +92,18 @@
                 </div>
             </div>
         </dialog>
+       <dialog id="m-NotifyRoute" class="site-dialog">
+            <div class="headerFormBottom">
+                <p class="textoHeader" style="font-size: 15px;">Notificaciones</p>
+                <div class="formularioDialogNotify">
+                    <img src="img/android/drawable-mdpi/logoapprutas.png" height="51" width="51">
+                    <input type="text" id="notificacion" style="vertical-align: -webkit-baseline-middle; margin-left: 1%; height: 20%; margin-top: 3%; width: 70%;">
+                    <div class="btn-group cf" style="margin-left: 1%; display: inline-flex;">
+                        <button class="btn_add" onclick="sendNotification('forMe'); closePopUp('m-NotifyRoute')" style="margin: 7px;">Enviar</button>
+                        <button class="btn_cancel" onclick="closePopUp('m-NotifyRoute')" style="margin: 7px;">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </dialog>          
       </body>
 </html>

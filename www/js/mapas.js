@@ -252,13 +252,10 @@ function listVehicleCns() {
     posicionActual();
     var liNew;
     for( var x = 0; x < markers.length; x++ ) {
-//        console.log(JSON.stringify(markers[x]));
         var textLi = markers[x].placa + " - " + markers[x].ruta + " - " + markers[x].nombre;
         var variables = "'" + markers[x].placa + "', '" + markers[x].ruta + "', '" + markers[x].nombre + "'";
         var ventanaCns = "'" + "m-SearchRoute" + "'";
-//        console.log(variables);
         var btnClick = ' <button class="btn_add spaceList" id="' + markers[x].ruta + '" onclick="closePopUp(' + ventanaCns + '); startSelectRoute(' + variables + ');">Ver Usuarios</button>';
-//        console.log("Marker:"+markers[x].ruta);
         if(find_li(textLi, "listaVehiculosCns")) {
             liNew = document.createElement("li");
             liNew.id = markers[x].ruta + "Cn";

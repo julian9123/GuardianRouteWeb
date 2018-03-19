@@ -488,7 +488,6 @@ function cnsDataRoute() {
     var obl = new Object();
     var pos = [];
     var lat1 = 0, lon1 = 0, lat2 = 0, lon2 = 0, latAnt = 0, lonAnt = 0;
-//    console.log("inicio " + new Date());
     var datos = conn.database().ref("logDetail/" + codRoute );
     datos.orderByValue().on("value", function(snapshot) {
         snapshot.forEach(function(data) {
@@ -646,4 +645,45 @@ function confirmaAddRoute() {
     });
     lastRouteAdded = newCar;
     addRoute();
+}
+
+function sendNotification(who) {
+    var msg = $('#notificacion').val();
+    if (who == "forMe") {
+        var datos = conn.database().ref("alert/" + codeRouteSel);
+        datos.set({
+            type: 9,
+            message: msg,
+            sended: 0
+        }).then(function () {
+            msjAlert("Mensaje enviado correctamente", 1);
+            $('#notificacion').val('');
+        }).catch(function (error) {
+            msjAlert("Error mensaje enviado: " + error, 2);
+            return;
+        });
+    }
+    if (who == "forAll") {
+        var msgSend = 0;
+        var datos = conn.database().ref("alert");
+        datos.orderByValue().on("value", function (snapshot) {
+            snapshot.forEach(function (data) {
+                var codeRouteSelect = data.key;
+                var datos = conn.database().ref("alert/" + codeRouteSelect);
+                datos.set({
+                    type: 9,
+                    message: msg,
+                    sended: 0
+                }).then(function () {
+                    msgSend++;
+                }).catch(function (error) {
+                    msjAlert("Error mensaje enviado: " + error + " Ruta: " + codeRouteSelect, 2);
+                });
+            });
+        });
+        if(msgSend > 0) {
+            msjAlert("Mensajes enviados correctamente", 1);
+            $('#notificacion').val('');
+        }
+    }
 }

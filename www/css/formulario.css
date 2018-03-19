@@ -223,3 +223,12 @@ body {
     background: #BDBDBD;
 }
 
+.formularioDialogNotify {
+    width: 100%;
+    max-width: 100%;
+    box-shadow: 0 0 20px 1px rgba(0,0,0,0.3);
+    position: relative;
+    padding: 10px;
+    background: #BDBDBD;
+    display: inline-flex;
+}

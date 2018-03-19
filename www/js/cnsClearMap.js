@@ -444,7 +444,7 @@ function cnsUserExistShc() {
         snapshot.forEach( function( data ) {
             registrado++;
             entRoute = data.key;
-            cambioPagina("mapaRuta.html");
+            cambioPagina("mapaRutaSchoolXX.html");
             return;
         } );
     } );    

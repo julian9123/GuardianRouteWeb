@@ -263,6 +263,21 @@ header:hover {
     color: white;
 }
 
+.headerFormBottom {
+    bottom: 0%;
+    height: 14%;
+	width: 40%;
+    background: #333333;
+    text-align: center;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    position: fixed;
+    opacity: 1;
+    color: white;
+}
+
 .letraMenu {
     font-size: 12px;
     display: inline-block;

@@ -24,18 +24,23 @@
         <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQ7J6-8VbDMfg12nPmEiNrvgbEhZGvIyA&callback=initMap"></script>
         <script type="text/javascript" src="js/mapas.js"></script>
       </head>
-      <body onload="initMap();">
-        <header style="width: 15%;">
+      <body>
+        <header style="width: 26%;">
             <nav>
                 <ul>
-                    <li onmouseover="menuSeleccionado('notificar')" onmouseout="menuNoSeleccionado('notificar')" onclick="abrirOpcionModal('m-NotifyRoute');">
-                        <a href="javascript:void(0)"><i class="material-icons md-light showIcon" id="notificar">add_alert</i>
+                    <li onmouseover="menuSeleccionado('notifRuta')" onmouseout="menuNoSeleccionado('notifRuta')" onclick="abrirOpcionModal('m-NotifyRoute')">
+                        <a href="#"><i class="material-icons md-light showIcon" id="notifRuta">add_alert</i>
                             <p class="letraMenu">Enviar Notificación</p>
                         </a>
+                    </li>                                        
+                    <li onmouseover="menuSeleccionado('consultaRuta')" onmouseout="menuNoSeleccionado('consultaRuta')" onclick="abrirOpcionModal('m-SearchRoute')">
+                        <a href="#"><i class="material-icons md-light showIcon" id="consultaRuta" >search</i>
+                            <p class="letraMenu">Consultar Vehículo</p>
+                        </a>
                     </li>
-                    <li onmouseover="menuSeleccionado('salir')" onmouseout="menuNoSeleccionado('salir')" onclick="window.close();">
-                        <a href="javascript:void(0)"><i class="material-icons md-light showIcon" id="salir">reply</i>
-                            <p class="letraMenu">Volver</p>
+                    <li onmouseover="menuSeleccionado('salir')" onmouseout="menuNoSeleccionado('salir')">
+                        <a href="cerrarSesion.html"><i class="material-icons md-light showIcon" id="salir">exit_to_app</i>
+                            <p class="letraMenu">Salir</p>
                         </a>
                     </li>
                 </ul>
@@ -71,14 +76,14 @@
                 </div>
             </div>
         </dialog>  
-        <dialog id="m-MsjAds" class="site-dialog">
+       <dialog id="m-MsjAds" class="site-dialog">
             <div class="headerFormPopUp">
                 <div class="headerDialog">
                     <div class="headerImage">
                         <img src="img/android/drawable-mdpi/logoapprutas.png" height="51" width="51">
                     </div>
                     <div class="headerTitle">
-                    <h1><p class="textoHeader">Confirmación</p></h1>
+                    <h1><p class="textoHeader">Advertencia</p></h1>
                     </div>
                 </div>
                 <br/>
@@ -99,7 +104,7 @@
                     <img src="img/android/drawable-mdpi/logoapprutas.png" height="51" width="51">
                     <input type="text" id="notificacion" style="vertical-align: -webkit-baseline-middle; margin-left: 1%; height: 20%; margin-top: 3%; width: 70%;">
                     <div class="btn-group cf" style="margin-left: 1%; display: inline-flex;">
-                        <button class="btn_add" onclick="sendNotification('forMe'); closePopUp('m-NotifyRoute')" style="margin: 7px;">Enviar</button>
+                        <button class="btn_add" onclick="sendNotification('forAll'); closePopUp('m-NotifyRoute')" style="margin: 7px;">Enviar</button>
                         <button class="btn_cancel" onclick="closePopUp('m-NotifyRoute')" style="margin: 7px;">Cancelar</button>
                     </div>
                 </div>

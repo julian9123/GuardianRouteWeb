@@ -72,6 +72,8 @@ function conectar(opt) {
 
 function showOptions() {
     $('#imgDivImg').show();
+    $('#firebaseui-auth-container').hide();
+    $('#btnGoogleLogin').hide();
 }
 
 function initApp() {
