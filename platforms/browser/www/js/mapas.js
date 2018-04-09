@@ -184,11 +184,13 @@ function eliminarObjetosDuplicados(arr, prop) {
 }
 
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-    if( errorMap > 1 ) { return; }
+//    if( errorMap > 1 ) { return; }
 //    infoWindow.setPosition(pos);
 //    infoWindow.setContent(browserHasGeolocation ? 'Servicio de Geolocation Fallo' : 'Error: Your browser doesn\'t support geolocation.');
     errorMap++;
-    location.reload();
+    document.location.reload();
+    console.log("Recargar Pagina");
+    initMap();
 }
 
 function posicionActual() {
@@ -430,7 +432,7 @@ function myPositionsRefreshChild(positions) {
         var pos = positions[i];
         var image = {
 //            url: '../img/android/drawable-mdpi/' + pos.icon + '.png',
-            url: '../img/android/drawable-mdpi/avatar1.png',
+            url: '../img/android/drawable-mdpi/avatarcir5.png',
             size: new google.maps.Size(39, 39),
             origin: new google.maps.Point(0, 0),
             anchor: new google.maps.Point(0, 39)

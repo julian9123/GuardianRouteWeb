@@ -1,7 +1,8 @@
 <!DOCTYPE html>
     <html>
       <head>
-        <title>Localizacion</title>
+        <title>Mapa Ruta</title>
+          <link rel="icon" href="img/drawable/logoapprutas.png">
         <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="css/mapa.css">  
@@ -28,13 +29,13 @@
         <header style="width: 15%;">
             <nav>
                 <ul>
-                    <li onmouseover="menuSeleccionado('notificar')" onmouseout="menuNoSeleccionado('notificar')" onclick="abrirOpcionModal('m-NotifyRoute');">
-                        <a href="javascript:void(0)"><i class="material-icons md-light showIcon" id="notificar">add_alert</i>
+                    <li onclick="abrirOpcionModal('m-NotifyRoute');">
+                        <a href="javascript:void(0)"><img src="img/drawable/BtnAlerta.png" width="80" height="80">
                             <p class="letraMenu">Enviar Notificación</p>
                         </a>
                     </li>
-                    <li onmouseover="menuSeleccionado('salir')" onmouseout="menuNoSeleccionado('salir')" onclick="window.close();">
-                        <a href="javascript:void(0)"><i class="material-icons md-light showIcon" id="salir">reply</i>
+                    <li onclick="window.close();">
+                        <a href="javascript:void(0)"><img src="img/drawable/back-web.png" width="80" height="80">
                             <p class="letraMenu">Volver</p>
                         </a>
                     </li>
@@ -42,6 +43,7 @@
             </nav>
         </header>
         <div id="map" class="map"></div>
+        <div id="footer" style="display: none"></div>
         <dialog id="m-SearchRoute" class="site-dialog">
             <div class="headerForm">
                 <div class="headerDialog">
@@ -94,10 +96,10 @@
         </dialog>
        <dialog id="m-NotifyRoute" class="site-dialog">
             <div class="headerFormBottom">
-                <p class="textoHeader" style="font-size: 15px;">Notificaciones</p>
+                <p class="textoHeader" style="font-size: 15px;"><strong>Notificaciones</strong></p>
                 <div class="formularioDialogNotify">
                     <img src="img/android/drawable-mdpi/logoapprutas.png" height="51" width="51">
-                    <input type="text" id="notificacion" style="vertical-align: -webkit-baseline-middle; margin-left: 1%; height: 20%; margin-top: 3%; width: 70%;">
+                    <input type="text" id="notificacion" class="textoNotify" maxlength="40">
                     <div class="btn-group cf" style="margin-left: 1%; display: inline-flex;">
                         <button class="btn_add" onclick="sendNotification('forMe'); closePopUp('m-NotifyRoute')" style="margin: 7px;">Enviar</button>
                         <button class="btn_cancel" onclick="closePopUp('m-NotifyRoute')" style="margin: 7px;">Cancelar</button>

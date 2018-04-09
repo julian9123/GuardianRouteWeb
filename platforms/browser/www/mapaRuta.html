@@ -1,8 +1,9 @@
 <!DOCTYPE html>
     <html>
       <head>
-        <title>Localizacion</title>
+        <title>Mapa Empresas</title>
         <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+        <link rel="icon" href="img/drawable/logoapprutas.png">
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="css/mapa.css">  
         <link rel="stylesheet" type="text/css" href="css/menu.css">
@@ -26,16 +27,17 @@
         <script type="text/javascript" src="js/mapas.js"></script>
       </head>
       <body>
-        <header style="width: 35%;">
+        <header style="width: 45%;">
             <nav>
                 <ul>
-                    <li onmouseover="menuSeleccionado('addRuta')" onmouseout="menuNoSeleccionado('addRuta')" onclick="listVehicle(); abrirOpcionModal('m-AddRoute');">
-                        <a href="#"><i class="material-icons md-light ShowIcon" id="addRuta" onclick="">add_circle</i>
+<!--                    <li onmouseover="menuSeleccionado('addRuta')" onmouseout="menuNoSeleccionado('addRuta')" onclick="listVehicle(); abrirOpcionModal('m-AddRoute');">  -->
+                    <li onclick="listVehicle(); abrirOpcionModal('m-AddRoute');">
+                        <a href="#"><img src="img/drawable/plus.png" width="80" height="80">
                             <p class="letraMenu">Registrar Vehículo</p>
                         </a>
                     </li>
-                    <li onmouseover="menuSeleccionado('remRuta')" onmouseout="menuNoSeleccionado('remRuta')" onclick="listVehicleDelete(); strDataRoute(); abrirOpcionModal('m-RemoveRoute');">
-                        <a href="#"><i class="material-icons md-light showIcon" id="remRuta">remove_circle</i>
+                    <li onclick="listVehicleDelete(); strDataRoute(); abrirOpcionModal('m-RemoveRoute');">
+                        <a href="#"><img src="img/drawable/minus.png" width="80" height="80">
                             <p class="letraMenu">Inactivar Vehículo</p>
                         </a>
                     </li>
@@ -52,13 +54,15 @@
                         </a>
                     </li>
 -->
-                    <li onmouseover="menuSeleccionado('notifRuta')" onmouseout="menuNoSeleccionado('notifRuta')" onclick="strDataRoute(); abrirOpcionModal('m-NotifyRoute');">
-                        <a href="#"><i class="material-icons md-light showIcon" id="notifRuta">add_alert</i>
+<!--                    <li onmouseover="menuSeleccionado('notifRuta')" onmouseout="menuNoSeleccionado('notifRuta')" onclick="strDataRoute(); abrirOpcionModal('m-NotifyRoute');"> -->
+                    <li onclick="strDataRoute(); abrirOpcionModal('m-NotifyRoute');">
+                        <a href="#"><img src="img/drawable/BtnAlerta.png" width="80" height="80">
                             <p class="letraMenu">Enviar Notificación</p>
                         </a>
                     </li>
-                    <li onmouseover="menuSeleccionado('consultaRuta')" onmouseout="menuNoSeleccionado('consultaRuta')" onclick="abrirOpcionModal('m-SearchRoute'); listVehicleCns();">
-                        <a href="#"><i class="material-icons md-light showIcon" id="consultaRuta" >search</i>
+<!--                    <li onmouseover="menuSeleccionado('consultaRuta')" onmouseout="menuNoSeleccionado('consultaRuta')" onclick="abrirOpcionModal('m-SearchRoute'); listVehicleCns();"> -->
+                    <li onclick="abrirOpcionModal('m-SearchRoute'); listVehicleCns();">
+                        <a href="#"><img src="img/drawable/btnbuscar.png" width="80" height="80">
                             <p class="letraMenu">Consultar Vehículo</p>
                         </a>
                     </li>
@@ -69,15 +73,16 @@
                         </a>
                     </li>
 -->
-                    <li onmouseover="menuSeleccionado('salir')" onmouseout="menuNoSeleccionado('salir')">
-                        <a href="cerrarSesion.html"><i class="material-icons md-light showIcon" id="salir">exit_to_app</i>
-                            <p class="letraMenu">Salir</p>
+                    <li>
+                        <a href="cerrarSesion.html"><img src="img/drawable/logging-out.png"  width="80" height="80">
+                            <p class="letraMenu">Cerrar Sesión</p>
                         </a>
                     </li>
                 </ul>
             </nav>
         </header>
         <div id="map" class="map"></div>
+        <div id="footer" style="display: none"></div>
         <dialog id="m-AddRoute" class="site-dialog">
             <div class="headerForm">
                 <div class="headerDialog">
@@ -276,10 +281,10 @@
         </dialog>
        <dialog id="m-NotifyRoute" class="site-dialog">
             <div class="headerFormBottom">
-                <p class="textoHeader" style="font-size: 15px;">Notificaciones</p>
+                <p class="textoHeader" style="font-size: 15px;"><strong>Notificaciones</strong></p>
                 <div class="formularioDialogNotify">
                     <img src="img/android/drawable-mdpi/logoapprutas.png" height="51" width="51">
-                    <input type="text" id="notificacion" style="vertical-align: -webkit-baseline-middle; margin-left: 1%; height: 20%; margin-top: 3%; width: 70%;">
+                    <input type="text" id="notificacion" class="textoNotify" maxlength="40">
                     <div class="btn-group cf" style="margin-left: 1%; display: inline-flex;">
                         <button class="btn_add" onclick="sendNotification('forAll'); closePopUp('m-NotifyRoute')" style="margin: 7px;">Enviar</button>
                         <button class="btn_cancel" onclick="closePopUp('m-NotifyRoute')" style="margin: 7px;">Cancelar</button>

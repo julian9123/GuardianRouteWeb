@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="icon" href="img/drawable/logoapprutas.png">
         <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'" />
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
@@ -17,26 +18,27 @@
         <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.6.1/firebaseui.css" />
         <script src="https://www.gstatic.com/firebasejs/ui/2.6.1/firebase-ui-auth__es.js"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript" src="js/conectar.js"></script>            
         <script type="text/javascript" src="js/consultar.js"></script>
         <title>Guardian Rutas</title>
     </head>
     <body onload="conectar('')">
-        <div class="fondoGuardian2">
+        <div id="fondoGuardian2" class="fondoGuardian2">
             <div class="fondoIntermedio">
-                <div class="logoGuardianTexto2">
+                <div id="logoGuardianTexto2" class="logoGuardianTexto2">
                     <div id="imgDivImg" class="imgDivImages">
                         <div class="imgDivSchool" onclick="conectar('Sch');">
-                            <img src="img/images/School.jpg">
-                            <br/><br/>
+                            <img src="img/images/School.png" width="245" height="93" style="border: 5px solid #FFF; border-radius: 10px; padding: 3px; cursor: pointer;">
+<!--                            <br/><br/>
                             Colegios
+-->
                         </div>
                         <div class="imgDivEnterprise" onclick="conectar('Ent');">
-                            <img src="img/images/School.jpg">
-                            <br/>
+                            <img src="img/images/EnterpriseRoute.png" width="245" height="93" style="border: 5px solid #FFF; border-radius: 10px; padding: 3px; cursor: pointer;">
+<!--                            <br/>
                             Empresa <br/>de Transporte
+-->
                         </div>
                     </div>
                     <div id="btnGoogleLogin" class="loginGoogle2">

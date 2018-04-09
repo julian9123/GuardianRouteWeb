@@ -74,6 +74,8 @@ function showOptions() {
     $('#imgDivImg').show();
     $('#firebaseui-auth-container').hide();
     $('#btnGoogleLogin').hide();
+    document.getElementById('fondoGuardian2').style.background = '#333333';
+    document.getElementById('logoGuardianTexto2').style.background = '#333333';
 }
 
 function initApp() {

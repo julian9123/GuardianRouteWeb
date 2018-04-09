@@ -308,3 +308,26 @@ header:hover {
     background-color: #333333;
     font-size: 18px;
 }
+
+.textoNotify {
+    vertical-align: -webkit-baseline-middle;
+    margin-left: 1%;
+    height: 20%;
+    margin-top: 2%;
+    width: 70%;
+    font-size: 20px;
+}
+
+#footer {
+    position: fixed;
+    bottom: 0;
+    width: 50%;
+    font-size: 16px;
+    background: #333333;
+    color: #FFFFFF;
+    z-index: 1000;
+    transition: opacity 0.9s ease-in-out;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 5px;
+}

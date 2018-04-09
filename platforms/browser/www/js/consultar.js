@@ -656,7 +656,9 @@ function sendNotification(who) {
             message: msg,
             sended: 0
         }).then(function () {
-            msjAlert("Mensaje enviado correctamente", 1);
+            document.getElementById('footer').innerHTML = '<strong>Notificación enviada la ruta ' + codeRouteSel + '...<strong>';
+            document.getElementById('footer').style.display='block';
+            setTimeout("document.getElementById('footer').style.display='none';", 5000);
             $('#notificacion').val('');
         }).catch(function (error) {
             msjAlert("Error mensaje enviado: " + error, 2);
@@ -676,13 +678,16 @@ function sendNotification(who) {
                     sended: 0
                 }).then(function () {
                     msgSend++;
+                    $('#notificacion').val('');
+                    document.getElementById('footer').innerHTML = '<strong>Notificación enviada a todas las rutas...<strong>';
+                    document.getElementById('footer').style.display='block';
+                    setTimeout("document.getElementById('footer').style.display='none';", 5000);
                 }).catch(function (error) {
                     msjAlert("Error mensaje enviado: " + error + " Ruta: " + codeRouteSelect, 2);
                 });
             });
         });
         if(msgSend > 0) {
-            msjAlert("Mensajes enviados correctamente", 1);
             $('#notificacion').val('');
         }
     }
