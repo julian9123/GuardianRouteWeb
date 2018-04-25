@@ -629,7 +629,7 @@ function confirmaAddRoute() {
                 latitud: myLat,
                 longitud: myLong
     }).then( function() {
-        msjAlert("dato almacenado correctamente", 1);
+        msjAlert("Dato almacenado correctamente", 1);
     }).catch(function(error) {
         msjAlert("Error al guardar los datos: " + error, 2);
         return;

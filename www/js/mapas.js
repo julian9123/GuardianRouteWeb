@@ -17,6 +17,9 @@ var codeRouteSel = "";
 var plateRouteSel = "";
 var nameRouteSel = "";
 var limitLoops = 3;
+var direcciones = [];
+var msgAlerts = [];
+var alertas = ['¡Estamos en un congestión vehicular grave!', '¡Sufrimos un accidente!', '¡Tenemos un daño mecánico!'];
 var shape = {coords: [0, 0, 50], type: 'circle'};
 
 $(document).ready(function() {
@@ -95,6 +98,18 @@ function myPositions() {
             }
         }
     }
+
+
+
+
+
+//FALTA VALIDAR CUAL ES LA RUTA QUE ESTA ACTIVA PARA EL VEHICULO CUANDO HAY MAS DE UNA RUTA JULIAN
+//Revisar en la tabla starandfinish
+
+
+
+
+
     var datos = conn.database().ref("datacar");
     datos.orderByValue().on("value", function (snapshot) {
         snapshot.forEach(function (data) {
@@ -210,6 +225,7 @@ function posicionActual() {
     } else {
         mapUsersRoute();
     }
+    cnsAlerts();
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
             var pos = {
@@ -328,11 +344,13 @@ function myPositionsRefresh(positions) {
     var limites = new google.maps.LatLngBounds();
     for (var i = 0; i < positions.length; i++) {
         var pos = positions[i];
+        var geocoder = new google.maps.Geocoder;
         var myLatlng = new google.maps.LatLng(pos.latitud, pos.longitud);
+        geocodeLatLng(geocoder, myLatlng, i);
         var marcador = new google.maps.Marker( {
                 position: myLatlng,
                 map: map,
-                title: 'Ruta:' + pos.nombre + ', Placa:' + pos.placa,
+                title: 'Ruta: ' + pos.nombre + ', Placa: ' + pos.placa + ", Dir: " + direcciones[i],
                 icon: image,
                 shape: shape,
                 zIndex: i
@@ -341,6 +359,11 @@ function myPositionsRefresh(positions) {
         marcador.addListener('dblclick', function() {
             abrirOpcionModal('m-SearchRoute');
             listVehicleCns();
+        });
+        marcador.addListener('mouseover', function() {
+            document.getElementById('dtsVehiculo').innerHTML = '<strong>&nbsp;&nbsp;' + this.title + '&nbsp;&nbsp;<strong>';
+            document.getElementById('dtsVehiculo').style.display='block';
+            setTimeout("document.getElementById('dtsVehiculo').style.display='none';", 5000);
         });
         markersDup.push(marcador);
         if(centerMap == 10) {
@@ -487,17 +510,18 @@ function myPositionRefreshRoute() {
     limitLoops = 10;
     if(centerMap > limitLoops && markersDup.length > 0) {
         map.setCenter(myLatlng);
+        console.log("Centrar Detalle Rutas");
 /*
         var limites = new google.maps.LatLngBounds();
         for (var i = 0; i < markersDup.length; i++) {
-            console.log("Titulo:" + markersDup[i].title + ":" + i);
+//            console.log("Titulo:" + markersDup[i].title + ":" + i);
             limites.extend(markersDup[i].position);
         }
-        console.log("Centrar");
         map.fitBounds(limites);
- */
+*/
         centerMap = 0;
     }
+
     centerMap++;
 }
 
@@ -549,4 +573,80 @@ function getGET() {
         }
         return varUrlRet;
     }
+}
+
+function geocodeLatLng(geocoder, latlng, pos){
+    geocoder.geocode({'location': latlng}, function(results, status) {
+        if (status === 'OK') {
+            if (results[1]) {
+                direcciones[pos] = results[1].formatted_address;
+ //               console.log("Dreccion Econtrada:" + direcciones[pos]);
+            } else {
+                window.alert('Sin direccion encontrada');
+            }
+        } else {
+            if (status == "OVER_QUERY_LIMIT")
+//            setTimeout(null, 3000);
+            return;
+        }
+    });
+}
+
+function cnsAlerts(){
+    var datos = conn.database().ref(tblRtAlt[0]);
+    var ind = rutas.length;
+    var i = 0;
+    msgAlerts = [];
+    var currentDiv = document.getElementById('dtsAlertParent');
+    var dts;
+    currentDiv.style.display='block';
+    datos.orderByValue().on("value", function (snapshot) {
+        snapshot.forEach(function (data) {
+            dts = data.val();
+            if(dts.type > 0) {
+//                console.log(JSON.stringify(data.val()));
+                var obj = new Object();
+                obj.hour = dts.hour;
+                obj.type = dts.type;
+                if(dts.message != undefined)
+                    obj.message = dts.message;
+                obj.ruta = data.key;
+                msgAlerts.push(obj);
+            }
+        });
+    });
+    var liNew, textLi, idAlert = 0, msg;
+    fecha = new Date();
+    for(var i = 0; i < markers.length; i++){
+        for(var j = 0; j < msgAlerts.length; j++){
+            if(markers[i].ruta == msgAlerts[j].ruta) {
+                liNew = document.createElement("li");
+                liNew.id = msgAlerts[j].ruta + "Alert";
+                console.log(msgAlerts[j].type);
+                if(msgAlerts[j].type < 9){
+                    idAlert = msgAlerts[j].type - 1;
+                    msg = alertas[idAlert]
+                } else
+                    msg = msgAlerts[j].message;
+                textLi = fecha + ' ' + msgAlerts[j].ruta + ' ' + msg;
+                liNew.innerHTML = textLi;
+                document.getElementById("dtsAlertParent").appendChild(liNew);
+            }
+        }
+    }
+/*
+    var newDiv = document.createElement('div');
+
+    newDiv.id = 'msg' + i;
+    var newContent = document.createTextNode(data.key);
+    newDiv.appendChild(newContent);
+    newDiv.style.display='block';
+    newDiv.setAttribute('class', 'dtsAlert');
+    document.body.insertBefore( newDiv, currentDiv );
+    currentDiv = document.getElementById('msg' + i);
+    i++;
+*/
+
+
+
 }

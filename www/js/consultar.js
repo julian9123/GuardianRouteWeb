@@ -340,12 +340,11 @@ function cnsEntGroup(codEmpresa) {
     if( myUserId == "" ){ initApp(); }
     if( myUserId == "" ){ initApp(); }
     var datos = conn.database().ref( "entGroup/" + codEmpresa );
-    alert("Existe Ruta:" + datos);
     datos.orderByValue().on( "value", function( snapshot ) {
         snapshot.forEach( function( data ) {
             registrado++;
             entUser = data.key;
-            alert("Ruta Existente:" + entUser);
+//            alert("Empresa Existente:" + entUser);
         } );
     } );    
 }
