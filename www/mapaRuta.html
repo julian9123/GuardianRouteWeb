@@ -103,7 +103,7 @@
                     <div id="routeFind"></div>
                     <br/>
                     <div class="btn-group cf">
-                        <button class="btn_add" id="btnARDialog" onclick="addRoute(); listVehicle();">Adicionar</button>
+                        <button class="btn_add" id="btnARDialog" onclick="addRoute(); return listVehicle();">Adicionar</button>
                         <button class="btn_cancel" onclick="closePopUp('m-AddRoute')">Cancelar</button>
                     </div>
                 </div>
@@ -229,7 +229,7 @@
                     <div style="text-align: center; color: #000000;">Desea eliminar la ruta?</div>
                     <br/>
                     <div class="btn-group cf">
-                        <button class="btn_add" id="btnCnfDialog" onclick="confirmaRemRoute()">Eliminar</button>
+                        <button class="btn_add" id="btnCnfDialog" onclick="confirmaRemRoute(); closePopUp('CnfRemRoute');">Eliminar</button>
                         <button class="btn_cancel" onclick="closePopUp('m-CnfRemRoute')">Cancelar</button>
                     </div>
                 </div>
@@ -253,7 +253,7 @@
                     <div style="text-align: center; color: #000000;">Relacionarlo con la empresa?</div>
                     <br/>
                     <div class="btn-group cf">
-                        <button class="btn_add" id="btnCnfAddDialog" onclick="confirmaAddRoute()">Crear</button>
+                        <button class="btn_add" id="btnCnfAddDialog" onclick="confirmaAddRoute(); closePopUp('m-CnfAddRoute'); $">Crear</button>
                         <button class="btn_cancel" onclick="closePopUp('m-CnfAddRoute')">Cancelar</button>
                     </div>
                 </div>

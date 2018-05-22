@@ -20,7 +20,7 @@ var intentos = 0;
 var distancia = 0;
 var iconoSel = "", entUser = "", entRoute = "" 
 var entCode = "";
-var tblRtAlt = ['alert'];
+var tblRtAlt = ['alert', 'starandfinish'];
 var enterpriseUser = "";
 var alertas = [ "Envió una alerta ¡Estamos en un congestión vehicular grave!, a sus usuarios de ruta.",
                 "Envió una alerta ¡Sufrimos un accidente!, a sus usuarios de ruta.",

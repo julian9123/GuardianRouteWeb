@@ -21,6 +21,7 @@ var direcciones = [];
 var msgAlerts = [];
 var alertas = ['¡Estamos en un congestión vehicular grave!', '¡Sufrimos un accidente!', '¡Tenemos un daño mecánico!'];
 var shape = {coords: [0, 0, 50], type: 'circle'};
+var starandfinish = [];
 
 $(document).ready(function() {
 
@@ -58,9 +59,8 @@ function initMap() {
     distancia = 1;
 }
 
-function myPositions() {
-    infoWindow = new google.maps.InfoWindow({map: map});
-     if (rutas.length <= 0) {
+function myRoutes() {
+    if (rutas.length <= 0) {
         var datosE = conn.database().ref("entRoute/" + entUser);
         datosE.orderByValue().on("value", function (snapshot) {
             snapshot.forEach(function (data) {
@@ -74,6 +74,10 @@ function myPositions() {
             });
         });
     }
+}
+
+function myPositions() {
+    infoWindow = new google.maps.InfoWindow({map: map});
     var markTemp = [];
     var datos = conn.database().ref("drivervstravel");
     datos.orderByValue().on("value", function (snapshot) {
@@ -91,25 +95,45 @@ function myPositions() {
             var res = JSON.parse(jsonString);
             if (res[indice]['placa'] == rutas[j]) {
                 var objT = new Object();
-                objT.ruta = res[indice]['id'];
-                objT.placa = res[indice]['placa'];
-                objT.nombre = res[indice]['name'];
-                markTempX.push(objT);
+                for(var l = 0; l < starandfinish.length; l++) {
+                    if( res[indice]['id'] == starandfinish[l].ruta ) {
+//                        console.log("Ruta Si: " + starandfinish[l].ruta);
+                        objT.ruta = res[indice]['id'];
+                        objT.placa = res[indice]['placa'];
+                        objT.nombre = res[indice]['name'];
+                        objT.act = "ok";
+                        markTempX.push(objT);
+                    }
+                }
             }
         }
     }
-
-
-
-
-
-//FALTA VALIDAR CUAL ES LA RUTA QUE ESTA ACTIVA PARA EL VEHICULO CUANDO HAY MAS DE UNA RUTA JULIAN
-//Revisar en la tabla starandfinish
-
-
-
-
-
+    var ofCourse = 'no';
+    for (var i = 0; i < rutas.length; i++) {
+        ofCourse = 'no';
+        for (var j = 0; j < markTempX.length; j++) {
+            if( rutas[i] == markTempX[j].placa ) {
+                ofCourse = 'yes';
+            }
+        }
+        if( ofCourse == 'no' ) {
+//            console.log("Ruta notOk: " + res[indice]['placa']);
+            for (var l = 0; l < markTemp.length; l++) {
+                var jsonString = Object.keys(markTemp[l]);
+                var indice = jsonString[0];
+                var jsonString = JSON.stringify(markTemp[l], [indice, 'id', 'placa', 'name']);
+                var res = JSON.parse(jsonString);
+                if (res[indice]['placa'] == rutas[i]) {
+                    var objT = new Object();
+                    objT.ruta = res[indice]['id'];
+                    objT.placa = res[indice]['placa'];
+                    objT.nombre = res[indice]['name'];
+                    objT.act = "notOk";
+                    markTempX.push(objT);
+                }
+            }
+        }
+    }
     var datos = conn.database().ref("datacar");
     datos.orderByValue().on("value", function (snapshot) {
         snapshot.forEach(function (data) {
@@ -126,13 +150,18 @@ function myPositions() {
                     obj.marca = reg.marca;
                     obj.modelo = reg.modelo;
                     obj.velocidad = reg.velocidad;
+                    obj.act = 'Activa';
+                    if( markTempX[i].act == 'notOk' ) {
+                        obj.nombre = 'Ruta en transito';
+                        obj.act = 'En transito';
+                    }
 //                    obj.url = "https://www.youtube.com/watch?v=bmtbg5b7_Aw";
                     markers.push(obj);
                 }
             }
             distancia++;
         });
-        markers = eliminarObjetosDuplicados(markers, "ruta");
+        markers = eliminarObjetosDuplicados(markers, "placa");
         setMapOnAll();
         myPositionsRefresh(markers);
         if (rutas.length <= 0) {
@@ -211,6 +240,8 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 function posicionActual() {
     var getVar = {};
     getVar = getGET();
+    cnsDtStrFnsh();
+    myRoutes();
     if (getVar != undefined) {
         var dataUrl = getVar;
         if( dataUrl[0] != undefined ) codeRouteSel = dataUrl[0];
@@ -220,6 +251,7 @@ function posicionActual() {
     } else {
         typeRouteMap = 0;
     }
+    centerMap++;
     if( typeRouteMap == 0 ) {
         myPositions();
     } else {
@@ -247,6 +279,7 @@ function posicionActual() {
 function listVehicle() {
     markers = [];
     rutas = [];
+    myRoutes();
     posicionActual();
     var liNew;
     var j = 0;
@@ -347,6 +380,8 @@ function myPositionsRefresh(positions) {
         var geocoder = new google.maps.Geocoder;
         var myLatlng = new google.maps.LatLng(pos.latitud, pos.longitud);
         geocodeLatLng(geocoder, myLatlng, i);
+        var act = 'En transito';
+        if(positions.act == 'ok' ) { act = 'Activa'; }
         var marcador = new google.maps.Marker( {
                 position: myLatlng,
                 map: map,
@@ -370,9 +405,10 @@ function myPositionsRefresh(positions) {
             limites.extend(marcador.position);
         }
     }
-    centerMap++;
-    if(centerMap > 10 && markersDup.length > 0) {
-        console.log("Centrar");
+//    centerMap++;
+//    console.log("CentrarMap:" + centerMap  + "   " + markersDup.length);
+    if(centerMap == 10 && markersDup.length > 0) {
+        console.log("Centrar Rutas: " + centerMap);
         map.fitBounds(limites);
         centerMap = 0;
     }
@@ -429,7 +465,7 @@ function mapUsersRoute() {
         snapshot.forEach(function (data) {
             var dataUsers = data.val();
             var obj = new Object();
-            obj.nombre = dataUsers.chiildname;
+            obj.nombre = dataUsers.childname;
             obj.icon = dataUsers.icon;
             obj.latitud = dataUsers.latitud;
             obj.longitud = dataUsers.longitud;
@@ -522,7 +558,7 @@ function myPositionRefreshRoute() {
         centerMap = 0;
     }
 
-    centerMap++;
+//    centerMap++;
 }
 
 function startSelectRoute(plateRoute, codeRoute, nameRoute) {
@@ -592,7 +628,9 @@ function geocodeLatLng(geocoder, latlng, pos){
     });
 }
 
-function cnsAlerts(){
+function cnsAlerts() {
+    return;
+    //Conmentarizado mientras se prueban otros procesos. Julian 21/05/2018
     var datos = conn.database().ref(tblRtAlt[0]);
     var ind = rutas.length;
     var i = 0;
@@ -634,19 +672,21 @@ function cnsAlerts(){
             }
         }
     }
-/*
-    var newDiv = document.createElement('div');
+    setTimeout("document.getElementById('dtsVehiculo').style.display='none';", 10000);
+}
 
-    newDiv.id = 'msg' + i;
-    var newContent = document.createTextNode(data.key);
-    newDiv.appendChild(newContent);
-    newDiv.style.display='block';
-    newDiv.setAttribute('class', 'dtsAlert');
-    document.body.insertBefore( newDiv, currentDiv );
-    currentDiv = document.getElementById('msg' + i);
-    i++;
-*/
-
-
-
+function cnsDtStrFnsh() {
+    var datos = conn.database().ref(tblRtAlt[1]);
+    starandfinish = [];
+    datos.orderByValue().on("value", function (snapshot) {
+        snapshot.forEach(function (data) {
+            var obj = new Object();
+            var dat = data.val();
+            if (dat.estado > 0) {
+                obj.ruta = data.key;
+                obj.estado = dat.estado;
+                starandfinish.push(obj);
+            }
+        });
+    });
 }

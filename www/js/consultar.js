@@ -637,6 +637,14 @@ function confirmaAddRoute() {
                 latitud: myLat,
                 longitud: myLong
     }).then( function() {
+//        msjAlert("dato almacenado correctamente", 1);
+    }).catch(function(error) {
+        msjAlert("Error al guardar los datos: " + error, 2);
+        return;
+    });
+    var datos = conn.database().ref("datacars/" + newCar );
+    datos.set({ matricula : newCar
+    }).then( function() {
         msjAlert("dato almacenado correctamente", 1);
     }).catch(function(error) {
         msjAlert("Error al guardar los datos: " + error, 2);
