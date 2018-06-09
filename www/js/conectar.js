@@ -7,6 +7,9 @@ var config = {
                 messagingSenderId: '1085529323533'
              };
 */
+
+"use strict";
+
 var config = {
     apiKey: 'AIzaSyD0s53gqHP_mjfiy2qLAgH2GXe9VGZslFo',
     authDomain: 'gardianapps.firebaseapp.com',
@@ -79,31 +82,25 @@ function showOptions() {
 }
 
 function initApp() {
+    var obj = new Object();
     if( autor.currentUser )  {
+        obj.myUserId = autor.currentUser.uid;
         myUserId = autor.currentUser.uid;
-//        console.log("Intento 3" + myUserId);
+//        console.log("Intento 1" + myUserId);
     }
     autor.onAuthStateChanged( function( user ) {
         if ( user ) {
-            displayName = user.displayName;
-            email = user.email;
-            photoURL = user.photoURL;
+            obj.displayName = user.displayName;
+            obj.email = user.email;
+            obj.photoURL = user.photoURL;
+            obj.myUserId = user.uid;
             myUserId = user.uid;
-            phoneNumber = user.phoneNumber;
-//            console.log("Intento 2" + myUserId);
-/*            
-            user.getIdToken().then( function( accessToken ) {
-                if( contador > 0 || intentos > 0 ) { return; }
-                cnsRutasEmpresa();
-                if( registrado > 0 ) { 
-                    cambioPagina("mapaRuta.html");
-                } else {
-                    cambioPagina("createEnterprise.html");
-                }
-            });
-*/            
+            obj.phoneNumber = user.phoneNumber;
+            obj.myUserId = autor.currentUser.uid;
+//            console.log("Intento 2" + obj.myUserId);
         } else {
             if( autor.currentUser )  {
+                obj.myUserId = autor.currentUser.uid;
                 myUserId = autor.currentUser.uid;
 //                console.log("Intento 3" + myUserId);
             }
@@ -111,6 +108,10 @@ function initApp() {
     }, function( error ) {
       console.log("Error Login:" + error);
     } );
+    if(obj.myUserId == ""  || obj.myUserId == undefined){ setTimeout( initApp, 1000 ); }
+    objCnx.push(obj);
+//    console.log("IntentoXXX: " + obj.myUserId);
+    return myUserId;
 }
 
 function cerrarSesion(){

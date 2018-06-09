@@ -435,10 +435,8 @@ function remRouteEnt(routeCode) {
 function cnsUserExistShc() {
     intentos = 0;
     registrado = 0;
-    initApp();
     if( myUserId == "" ) { initApp(); }
-    if( myUserId == "" ) { initApp(); }
-    if( myUserId == "" ) { initApp(); }
+    if( myUserId == "" || myUserId == undefined ) { return; }
     var datos = conn.database().ref( "schUser/" + myUserId );
     datos.orderByValue().on( "value", function( snapshot ) {
         snapshot.forEach( function( data ) {

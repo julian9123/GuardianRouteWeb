@@ -444,15 +444,18 @@ function remRouteEnt(routeCode) {
 function cnsUserExistEnt() {
     intentos = 0;
     registrado = 0;
-    initApp();
     if( myUserId == "" ) { initApp(); }
-    if( myUserId == "" ) { initApp(); }
-    if( myUserId == "" ) { initApp(); }
+    if( myUserId == "" || myUserId == undefined ) {
+        console.log("myUserIdJulito: " + myUserId);
+        return;
+    }
     var datos = conn.database().ref( "entUser/" + myUserId );
+    console.log("myUserId: " + datos);
     datos.orderByValue().on( "value", function( snapshot ) {
         snapshot.forEach( function( data ) {
             registrado++;
             entRoute = data.key;
+            console.log("myUserId: " + myUserId + " entRoute: " + entRoute);
             cambioPagina("mapaRuta.html");
             return;
         } );

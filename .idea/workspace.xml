@@ -2,741 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a1e69a03-3c2a-4dd1-9eee-ca61bf8f8fa0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/copyright/desktop.ini" afterPath="$PROJECT_DIR$/.idea/copyright/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/desktop.ini" afterPath="$PROJECT_DIR$/.idea/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/desktop.ini" afterPath="$PROJECT_DIR$/.idea/dictionaries/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/img/android/drawable-mdpi/avatar1.png" afterPath="$PROJECT_DIR$/platforms/browser/www/img/android/drawable-mdpi/avatar1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/img/android/drawable-mdpi/avatar2.png" afterPath="$PROJECT_DIR$/platforms/browser/www/img/android/drawable-mdpi/avatar2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/img/android/drawable-mdpi/avatar3.png" afterPath="$PROJECT_DIR$/platforms/browser/www/img/android/drawable-mdpi/avatar3.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/img/android/drawable-mdpi/avatar4.png" afterPath="$PROJECT_DIR$/platforms/browser/www/img/android/drawable-mdpi/avatar4.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/img/android/drawable-mdpi/avatar5.png" afterPath="$PROJECT_DIR$/platforms/browser/www/img/android/drawable-mdpi/avatar5.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/img/android/drawable-mdpi/avatar6.png" afterPath="$PROJECT_DIR$/platforms/browser/www/img/android/drawable-mdpi/avatar6.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/img/android/drawable-mdpi/avatar7.png" afterPath="$PROJECT_DIR$/platforms/browser/www/img/android/drawable-mdpi/avatar7.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/img/android/drawable-mdpi/avatar8.png" afterPath="$PROJECT_DIR$/platforms/browser/www/img/android/drawable-mdpi/avatar8.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/img/android/drawable-mdpi/marketend.png" afterPath="$PROJECT_DIR$/platforms/browser/www/img/android/drawable-mdpi/marketend.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/img/android/drawable-mdpi/avatar1.png" afterPath="$PROJECT_DIR$/www/img/android/drawable-mdpi/avatar1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/img/android/drawable-mdpi/avatar2.png" afterPath="$PROJECT_DIR$/www/img/android/drawable-mdpi/avatar2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/img/android/drawable-mdpi/avatar3.png" afterPath="$PROJECT_DIR$/www/img/android/drawable-mdpi/avatar3.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/img/android/drawable-mdpi/avatar4.png" afterPath="$PROJECT_DIR$/www/img/android/drawable-mdpi/avatar4.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/img/android/drawable-mdpi/avatar5.png" afterPath="$PROJECT_DIR$/www/img/android/drawable-mdpi/avatar5.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/img/android/drawable-mdpi/avatar6.png" afterPath="$PROJECT_DIR$/www/img/android/drawable-mdpi/avatar6.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/img/android/drawable-mdpi/avatar7.png" afterPath="$PROJECT_DIR$/www/img/android/drawable-mdpi/avatar7.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/img/android/drawable-mdpi/avatar8.png" afterPath="$PROJECT_DIR$/www/img/android/drawable-mdpi/avatar8.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/img/android/drawable-mdpi/marketend.png" afterPath="$PROJECT_DIR$/www/img/android/drawable-mdpi/marketend.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.tern-defs/desktop.ini" afterPath="$PROJECT_DIR$/.tern-defs/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/desktop.ini" afterPath="$PROJECT_DIR$/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hooks/desktop.ini" afterPath="$PROJECT_DIR$/hooks/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/.bin/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/.bin/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/balanced-match/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/balanced-match/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/base64-js/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/base64-js/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/base64-js/test/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/base64-js/test/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/brace-expansion/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/brace-expansion/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/concat-map/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/concat-map/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/concat-map/example/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/concat-map/example/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/concat-map/test/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/concat-map/test/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/.github/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/.github/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/.bin/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/.bin/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/abbrev/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/abbrev/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/accepts/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/accepts/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/ansi-regex/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/ansi-regex/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/ansi-styles/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/ansi-styles/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/ansi/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/ansi/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/ansi/examples/beep/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/ansi/examples/beep/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/ansi/examples/clear/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/ansi/examples/clear/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/ansi/examples/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/ansi/examples/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/ansi/examples/progress/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/ansi/examples/progress/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/ansi/lib/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/ansi/lib/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/array-flatten/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/array-flatten/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/balanced-match/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/balanced-match/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/base64-js/bench/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/base64-js/bench/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/base64-js/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/base64-js/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/base64-js/lib/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/base64-js/lib/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/base64-js/test/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/base64-js/test/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/big-integer/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/big-integer/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/body-parser/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/body-parser/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/body-parser/lib/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/body-parser/lib/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/body-parser/lib/types/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/body-parser/lib/types/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/bplist-parser/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/bplist-parser/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/bplist-parser/test/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/bplist-parser/test/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/brace-expansion/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/brace-expansion/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/bytes/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/bytes/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/chalk/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/chalk/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/compressible/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/compressible/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/compression/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/compression/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/concat-map/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/concat-map/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/concat-map/example/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/concat-map/example/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/concat-map/test/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/concat-map/test/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/content-disposition/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/content-disposition/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/content-type/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/content-type/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/cookie-signature/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/cookie-signature/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/cookie/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/cookie/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/cordova-common/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/cordova-common/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/cordova-common/src/ConfigChanges/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/cordova-common/src/ConfigChanges/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/cordova-common/src/ConfigParser/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/cordova-common/src/ConfigParser/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/cordova-common/src/CordovaError/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/cordova-common/src/CordovaError/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/cordova-common/src/PluginInfo/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/cordova-common/src/PluginInfo/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/cordova-common/src/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/cordova-common/src/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/cordova-common/src/util/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/cordova-common/src/util/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/cordova-registry-mapper/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/cordova-registry-mapper/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/cordova-registry-mapper/tests/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/cordova-registry-mapper/tests/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/cordova-serve/.github/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/cordova-serve/.github/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/cordova-serve/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/cordova-serve/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/cordova-serve/spec/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/cordova-serve/spec/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/cordova-serve/src/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/cordova-serve/src/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/debug/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/debug/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/debug/src/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/debug/src/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/depd/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/depd/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/depd/lib/browser/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/depd/lib/browser/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/depd/lib/compat/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/depd/lib/compat/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/depd/lib/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/depd/lib/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/destroy/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/destroy/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/ee-first/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/ee-first/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/elementtree/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/elementtree/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/elementtree/lib/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/elementtree/lib/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/elementtree/lib/parsers/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/elementtree/lib/parsers/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/elementtree/tests/data/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/elementtree/tests/data/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/elementtree/tests/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/elementtree/tests/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/encodeurl/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/encodeurl/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/escape-html/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/escape-html/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/escape-string-regexp/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/escape-string-regexp/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/etag/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/etag/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/express/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/express/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/express/lib/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/express/lib/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/express/lib/middleware/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/express/lib/middleware/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/express/lib/router/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/express/lib/router/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/finalhandler/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/finalhandler/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/forwarded/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/forwarded/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/fresh/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/fresh/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/glob/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/glob/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/has-ansi/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/has-ansi/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/http-errors/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/http-errors/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/http-errors/node_modules/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/http-errors/node_modules/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/http-errors/node_modules/setprototypeof/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/http-errors/node_modules/setprototypeof/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/iconv-lite/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/iconv-lite/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/iconv-lite/encodings/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/iconv-lite/encodings/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/iconv-lite/encodings/tables/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/iconv-lite/encodings/tables/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/iconv-lite/lib/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/iconv-lite/lib/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/inflight/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/inflight/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/inherits/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/inherits/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/ipaddr.js/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/ipaddr.js/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/ipaddr.js/lib/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/ipaddr.js/lib/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/ipaddr.js/src/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/ipaddr.js/src/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/ipaddr.js/test/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/ipaddr.js/test/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/lodash/array/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/lodash/array/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/lodash/chain/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/lodash/chain/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/lodash/collection/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/lodash/collection/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/lodash/date/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/lodash/date/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/lodash/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/lodash/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/lodash/function/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/lodash/function/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/lodash/internal/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/lodash/internal/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/lodash/lang/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/lodash/lang/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/lodash/math/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/lodash/math/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/lodash/number/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/lodash/number/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/lodash/object/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/lodash/object/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/lodash/string/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/lodash/string/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/lodash/utility/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/lodash/utility/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/media-typer/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/media-typer/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/merge-descriptors/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/merge-descriptors/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/methods/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/methods/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/mime-db/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/mime-db/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/mime-types/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/mime-types/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/mime/build/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/mime/build/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/mime/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/mime/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/minimatch/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/minimatch/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/ms/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/ms/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/negotiator/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/negotiator/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/negotiator/lib/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/negotiator/lib/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/nopt/bin/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/nopt/bin/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/nopt/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/nopt/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/nopt/examples/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/nopt/examples/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/nopt/lib/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/nopt/lib/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/nopt/test/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/nopt/test/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/on-finished/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/on-finished/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/on-headers/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/on-headers/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/once/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/once/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/open/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/open/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/open/lib/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/open/lib/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/open/vendor/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/open/vendor/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/os-homedir/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/os-homedir/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/os-tmpdir/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/os-tmpdir/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/osenv/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/osenv/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/osenv/test/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/osenv/test/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/parseurl/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/parseurl/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/path-is-absolute/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/path-is-absolute/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/path-to-regexp/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/path-to-regexp/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/plist/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/plist/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/plist/dist/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/plist/dist/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/plist/examples/browser/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/plist/examples/browser/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/plist/examples/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/plist/examples/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/plist/lib/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/plist/lib/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/proxy-addr/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/proxy-addr/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/q/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/q/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/qs/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/qs/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/qs/dist/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/qs/dist/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/qs/lib/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/qs/lib/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/qs/test/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/qs/test/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/range-parser/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/range-parser/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/raw-body/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/raw-body/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/safe-buffer/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/safe-buffer/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/sax/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/sax/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/sax/examples/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/sax/examples/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/sax/lib/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/sax/lib/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/sax/test/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/sax/test/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/semver/bin/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/semver/bin/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/semver/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/semver/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/send/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/send/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/serve-static/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/serve-static/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/setprototypeof/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/setprototypeof/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/shelljs/bin/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/shelljs/bin/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/shelljs/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/shelljs/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/shelljs/scripts/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/shelljs/scripts/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/shelljs/src/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/shelljs/src/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/statuses/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/statuses/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/strip-ansi/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/strip-ansi/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/supports-color/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/supports-color/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/type-is/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/type-is/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/underscore/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/underscore/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/unorm/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/unorm/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/unorm/lib/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/unorm/lib/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/unpipe/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/unpipe/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/util-deprecate/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/util-deprecate/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/utils-merge/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/utils-merge/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/vary/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/vary/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/wrappy/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/wrappy/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/xmlbuilder/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/xmlbuilder/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/xmlbuilder/lib/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/xmlbuilder/lib/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/xmldom/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/node_modules/xmldom/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/spec/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/spec/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-browser/spec/support/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/spec/support/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-plugin-compat/.github/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-plugin-compat/.github/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-plugin-device/.github/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-plugin-device/.github/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-plugin-device/tests/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-plugin-device/tests/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-plugin-inappbrowser/.github/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-plugin-inappbrowser/.github/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-plugin-inappbrowser/tests/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-plugin-inappbrowser/tests/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-plugin-inappbrowser/tests/resources/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-plugin-inappbrowser/tests/resources/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-plugin-whitelist/.github/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/cordova-plugin-whitelist/.github/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/es6-promise-plugin/.tmp/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/es6-promise-plugin/.tmp/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/fs.realpath/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/fs.realpath/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/glob/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/glob/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/inflight/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/inflight/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/inherits/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/inherits/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/minimatch/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/minimatch/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mkpath/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/mkpath/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mkpath/test/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/mkpath/test/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-version-compare/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/node-version-compare/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-version-compare/test/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/node-version-compare/test/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/once/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/once/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/path-is-absolute/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/path-is-absolute/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/plist/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/plist/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/plist/dist/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/plist/dist/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/plist/examples/browser/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/plist/examples/browser/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/plist/examples/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/plist/examples/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/plist/lib/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/plist/lib/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/rimraf/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/rimraf/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sax/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/sax/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sax/lib/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/sax/lib/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/wrappy/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/wrappy/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/xml2js/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/xml2js/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/xml2js/lib/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/xml2js/lib/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/xml2js/node_modules/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/xml2js/node_modules/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/xml2js/node_modules/xmlbuilder/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/xml2js/node_modules/xmlbuilder/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/xml2js/node_modules/xmlbuilder/lib/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/xml2js/node_modules/xmlbuilder/lib/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/xmlbuilder/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/xmlbuilder/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/xmlbuilder/lib/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/xmlbuilder/lib/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/xmldom/desktop.ini" afterPath="$PROJECT_DIR$/node_modules/xmldom/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/lib/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/lib/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/.bin/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/.bin/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/abbrev/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/abbrev/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/accepts/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/accepts/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/ansi-regex/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/ansi-regex/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/ansi-styles/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/ansi-styles/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/ansi/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/ansi/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/ansi/examples/beep/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/ansi/examples/beep/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/ansi/examples/clear/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/ansi/examples/clear/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/ansi/examples/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/ansi/examples/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/ansi/examples/progress/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/ansi/examples/progress/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/ansi/lib/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/ansi/lib/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/array-flatten/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/array-flatten/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/balanced-match/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/balanced-match/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/base64-js/bench/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/base64-js/bench/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/base64-js/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/base64-js/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/base64-js/lib/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/base64-js/lib/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/base64-js/test/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/base64-js/test/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/big-integer/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/big-integer/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/body-parser/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/body-parser/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/body-parser/lib/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/body-parser/lib/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/body-parser/lib/types/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/body-parser/lib/types/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/bplist-parser/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/bplist-parser/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/bplist-parser/test/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/bplist-parser/test/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/brace-expansion/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/brace-expansion/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/bytes/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/bytes/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/chalk/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/chalk/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/compressible/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/compressible/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/compression/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/compression/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/concat-map/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/concat-map/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/concat-map/example/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/concat-map/example/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/concat-map/test/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/concat-map/test/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/content-disposition/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/content-disposition/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/content-type/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/content-type/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/cookie-signature/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/cookie-signature/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/cookie/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/cookie/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/cordova-common/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/cordova-common/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/cordova-common/src/ConfigChanges/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/cordova-common/src/ConfigChanges/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/cordova-common/src/ConfigParser/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/cordova-common/src/ConfigParser/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/cordova-common/src/CordovaError/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/cordova-common/src/CordovaError/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/cordova-common/src/PluginInfo/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/cordova-common/src/PluginInfo/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/cordova-common/src/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/cordova-common/src/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/cordova-common/src/util/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/cordova-common/src/util/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/cordova-registry-mapper/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/cordova-registry-mapper/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/cordova-registry-mapper/tests/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/cordova-registry-mapper/tests/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/cordova-serve/.github/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/cordova-serve/.github/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/cordova-serve/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/cordova-serve/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/cordova-serve/spec/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/cordova-serve/spec/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/cordova-serve/src/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/cordova-serve/src/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/debug/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/debug/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/debug/src/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/debug/src/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/depd/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/depd/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/depd/lib/browser/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/depd/lib/browser/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/depd/lib/compat/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/depd/lib/compat/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/depd/lib/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/depd/lib/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/destroy/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/destroy/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/ee-first/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/ee-first/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/elementtree/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/elementtree/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/elementtree/lib/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/elementtree/lib/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/elementtree/lib/parsers/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/elementtree/lib/parsers/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/elementtree/tests/data/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/elementtree/tests/data/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/elementtree/tests/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/elementtree/tests/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/encodeurl/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/encodeurl/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/escape-html/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/escape-html/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/escape-string-regexp/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/escape-string-regexp/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/etag/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/etag/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/express/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/express/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/express/lib/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/express/lib/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/express/lib/middleware/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/express/lib/middleware/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/express/lib/router/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/express/lib/router/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/finalhandler/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/finalhandler/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/forwarded/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/forwarded/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/fresh/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/fresh/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/glob/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/glob/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/has-ansi/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/has-ansi/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/http-errors/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/http-errors/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/http-errors/node_modules/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/http-errors/node_modules/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/http-errors/node_modules/setprototypeof/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/http-errors/node_modules/setprototypeof/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/iconv-lite/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/iconv-lite/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/iconv-lite/encodings/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/iconv-lite/encodings/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/iconv-lite/encodings/tables/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/iconv-lite/encodings/tables/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/iconv-lite/lib/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/iconv-lite/lib/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/inflight/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/inflight/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/inherits/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/inherits/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/ipaddr.js/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/ipaddr.js/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/ipaddr.js/lib/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/ipaddr.js/lib/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/ipaddr.js/src/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/ipaddr.js/src/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/ipaddr.js/test/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/ipaddr.js/test/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/lodash/array/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/lodash/array/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/lodash/chain/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/lodash/chain/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/lodash/collection/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/lodash/collection/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/lodash/date/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/lodash/date/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/lodash/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/lodash/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/lodash/function/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/lodash/function/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/lodash/internal/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/lodash/internal/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/lodash/lang/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/lodash/lang/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/lodash/math/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/lodash/math/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/lodash/number/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/lodash/number/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/lodash/object/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/lodash/object/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/lodash/string/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/lodash/string/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/lodash/utility/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/lodash/utility/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/media-typer/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/media-typer/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/merge-descriptors/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/merge-descriptors/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/methods/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/methods/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/mime-db/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/mime-db/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/mime-types/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/mime-types/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/mime/build/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/mime/build/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/mime/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/mime/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/minimatch/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/minimatch/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/ms/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/ms/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/negotiator/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/negotiator/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/negotiator/lib/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/negotiator/lib/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/nopt/bin/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/nopt/bin/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/nopt/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/nopt/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/nopt/examples/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/nopt/examples/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/nopt/lib/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/nopt/lib/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/nopt/test/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/nopt/test/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/on-finished/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/on-finished/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/on-headers/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/on-headers/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/once/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/once/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/open/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/open/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/open/lib/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/open/lib/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/open/vendor/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/open/vendor/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/os-homedir/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/os-homedir/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/os-tmpdir/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/os-tmpdir/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/osenv/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/osenv/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/osenv/test/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/osenv/test/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/parseurl/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/parseurl/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/path-is-absolute/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/path-is-absolute/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/path-to-regexp/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/path-to-regexp/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/plist/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/plist/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/plist/dist/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/plist/dist/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/plist/examples/browser/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/plist/examples/browser/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/plist/examples/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/plist/examples/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/plist/lib/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/plist/lib/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/proxy-addr/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/proxy-addr/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/q/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/q/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/qs/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/qs/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/qs/dist/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/qs/dist/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/qs/lib/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/qs/lib/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/qs/test/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/qs/test/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/range-parser/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/range-parser/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/raw-body/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/raw-body/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/safe-buffer/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/safe-buffer/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/sax/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/sax/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/sax/examples/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/sax/examples/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/sax/lib/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/sax/lib/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/sax/test/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/sax/test/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/semver/bin/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/semver/bin/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/semver/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/semver/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/send/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/send/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/serve-static/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/serve-static/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/setprototypeof/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/setprototypeof/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/shelljs/bin/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/shelljs/bin/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/shelljs/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/shelljs/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/shelljs/scripts/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/shelljs/scripts/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/shelljs/src/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/shelljs/src/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/statuses/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/statuses/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/strip-ansi/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/strip-ansi/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/supports-color/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/supports-color/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/type-is/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/type-is/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/underscore/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/underscore/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/unorm/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/unorm/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/unorm/lib/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/unorm/lib/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/unpipe/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/unpipe/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/util-deprecate/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/util-deprecate/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/utils-merge/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/utils-merge/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/vary/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/vary/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/wrappy/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/wrappy/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/xmlbuilder/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/xmlbuilder/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/xmlbuilder/lib/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/xmlbuilder/lib/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/xmldom/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/cordova/node_modules/xmldom/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/platform_www/cordova-js-src/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/platform_www/cordova-js-src/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/platform_www/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/platform_www/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/platform_www/plugins/cordova-plugin-background-mode/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/platform_www/plugins/cordova-plugin-background-mode/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/platform_www/plugins/cordova-plugin-background-mode/src/browser/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/platform_www/plugins/cordova-plugin-background-mode/src/browser/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/platform_www/plugins/cordova-plugin-background-mode/src/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/platform_www/plugins/cordova-plugin-background-mode/src/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/platform_www/plugins/cordova-plugin-background-mode/www/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/platform_www/plugins/cordova-plugin-background-mode/www/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/platform_www/plugins/cordova-plugin-badge/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/platform_www/plugins/cordova-plugin-badge/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/platform_www/plugins/cordova-plugin-badge/src/browser/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/platform_www/plugins/cordova-plugin-badge/src/browser/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/platform_www/plugins/cordova-plugin-badge/src/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/platform_www/plugins/cordova-plugin-badge/src/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/platform_www/plugins/cordova-plugin-badge/www/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/platform_www/plugins/cordova-plugin-badge/www/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/platform_www/plugins/cordova-plugin-browsertab/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/platform_www/plugins/cordova-plugin-browsertab/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/platform_www/plugins/cordova-plugin-browsertab/www/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/platform_www/plugins/cordova-plugin-browsertab/www/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/platform_www/plugins/cordova-plugin-buildinfo/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/platform_www/plugins/cordova-plugin-buildinfo/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/platform_www/plugins/cordova-plugin-buildinfo/www/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/platform_www/plugins/cordova-plugin-buildinfo/www/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/platform_www/plugins/cordova-plugin-device/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/platform_www/plugins/cordova-plugin-device/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/platform_www/plugins/cordova-plugin-device/src/browser/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/platform_www/plugins/cordova-plugin-device/src/browser/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/platform_www/plugins/cordova-plugin-device/src/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/platform_www/plugins/cordova-plugin-device/src/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/platform_www/plugins/cordova-plugin-device/www/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/platform_www/plugins/cordova-plugin-device/www/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/platform_www/plugins/cordova-plugin-inappbrowser/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/platform_www/plugins/cordova-plugin-inappbrowser/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/platform_www/plugins/cordova-plugin-inappbrowser/src/browser/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/platform_www/plugins/cordova-plugin-inappbrowser/src/browser/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/platform_www/plugins/cordova-plugin-inappbrowser/src/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/platform_www/plugins/cordova-plugin-inappbrowser/src/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/platform_www/plugins/cordova-plugin-inappbrowser/www/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/platform_www/plugins/cordova-plugin-inappbrowser/www/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/platform_www/plugins/cordova-plugin-local-notification/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/platform_www/plugins/cordova-plugin-local-notification/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/platform_www/plugins/cordova-plugin-local-notification/www/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/platform_www/plugins/cordova-plugin-local-notification/www/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/platform_www/plugins/cordova-plugin-x-socialsharing/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/platform_www/plugins/cordova-plugin-x-socialsharing/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/platform_www/plugins/cordova-plugin-x-socialsharing/www/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/platform_www/plugins/cordova-plugin-x-socialsharing/www/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/platform_www/plugins/cordova-universal-links-plugin/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/platform_www/plugins/cordova-universal-links-plugin/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/platform_www/plugins/cordova-universal-links-plugin/www/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/platform_www/plugins/cordova-universal-links-plugin/www/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/platform_www/plugins/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/platform_www/plugins/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/platform_www/plugins/es6-promise-plugin/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/platform_www/plugins/es6-promise-plugin/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/platform_www/plugins/es6-promise-plugin/www/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/platform_www/plugins/es6-promise-plugin/www/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/cordova-js-src/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/www/cordova-js-src/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/css/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/www/css/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/www/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/icon/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/www/icon/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/img/android/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/www/img/android/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/img/android/drawable-hdpi/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/www/img/android/drawable-hdpi/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/img/android/drawable-mdpi/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/www/img/android/drawable-mdpi/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/img/android/drawable-xhdpi/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/www/img/android/drawable-xhdpi/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/img/android/drawable-xxhdpi/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/www/img/android/drawable-xxhdpi/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/img/android/drawable-xxxhdpi/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/www/img/android/drawable-xxxhdpi/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/img/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/www/img/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/img/drawable/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/www/img/drawable/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/img/flags/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/www/img/flags/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/img/images/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/www/img/images/desktop.ini" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/js/conectar.js" afterPath="$PROJECT_DIR$/platforms/browser/www/js/conectar.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/js/consultar.js" afterPath="$PROJECT_DIR$/platforms/browser/www/js/consultar.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/js/index.js" afterPath="$PROJECT_DIR$/platforms/browser/www/js/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/js/mapas.js" afterPath="$PROJECT_DIR$/platforms/browser/www/js/mapas.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/mapaRuta.html" afterPath="$PROJECT_DIR$/platforms/browser/www/mapaRuta.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/plugins/cordova-plugin-background-mode/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/www/plugins/cordova-plugin-background-mode/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/plugins/cordova-plugin-background-mode/src/browser/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/www/plugins/cordova-plugin-background-mode/src/browser/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/plugins/cordova-plugin-background-mode/src/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/www/plugins/cordova-plugin-background-mode/src/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/plugins/cordova-plugin-background-mode/www/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/www/plugins/cordova-plugin-background-mode/www/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/plugins/cordova-plugin-badge/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/www/plugins/cordova-plugin-badge/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/plugins/cordova-plugin-badge/src/browser/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/www/plugins/cordova-plugin-badge/src/browser/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/plugins/cordova-plugin-badge/src/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/www/plugins/cordova-plugin-badge/src/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/plugins/cordova-plugin-badge/www/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/www/plugins/cordova-plugin-badge/www/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/plugins/cordova-plugin-browsertab/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/www/plugins/cordova-plugin-browsertab/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/plugins/cordova-plugin-browsertab/www/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/www/plugins/cordova-plugin-browsertab/www/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/plugins/cordova-plugin-buildinfo/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/www/plugins/cordova-plugin-buildinfo/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/plugins/cordova-plugin-buildinfo/www/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/www/plugins/cordova-plugin-buildinfo/www/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/plugins/cordova-plugin-device/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/www/plugins/cordova-plugin-device/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/plugins/cordova-plugin-device/src/browser/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/www/plugins/cordova-plugin-device/src/browser/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/plugins/cordova-plugin-device/src/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/www/plugins/cordova-plugin-device/src/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/plugins/cordova-plugin-device/www/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/www/plugins/cordova-plugin-device/www/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/plugins/cordova-plugin-inappbrowser/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/www/plugins/cordova-plugin-inappbrowser/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/plugins/cordova-plugin-inappbrowser/src/browser/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/www/plugins/cordova-plugin-inappbrowser/src/browser/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/plugins/cordova-plugin-inappbrowser/src/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/www/plugins/cordova-plugin-inappbrowser/src/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/plugins/cordova-plugin-inappbrowser/www/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/www/plugins/cordova-plugin-inappbrowser/www/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/plugins/cordova-plugin-local-notification/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/www/plugins/cordova-plugin-local-notification/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/plugins/cordova-plugin-local-notification/www/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/www/plugins/cordova-plugin-local-notification/www/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/plugins/cordova-plugin-x-socialsharing/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/www/plugins/cordova-plugin-x-socialsharing/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/plugins/cordova-plugin-x-socialsharing/www/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/www/plugins/cordova-plugin-x-socialsharing/www/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/plugins/cordova-universal-links-plugin/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/www/plugins/cordova-universal-links-plugin/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/plugins/cordova-universal-links-plugin/www/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/www/plugins/cordova-universal-links-plugin/www/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/plugins/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/www/plugins/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/plugins/es6-promise-plugin/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/www/plugins/es6-promise-plugin/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/plugins/es6-promise-plugin/www/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/www/plugins/es6-promise-plugin/www/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/registro/desktop.ini" afterPath="$PROJECT_DIR$/platforms/browser/www/registro/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/desktop.ini" afterPath="$PROJECT_DIR$/platforms/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-background-mode/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-background-mode/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-background-mode/src/android/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-background-mode/src/android/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-background-mode/src/browser/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-background-mode/src/browser/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-background-mode/src/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-background-mode/src/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-background-mode/src/ios/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-background-mode/src/ios/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-background-mode/src/windows/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-background-mode/src/windows/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-background-mode/www/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-background-mode/www/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-badge/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-badge/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-badge/images/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-badge/images/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-badge/src/android/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-badge/src/android/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-badge/src/browser/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-badge/src/browser/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-badge/src/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-badge/src/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-badge/src/ios/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-badge/src/ios/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-badge/src/osx/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-badge/src/osx/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-badge/src/windows/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-badge/src/windows/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-badge/www/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-badge/www/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-browsertab/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-browsertab/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-browsertab/src/android/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-browsertab/src/android/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-browsertab/src/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-browsertab/src/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-browsertab/src/ios/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-browsertab/src/ios/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-browsertab/www/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-browsertab/www/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-buildinfo/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-buildinfo/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-buildinfo/scripts/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-buildinfo/scripts/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-buildinfo/src/android/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-buildinfo/src/android/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-buildinfo/src/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-buildinfo/src/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-buildinfo/src/ios/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-buildinfo/src/ios/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-buildinfo/src/windows/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-buildinfo/src/windows/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-buildinfo/tests/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-buildinfo/tests/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-buildinfo/www/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-buildinfo/www/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-compat/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-compat/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-compat/src/android/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-compat/src/android/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-compat/src/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-compat/src/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-device/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-device/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-device/doc/de/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-device/doc/de/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-device/doc/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-device/doc/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-device/doc/es/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-device/doc/es/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-device/doc/fr/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-device/doc/fr/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-device/doc/it/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-device/doc/it/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-device/doc/ja/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-device/doc/ja/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-device/doc/ko/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-device/doc/ko/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-device/doc/pl/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-device/doc/pl/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-device/doc/ru/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-device/doc/ru/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-device/doc/zh/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-device/doc/zh/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-device/src/android/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-device/src/android/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-device/src/blackberry10/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-device/src/blackberry10/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-device/src/browser/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-device/src/browser/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-device/src/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-device/src/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-device/src/firefoxos/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-device/src/firefoxos/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-device/src/ios/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-device/src/ios/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-device/src/osx/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-device/src/osx/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-device/src/tizen/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-device/src/tizen/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-device/src/ubuntu/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-device/src/ubuntu/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-device/src/windows/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-device/src/windows/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-device/src/wp/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-device/src/wp/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-device/tests/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-device/tests/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-device/types/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-device/types/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-device/www/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-device/www/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/doc/de/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/doc/de/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/doc/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/doc/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/doc/es/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/doc/es/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/doc/fr/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/doc/fr/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/doc/it/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/doc/it/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/doc/ja/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/doc/ja/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/doc/ko/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/doc/ko/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/doc/pl/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/doc/pl/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/doc/ru/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/doc/ru/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/doc/zh/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/doc/zh/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/src/amazon/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/src/amazon/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/src/android/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/src/android/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/src/android/res/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/src/android/res/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/src/android/res/drawable-hdpi/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/src/android/res/drawable-hdpi/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/src/android/res/drawable-mdpi/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/src/android/res/drawable-mdpi/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/src/android/res/drawable-xhdpi/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/src/android/res/drawable-xhdpi/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/src/android/res/drawable-xxhdpi/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/src/android/res/drawable-xxhdpi/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/src/blackberry10/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/src/blackberry10/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/src/blackberry10/doc/de/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/src/blackberry10/doc/de/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/src/blackberry10/doc/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/src/blackberry10/doc/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/src/blackberry10/doc/es/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/src/blackberry10/doc/es/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/src/blackberry10/doc/fr/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/src/blackberry10/doc/fr/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/src/blackberry10/doc/it/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/src/blackberry10/doc/it/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/src/blackberry10/doc/ja/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/src/blackberry10/doc/ja/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/src/blackberry10/doc/ko/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/src/blackberry10/doc/ko/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/src/blackberry10/doc/pl/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/src/blackberry10/doc/pl/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/src/blackberry10/doc/zh/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/src/blackberry10/doc/zh/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/src/browser/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/src/browser/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/src/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/src/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/src/firefoxos/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/src/firefoxos/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/src/ios/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/src/ios/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/src/osx/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/src/osx/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/src/ubuntu/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/src/ubuntu/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/src/windows/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/src/windows/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/src/wp/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/src/wp/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/tests/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/tests/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/tests/resources/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/tests/resources/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/types/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/types/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/www/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/www/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/www/windows8/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-inappbrowser/www/windows8/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/images/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/images/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/android/build/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/android/build/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/android/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/android/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/android/notification/action/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/android/notification/action/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/android/notification/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/android/notification/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/android/notification/receiver/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/android/notification/receiver/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/android/notification/trigger/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/android/notification/trigger/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/android/notification/util/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/android/notification/util/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/android/xml/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/android/xml/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/ios/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/ios/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/windows/LocalNotificationProxy/LocalNotificationProxy/LocalNotification/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/windows/LocalNotificationProxy/LocalNotificationProxy/LocalNotification/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/windows/LocalNotificationProxy/LocalNotificationProxy/Properties/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/windows/LocalNotificationProxy/LocalNotificationProxy/Properties/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/windows/LocalNotificationProxy/LocalNotificationProxy/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/windows/LocalNotificationProxy/LocalNotificationProxy/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/windows/LocalNotificationProxy/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/windows/LocalNotificationProxy/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/windows/Microsoft.Toolkit.Uwp.Notifications.Shared/Adaptive/BindableValues/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/windows/Microsoft.Toolkit.Uwp.Notifications.Shared/Adaptive/BindableValues/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/windows/Microsoft.Toolkit.Uwp.Notifications.Shared/Adaptive/Elements/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/windows/Microsoft.Toolkit.Uwp.Notifications.Shared/Adaptive/Elements/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/windows/Microsoft.Toolkit.Uwp.Notifications.Shared/Adaptive/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/windows/Microsoft.Toolkit.Uwp.Notifications.Shared/Adaptive/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/windows/Microsoft.Toolkit.Uwp.Notifications.Shared/Badges/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/windows/Microsoft.Toolkit.Uwp.Notifications.Shared/Badges/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/windows/Microsoft.Toolkit.Uwp.Notifications.Shared/Common/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/windows/Microsoft.Toolkit.Uwp.Notifications.Shared/Common/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/windows/Microsoft.Toolkit.Uwp.Notifications.Shared/Tiles/Elements/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/windows/Microsoft.Toolkit.Uwp.Notifications.Shared/Tiles/Elements/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/windows/Microsoft.Toolkit.Uwp.Notifications.Shared/Tiles/SpecialTemplates/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/windows/Microsoft.Toolkit.Uwp.Notifications.Shared/Tiles/SpecialTemplates/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/windows/Microsoft.Toolkit.Uwp.Notifications.Shared/Tiles/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/windows/Microsoft.Toolkit.Uwp.Notifications.Shared/Tiles/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/windows/Microsoft.Toolkit.Uwp.Notifications.Shared/Toasts/Elements/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/windows/Microsoft.Toolkit.Uwp.Notifications.Shared/Toasts/Elements/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/windows/Microsoft.Toolkit.Uwp.Notifications.Shared/Toasts/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/windows/Microsoft.Toolkit.Uwp.Notifications.Shared/Toasts/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/windows/Microsoft.Toolkit.Uwp.Notifications.Shared/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/windows/Microsoft.Toolkit.Uwp.Notifications.Shared/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/windows/Microsoft.Toolkit.Uwp.Notifications.UWP/Properties/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/windows/Microsoft.Toolkit.Uwp.Notifications.UWP/Properties/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/windows/Microsoft.Toolkit.Uwp.Notifications.UWP/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/windows/Microsoft.Toolkit.Uwp.Notifications.UWP/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/windows/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/windows/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/windows/lib.UW/ARM/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/windows/lib.UW/ARM/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/windows/lib.UW/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/windows/lib.UW/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/windows/lib.UW/x64/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/windows/lib.UW/x64/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/windows/lib.UW/x86/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/src/windows/lib.UW/x86/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/www/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-local-notification/www/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-whitelist/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-whitelist/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-whitelist/doc/de/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-whitelist/doc/de/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-whitelist/doc/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-whitelist/doc/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-whitelist/doc/es/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-whitelist/doc/es/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-whitelist/doc/fr/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-whitelist/doc/fr/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-whitelist/doc/it/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-whitelist/doc/it/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-whitelist/doc/ja/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-whitelist/doc/ja/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-whitelist/doc/ko/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-whitelist/doc/ko/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-whitelist/doc/pl/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-whitelist/doc/pl/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-whitelist/doc/zh/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-whitelist/doc/zh/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-whitelist/src/android/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-whitelist/src/android/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-whitelist/src/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-whitelist/src/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-x-socialsharing/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-x-socialsharing/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-x-socialsharing/src/android/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-x-socialsharing/src/android/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-x-socialsharing/src/android/nl/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-x-socialsharing/src/android/nl/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-x-socialsharing/src/android/nl/xservices/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-x-socialsharing/src/android/nl/xservices/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-x-socialsharing/src/android/nl/xservices/plugins/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-x-socialsharing/src/android/nl/xservices/plugins/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-x-socialsharing/src/android/res/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-x-socialsharing/src/android/res/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-x-socialsharing/src/android/res/xml/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-x-socialsharing/src/android/res/xml/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-x-socialsharing/src/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-x-socialsharing/src/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-x-socialsharing/src/ios/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-x-socialsharing/src/ios/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-x-socialsharing/src/windows/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-x-socialsharing/src/windows/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-x-socialsharing/src/wp8/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-x-socialsharing/src/wp8/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-plugin-x-socialsharing/www/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-x-socialsharing/www/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/docs/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/docs/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/docs/images/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/docs/images/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/hooks/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/hooks/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/hooks/lib/android/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/hooks/lib/android/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/hooks/lib/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/hooks/lib/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/hooks/lib/ios/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/hooks/lib/ios/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/node_modules/.bin/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/node_modules/.bin/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/node_modules/balanced-match/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/node_modules/balanced-match/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/node_modules/base64-js/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/node_modules/base64-js/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/node_modules/base64-js/test/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/node_modules/base64-js/test/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/node_modules/brace-expansion/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/node_modules/brace-expansion/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/node_modules/concat-map/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/node_modules/concat-map/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/node_modules/concat-map/example/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/node_modules/concat-map/example/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/node_modules/concat-map/test/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/node_modules/concat-map/test/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/node_modules/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/node_modules/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/node_modules/fs.realpath/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/node_modules/fs.realpath/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/node_modules/glob/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/node_modules/glob/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/node_modules/inflight/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/node_modules/inflight/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/node_modules/inherits/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/node_modules/inherits/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/node_modules/minimatch/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/node_modules/minimatch/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/node_modules/mkpath/test/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/node_modules/mkpath/test/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/node_modules/node-version-compare/test/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/node_modules/node-version-compare/test/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/node_modules/once/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/node_modules/once/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/node_modules/path-is-absolute/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/node_modules/path-is-absolute/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/node_modules/sax/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/node_modules/sax/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/node_modules/sax/lib/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/node_modules/sax/lib/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/node_modules/wrappy/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/node_modules/wrappy/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/node_modules/xml2js/node_modules/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/node_modules/xml2js/node_modules/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/node_modules/xml2js/node_modules/xmlbuilder/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/node_modules/xml2js/node_modules/xmlbuilder/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/node_modules/xml2js/node_modules/xmlbuilder/lib/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/node_modules/xml2js/node_modules/xmlbuilder/lib/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/node_modules/xmlbuilder/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/node_modules/xmlbuilder/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/node_modules/xmlbuilder/lib/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/node_modules/xmlbuilder/lib/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/node_modules/xmldom/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/node_modules/xmldom/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/src/android/com/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/src/android/com/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/src/android/com/nordnetab/cordova/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/src/android/com/nordnetab/cordova/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/src/android/com/nordnetab/cordova/ul/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/src/android/com/nordnetab/cordova/ul/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/src/android/com/nordnetab/cordova/ul/js/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/src/android/com/nordnetab/cordova/ul/js/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/src/android/com/nordnetab/cordova/ul/model/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/src/android/com/nordnetab/cordova/ul/model/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/src/android/com/nordnetab/cordova/ul/parser/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/src/android/com/nordnetab/cordova/ul/parser/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/src/android/com/nordnetab/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/src/android/com/nordnetab/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/src/android/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/src/android/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/src/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/src/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/src/ios/JS/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/src/ios/JS/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/src/ios/Model/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/src/ios/Model/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/src/ios/Parser/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/src/ios/Parser/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/src/ios/Utils/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/src/ios/Utils/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/src/ios/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/src/ios/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/ul_web_hooks/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/ul_web_hooks/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/www/desktop.ini" afterPath="$PROJECT_DIR$/plugins/cordova-universal-links-plugin/www/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/desktop.ini" afterPath="$PROJECT_DIR$/plugins/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/es6-promise-plugin/desktop.ini" afterPath="$PROJECT_DIR$/plugins/es6-promise-plugin/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugins/es6-promise-plugin/www/desktop.ini" afterPath="$PROJECT_DIR$/plugins/es6-promise-plugin/www/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/desktop.ini" afterPath="$PROJECT_DIR$/public/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/desktop.ini" afterPath="$PROJECT_DIR$/res/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/icon/android/desktop.ini" afterPath="$PROJECT_DIR$/res/icon/android/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/icon/bada-wac/desktop.ini" afterPath="$PROJECT_DIR$/res/icon/bada-wac/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/icon/bada/desktop.ini" afterPath="$PROJECT_DIR$/res/icon/bada/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/icon/blackberry/desktop.ini" afterPath="$PROJECT_DIR$/res/icon/blackberry/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/icon/blackberry10/desktop.ini" afterPath="$PROJECT_DIR$/res/icon/blackberry10/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/icon/desktop.ini" afterPath="$PROJECT_DIR$/res/icon/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/icon/ios/desktop.ini" afterPath="$PROJECT_DIR$/res/icon/ios/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/icon/tizen/desktop.ini" afterPath="$PROJECT_DIR$/res/icon/tizen/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/icon/webos/desktop.ini" afterPath="$PROJECT_DIR$/res/icon/webos/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/icon/windows-phone/desktop.ini" afterPath="$PROJECT_DIR$/res/icon/windows-phone/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/screen/android/desktop.ini" afterPath="$PROJECT_DIR$/res/screen/android/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/screen/bada-wac/desktop.ini" afterPath="$PROJECT_DIR$/res/screen/bada-wac/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/screen/bada/desktop.ini" afterPath="$PROJECT_DIR$/res/screen/bada/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/screen/blackberry/desktop.ini" afterPath="$PROJECT_DIR$/res/screen/blackberry/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/screen/blackberry10/desktop.ini" afterPath="$PROJECT_DIR$/res/screen/blackberry10/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/screen/desktop.ini" afterPath="$PROJECT_DIR$/res/screen/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/screen/ios/desktop.ini" afterPath="$PROJECT_DIR$/res/screen/ios/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/screen/tizen/desktop.ini" afterPath="$PROJECT_DIR$/res/screen/tizen/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/screen/webos/desktop.ini" afterPath="$PROJECT_DIR$/res/screen/webos/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/screen/windows-phone/desktop.ini" afterPath="$PROJECT_DIR$/res/screen/windows-phone/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ul_web_hooks/android/desktop.ini" afterPath="$PROJECT_DIR$/ul_web_hooks/android/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ul_web_hooks/desktop.ini" afterPath="$PROJECT_DIR$/ul_web_hooks/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/desktop.ini" afterPath="$PROJECT_DIR$/www/css/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/icon/desktop.ini" afterPath="$PROJECT_DIR$/www/icon/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/img/android/desktop.ini" afterPath="$PROJECT_DIR$/www/img/android/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/img/android/drawable-hdpi/desktop.ini" afterPath="$PROJECT_DIR$/www/img/android/drawable-hdpi/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/img/android/drawable-mdpi/desktop.ini" afterPath="$PROJECT_DIR$/www/img/android/drawable-mdpi/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/img/android/drawable-xhdpi/desktop.ini" afterPath="$PROJECT_DIR$/www/img/android/drawable-xhdpi/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/img/android/drawable-xxhdpi/desktop.ini" afterPath="$PROJECT_DIR$/www/img/android/drawable-xxhdpi/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/img/android/drawable-xxxhdpi/desktop.ini" afterPath="$PROJECT_DIR$/www/img/android/drawable-xxxhdpi/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/img/desktop.ini" afterPath="$PROJECT_DIR$/www/img/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/img/drawable/desktop.ini" afterPath="$PROJECT_DIR$/www/img/drawable/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/img/flags/desktop.ini" afterPath="$PROJECT_DIR$/www/img/flags/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/img/images/desktop.ini" afterPath="$PROJECT_DIR$/www/img/images/desktop.ini" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/cnsClearMap.js" afterPath="$PROJECT_DIR$/www/js/cnsClearMap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/conectar.js" afterPath="$PROJECT_DIR$/www/js/conectar.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/consultar.js" afterPath="$PROJECT_DIR$/www/js/consultar.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/index.js" afterPath="$PROJECT_DIR$/www/js/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/mapas.js" afterPath="$PROJECT_DIR$/www/js/mapas.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/mapaRuta.html" afterPath="$PROJECT_DIR$/www/mapaRuta.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/registro/desktop.ini" afterPath="$PROJECT_DIR$/www/registro/desktop.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xdk/desktop.ini" afterPath="$PROJECT_DIR$/xdk/desktop.ini" />
     </list>
     <ignored path="GuardianRouteWeb.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -759,7 +52,7 @@
       <file leaf-file-name="mapRouteDetail.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/mapRouteDetail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
+            <state relative-caret-position="0">
               <caret line="23" column="49" lean-forward="false" selection-start-line="23" selection-start-column="49" selection-end-line="23" selection-end-column="49" />
               <folding>
                 <element signature="n#style#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -785,11 +78,31 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="createUserSchool.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/createUserSchool.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="31" column="27" lean-forward="false" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="consultar.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/js/consultar.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="211">
+              <caret line="447" column="60" lean-forward="false" selection-start-line="447" selection-start-column="60" selection-end-line="447" selection-end-column="60" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="createEnterprise.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/createEnterprise.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-85">
+              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -798,8 +111,8 @@
       <file leaf-file-name="conectar.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/js/conectar.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1224">
-              <caret line="80" column="9" lean-forward="false" selection-start-line="80" selection-start-column="9" selection-end-line="80" selection-end-column="9" />
+            <state relative-caret-position="413">
+              <caret line="112" column="2" lean-forward="false" selection-start-line="112" selection-start-column="2" selection-end-line="112" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -808,8 +121,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
+            <state relative-caret-position="391">
+              <caret line="23" column="10" lean-forward="false" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -818,7 +131,7 @@
       <file leaf-file-name="mapaRuta.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/mapaRuta.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1590">
+            <state relative-caret-position="17">
               <caret line="105" column="99" lean-forward="false" selection-start-line="105" selection-start-column="99" selection-end-line="105" selection-end-column="99" />
               <folding>
                 <element signature="n#style#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -845,27 +158,17 @@
       <file leaf-file-name="mapas.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/js/mapas.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7710">
-              <caret line="521" column="44" lean-forward="false" selection-start-line="521" selection-start-column="44" selection-end-line="521" selection-end-column="44" />
+            <state relative-caret-position="17">
+              <caret line="661" column="20" lean-forward="false" selection-start-line="661" selection-start-column="4" selection-end-line="661" selection-end-column="20" />
               <folding>
-                <marker date="1526917255723" expanded="true" signature="14322:14328" ph="&amp;nbsp;" />
-                <marker date="1526917255723" expanded="true" signature="14328:14334" ph="&amp;nbsp;" />
-                <marker date="1526917255723" expanded="true" signature="14352:14358" ph="&amp;nbsp;" />
-                <marker date="1526917255723" expanded="true" signature="14358:14364" ph="&amp;nbsp;" />
-                <marker date="1526917255723" expanded="true" signature="15017:15052" ph="..." />
-                <marker date="1526917255723" expanded="true" signature="15118:15153" ph="..." />
-                <marker date="1526917255723" expanded="true" signature="15227:15262" ph="..." />
+                <marker date="1527275496145" expanded="true" signature="15733:15739" ph="&amp;nbsp;" />
+                <marker date="1527275496145" expanded="true" signature="15739:15745" ph="&amp;nbsp;" />
+                <marker date="1527275496145" expanded="true" signature="15763:15769" ph="&amp;nbsp;" />
+                <marker date="1527275496145" expanded="true" signature="15769:15775" ph="&amp;nbsp;" />
+                <marker date="1527275496145" expanded="true" signature="16428:16463" ph="..." />
+                <marker date="1527275496145" expanded="true" signature="16529:16564" ph="..." />
+                <marker date="1527275496145" expanded="true" signature="16638:16673" ph="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cnsClearMap.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/js/cnsClearMap.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="10727">
-              <caret line="631" column="19" lean-forward="false" selection-start-line="631" selection-start-column="19" selection-end-line="631" selection-end-column="19" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -874,26 +177,16 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>codeRouteSel</find>
-      <find>tblRtAlt</find>
-      <find>si</find>
-      <find>Si</find>
-      <find>myPositionRefreshRoute</find>
-      <find>centrar ru</find>
-      <find>myPositions</find>
-      <find>setInterval</find>
       <find>centerMap++</find>
       <find>5000</find>
       <find>centrar</find>
       <find>UltimaRuta</find>
       <find>registrar</find>
       <find>9</find>
-      <find>cnsDtStrFnsh</find>
       <find>centerMap</find>
       <find>markersDup</find>
       <find>ruta si</find>
       <find>entRoute</find>
-      <find>rutas</find>
       <find>JULIAN</find>
       <find>centrarM</find>
       <find>eliminarObjetosDuplicados</find>
@@ -901,10 +194,23 @@
       <find>myPositionsRefresh</find>
       <find>initma</find>
       <find>dataCar</find>
+      <find>rutas</find>
+      <find>routeNP = []</find>
+      <find>rutas = []</find>
+      <find>routeNP</find>
+      <find>myRoutes</find>
+      <find>icon</find>
+      <find>cnsDtStrFnsh</find>
+      <find>starandfinish</find>
+      <find>.tipo</find>
+      <find>direcciones</find>
+      <find>addRoute</find>
+      <find>myUserId</find>
+      <find>Callbacks</find>
     </findStrings>
     <dirStrings>
-      <dir>C:\Users\JULIAN Corp\Google Drive\NOVATEC\Personal\Apps\Guardian\GuardianRouteWeb\www</dir>
       <dir>C:\Users\JULIAN Corp\Google Drive\NOVATEC\Personal\Apps\Guardian\GuardianRouteWeb\www\js</dir>
+      <dir>C:\Users\JULIAN Corp\Google Drive\NOVATEC\Personal\Apps\Guardian\GuardianRouteWeb\www</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -923,7 +229,6 @@
         <option value="$PROJECT_DIR$/www/css/popup.css" />
         <option value="$PROJECT_DIR$/www/css/mapa.css" />
         <option value="$PROJECT_DIR$/www/css/index.css" />
-        <option value="$PROJECT_DIR$/www/js/conectar.js" />
         <option value="$PROJECT_DIR$/www/login.html" />
         <option value="$PROJECT_DIR$/www/index.html" />
         <option value="$PROJECT_DIR$/www/cerrarSesion.html" />
@@ -933,11 +238,12 @@
         <option value="$PROJECT_DIR$/www/createEnterprise.html" />
         <option value="$PROJECT_DIR$/www/mapaRutaSchool.html" />
         <option value="$PROJECT_DIR$/www/mapRouteDetail.html" />
-        <option value="$PROJECT_DIR$/www/js/cnsClearMap.js" />
-        <option value="$PROJECT_DIR$/www/js/consultar.js" />
         <option value="$PROJECT_DIR$/www/mapaRuta.html" />
-        <option value="$PROJECT_DIR$/www/js/index.js" />
         <option value="$PROJECT_DIR$/www/js/mapas.js" />
+        <option value="$PROJECT_DIR$/www/js/index.js" />
+        <option value="$PROJECT_DIR$/www/js/consultar.js" />
+        <option value="$PROJECT_DIR$/www/js/conectar.js" />
+        <option value="$PROJECT_DIR$/www/js/cnsClearMap.js" />
       </list>
     </option>
   </component>
@@ -947,6 +253,13 @@
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <annotation-enable>false</annotation-enable>
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
@@ -977,6 +290,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -999,9 +315,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1011,7 +324,6 @@
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
-    <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -1485,11 +797,16 @@
       <workItem from="1525810068506" duration="543000" />
       <workItem from="1526484857623" duration="10888000" />
       <workItem from="1526907489964" duration="7879000" />
+      <workItem from="1527081054068" duration="9895000" />
+      <workItem from="1527253598929" duration="3801000" />
+      <workItem from="1527372564975" duration="674000" />
+      <workItem from="1528474194981" duration="3561000" />
+      <workItem from="1528559060095" duration="3663000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="214894000" />
+    <option name="totallyTimeSpent" value="236488000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1580,13 +897,13 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1526917255723" expanded="true" signature="14322:14328" ph="&amp;nbsp;" />
-            <marker date="1526917255723" expanded="true" signature="14328:14334" ph="&amp;nbsp;" />
-            <marker date="1526917255723" expanded="true" signature="14352:14358" ph="&amp;nbsp;" />
-            <marker date="1526917255723" expanded="true" signature="14358:14364" ph="&amp;nbsp;" />
-            <marker date="1526917255723" expanded="true" signature="15017:15052" ph="..." />
-            <marker date="1526917255723" expanded="true" signature="15118:15153" ph="..." />
-            <marker date="1526917255723" expanded="true" signature="15227:15262" ph="..." />
+            <marker date="1527275496145" expanded="true" signature="15733:15739" ph="&amp;nbsp;" />
+            <marker date="1527275496145" expanded="true" signature="15739:15745" ph="&amp;nbsp;" />
+            <marker date="1527275496145" expanded="true" signature="15763:15769" ph="&amp;nbsp;" />
+            <marker date="1527275496145" expanded="true" signature="15769:15775" ph="&amp;nbsp;" />
+            <marker date="1527275496145" expanded="true" signature="16428:16463" ph="..." />
+            <marker date="1527275496145" expanded="true" signature="16529:16564" ph="..." />
+            <marker date="1527275496145" expanded="true" signature="16638:16673" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1637,13 +954,13 @@
         <state relative-caret-position="3298">
           <caret line="194" column="96" lean-forward="false" selection-start-line="194" selection-start-column="96" selection-end-line="194" selection-end-column="96" />
           <folding>
-            <marker date="1526917255723" expanded="true" signature="14322:14328" ph="&amp;nbsp;" />
-            <marker date="1526917255723" expanded="true" signature="14328:14334" ph="&amp;nbsp;" />
-            <marker date="1526917255723" expanded="true" signature="14352:14358" ph="&amp;nbsp;" />
-            <marker date="1526917255723" expanded="true" signature="14358:14364" ph="&amp;nbsp;" />
-            <marker date="1526917255723" expanded="true" signature="15017:15052" ph="..." />
-            <marker date="1526917255723" expanded="true" signature="15118:15153" ph="..." />
-            <marker date="1526917255723" expanded="true" signature="15227:15262" ph="..." />
+            <marker date="1527275496145" expanded="true" signature="15733:15739" ph="&amp;nbsp;" />
+            <marker date="1527275496145" expanded="true" signature="15739:15745" ph="&amp;nbsp;" />
+            <marker date="1527275496145" expanded="true" signature="15763:15769" ph="&amp;nbsp;" />
+            <marker date="1527275496145" expanded="true" signature="15769:15775" ph="&amp;nbsp;" />
+            <marker date="1527275496145" expanded="true" signature="16428:16463" ph="..." />
+            <marker date="1527275496145" expanded="true" signature="16529:16564" ph="..." />
+            <marker date="1527275496145" expanded="true" signature="16638:16673" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1701,13 +1018,13 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1526917255723" expanded="true" signature="14322:14328" ph="&amp;nbsp;" />
-            <marker date="1526917255723" expanded="true" signature="14328:14334" ph="&amp;nbsp;" />
-            <marker date="1526917255723" expanded="true" signature="14352:14358" ph="&amp;nbsp;" />
-            <marker date="1526917255723" expanded="true" signature="14358:14364" ph="&amp;nbsp;" />
-            <marker date="1526917255723" expanded="true" signature="15017:15052" ph="..." />
-            <marker date="1526917255723" expanded="true" signature="15118:15153" ph="..." />
-            <marker date="1526917255723" expanded="true" signature="15227:15262" ph="..." />
+            <marker date="1527275496145" expanded="true" signature="15733:15739" ph="&amp;nbsp;" />
+            <marker date="1527275496145" expanded="true" signature="15739:15745" ph="&amp;nbsp;" />
+            <marker date="1527275496145" expanded="true" signature="15763:15769" ph="&amp;nbsp;" />
+            <marker date="1527275496145" expanded="true" signature="15769:15775" ph="&amp;nbsp;" />
+            <marker date="1527275496145" expanded="true" signature="16428:16463" ph="..." />
+            <marker date="1527275496145" expanded="true" signature="16529:16564" ph="..." />
+            <marker date="1527275496145" expanded="true" signature="16638:16673" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1732,13 +1049,13 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1526917255723" expanded="true" signature="14322:14328" ph="&amp;nbsp;" />
-            <marker date="1526917255723" expanded="true" signature="14328:14334" ph="&amp;nbsp;" />
-            <marker date="1526917255723" expanded="true" signature="14352:14358" ph="&amp;nbsp;" />
-            <marker date="1526917255723" expanded="true" signature="14358:14364" ph="&amp;nbsp;" />
-            <marker date="1526917255723" expanded="true" signature="15017:15052" ph="..." />
-            <marker date="1526917255723" expanded="true" signature="15118:15153" ph="..." />
-            <marker date="1526917255723" expanded="true" signature="15227:15262" ph="..." />
+            <marker date="1527275496145" expanded="true" signature="15733:15739" ph="&amp;nbsp;" />
+            <marker date="1527275496145" expanded="true" signature="15739:15745" ph="&amp;nbsp;" />
+            <marker date="1527275496145" expanded="true" signature="15763:15769" ph="&amp;nbsp;" />
+            <marker date="1527275496145" expanded="true" signature="15769:15775" ph="&amp;nbsp;" />
+            <marker date="1527275496145" expanded="true" signature="16428:16463" ph="..." />
+            <marker date="1527275496145" expanded="true" signature="16529:16564" ph="..." />
+            <marker date="1527275496145" expanded="true" signature="16638:16673" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1771,13 +1088,13 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1526917255723" expanded="true" signature="14322:14328" ph="&amp;nbsp;" />
-            <marker date="1526917255723" expanded="true" signature="14328:14334" ph="&amp;nbsp;" />
-            <marker date="1526917255723" expanded="true" signature="14352:14358" ph="&amp;nbsp;" />
-            <marker date="1526917255723" expanded="true" signature="14358:14364" ph="&amp;nbsp;" />
-            <marker date="1526917255723" expanded="true" signature="15017:15052" ph="..." />
-            <marker date="1526917255723" expanded="true" signature="15118:15153" ph="..." />
-            <marker date="1526917255723" expanded="true" signature="15227:15262" ph="..." />
+            <marker date="1527275496145" expanded="true" signature="15733:15739" ph="&amp;nbsp;" />
+            <marker date="1527275496145" expanded="true" signature="15739:15745" ph="&amp;nbsp;" />
+            <marker date="1527275496145" expanded="true" signature="15763:15769" ph="&amp;nbsp;" />
+            <marker date="1527275496145" expanded="true" signature="15769:15775" ph="&amp;nbsp;" />
+            <marker date="1527275496145" expanded="true" signature="16428:16463" ph="..." />
+            <marker date="1527275496145" expanded="true" signature="16529:16564" ph="..." />
+            <marker date="1527275496145" expanded="true" signature="16638:16673" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1802,13 +1119,13 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1526917255723" expanded="true" signature="14322:14328" ph="&amp;nbsp;" />
-            <marker date="1526917255723" expanded="true" signature="14328:14334" ph="&amp;nbsp;" />
-            <marker date="1526917255723" expanded="true" signature="14352:14358" ph="&amp;nbsp;" />
-            <marker date="1526917255723" expanded="true" signature="14358:14364" ph="&amp;nbsp;" />
-            <marker date="1526917255723" expanded="true" signature="15017:15052" ph="..." />
-            <marker date="1526917255723" expanded="true" signature="15118:15153" ph="..." />
-            <marker date="1526917255723" expanded="true" signature="15227:15262" ph="..." />
+            <marker date="1527275496145" expanded="true" signature="15733:15739" ph="&amp;nbsp;" />
+            <marker date="1527275496145" expanded="true" signature="15739:15745" ph="&amp;nbsp;" />
+            <marker date="1527275496145" expanded="true" signature="15763:15769" ph="&amp;nbsp;" />
+            <marker date="1527275496145" expanded="true" signature="15769:15775" ph="&amp;nbsp;" />
+            <marker date="1527275496145" expanded="true" signature="16428:16463" ph="..." />
+            <marker date="1527275496145" expanded="true" signature="16529:16564" ph="..." />
+            <marker date="1527275496145" expanded="true" signature="16638:16673" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1833,13 +1150,13 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1526917255723" expanded="true" signature="14322:14328" ph="&amp;nbsp;" />
-            <marker date="1526917255723" expanded="true" signature="14328:14334" ph="&amp;nbsp;" />
-            <marker date="1526917255723" expanded="true" signature="14352:14358" ph="&amp;nbsp;" />
-            <marker date="1526917255723" expanded="true" signature="14358:14364" ph="&amp;nbsp;" />
-            <marker date="1526917255723" expanded="true" signature="15017:15052" ph="..." />
-            <marker date="1526917255723" expanded="true" signature="15118:15153" ph="..." />
-            <marker date="1526917255723" expanded="true" signature="15227:15262" ph="..." />
+            <marker date="1527275496145" expanded="true" signature="15733:15739" ph="&amp;nbsp;" />
+            <marker date="1527275496145" expanded="true" signature="15739:15745" ph="&amp;nbsp;" />
+            <marker date="1527275496145" expanded="true" signature="15763:15769" ph="&amp;nbsp;" />
+            <marker date="1527275496145" expanded="true" signature="15769:15775" ph="&amp;nbsp;" />
+            <marker date="1527275496145" expanded="true" signature="16428:16463" ph="..." />
+            <marker date="1527275496145" expanded="true" signature="16529:16564" ph="..." />
+            <marker date="1527275496145" expanded="true" signature="16638:16673" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1857,13 +1174,13 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1526917255723" expanded="true" signature="14322:14328" ph="&amp;nbsp;" />
-            <marker date="1526917255723" expanded="true" signature="14328:14334" ph="&amp;nbsp;" />
-            <marker date="1526917255723" expanded="true" signature="14352:14358" ph="&amp;nbsp;" />
-            <marker date="1526917255723" expanded="true" signature="14358:14364" ph="&amp;nbsp;" />
-            <marker date="1526917255723" expanded="true" signature="15017:15052" ph="..." />
-            <marker date="1526917255723" expanded="true" signature="15118:15153" ph="..." />
-            <marker date="1526917255723" expanded="true" signature="15227:15262" ph="..." />
+            <marker date="1527275496145" expanded="true" signature="15733:15739" ph="&amp;nbsp;" />
+            <marker date="1527275496145" expanded="true" signature="15739:15745" ph="&amp;nbsp;" />
+            <marker date="1527275496145" expanded="true" signature="15763:15769" ph="&amp;nbsp;" />
+            <marker date="1527275496145" expanded="true" signature="15769:15775" ph="&amp;nbsp;" />
+            <marker date="1527275496145" expanded="true" signature="16428:16463" ph="..." />
+            <marker date="1527275496145" expanded="true" signature="16529:16564" ph="..." />
+            <marker date="1527275496145" expanded="true" signature="16638:16673" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1881,13 +1198,13 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1526917255723" expanded="true" signature="14322:14328" ph="&amp;nbsp;" />
-            <marker date="1526917255723" expanded="true" signature="14328:14334" ph="&amp;nbsp;" />
-            <marker date="1526917255723" expanded="true" signature="14352:14358" ph="&amp;nbsp;" />
-            <marker date="1526917255723" expanded="true" signature="14358:14364" ph="&amp;nbsp;" />
-            <marker date="1526917255723" expanded="true" signature="15017:15052" ph="..." />
-            <marker date="1526917255723" expanded="true" signature="15118:15153" ph="..." />
-            <marker date="1526917255723" expanded="true" signature="15227:15262" ph="..." />
+            <marker date="1527275496145" expanded="true" signature="15733:15739" ph="&amp;nbsp;" />
+            <marker date="1527275496145" expanded="true" signature="15739:15745" ph="&amp;nbsp;" />
+            <marker date="1527275496145" expanded="true" signature="15763:15769" ph="&amp;nbsp;" />
+            <marker date="1527275496145" expanded="true" signature="15769:15775" ph="&amp;nbsp;" />
+            <marker date="1527275496145" expanded="true" signature="16428:16463" ph="..." />
+            <marker date="1527275496145" expanded="true" signature="16529:16564" ph="..." />
+            <marker date="1527275496145" expanded="true" signature="16638:16673" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1970,51 +1287,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/createEnterprise.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="106" column="7" lean-forward="false" selection-start-line="106" selection-start-column="7" selection-end-line="106" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/createUserSchool.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="83" column="103" lean-forward="false" selection-start-line="83" selection-start-column="103" selection-end-line="83" selection-end-column="103" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/conectar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1224">
-          <caret line="80" column="9" lean-forward="false" selection-start-line="80" selection-start-column="9" selection-end-line="80" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/mapaRutaSchool.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1309">
-          <caret line="77" column="45" lean-forward="false" selection-start-line="77" selection-start-column="28" selection-end-line="77" selection-end-column="45" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/cnsClearMap.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10727">
-          <caret line="631" column="19" lean-forward="false" selection-start-line="631" selection-start-column="19" selection-end-line="631" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/mapRouteDetail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
+        <state relative-caret-position="0">
           <caret line="23" column="49" lean-forward="false" selection-start-line="23" selection-start-column="49" selection-end-line="23" selection-end-column="49" />
           <folding>
             <element signature="n#style#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -2025,25 +1300,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/consultar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/mapaRuta.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1590">
+        <state relative-caret-position="17">
           <caret line="105" column="99" lean-forward="false" selection-start-line="105" selection-start-column="99" selection-end-line="105" selection-end-column="99" />
           <folding>
             <element signature="n#style#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -2066,18 +1325,78 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="10" lean-forward="false" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/createEnterprise.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-85">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/conectar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="112" column="2" lean-forward="false" selection-start-line="112" selection-start-column="2" selection-end-line="112" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/consultar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="447" column="60" lean-forward="false" selection-start-line="447" selection-start-column="60" selection-end-line="447" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/mapaRutaSchool.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1309">
+          <caret line="77" column="45" lean-forward="false" selection-start-line="77" selection-start-column="28" selection-end-line="77" selection-end-column="45" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/createUserSchool.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="31" column="27" lean-forward="false" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/cnsClearMap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="439" column="0" lean-forward="false" selection-start-line="439" selection-start-column="0" selection-end-line="439" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/www/js/mapas.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7710">
-          <caret line="521" column="44" lean-forward="false" selection-start-line="521" selection-start-column="44" selection-end-line="521" selection-end-column="44" />
+        <state relative-caret-position="17">
+          <caret line="661" column="20" lean-forward="false" selection-start-line="661" selection-start-column="4" selection-end-line="661" selection-end-column="20" />
           <folding>
-            <marker date="1526917255723" expanded="true" signature="14322:14328" ph="&amp;nbsp;" />
-            <marker date="1526917255723" expanded="true" signature="14328:14334" ph="&amp;nbsp;" />
-            <marker date="1526917255723" expanded="true" signature="14352:14358" ph="&amp;nbsp;" />
-            <marker date="1526917255723" expanded="true" signature="14358:14364" ph="&amp;nbsp;" />
-            <marker date="1526917255723" expanded="true" signature="15017:15052" ph="..." />
-            <marker date="1526917255723" expanded="true" signature="15118:15153" ph="..." />
-            <marker date="1526917255723" expanded="true" signature="15227:15262" ph="..." />
+            <marker date="1527275496145" expanded="true" signature="15733:15739" ph="&amp;nbsp;" />
+            <marker date="1527275496145" expanded="true" signature="15739:15745" ph="&amp;nbsp;" />
+            <marker date="1527275496145" expanded="true" signature="15763:15769" ph="&amp;nbsp;" />
+            <marker date="1527275496145" expanded="true" signature="15769:15775" ph="&amp;nbsp;" />
+            <marker date="1527275496145" expanded="true" signature="16428:16463" ph="..." />
+            <marker date="1527275496145" expanded="true" signature="16529:16564" ph="..." />
+            <marker date="1527275496145" expanded="true" signature="16638:16673" ph="..." />
           </folding>
         </state>
       </provider>

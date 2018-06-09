@@ -22,6 +22,7 @@ var msgAlerts = [];
 var alertas = ['¡Estamos en un congestión vehicular grave!', '¡Sufrimos un accidente!', '¡Tenemos un daño mecánico!'];
 var shape = {coords: [0, 0, 50], type: 'circle'};
 var starandfinish = [];
+var routeNP = [];
 
 $(document).ready(function() {
 
@@ -76,31 +77,65 @@ function myRoutes() {
     }
 }
 
+function driversNRoutes() {
+    if( routeNP.length <= 0 ) {
+        var markTemp = [];
+        var drivers = [];
+        var datos = conn.database().ref("drivervstravel");
+        datos.orderByValue().on("value", function (snapshot) {
+            snapshot.forEach(function (data) {
+                var rutaCns = data.key;
+                drivers.push(rutaCns);
+            });
+        });
+        var conductor;
+        for (var i = 0; i < drivers.length; i++) {
+            conductor = drivers[i];
+            if (conductor == '[object Object]') {
+                continue;
+            }
+            var datos = conn.database().ref("drivervstravel/" + conductor);
+            datos.orderByValue().on("value", function (snapshot) {
+                snapshot.forEach(function (data) {
+                    var rutaCns = data.val();
+                    var obj = new Object();
+                    obj.id = rutaCns.id;
+                    obj.name = rutaCns.name;
+                    obj.placa = rutaCns.placa;
+                    markTemp.push(obj);
+                });
+            });
+        }
+        routeNP = markTemp;
+    }
+}
+
+
 function myPositions() {
     infoWindow = new google.maps.InfoWindow({map: map});
     var markTemp = [];
-    var datos = conn.database().ref("drivervstravel");
-    datos.orderByValue().on("value", function (snapshot) {
-        snapshot.forEach(function (data) {
-            var rutaCns = data.val();
-            markTemp.push(rutaCns);
-        });
-    });
+    markTemp = routeNP;
     var markTempX = [];
     for (var i = 0; i < markTemp.length; i++) {
+        //console.log("obj.id: " + markTemp[i].id + " obj.placa: " + markTemp[i].placa);
+/*
+        var jsonString = Object.keys(markTemp[i]);
+        var indice = jsonString[0];
+        var jsonString = JSON.stringify(markTemp[i], [indice, 'id', 'placa', 'name']);
+        var res = JSON.parse(jsonString);
+*/
         for (var j = 0; j < rutas.length; j++) {
-            var jsonString = Object.keys(markTemp[i]);
-            var indice = jsonString[0];
-            var jsonString = JSON.stringify(markTemp[i], [indice, 'id', 'placa', 'name']);
-            var res = JSON.parse(jsonString);
-            if (res[indice]['placa'] == rutas[j]) {
+//            if (res[indice]['placa'] == rutas[j]) {
+            if (markTemp[i].placa == rutas[j]) {
+//                console.log("starandfinish.length: " + starandfinish.length);
                 var objT = new Object();
                 for(var l = 0; l < starandfinish.length; l++) {
-                    if( res[indice]['id'] == starandfinish[l].ruta ) {
-//                        console.log("Ruta Si: " + starandfinish[l].ruta);
-                        objT.ruta = res[indice]['id'];
-                        objT.placa = res[indice]['placa'];
-                        objT.nombre = res[indice]['name'];
+                    if( markTemp[i].id == starandfinish[l].ruta ) {
+//                        console.log("Ruta Si: " + starandfinish[l].ruta + " Nombre: " + markTemp[i].name + " Placa: " + markTemp[i].placa);
+                        objT.ruta = markTemp[i].id;
+                        objT.placa = markTemp[i].placa;
+                        objT.nombre = markTemp[i].name;
+                        objT.destino =  starandfinish[l].tipo;
                         objT.act = "ok";
                         markTempX.push(objT);
                     }
@@ -117,17 +152,19 @@ function myPositions() {
             }
         }
         if( ofCourse == 'no' ) {
-//            console.log("Ruta notOk: " + res[indice]['placa']);
             for (var l = 0; l < markTemp.length; l++) {
+/*
                 var jsonString = Object.keys(markTemp[l]);
                 var indice = jsonString[0];
                 var jsonString = JSON.stringify(markTemp[l], [indice, 'id', 'placa', 'name']);
                 var res = JSON.parse(jsonString);
-                if (res[indice]['placa'] == rutas[i]) {
+*/
+                if (markTemp[l].placa == rutas[i]) {
                     var objT = new Object();
-                    objT.ruta = res[indice]['id'];
-                    objT.placa = res[indice]['placa'];
-                    objT.nombre = res[indice]['name'];
+                    objT.ruta = markTemp[l].id;
+                    objT.placa = markTemp[l].placa;
+                    objT.nombre = markTemp[l].name;
+                    objT.destino =  "Sin definir";
                     objT.act = "notOk";
                     markTempX.push(objT);
                 }
@@ -150,6 +187,7 @@ function myPositions() {
                     obj.marca = reg.marca;
                     obj.modelo = reg.modelo;
                     obj.velocidad = reg.velocidad;
+                    obj.destino = markTempX[i].destino;
                     obj.act = 'Activa';
                     if( markTempX[i].act == 'notOk' ) {
                         obj.nombre = 'Ruta en transito';
@@ -242,6 +280,7 @@ function posicionActual() {
     getVar = getGET();
     cnsDtStrFnsh();
     myRoutes();
+    driversNRoutes();
     if (getVar != undefined) {
         var dataUrl = getVar;
         if( dataUrl[0] != undefined ) codeRouteSel = dataUrl[0];
@@ -279,7 +318,9 @@ function posicionActual() {
 function listVehicle() {
     markers = [];
     rutas = [];
+    routeNP = [];
     myRoutes();
+    driversNRoutes();
     posicionActual();
     var liNew;
     var j = 0;
@@ -300,6 +341,7 @@ function listVehicle() {
 function listVehicleCns() {
     markers = [];
     rutas = [];
+    routeNP = [];
     posicionActual();
     var liNew;
     for( var x = 0; x < markers.length; x++ ) {
@@ -335,6 +377,7 @@ function applyStyle(list) {
 function listVehicleDelete() {
     markers = [];
     rutas = [];
+    routeNP = [];
     posicionActual();
     var j = 0;
     for(var x = 0; x < markers.length; x++ ) {
@@ -385,7 +428,7 @@ function myPositionsRefresh(positions) {
         var marcador = new google.maps.Marker( {
                 position: myLatlng,
                 map: map,
-                title: 'Ruta: ' + pos.nombre + ', Placa: ' + pos.placa + ", Dir: " + direcciones[i],
+                title: 'Ruta: ' + pos.nombre + ', Placa: ' + pos.placa + ", Dir: " + direcciones[i] + ", Destino: " + pos.destino,
                 icon: image,
                 shape: shape,
                 zIndex: i
@@ -467,6 +510,9 @@ function mapUsersRoute() {
             var obj = new Object();
             obj.nombre = dataUsers.childname;
             obj.icon = dataUsers.icon;
+            if(obj.icon == undefined){
+                obj.icon = 'marketend';
+            }
             obj.latitud = dataUsers.latitud;
             obj.longitud = dataUsers.longitud;
             obj.phone = dataUsers.phone;
@@ -490,8 +536,8 @@ function myPositionsRefreshChild(positions) {
     for (var i = 0; i < positions.length; i++) {
         var pos = positions[i];
         var image = {
-//            url: '../img/android/drawable-mdpi/' + pos.icon + '.png',
-            url: '../img/android/drawable-mdpi/avatarcir5.png',
+            url: '../img/android/drawable-mdpi/' + pos.icon + '.png',
+//            url: '../img/android/drawable-mdpi/avatarcir5.png',
             size: new google.maps.Size(39, 39),
             origin: new google.maps.Point(0, 0),
             anchor: new google.maps.Point(0, 39)
@@ -586,6 +632,7 @@ function startSelectRoute(plateRoute, codeRoute, nameRoute) {
     markers = [];
     markersDup = [];
     rutas = [];
+    routeNP = [];
     var url = "mapRouteDetail.html?routeSel=" + codeRouteSel + "&routeName=" + nameRouteSel + "&routePlate=" + plateRouteSel + "&typeRouteMap=" + typeRouteMap;
     openeNewTab(url);
 }
@@ -682,9 +729,13 @@ function cnsDtStrFnsh() {
         snapshot.forEach(function (data) {
             var obj = new Object();
             var dat = data.val();
-            if (dat.estado > 0) {
+            if (dat.estado == 1) {
                 obj.ruta = data.key;
                 obj.estado = dat.estado;
+                obj.tipo = "";
+                if( dat.tipo == 1 ){ obj.tipo = "Colegio" }
+                if( dat.tipo == 2 ){ obj.tipo = "Entrega" }
+//            console.log('Estado: ' + dat.estado + ', Ruta: ' + obj.ruta);
                 starandfinish.push(obj);
             }
         });
