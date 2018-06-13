@@ -106,9 +106,10 @@ function registroDatos() {
     } else {
         cnsEntGroup(codRutaTmp);
         if( registrado == 0 ) {
-            msjError = 'Codigo de ruta no existente';
+            msjError = "Codigo de ruta " + codRutaTmp + " no existente";
             formatoMsjDialog("dataError6", msjError);
             codRutaTmp = "";
+            return;
         }
     }
     if( userName != "" && userLastName != "" && userCellPhone != "" && codRutaTmp != "" && paisSel != "" ) {
@@ -216,10 +217,10 @@ function csnRouteEnt(ruta) {
             elem.textContent = "Vehiculo encontrado: " + ruta;
             elem.setAttribute("style", "color: #000000");
             var elemB = document.getElementById("btnARDialog");
-            elemB.removeAttribute("disabled");
+            if( elemB != undefined ) elemB.removeAttribute("disabled");
             var elemR = document.getElementById("routeFindRem");
-            elemR.textContent = "Vehiculo encontrado: " + ruta;
-            elemR.setAttribute("style", "color: #000000");
+            if( elemR != undefined ) elemR.textContent = "Vehiculo encontrado: " + ruta;
+            if( elemR != undefined ) elemR.setAttribute("style", "color: #000000");
         } );
     } );    
     if( srRoute == 0 ) {
@@ -335,16 +336,12 @@ function cnsRouteExistEnt(myUseridTmp, routeCodeTmp) {
 function cnsEntGroup(codEmpresa) {
     intentos = 0;
     registrado = 0;
-    initApp();
-    if( myUserId == "" ){ initApp(); }
-    if( myUserId == "" ){ initApp(); }
-    if( myUserId == "" ){ initApp(); }
     var datos = conn.database().ref( "entGroup/" + codEmpresa );
     datos.orderByValue().on( "value", function( snapshot ) {
         snapshot.forEach( function( data ) {
             registrado++;
             entUser = data.key;
-//            alert("Empresa Existente:" + entUser);
+            return;
         } );
     } );    
 }
@@ -445,12 +442,8 @@ function cnsUserExistEnt() {
     intentos = 0;
     registrado = 0;
     if( myUserId == "" ) { initApp(); }
-    if( myUserId == "" || myUserId == undefined ) {
-        console.log("myUserIdJulito: " + myUserId);
-        return;
-    }
+    if( myUserId == "" || myUserId == undefined ) { return; }
     var datos = conn.database().ref( "entUser/" + myUserId );
-    console.log("myUserId: " + datos);
     datos.orderByValue().on( "value", function( snapshot ) {
         snapshot.forEach( function( data ) {
             registrado++;
@@ -659,10 +652,14 @@ function confirmaAddRoute() {
 
 function sendNotification(who) {
     var msg = $('#notificacion').val();
+    var hora = new Date();
+    var meridiano = hora.getHours()>12?"p.m.":"a.m.";
+    var momento = hora.getHours() + ":" + hora.getMinutes() + " " + meridiano;
     if (who == "forMe") {
         var datos = conn.database().ref("alert/" + codeRouteSel);
         datos.set({
             type: 9,
+            hour: momento,
             message: msg,
             sended: 0
         }).then(function () {
@@ -684,6 +681,7 @@ function sendNotification(who) {
                 var datos = conn.database().ref("alert/" + codeRouteSelect);
                 datos.set({
                     type: 9,
+                    hour: momento,
                     message: msg,
                     sended: 0
                 }).then(function () {

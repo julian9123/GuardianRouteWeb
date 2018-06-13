@@ -108,9 +108,12 @@ function initApp() {
     }, function( error ) {
       console.log("Error Login:" + error);
     } );
-    if(obj.myUserId == ""  || obj.myUserId == undefined){ setTimeout( initApp, 1000 ); }
+    if(myUserId == ""  || myUserId == undefined){
+        setTimeout( initApp, 1000 );
+        console.log(new Date() + myUserId + new Date());
+    }
     objCnx.push(obj);
-    console.log("IntentoXXX: " + obj.myUserId);
+//    console.log(myUserId + "" + myUserId + "" + myUserId);
     return myUserId;
 }
 

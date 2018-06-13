@@ -189,9 +189,11 @@ function myPositions() {
                     obj.velocidad = reg.velocidad;
                     obj.destino = markTempX[i].destino;
                     obj.act = 'Activa';
+                    obj.imagen = 'marcaruta';
                     if( markTempX[i].act == 'notOk' ) {
                         obj.nombre = 'Ruta en transito';
                         obj.act = 'En transito';
+                        obj.imagen = 'marcadorgris';
                     }
 //                    obj.url = "https://www.youtube.com/watch?v=bmtbg5b7_Aw";
                     markers.push(obj);
@@ -387,7 +389,7 @@ function listVehicleDelete() {
         var textLi = markers[x].ruta + " - " + markers[x].nombre;
         var btnClick = " <button class='btn_add spaceList' id='" + markers[x].placa + "' onclick='remRouteList(this.id)'>Eliminar</button>";
         if(find_li(textLi, "listaVehiculosDel")) {
-            liNew.innerHTML = "&nbsp;ASD11" + x + " - " + textLi + btnClick;
+            liNew.innerHTML = "&nbsp;" + markers[x].placa + x + " - " + textLi + btnClick;
             document.getElementById("listaVehiculosDel").appendChild(liNew);
         }
     }
@@ -410,16 +412,16 @@ function find_li(content, list) {
 }
 
 function myPositionsRefresh(positions) {
-    var image = {
-        url: '../img/android/drawable-mdpi/marcaruta.png',
-        size: new google.maps.Size(29, 39),
-        origin: new google.maps.Point(0, 0),
-        anchor: new google.maps.Point(0, 29)
-    };
 //    var shape = {coords: [1, 1, 1, 20, 18, 20, 18, 1], type: 'poly'};
     var limites = new google.maps.LatLngBounds();
     for (var i = 0; i < positions.length; i++) {
         var pos = positions[i];
+        var image = {
+            url: '../img/android/drawable-mdpi/' + pos.imagen + '.png',
+            size: new google.maps.Size(29, 39),
+            origin: new google.maps.Point(0, 0),
+            anchor: new google.maps.Point(0, 29)
+        };
         var geocoder = new google.maps.Geocoder;
         var myLatlng = new google.maps.LatLng(pos.latitud, pos.longitud);
         geocodeLatLng(geocoder, myLatlng, i);
@@ -681,7 +683,6 @@ function cnsAlerts() {
     var datos = conn.database().ref(tblRtAlt[0]);
     var ind = rutas.length;
     var i = 0;
-    msgAlerts = [];
     var currentDiv = document.getElementById('dtsAlertParent');
     var dts;
     currentDiv.style.display='block';

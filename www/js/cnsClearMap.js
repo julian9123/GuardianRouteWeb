@@ -328,14 +328,13 @@ function cnsRouteExistEnt(myUseridTmp, routeCodeTmp) {
 function cnsSchGroup(codSchool) {
     intentos = 0;
     registrado = 0;
-    if( myUserId == "" ){ initApp(); }
-    if( myUserId == "" ){ initApp(); }
-    if( myUserId == "" ){ initApp(); }
     var datos = conn.database().ref( "schGroup/" + codSchool );
+    console.log("datos: " + datos);
     datos.orderByValue().on( "value", function( snapshot ) {
         snapshot.forEach( function( data ) {
             registrado++;
             entUser = data.key;
+            console.log("registrado: " + registrado);
         } );
     } );    
 }
@@ -437,6 +436,7 @@ function cnsUserExistShc() {
     registrado = 0;
     if( myUserId == "" ) { initApp(); }
     if( myUserId == "" || myUserId == undefined ) { return; }
+    console.log(myUserId + "" + myUserId + "" + myUserId);
     var datos = conn.database().ref( "schUser/" + myUserId );
     datos.orderByValue().on( "value", function( snapshot ) {
         snapshot.forEach( function( data ) {
