@@ -20,6 +20,7 @@ var limitLoops = 3;
 var direcciones = [];
 var msgAlerts = [];
 var alertas = ['¡Estamos en un congestión vehicular grave!', '¡Sufrimos un accidente!', '¡Tenemos un daño mecánico!'];
+var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
 var shape = {coords: [0, 0, 50], type: 'circle'};
 var starandfinish = [];
 var routeNP = [];
@@ -613,29 +614,15 @@ function startSelectRoute(plateRoute, codeRoute, nameRoute) {
     codeRouteSel = codeRoute;
     nameRouteSel = nameRoute;
     plateRouteSel = plateRoute;
-
-/*
-    var datos = conn.database().ref("entGroup/" + codRuta );
-    datos.set({  dir: "Calle " + codRuta,
-        est: 1,
-        fecreg: fecha,
-        nit: "80000000",
-        tel: "300456889",
-        nom: "Empresa " + codRuta,
-        entCode: codRuta
-    }).then( function() {
-        msjAlert("dato almacenado correctamente", 1);
-        $("#txtRuta").val("");
-    }).catch(function(error) {
-        msjAlert("Error al guardar los datos: " + error, 2);
-    });
-*/
     typeRouteMap = 1;
     markers = [];
     markersDup = [];
     rutas = [];
     routeNP = [];
-    var url = "mapRouteDetail.html?routeSel=" + codeRouteSel + "&routeName=" + nameRouteSel + "&routePlate=" + plateRouteSel + "&typeRouteMap=" + typeRouteMap;
+    if (entChoose == "")
+        var url = "mapRouteDetail.html?routeSel=" + codeRouteSel + "&routeName=" + nameRouteSel + "&routePlate=" + plateRouteSel + "&typeRouteMap=" + typeRouteMap;
+    if (entChoose == "enterprise")
+        var url = "mapRouteDetailEnt.html?routeSel=" + codeRouteSel + "&routeName=" + nameRouteSel + "&routePlate=" + plateRouteSel + "&typeRouteMap=" + typeRouteMap;
     openeNewTab(url);
 }
 
@@ -678,49 +665,74 @@ function geocodeLatLng(geocoder, latlng, pos){
 }
 
 function cnsAlerts() {
-    return;
-    //Conmentarizado mientras se prueban otros procesos. Julian 21/05/2018
     var datos = conn.database().ref(tblRtAlt[0]);
+    var msgAlrtTmp = [];
     var ind = rutas.length;
     var i = 0;
     var currentDiv = document.getElementById('dtsAlertParent');
     var dts;
-    currentDiv.style.display='block';
     datos.orderByValue().on("value", function (snapshot) {
         snapshot.forEach(function (data) {
             dts = data.val();
             if(dts.type > 0) {
-//                console.log(JSON.stringify(data.val()));
                 var obj = new Object();
                 obj.hour = dts.hour;
                 obj.type = dts.type;
                 if(dts.message != undefined)
                     obj.message = dts.message;
                 obj.ruta = data.key;
-                msgAlerts.push(obj);
+//                console.log("obj: " + obj.ruta);
+                msgAlrtTmp.push(obj);
             }
         });
     });
-    var liNew, textLi, idAlert = 0, msg;
+    var msgIs, ifNew = 0, inx;
+    for(var i = 0; i < msgAlrtTmp.length; i++) {
+        msgIs = "no";
+        inx = -1;
+        for(var j = 0; j < msgAlerts.length; j++) {
+            if (msgAlerts[j].ruta == msgAlrtTmp[i].ruta) inx = j;
+            if (inx >= 0 && msgAlerts[j].hour == msgAlrtTmp[i].hour) msgIs = "si";
+        }
+        if(msgIs == "no") {
+            var obj = new Object();
+            obj = msgAlrtTmp[i];
+            if(inx >= 0) msgAlerts[inx] = obj;
+            else msgAlerts.push(obj);
+            ifNew++;
+        }
+    }
+    if(ifNew == 0) return;
+    currentDiv.style.display='block';
+    var liNew, textLi, idAlert = 0, msg, fechaTmp, dia, mes;
     fecha = new Date();
-    for(var i = 0; i < markers.length; i++){
-        for(var j = 0; j < msgAlerts.length; j++){
+    dia = fecha.getDate()<10?'0' + fecha.getDate(): fecha.getDate();
+    mes = meses[fecha.getMonth()];
+    fechaTmp = dia + " de " + mes + " de " + fecha.getFullYear();
+    for(var i = 0; i < markers.length; i++) {
+        for(var j = 0; j < msgAlerts.length; j++) {
             if(markers[i].ruta == msgAlerts[j].ruta) {
                 liNew = document.createElement("li");
                 liNew.id = msgAlerts[j].ruta + "Alert";
-                console.log(msgAlerts[j].type);
                 if(msgAlerts[j].type < 9){
                     idAlert = msgAlerts[j].type - 1;
                     msg = alertas[idAlert]
                 } else
                     msg = msgAlerts[j].message;
-                textLi = fecha + ' ' + msgAlerts[j].ruta + ' ' + msg;
+                textLi = "&nbsp;" + fechaTmp + ' ' + msgAlerts[j].hour + ' - Ruta: ' + msgAlerts[j].ruta + ' - Mensaje: ' + msg;
+//                console.log("textLi: " + textLi);
                 liNew.innerHTML = textLi;
                 document.getElementById("dtsAlertParent").appendChild(liNew);
             }
         }
     }
-    setTimeout("document.getElementById('dtsVehiculo').style.display='none';", 10000);
+    setTimeout("document.getElementById('dtsAlertParent').style.display='none';", 10000);
+    setInterval(function() {
+    for(var j = 0; j < msgAlerts.length; j++) {
+        var list = document.getElementById("dtsAlertParent").getElementsByTagName("li");
+        remFile(list, msgAlerts[j].ruta);
+    } }, 10000);
+
 }
 
 function cnsDtStrFnsh() {

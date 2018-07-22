@@ -1,4 +1,5 @@
 'use strict';
+
 var myUserId = "";
 var tokenSesion;
 var myUser;
@@ -20,9 +21,12 @@ var intentos = 0;
 var distancia = 0;
 var iconoSel = "", entUser = "", entRoute = "" 
 var entCode = "";
-var tblRtAlt = ['alert', 'starandfinish'];
+var alphaLow = "abcdefghijklmnopqrstuvwxyz";
+var alphaUp = "abcdefghijklmnopqrstuvwxyz".toLocaleUpperCase();
+var tblRtAlt = ['alert', 'starandfinish', 'entRoute', 'datacar', 'datacars', 'drivervstravel', 'starandfinish', 'placavskey', 'entUser', 'entGroup', 'uservscode', 'usersvstravel', 'mensaje'];
 var objCnx = [];
 var enterpriseUser = "";
+var entChoose = "";
 var alertas = [ "Envió una alerta ¡Estamos en un congestión vehicular grave!, a sus usuarios de ruta.",
                 "Envió una alerta ¡Sufrimos un accidente!, a sus usuarios de ruta.",
                 "Envió una alerta ¡Tenemos un daño mecánico!, a sus usuarios de ruta."
@@ -139,6 +143,9 @@ function campoDiligenciado(etiqueta) {
         } else if( etiqueta.substr(0,4).trim() == "Ruta" ) {
             $('#lbl' + etiqueta ).removeClass("formulario__labelDialog");
             $('#lbl' + etiqueta ).addClass("formulario__labelDialog_lleno");
+        } else if( etiqueta.trim() == "Empleado" || etiqueta.trim() == "Direccion" || etiqueta.trim() == "CelularX") {
+            $('#lbl' + etiqueta ).removeClass("formulario__labelDialogEmp");
+            $('#lbl' + etiqueta ).addClass("formulario__labelDialogEmp_lleno");
         } else {
             $('#lbl' + etiqueta ).removeClass("formulario__label");
             $('#lbl' + etiqueta ).addClass("formulario__label_lleno");
@@ -149,12 +156,16 @@ function campoDiligenciado(etiqueta) {
             $('#lbl' + etiqueta ).addClass("formulario__label_cel");
         } else if( etiqueta.substr(0,4).trim() == "Ruta" ) {
             $('#lbl' + etiqueta ).removeClass("formulario__labelDialog_lleno");
-            $('#lbl' + etiqueta ).addClass("formulario__labelDialog");            
+            $('#lbl' + etiqueta ).addClass("formulario__labelDialog");
+        } else if( etiqueta.trim() == "Empleado" || etiqueta.trim() == "Direccion" || etiqueta.trim() == "CelularX") {
+            $('#lbl' + etiqueta ).removeClass("formulario__labelDialogEmp_lleno");
+            $('#lbl' + etiqueta ).addClass("formulario__labelDialogEmp");
         } else {
             $('#lbl' + etiqueta ).removeClass("formulario__label_lleno");
             $('#lbl' + etiqueta ).addClass("formulario__label");
         }        
     }
+//    console.log($('#txt' + etiqueta ).val() + " - " + etiqueta.substr(0,4).trim());
     if( $('#txt' + etiqueta ).val().length > 5 && etiqueta.substr(0,4).trim() == "Ruta" ) {
         var alphaLow = "abcdefghijklmnopqrstuvwxyz";
         var alphaUp = "abcdefghijklmnopqrstuvwxyz".toLocaleUpperCase();
@@ -181,6 +192,7 @@ function campoDiligenciado(etiqueta) {
             }
             routeCode += tmpLetra;
         }
+//        console.log("Segundo intento");
         csnRouteEnt(routeCode);
     }
 }
@@ -254,8 +266,6 @@ function espera( ms ) {
 }
 
 function minToMayus(textMin) {
-    var alphaLow = "abcdefghijklmnopqrstuvwxyz";
-    var alphaUp = "abcdefghijklmnopqrstuvwxyz".toLocaleUpperCase();
     var number = "0123456789";
     var routeCode = "";
     var tmpLetra = ""
@@ -280,4 +290,31 @@ function minToMayus(textMin) {
         routeCode += tmpLetra;
     }
     return routeCode;
+}
+
+function getCodRoute() {
+    codRuta = "";
+    codRuta += String.fromCharCode(Math.floor((Math.random() * (122 - 97)+97) + 1));
+    codRuta += String.fromCharCode(Math.floor((Math.random() * (122 - 97)+97) + 1));
+    codRuta += menorCero(Math.round(Math.random() * (98) + 1));
+    codRuta += String.fromCharCode(Math.floor((Math.random() * (122 - 97)+97) + 1));
+    codRuta += String.fromCharCode(Math.floor((Math.random() * (122 - 97)+97) + 1));
+    codRuta = codRuta.toUpperCase();
+    console.log("codRuta: " + codRuta);
+}
+
+function valCellNumber(option) {
+    var cellNumber = ""
+    if (option == 1) cellNumber = $("#txtCelular").val();
+    if (option == 2) cellNumber = $("#txtCelularX").val();
+    var tmpCellNumer = "";
+    var number = "0123456789";
+    for (var i = 0; i < cellNumber.length; i++) {
+        for (var j = 0; j < number.length; j++) {
+            if (cellNumber.charAt(i) == number.charAt(j))
+                tmpCellNumer += cellNumber.charAt(i);
+        }
+    }
+    if (option == 1) $("#txtCelular").val(tmpCellNumer);
+    if (option == 2) $("#txtCelularX").val(tmpCellNumer);
 }

@@ -103,7 +103,7 @@
                     <div id="routeFind"></div>
                     <br/>
                     <div class="btn-group cf">
-                        <button class="btn_add" id="btnARDialog" onclick="addRoute(); return listVehicle();">Adicionar</button>
+                        <button class="btn_add" id="btnARDialog" disabled="false" onclick="campoDiligenciado('Ruta'); listVehicle();">Adicionar</button>
                         <button class="btn_cancel" onclick="closePopUp('m-AddRoute')">Cancelar</button>
                     </div>
                 </div>
@@ -174,11 +174,6 @@
                 </div>
             </div>
         </dialog>
-
-
-
-
-
         <dialog id="m-ChangeRoute" class="site-dialog">
             <div class="headerFormVideo">
                 <div class="headerDialog">
@@ -203,13 +198,6 @@
                 </div>
             </div>
         </dialog>
-
-
-
-
-
-
-
         <dialog id="m-CnfRemRoute" class="site-dialog">
             <div class="headerForm">
                 <div class="headerDialog">

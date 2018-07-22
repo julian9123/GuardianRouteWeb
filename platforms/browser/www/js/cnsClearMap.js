@@ -151,24 +151,6 @@ function cnsEmpresaCreada() {
     } );    
 }
 
-function cnsUsuarioEmpresa() {
-    intentos = 0;
-    registrado = 0;
-    initApp();
-    var datos = conn.database().ref("entUser/" + myUserId );
-    datos.orderByValue().on("value", function(snapshot) {
-        snapshot.forEach(function(data) {
-            registrado++;
-            var arrayX = [];
-            arrayX.push(empresa);
-            for( var x in data.val() ) {
-                var empresa = x;
-            }
-            entUser = empresa;
-        } );
-    } );    
-}
-
 function cnsMovRutasDetalle() {
     var datos = conn.database().ref("logDetail/" + myUserId + "/" + empresa );
     datos.orderByValue().on("value", function(snapshot) {
@@ -197,35 +179,6 @@ function cnsMovRutasDetalleXX() {
     }
     console.log("Fin:" + new Date().getTime());
 */    
-}
-
-function csnRouteEnt(ruta) {
-    var srRoute = 0;
-    var datos = conn.database().ref("datacar/" + ruta);
-    datos.orderByValue().on("value", function(snapshot) {
-        snapshot.forEach(function(data) {
-            srRoute = 1;
-            var elem = document.getElementById("routeFind");
-            elem.textContent = "Vehiculo encontrado: " + ruta;
-            elem.setAttribute("style", "color: #000000");
-            var elemB = document.getElementById("btnARDialog");
-            elemB.removeAttribute("disabled");
-            var elemR = document.getElementById("routeFindRem");
-            elemR.textContent = "Vehiculo encontrado: " + ruta;
-            elemR.setAttribute("style", "color: #000000");
-        } );
-    } );    
-    if( srRoute == 0 ) {
-        var elemD = document.getElementById("routeFind");
-        elemD.textContent = "Vehiculo no encontrado";
-        elemD.setAttribute("style", "color: #DF0101");
-        var elemB = document.getElementById("btnARDialog");
-        elemB.setAttribute("disabled", "true");
-        var elemDR = document.getElementById("routeFindRem");
-        elemDR.textContent = "Vehiculo no encontrado";
-        elemDR.setAttribute("style", "color: #DF0101");
-        abrirOpcionModal('m-CnfAddRoute');
-    }
 }
 
 function cnsUserEnt() {

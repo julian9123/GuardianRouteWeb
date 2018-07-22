@@ -12,6 +12,9 @@ var nameRoute = "";
 var codDriverRoute = "";
 var intCnsRoute = 0;
 var lastRouteAdded = "";
+var latLocal;
+var lngLocal;
+var codePoint = 0;
 
 function d2(n) {
     if(n<9) return "0"+n;
@@ -163,18 +166,30 @@ function cnsUsuarioEmpresa() {
     intentos = 0;
     registrado = 0;
     initApp();
+    if (entUser != "" && entUser != undefined) return;
     var datos = conn.database().ref("entUser/" + myUserId );
+//    console.log("datos: " + datos);
     datos.orderByValue().on("value", function(snapshot) {
         snapshot.forEach(function(data) {
             registrado++;
             var arrayX = [];
-            arrayX.push(empresa);
-            for( var x in data.val() ) {
-                var empresa = x;
-            }
+            var empresa;
+            for( var x in data.val() )
+                empresa = x;
             entUser = empresa;
+            arrayX.push(empresa);
+            entChoose = "";
+            var datosX = conn.database().ref( tblRtAlt[9] + "/" + entUser );
+            datosX.orderByValue().on("value", function(snapshot) {
+                snapshot.forEach( function(dataX) {
+//                    console.log("data2: " + dataX.key + " - " + dataX.val());
+                    if (dataX.key == "est" && dataX.val() == 2) entChoose = "enterprise";
+//                    console.log("entChoose: " + entChoose);
+                } );
+            } );
         } );
-    } );    
+    } );
+    if (entUser == undefined || entUser == "") setTimeout( cnsUsuarioEmpresa, 1000 );
 }
 
 function cnsMovRutasDetalle() {
@@ -209,10 +224,12 @@ function cnsMovRutasDetalleXX() {
 
 function csnRouteEnt(ruta) {
     var srRoute = 0;
+    if (ruta == "" || ruta == undefined ) return;
     var datos = conn.database().ref("datacar/" + ruta);
     datos.orderByValue().on("value", function(snapshot) {
         snapshot.forEach(function(data) {
             srRoute = 1;
+//            console.log("Lo encontre " + ruta);
             var elem = document.getElementById("routeFind");
             elem.textContent = "Vehiculo encontrado: " + ruta;
             elem.setAttribute("style", "color: #000000");
@@ -243,7 +260,7 @@ function cnsUserEnt() {
     if( myUserId == "" ) { initApp(); }
     if( myUserId == "" ) { initApp(); }
     var datos = conn.database().ref("entUser/" + myUserId );
-    console.log("cnsUserEnt:" + myUserId);
+//    console.log("cnsUserEnt:" + myUserId);
     datos.orderByValue().on("value", function( snapshot ) {
         snapshot.forEach( function( data ) {
             entUser = data.key;
@@ -441,16 +458,14 @@ function remRouteEnt(routeCode) {
 function cnsUserExistEnt() {
     intentos = 0;
     registrado = 0;
-    if( myUserId == "" ) { initApp(); }
-    if( myUserId == "" || myUserId == undefined ) { return; }
+    if( myUserId == "" ) initApp();
+    if( myUserId == "" || myUserId == undefined ) return;
     var datos = conn.database().ref( "entUser/" + myUserId );
     datos.orderByValue().on( "value", function( snapshot ) {
         snapshot.forEach( function( data ) {
             registrado++;
             entRoute = data.key;
-            console.log("myUserId: " + myUserId + " entRoute: " + entRoute);
             cambioPagina("mapaRuta.html");
-            return;
         } );
     } );    
 }
@@ -699,4 +714,235 @@ function sendNotification(who) {
             $('#notificacion').val('');
         }
     }
+}
+
+function addRouteEnt() {
+    formatoFecha();
+    if( myUserId == "" ) { initApp(); }
+    if( myUserId == "" ) { initApp(); }
+    if( myUserId == "" ) { initApp(); }
+    if( entCode == "" ) { cnsUserEnt(); }
+    if( entCode == "" ) { cnsUserEnt(); }
+    if( entCode == "" ) { cnsUserEnt(); }
+    var routeCode = $("#txtRuta").val();
+    routeCode = minToMayus(routeCode);
+    cnsRouteExistEnt(myUserId, routeCode);
+    if( registrado > 0 ) {
+        msjAlert("Ruta " + routeCode + " ya fue registrada", 2);
+        return;
+    }
+    if( lastRouteAdded == routeCode ) {
+        console.log("UltimaRuta Registrada: "+lastRouteAdded);
+        return;
+    }
+    lastRouteAdded = routeCode;
+    csnRouteEnt(routeCode);
+    var datos = conn.database().ref( tblRtAlt[8] + "/" + myUserId );
+    console.log(datos.toString());
+    datos.orderByValue().on("value", function( snapshot ) {
+        snapshot.forEach( function( data ) {
+            entUser = data.key;
+            var datosX = conn.database().ref( tblRtAlt[2] + "/" + entUser + "/" + lastRouteAdded );
+            datosX.set( { date: fecha,
+                          user: myUserId,
+                          routeCode: lastRouteAdded,
+                          plateCode: codRuta,
+                          entCode: entUser
+            } ).then( function () {
+                msjAlert("dato almacenado correctamente", 1);
+                console.log(datosX + "dato almacenado correctamente 2");
+                $("#txtRuta").val("");
+            } ).catch( function (error) {
+                    msjAlert("2 Error al guardar los datos: " + error, 2);
+                    return;
+                } );
+        } );
+    }, function( errorObj ) {
+        console.log("Error:" + errorObj.code);
+        return;
+    } );
+    complementData(1);
+    listVehicle();
+}
+
+function confirmaAddRouteEnt() {
+    var newCar = $('#txtRuta').val();
+    var nameRoute = $('#txtNewRoute').val();
+    if( newCar.trim() == "" ){
+        msjAlert("No ha ingresado un numero de placa", 2);
+        return;
+    }
+    if( nameRoute.trim() == "" ){
+        msjAlert("No ha ingresado un nombre de ruta", 2);
+        return;
+    }
+    newCar = minToMayus(newCar);
+    getCodRoute();
+    var datos = conn.database().ref(tblRtAlt[3] + "/" + newCar );
+    datos.set({ coderoute : codRuta,
+        distancia : 0,
+        latitud: myLat,
+        longitud: myLong
+    }).then( function() {
+        console.log("dato almacenado correctamente 3");
+    }).catch(function(error) {
+        msjAlert("3 Error al guardar los datos: " + error, 2);
+        return;
+    });
+    var datos = conn.database().ref(tblRtAlt[4] + "/" + newCar );
+    datos.set({ matricula : newCar
+    }).then( function() {
+        console.log("dato almacenado correctamente 4");
+    }).catch(function(error) {
+        msjAlert("4 Error al guardar los datos: " + error, 2);
+        return;
+    });
+    addRouteEnt();
+}
+
+function complementData(validate) {
+    var nameRoute = $('#txtNewRoute').val();
+    if (validate != 1) {
+        lastRouteAdded = plateRouteSel;
+        if( myUserId == "" ) { initApp(); }
+        getCodRoute();
+    }
+    var datos = conn.database().ref(tblRtAlt[5] + "/" + myUserId + "/" + codRuta );
+    datos.set({ id: codRuta,
+                name: nameRoute,
+                paradas: 0,
+                placa: lastRouteAdded,
+                preruta: 2
+    } ).then( function() {
+        console.log("dato almacenado correctamente 5");
+    } ).catch( function(error) {
+        msjAlert("5 Error al guardar los datos: " + error, 2);
+        return;
+    });
+    var datos = conn.database().ref(tblRtAlt[6] + "/" + codRuta );
+    datos.set({ estado: 0,
+                hourfin: "",
+                latitud: myLat,
+                longitud: myLong,
+                tiempo: 0,
+                tipo: 0,
+                velocidad: 0
+    } ).then( function() {
+        console.log("dato almacenado correctamente 6");
+    } ).catch( function(error) {
+        msjAlert("6 Error al guardar los datos: " + error, 2);
+        return;
+    });
+    var datos = conn.database().ref(tblRtAlt[7] + "/" + lastRouteAdded );
+    datos.set({ keyid: myUserId
+    } ).then( function() {
+        console.log("dato almacenado correctamente 7");
+    } ).catch( function(error) {
+        msjAlert("7 Error al guardar los datos: " + error, 2);
+        return;
+    });
+}
+
+function setNewAccessPoint() {
+    var nameEmp = $("#txtEmpleado").val();
+    var address = $("#txtDireccion").val();
+    var CellPhone = $("#txtCelularX").val();
+    if (nameEmp == "") {
+        msjAlert("No ha ingresado el nombre del empleado", 2);
+        return;
+    }
+    if (address == "") {
+        msjAlert("No ha ingresado la dirección", 2);
+        return;
+    }
+    if (CellPhone == "") {
+        msjAlert("No ha ingresado el número celular", 2);
+        return;
+    }
+    getCodePoint();
+    getLatLngDireccion(address, nameEmp, CellPhone);
+}
+
+function setPositionPoint(address, nameEmp, CellPhone) {
+    if (latLocal == 0 || lngLocal == 0) {
+        msjAlert("No ha ingresado una dirección correcta", 2);
+        return;
+    }
+    var codeRouteWorker = codeRouteSel + alphaUp[codePoint];
+    var datos = conn.database().ref(tblRtAlt[10] + "/" + codeRouteWorker + "/" + codeRouteSel);
+    datos.set({ alerttone: 1000,
+                code: codeRouteSel,
+                nameroute: nameRouteSel
+    } ).then( function() {
+        console.log("dato almacenado correctamente 10");
+    } ).catch( function(error) {
+        msjAlert("10 Error al guardar los datos: " + error, 2);
+        return;
+    });
+    var datos = conn.database().ref(tblRtAlt[11] + "/" + codeRouteSel + "/" + codeRouteWorker);
+    datos.set({ check: 'n',
+                childname: nameEmp,
+                code: codeRouteSel,
+                direccion: address,
+                distance: 100000,
+                icon: 'marketend',
+                iconface: 'R.drawable.marketend',
+                id: codeRouteWorker,
+                latitud: latLocal,
+                longitud: lngLocal,
+                messageuser: 'go',
+                nametutor: nameEmp,
+                phone: '0',
+                stoped: 1
+    } ).then( function() {
+    console.log("dato almacenado correctamente 11");
+    } ).catch( function(error) {
+        msjAlert("11 Error al guardar los datos: " + error, 2);
+        return;
+    });
+    var datos = conn.database().ref(tblRtAlt[12] + "/" + "/" + codeRouteWorker);
+    datos.set({ phone: "0",
+                user: codeRouteWorker
+    } ).then( function() {
+        console.log("dato almacenado correctamente 12");
+    } ).catch( function(error) {
+        msjAlert("12 Error al guardar los datos: " + error, 2);
+        return;
+    });
+}
+
+function getLatLngDireccion(address, nameEmp, CellPhone) {
+    var geocoder = new google.maps.Geocoder();
+    latLocal = 0;
+    lngLocal = 0;
+    if (address != "") {
+ // Llamamos a la función geodecode pasandole la dirección que hemos introducido en la caja de texto.
+        geocoder.geocode({ 'address': address}, function(results, status) {
+            if (status == 'OK') {
+// Mostramos las coordenadas obtenidas en el p con id coordenadas
+//                msjAlert('Coordenadas:   ' + results[0].geometry.location.lat() + ', ' + results[0].geometry.location.lng(),1);
+                latLocal = results[0].geometry.location.lat();
+                lngLocal = results[0].geometry.location.lng();
+                setPositionPoint(address, nameEmp, CellPhone);
+// Posicionamos el marcador en las coordenadas obtenidas
+//                map.marker.setPosition(results[0].geometry.location);
+// Centramos el mapa en las coordenadas obtenidas
+//                map.map.setCenter(map.marker.getPosition());
+//                agendaForm.showMapaEventForm();
+            } else {
+                console.log("Error getLatLngDireccion(): " + status);
+            }
+        });
+    }
+}
+
+function getCodePoint() {
+    codePoint = 0;
+    var datos = conn.database().ref(tblRtAlt[11] + "/" + codeRouteSel);
+    datos.orderByValue().on("value", function (snapshot) {
+        snapshot.forEach(function (data) {
+            codePoint++;
+        });
+    });
+    console.log("codePoint: " + codePoint);
 }

@@ -29,7 +29,7 @@ body {
   font-size: 1.3em;
 }
 
-.formulario__inputDialog, .formulario__labelDialog, .formulario__submit {
+.formulario__inputDialog, .formulario__labelDialog, .formulario__submit, .formulario__labelDialogEmp {
     display: block;
     width: 100%;
     font-size: 1.3em;
@@ -78,9 +78,18 @@ body {
 .formulario__input_cel:focus + .formulario__label_cel{
   margin-top: -125px;
 }
-.formulario__inputDialog:focus + .formulario__labelDialog{
+.formulario__inputDialog:focus + .formulario__labelDialog {
   margin-top: -125px;
 }
+
+.formulario__inputDialog:focus + .formulario__labelDialogEmp {
+    margin-top: -105px;
+}
+
+.formulario__labelDialogEmp {
+    margin-top: -105px;
+}
+
 .formulario__inputDialog:focus {
   outline: 1px solid rgba(0,0,0,0.7);
 }
@@ -179,6 +188,16 @@ body {
     left: -40%;
 }
 
+.formulario__labelDialogEmp {
+    padding-left: 25px;
+    position: absolute;
+    margin-top: -80px;
+    color: rgba(0,0,0,0.5);
+    transition: all 0.2s;
+    width: 100%;
+    left: -40%;
+}
+
 .formulario__inputDialog {
     padding: 20px;
     background: rgba(0,0,0,0.1);
@@ -192,6 +211,15 @@ body {
     padding-left: 15px;
     position: absolute;
     margin-top: -125px;
+    color: rgba(0,0,0,0.5);
+    width: 100%;
+    left: -40%;
+}
+
+.formulario__labelDialogEmp_lleno {
+    padding-left: 25px;
+    position: absolute;
+    margin-top: -105px;
     color: rgba(0,0,0,0.5);
     width: 100%;
     left: -40%;
@@ -231,4 +259,14 @@ body {
     padding: 10px;
     background: #BDBDBD;
     display: inline-flex;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    vertical-align: bottom;
 }

@@ -110,7 +110,7 @@ function initApp() {
     } );
     if(myUserId == ""  || myUserId == undefined){
         setTimeout( initApp, 1000 );
-        console.log(new Date() + myUserId + new Date());
+//        console.log(new Date() + myUserId + new Date());
     }
     objCnx.push(obj);
 //    console.log(myUserId + "" + myUserId + "" + myUserId);
