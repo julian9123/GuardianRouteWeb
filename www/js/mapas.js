@@ -56,8 +56,6 @@ function initMap() {
     infoWindow = new google.maps.InfoWindow({map: map});
     setInterval(posicionActual, 3000);
     if( entUser == "" ) { cnsUsuarioEmpresa(); }
-    if( entUser == "" ) { cnsUsuarioEmpresa(); }
-    if( entUser == "" ) { cnsUsuarioEmpresa(); }
     distancia = 1;
 }
 
@@ -351,11 +349,11 @@ function listVehicleCns() {
         var textLi = markers[x].placa + " - " + markers[x].ruta + " - " + markers[x].nombre;
         var variables = "'" + markers[x].placa + "', '" + markers[x].ruta + "', '" + markers[x].nombre + "'";
         var ventanaCns = "'" + "m-SearchRoute" + "'";
-        var btnClick = ' <button class="btn_add spaceList" id="' + markers[x].ruta + '" onclick="closePopUp(' + ventanaCns + '); startSelectRoute(' + variables + ');">Ver Usuarios</button>';
+        var btnClick = '<button class="btn_add spaceList" id="' + markers[x].ruta + '" onclick="closePopUp(' + ventanaCns + '); startSelectRoute(' + variables + ');">Ver Usuarios</button>';
         if(find_li(textLi, "listaVehiculosCns")) {
             liNew = document.createElement("li");
             liNew.id = markers[x].ruta + "Cn";
-            textLi = "&nbsp;" + textLi + btnClick;
+            textLi = '<div style="display: table-cell; width: 270px; padding: 10px;">' + "&nbsp;" + textLi + '</div><div style="display: table-cell; width: 40%; padding: 5px;">'+ btnClick + '</div>';
             liNew.innerHTML = textLi;
             document.getElementById("listaVehiculosCns").appendChild(liNew);
         }
@@ -374,6 +372,7 @@ function applyStyle(list) {
         else {
             estilo = "text-align: left; font-size: 12px; background-color: #FFFFFF; color: #333333;";
         }
+        estilo = "text-align: left; font-size: 12px; background-color: #FFFFFF; color: #333333;";
         lista[i].setAttribute("style", estilo);
     }
 }
@@ -388,9 +387,9 @@ function listVehicleDelete() {
         var liNew = document.createElement("li");
         liNew.id = markers[x].ruta + "ld";
         var textLi = markers[x].ruta + " - " + markers[x].nombre;
-        var btnClick = " <button class='btn_add spaceList' id='" + markers[x].placa + "' onclick='remRouteList(this.id)'>Eliminar</button>";
+        var btnClick = "<button class='btn_add spaceList' id='" + markers[x].placa + "' onclick='remRouteList(this.id)'>Eliminar</button>";
         if(find_li(textLi, "listaVehiculosDel")) {
-            liNew.innerHTML = "&nbsp;" + markers[x].placa + x + " - " + textLi + btnClick;
+            liNew.innerHTML = "<div style=\"display: table-cell; width: 270px; padding: 10px;\">&nbsp;" + markers[x].placa + x + " - " + textLi + '</div><div style="display: table-cell; width: 40%; padding: 5px;">' + btnClick + '</div>';
             document.getElementById("listaVehiculosDel").appendChild(liNew);
         }
     }
@@ -732,7 +731,6 @@ function cnsAlerts() {
         var list = document.getElementById("dtsAlertParent").getElementsByTagName("li");
         remFile(list, msgAlerts[j].ruta);
     } }, 10000);
-
 }
 
 function cnsDtStrFnsh() {

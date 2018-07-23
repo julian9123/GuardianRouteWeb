@@ -165,19 +165,21 @@
                         <label class="formulario__labelDialogEmp" id="lblDireccion">Dirección</label>
                         <input type="text" class="formulario__inputDialog" style="padding: 10px !important;" id="txtCelularX" size="10" max="10" maxlength="10" onkeyup="valCellNumber(2); campoDiligenciado('CelularX');">
                         <label class="formulario__labelDialogEmp" id="lblCelularX">Celular</label>
-                        <p style="color: rgba(0,0,0,0.5); font-size: 1.3em !important;">Es el punto de Llegada?&nbsp;<input type="checkbox" class="checkmark" id="txtPuntoLlegada" value="S"></p>
+                        <p style="color: rgba(0,0,0,0.5); font-size: 1.3em !important;">Es el punto de Llegada?&nbsp;<input type="checkbox" class="checkmark" id="ckbPuntoLlegada"></p>
                         <div id="routeFind"></div>
                         <br/>
                         <div class="btn-group cf">
-                            <button class="btn_add" id="btnARDialogX" onclick="setNewAccessPoint();">Adicionar</button>
-                            <button class="btn_cancel" onclick="getLatLngDireccion(); closePopUp('m-AddRouteEnt')">Cancelar</button>
+                            <button class="btn_add" id="btnARDialogX" onclick="setNewAccessPoint(); setStopped();">Adicionar</button>
+                            <button class="btn_cancel" onclick="closePopUp('m-AddRouteEnt')">Cancelar</button>
                         </div>
                     </div>
                     <div>
+<!--
                         <ul id="listaVehiculos" style="overflow: auto";>
                             <li id="titulo"><b>VEHICULOS</b></li>
                             <li id="columnas"><b>Placa - Ruta - Nombre</b></li>
                         </ul>
+-->
                     </div>
                 </div>
            </dialog>

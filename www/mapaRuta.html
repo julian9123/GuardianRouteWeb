@@ -14,15 +14,16 @@
         <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.1/material.teal-red.min.css" />
         <script src="https://storage.googleapis.com/code.getmdl.io/1.0.1/material.min.js"></script>          
         <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-        <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase-auth.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase-database.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase-messaging.js"></script>
+          <script src="https://apis.google.com/js/platform.js" async defer></script>
+          <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+          <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-app.js"></script>
+          <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-auth.js"></script>
+          <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-database.js"></script>
+          <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-messaging.js"></script>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>  
         <script type="text/javascript" src="js/conectar.js"></script>
         <script type="text/javascript" src="js/consultar.js"></script>
-
         <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQ7J6-8VbDMfg12nPmEiNrvgbEhZGvIyA&callback=initMap"></script>
         <script type="text/javascript" src="js/mapas.js"></script>
       </head>
@@ -33,12 +34,12 @@
 <!--                    <li onmouseover="menuSeleccionado('addRuta')" onmouseout="menuNoSeleccionado('addRuta')" onclick="listVehicle(); abrirOpcionModal('m-AddRoute');">  -->
                     <li onclick="listVehicle(); abrirOpcionModal('m-AddRoute');">
                         <a href="#"><img src="img/drawable/plus.png" width="80" height="80">
-                            <p class="letraMenu">Registrar Vehículo</p>
+                            <p class="letraMenu">Vincular Vehículo</p>
                         </a>
                     </li>
                     <li onclick="listVehicleDelete(); strDataRoute(); abrirOpcionModal('m-RemoveRoute');">
                         <a href="#"><img src="img/drawable/minus.png" width="80" height="80">
-                            <p class="letraMenu">Inactivar Vehículo</p>
+                            <p class="letraMenu">Desvincular Vehículo</p>
                         </a>
                     </li>
 <!--
@@ -89,10 +90,10 @@
             <div class="headerForm">
                 <div class="headerDialog">
                     <div class="headerImage">
-                        <img src="img/android/drawable-mdpi/logoapprutas.png" height="51" width="51">
+<!--                        <img src="img/android/drawable-mdpi/logoapprutas.png" height="51" width="51"> -->
                     </div>
                     <div class="headerTitle">
-                    <h1><p class="textoHeader">Agregar Vehículo</p></h1>
+                    <h1><p class="textoHeader">Vincular Vehículo</p></h1>
                     </div>
                 </div>
                 <br/>
@@ -103,7 +104,7 @@
                     <div id="routeFind"></div>
                     <br/>
                     <div class="btn-group cf">
-                        <button class="btn_add" id="btnARDialog" disabled="false" onclick="campoDiligenciado('Ruta'); listVehicle();">Adicionar</button>
+                        <button class="btn_add" id="btnARDialog" disabled="false" onclick="campoDiligenciado('Ruta'); listVehicle();">Vincular</button>
                         <button class="btn_cancel" onclick="closePopUp('m-AddRoute')">Cancelar</button>
                     </div>
                 </div>
@@ -119,10 +120,10 @@
             <div class="headerForm">
                 <div class="headerDialog">
                     <div class="headerImage">
-                        <img src="img/android/drawable-mdpi/logoapprutas.png" height="51" width="51">
+<!--                        <img src="img/android/drawable-mdpi/logoapprutas.png" height="51" width="51"> -->
                     </div>
                     <div class="headerTitle">
-                    <h1><p class="textoHeader">Eliminar Vehículo</p></h1>
+                    <h1><p class="textoHeader">Desvincular Vehículo</p></h1>
                     </div>
                 </div>
                 <br/>
@@ -133,7 +134,7 @@
                     <div id="routeFindRem"></div>
                     <br/>
                     <div class="btn-group cf">
-                        <button class="btn_add" id="btnRmDialog" onclick="remRoute()">Eliminar</button>
+                        <button class="btn_add" id="btnRmDialog" onclick="remRoute()">Desvincular</button>
                         <button class="btn_cancel" onclick="closePopUp('m-RemoveRoute')">Cancelar</button>
                     </div>
                 </div>
@@ -149,7 +150,7 @@
             <div class="headerForm">
                 <div class="headerDialog">
                     <div class="headerImage">
-                        <img src="img/android/drawable-mdpi/logoapprutas.png" height="51" width="51">
+<!--                        <img src="img/android/drawable-mdpi/logoapprutas.png" height="51" width="51"> -->
                     </div>
                     <div class="headerTitle">
                     <h1><p class="textoHeader">Consultar Detalle<br/>Vehículo</p></h1>
@@ -178,7 +179,7 @@
             <div class="headerFormVideo">
                 <div class="headerDialog">
                     <div class="headerImage">
-                        <img src="img/android/drawable-mdpi/logoapprutas.png" height="51" width="51">
+<!--                        <img src="img/android/drawable-mdpi/logoapprutas.png" height="51" width="51"> -->
                     </div>
                     <div class="headerTitle">
                     <h1><p class="textoHeader">Ruta en Vivo</p></h1>
@@ -202,7 +203,7 @@
             <div class="headerForm">
                 <div class="headerDialog">
                     <div class="headerImage">
-                        <img src="img/android/drawable-mdpi/logoapprutas.png" height="51" width="51">
+<!--                        <img src="img/android/drawable-mdpi/logoapprutas.png" height="51" width="51"> -->
                     </div>
                     <div class="headerTitle">
                     <h1><p class="textoHeader">Confirmación</p></h1>
@@ -214,10 +215,10 @@
                     <div style="text-align: center; color: #000000;">Recuerde que una vez efectuado el proceso</div>
                     <div style="text-align: center; color: #000000;">Los datos de la ruta relacionada a la empresa</div>
                     <div style="text-align: center; color: #000000;">No se podran recuperar</div>
-                    <div style="text-align: center; color: #000000;">Desea eliminar la ruta?</div>
+                    <div style="text-align: center; color: #000000;">Desea desvincular la ruta?</div>
                     <br/>
                     <div class="btn-group cf">
-                        <button class="btn_add" id="btnCnfDialog" onclick="confirmaRemRoute(); closePopUp('CnfRemRoute');">Eliminar</button>
+                        <button class="btn_add" id="btnCnfDialog" onclick="confirmaRemRoute(); closePopUp('CnfRemRoute');">Desvincular</button>
                         <button class="btn_cancel" onclick="closePopUp('m-CnfRemRoute')">Cancelar</button>
                     </div>
                 </div>
@@ -228,7 +229,7 @@
             <div class="headerForm">
                 <div class="headerDialog">
                     <div class="headerImage">
-                        <img src="img/android/drawable-mdpi/logoapprutas.png" height="51" width="51">
+<!--                        <img src="img/android/drawable-mdpi/logoapprutas.png" height="51" width="51"> -->
                     </div>
                     <div class="headerTitle">
                         <h1><p class="textoHeader">Confirmación</p></h1>
@@ -237,11 +238,11 @@
                 <br/>
                 <div class="formularioDialogAlert">
                     <br/>
-                    <div style="text-align: center; color: #000000;">Desea crear el vehículo y</div>
-                    <div style="text-align: center; color: #000000;">Relacionarlo con la empresa?</div>
+                    <div style="text-align: center; color: #000000;">Desea vincular el vehículo</div>
+                    <div style="text-align: center; color: #000000;">con la empresa?</div>
                     <br/>
                     <div class="btn-group cf">
-                        <button class="btn_add" id="btnCnfAddDialog" onclick="confirmaAddRoute(); closePopUp('m-CnfAddRoute'); $">Crear</button>
+                        <button class="btn_add" id="btnCnfAddDialog" onclick="confirmaAddRoute(); closePopUp('m-CnfAddRoute'); $">Vincular</button>
                         <button class="btn_cancel" onclick="closePopUp('m-CnfAddRoute')">Cancelar</button>
                     </div>
                 </div>
@@ -252,7 +253,7 @@
             <div class="headerFormPopUp">
                 <div class="headerDialog">
                     <div class="headerImage">
-                        <img src="img/android/drawable-mdpi/logoapprutas.png" height="51" width="51">
+<!--                        <img src="img/android/drawable-mdpi/logoapprutas.png" height="51" width="51"> -->
                     </div>
                     <div class="headerTitle">
                     <h1><p class="textoHeader">Advertencia</p></h1>

@@ -19,14 +19,19 @@ body {
     max-height: 100%;
 }
 .formulario__titulo {
-  text-align: center;
-  margin-top: 0;
-  color: rgba(0,0,0,0.7);
+    text-align: center;
+    margin-top: 0;
+    color: rgba(0,0,0,0.7);
 }
+
+.formulario__input{
+    text-transform: uppercase;
+}
+
 .formulario__input, .formulario__label, .formulario__submit {
-  display: block;
-  width: 100%;
-  font-size: 1.3em;
+    display: block;
+    width: 100%;
+    font-size: 1.3em;
 }
 
 .formulario__inputDialog, .formulario__labelDialog, .formulario__submit, .formulario__labelDialogEmp {
@@ -36,9 +41,9 @@ body {
 }
 
 .formulario__input_cel, .formulario__label_cel, .formulario__submit {
-  display: block;
-  width: 100%;
-  font-size: 1.3em;
+    display: block;
+    width: 100%;
+    font-size: 1.3em;
 }
 .formulario__input {
     padding: 20px;

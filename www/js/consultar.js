@@ -15,6 +15,7 @@ var lastRouteAdded = "";
 var latLocal;
 var lngLocal;
 var codePoint = 0;
+var imageSchool;
 
 function d2(n) {
     if(n<9) return "0"+n;
@@ -168,7 +169,7 @@ function cnsUsuarioEmpresa() {
     initApp();
     if (entUser != "" && entUser != undefined) return;
     var datos = conn.database().ref("entUser/" + myUserId );
-//    console.log("datos: " + datos);
+    console.log("datos: " + datos);
     datos.orderByValue().on("value", function(snapshot) {
         snapshot.forEach(function(data) {
             registrado++;
@@ -458,6 +459,7 @@ function remRouteEnt(routeCode) {
 function cnsUserExistEnt() {
     intentos = 0;
     registrado = 0;
+    var dirURL = "";
     if( myUserId == "" ) initApp();
     if( myUserId == "" || myUserId == undefined ) return;
     var datos = conn.database().ref( "entUser/" + myUserId );
@@ -465,7 +467,17 @@ function cnsUserExistEnt() {
         snapshot.forEach( function( data ) {
             registrado++;
             entRoute = data.key;
-            cambioPagina("mapaRuta.html");
+            var datosX = conn.database().ref( tblRtAlt[9] + "/" + entRoute );
+            datosX.orderByValue().on("value", function(snapshot) {
+                snapshot.forEach( function(dataX) {
+                    if (dataX.key == "est" && dataX.val() == 2) dirURL = "mapaRutaEnt.html";
+                    if (dataX.key == "est" && dataX.val() != 2) dirURL = "mapaRuta.html";
+                    if (dirURL != "") {
+                        cambioPagina(dirURL);
+                        return;
+                    }
+                } );
+            } );
         } );
     } );    
 }
@@ -864,11 +876,20 @@ function setNewAccessPoint() {
 }
 
 function setPositionPoint(address, nameEmp, cellPhone) {
+    var codeRouteWorker = "";
     if (latLocal == 0 || lngLocal == 0) {
         msjAlert("No ha ingresado una dirección correcta", 2);
         return;
     }
-    var codeRouteWorker = codeRouteSel + alphaUp[codePoint];
+    if ($("#ckbPuntoLlegada").is(':checked')) {
+        codeRouteWorker = codeRouteSel + "ZZSCHOOL";
+        imageSchool = 'schoolmarket';
+    }
+    else {
+        codeRouteWorker = codeRouteSel + alphaUp[codePoint];
+        imageSchool = 'marketend';
+    }
+    console.log("codeRouteWorker: " + codeRouteWorker);
     var datos = conn.database().ref(tblRtAlt[10] + "/" + codeRouteWorker + "/" + codeRouteSel);
     datos.set({ alerttone: 1000,
                 code: codeRouteSel,
@@ -885,8 +906,8 @@ function setPositionPoint(address, nameEmp, cellPhone) {
                 code: codeRouteSel,
                 direccion: address,
                 distance: 100000,
-                icon: 'marketend',
-                iconface: 'R.drawable.marketend',
+                icon: imageSchool,
+                iconface: 'R.drawable.' + imageSchool,
                 id: codeRouteWorker,
                 latitud: latLocal,
                 longitud: lngLocal,
@@ -909,6 +930,7 @@ function setPositionPoint(address, nameEmp, cellPhone) {
         msjAlert("12 Error al guardar los datos: " + error, 2);
         return;
     });
+    msjAlert('<lu><li>' + "El empleado: " + $("#txtEmpleado").val() + '</li><li>' + ", dirección: " + $("#txtDireccion").val()+ ", Celular: " + $("#txtCelularX").val() + ", ha sido registrado correctamente", 1);
     $("#txtEmpleado").val("");
     $("#txtDireccion").val("");
     $("#txtCelularX").val("");
@@ -933,6 +955,7 @@ function getLatLngDireccion(address, nameEmp, CellPhone) {
 //                map.map.setCenter(map.marker.getPosition());
 //                agendaForm.showMapaEventForm();
             } else {
+                msjAlert("Error al obtener coordenadas de la dirección: " + status, 2);
                 console.log("Error getLatLngDireccion(): " + status);
             }
         });
@@ -947,5 +970,16 @@ function getCodePoint() {
             codePoint++;
         });
     });
-    console.log("codePoint: " + codePoint);
+//    console.log("codePoint: " + codePoint);
+}
+
+function setStopped() {
+    var datosX = conn.database().ref(tblRtAlt[5] + "/" + myUserId + "/" + codeRouteSel);
+    getCodePoint();
+    datosX.update({ paradas: codePoint
+    }).then(function () {
+        console.log("Paradas guardadas");
+    }).catch(function (error) {
+        console.log("Error al actualizar las paradas: " + error);
+    });
 }
