@@ -31,12 +31,12 @@
             <nav>
                 <ul>
                     <li onclick="abrirOpcionModal('m-NotifyRoute');">
-                        <a href="javascript:void(0)"><img src="img/drawable/BtnAlerta.png" width="80" height="80">
+                        <a href="javascript:void(0)"><img src="img/drawable/BtnAlerta.png" width="60" height="60">
                             <p class="letraMenu">Enviar Notificación</p>
                         </a>
                     </li>
                     <li onclick="window.close();">
-                        <a href="javascript:void(0)"><img src="img/drawable/back-web.png" width="80" height="80">
+                        <a href="javascript:void(0)"><img src="img/drawable/back-web.png" width="60" height="60">
                             <p class="letraMenu">Volver</p>
                         </a>
                     </li>
@@ -60,7 +60,7 @@
                 <br/>
                 <div class="formularioDialog">
                     <br/>
-                    <input type="text" class="formulario__inputDialog" id="txtRutaCns" size="8" max="8" maxlength="8" onkeyup="campoDiligenciado('RutaCns')">
+                    <input type="text" class="formulario__inputDialog" id="txtRouteCns" size="6" max="6" maxlength="6" onkeyup="campoDiligenciado('txtRouteCns'); getFilterList('txtRouteCns');">
                     <label  class="formulario__labelDialog" id="lblRutaCns">Ruta</label>
                     <br/>
                     <div class="btn-group cf">
@@ -97,7 +97,7 @@
                 </div>
             </div>
         </dialog>
-       <dialog id="m-NotifyRoute" class="site-dialog">
+        <dialog id="m-NotifyRoute" class="site-dialog">
             <div class="headerFormBottom">
                 <p class="textoHeader" style="font-size: 15px;"><strong>Notificaciones</strong></p>
                 <div class="formularioDialogNotify">

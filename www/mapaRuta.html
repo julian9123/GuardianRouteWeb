@@ -33,12 +33,12 @@
                 <ul>
 <!--                    <li onmouseover="menuSeleccionado('addRuta')" onmouseout="menuNoSeleccionado('addRuta')" onclick="listVehicle(); abrirOpcionModal('m-AddRoute');">  -->
                     <li onclick="listVehicle(); abrirOpcionModal('m-AddRoute');">
-                        <a href="#"><img src="img/drawable/plus.png" width="80" height="80">
+                        <a href="#"><img src="img/drawable/plus.png" width="60" height="60">
                             <p class="letraMenu">Vincular Vehículo</p>
                         </a>
                     </li>
                     <li onclick="listVehicleDelete(); strDataRoute(); abrirOpcionModal('m-RemoveRoute');">
-                        <a href="#"><img src="img/drawable/minus.png" width="80" height="80">
+                        <a href="#"><img src="img/drawable/minus.png" width="60" height="60">
                             <p class="letraMenu">Desvincular Vehículo</p>
                         </a>
                     </li>
@@ -57,13 +57,13 @@
 -->
 <!--                    <li onmouseover="menuSeleccionado('notifRuta')" onmouseout="menuNoSeleccionado('notifRuta')" onclick="strDataRoute(); abrirOpcionModal('m-NotifyRoute');"> -->
                     <li onclick="strDataRoute(); abrirOpcionModal('m-NotifyRoute');">
-                        <a href="#"><img src="img/drawable/BtnAlerta.png" width="80" height="80">
+                        <a href="#"><img src="img/drawable/BtnAlerta.png" width="60" height="60">
                             <p class="letraMenu">Enviar Notificación</p>
                         </a>
                     </li>
 <!--                    <li onmouseover="menuSeleccionado('consultaRuta')" onmouseout="menuNoSeleccionado('consultaRuta')" onclick="abrirOpcionModal('m-SearchRoute'); listVehicleCns();"> -->
                     <li onclick="abrirOpcionModal('m-SearchRoute'); listVehicleCns();">
-                        <a href="#"><img src="img/drawable/btnbuscar.png" width="80" height="80">
+                        <a href="#"><img src="img/drawable/btnbuscar.png" width="60" height="60">
                             <p class="letraMenu">Consultar Vehículo</p>
                         </a>
                     </li>
@@ -75,7 +75,7 @@
                     </li>
 -->
                     <li>
-                        <a href="cerrarSesion.html"><img src="img/drawable/logging-out.png"  width="80" height="80">
+                        <a href="cerrarSesion.html"><img src="img/drawable/logging-out.png"  width="60" height="60">
                             <p class="letraMenu">Cerrar Sesión</p>
                         </a>
                     </li>
@@ -99,7 +99,7 @@
                 <br/>
                 <div class="formularioDialog">
                     <br/>
-                    <input type="text" class="formulario__inputDialog" id="txtRuta" size="6" max="6" maxlength="6" onkeyup="campoDiligenciado('Ruta')">
+                    <input type="text" class="formulario__inputDialog" id="txtRuta" size="6" max="6" maxlength="6" onkeyup="campoDiligenciado('Ruta'); getFilterList('txtRuta');">
                     <label class="formulario__labelDialog" id="lblRuta">Placa</label>
                     <div id="routeFind"></div>
                     <br/>
@@ -110,7 +110,7 @@
                 </div>
                 <div>
                     <ul id="listaVehiculos" style="overflow: auto";>
-                        <li id="titulo"><b>VEHICULOS</b></li>
+                        <li id="titulo"><b>Vehiculos</b></li>
                         <li id="columnas"><b>Placa - Ruta - Nombre</b></li>
                     </ul>
                 </div>
@@ -129,7 +129,7 @@
                 <br/>
                 <div class="formularioDialog">
                     <br/>
-                    <input type="text" class="formulario__inputDialog" id="txtRutaRem" size="8" max="8" maxlength="8" onkeyup="campoDiligenciado('RutaRem')">
+                    <input type="text" class="formulario__inputDialog" id="txtRutaRem" size="6" max="6" maxlength="6" onkeyup="campoDiligenciado('RutaRem'); getFilterList('txtRutaRem');">
                     <label class="formulario__labelDialog" id="lblRutaRem">Placa</label>
                     <div id="routeFindRem"></div>
                     <br/>
@@ -159,7 +159,7 @@
                 <br/>
                 <div class="formularioDialog">
                     <br/>
-                    <input type="text" class="formulario__inputDialog" id="txtRutaCns" size="8" max="8" maxlength="8" onkeyup="campoDiligenciado('RutaCns')">
+                    <input type="text" class="formulario__inputDialog" id="txtRouteCns" size="6" max="6" maxlength="6" onkeyup="campoDiligenciado('RouteCns'); getFilterList('txtRouteCns');">
                     <label  class="formulario__labelDialog" id="lblRutaCns">Ruta</label>
                     <br/>
                     <div class="btn-group cf">
@@ -169,7 +169,7 @@
                 </div>
                 <div>
                     <ul id="listaVehiculosCns" style="overflow: auto;">
-                        <li id="tituloCns"><b>VEHICULOS</b></li>
+                        <li id="tituloCns"><b>Vehiculos</b></li>
                         <li id="columnasCns"><b>Placa - Ruta - Nombre</b></li>
                     </ul>
                 </div>
@@ -188,7 +188,7 @@
                 <br/>
                 <div class="formularioDialog">
                     <br/>
-                    <input type="text" class="formulario__inputDialog" id="txtRutaUrl" size="8" max="8" maxlength="8" onkeyup="campoDiligenciado('RutaUrl')">
+                    <input type="text" class="formulario__inputDialog" id="txtRutaUrl" size="6" max="6" maxlength="6" onkeyup="campoDiligenciado('RutaUrl')">
                     <label class="formulario__labelDialog" id="lblRutaUrl">Ruta</label>
                     <div id="youtubeFrame"></div>
                     <br/>

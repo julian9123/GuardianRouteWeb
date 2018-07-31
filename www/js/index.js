@@ -23,7 +23,7 @@ var iconoSel = "", entUser = "", entRoute = ""
 var entCode = "";
 var alphaLow = "abcdefghijklmnopqrstuvwxyz";
 var alphaUp = "abcdefghijklmnopqrstuvwxyz".toLocaleUpperCase();
-var tblRtAlt = ['alert', 'starandfinish', 'entRoute', 'datacar', 'datacars', 'drivervstravel', 'starandfinish', 'placavskey', 'entUser', 'entGroup', 'uservscode', 'usersvstravel', 'mensaje'];
+var tblRtAlt = ['alert', 'starandfinish', 'entRoute', 'datacar', 'datacars', 'drivervstravel', 'starandfinish', 'placavskey', 'entUser', 'entGroup', 'uservscode', 'usersvstravel', 'mensaje', 'datadriver'];
 var objCnx = [];
 var enterpriseUser = "";
 var entChoose = "";

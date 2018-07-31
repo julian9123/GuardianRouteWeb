@@ -437,8 +437,10 @@ function myPositionsRefresh(positions) {
             }
         );
         marcador.addListener('dblclick', function() {
-            abrirOpcionModal('m-SearchRoute');
-            listVehicleCns();
+            getDataCar(this.title);
+            abrirOpcionModal('m-CnsRouteDetailEnt');
+            //abrirOpcionModal('m-SearchRoute');
+            //listVehicleCns();
         });
         marcador.addListener('mouseover', function() {
             document.getElementById('dtsVehiculo').innerHTML = '<strong>&nbsp;&nbsp;' + this.title + '&nbsp;&nbsp;<strong>';
@@ -489,17 +491,18 @@ function setMapOnSelRoute() {
 }
 
 function deleteLi(list) {
+
     var lista = document.getElementById(list).getElementsByTagName("li");
-    var nodo = "";
-    for (var i = 0; i < lista.length; i++ ) {
-        nodo = lista[i].getAttribute("id");
-//        console.log("Nodo:"+nodo+" : "+i);
-//        if(nodo == "titulo" || nodo == "tituloDel" || nodo == "columnas" || nodo == "columnasDel"){
-//            continue;
-//        }
+    if (lista.length < 3) return;
+    for (var i = lista.length; i > 1; i-- ) {
+        lista = document.getElementById(list).getElementsByTagName("li");
+        if( lista[i] == undefined ) continue;
+        var nodo = lista[i].getAttribute("id");
         var child = document.getElementById(nodo);
+//        console.log("nodo " + nodo + " " + i);
         child.parentNode.removeChild(child);
     }
+
 }
 
 function mapUsersRoute() {

@@ -31,23 +31,23 @@
         <header style="width: 30%;">
             <nav>
                 <ul>
-                    <li onclick="abrirOpcionModal('m-CnfAddRoute');">
-                        <a href="#"><img src="img/drawable/plus.png" width="80" height="80">
-                            <p class="letraMenu">Nueva Ruta</p>
+                    <li onclick="abrirOpcionModal('m-AddRouteEnt');">
+                        <a href="#"><img src="img/drawable/change.png" width="60" height="60">
+                            <p class="letraMenu">Agregar Puntos Ruta</p>
                         </a>
                     </li>
-                    <li onclick="abrirOpcionModal('m-AddRouteEnt');">
-                        <a href="#"><img src="img/drawable/change.png" width="80" height="80">
-                            <p class="letraMenu">Modificar Ruta</p>
+                    <li onclick="abrirOpcionModal('m-ListUsersRouteEnt'); getDataUserRoute();">
+                        <a href="#"><img src="img/drawable/change.png" width="60" height="60">
+                            <p class="letraMenu">Lista Usuarios</p>
                         </a>
                     </li>
                     <li onclick="abrirOpcionModal('m-NotifyRoute');">
-                        <a href="javascript:void(0)"><img src="img/drawable/BtnAlerta.png" width="80" height="80">
+                        <a href="javascript:void(0)"><img src="img/drawable/BtnAlerta.png" width="60" height="60">
                             <p class="letraMenu">Enviar Notificación</p>
                         </a>
                     </li>
                     <li onclick="window.close();">
-                        <a href="javascript:void(0)"><img src="img/drawable/back-web.png" width="80" height="80">
+                        <a href="javascript:void(0)"><img src="img/drawable/back-web.png" width="60" height="60">
                             <p class="letraMenu">Volver</p>
                         </a>
                     </li>
@@ -65,13 +65,13 @@
                             <img src="img/android/drawable-mdpi/logoapprutas.png" height="51" width="51">
                         </div>
                         <div class="headerTitle">
-                        <h1><p class="textoHeader">Consultar Detalle<br/>Vehículo</p></h1>
+                        <h1><p class="textoHeader">Consultar Detalle Vehículo</p></h1>
                         </div>
                     </div>
                     <br/>
                     <div class="formularioDialog">
                         <br/>
-                        <input type="text" class="formulario__inputDialog" id="txtRutaCns" size="8" max="8" maxlength="8" onkeyup="campoDiligenciado('RutaCns')">
+                        <input type="text" class="formulario__inputDialog" id="txtRouteCns" size="6" max="6" maxlength="6" onkeyup="campoDiligenciado('RouteCns'); getFilterList('txtRouteCns');">
                         <label  class="formulario__labelDialog" id="lblRutaCns">Ruta</label>
                         <br/>
                         <div class="btn-group cf">
@@ -160,7 +160,7 @@
                     <div class="formularioDialog">
                         <br/>
                         <input type="text" class="formulario__inputDialog" style="padding: 10px !important;" id="txtEmpleado" size="40" max="40" maxlength="40" onkeyup="campoDiligenciado('Empleado')">
-                        <label class="formulario__labelDialogEmp" id="lblEmpleado">Empleado</label>
+                        <label class="formulario__labelDialogEmp" id="lblEmpleado">Usuario</label>
                         <input type="text" class="formulario__inputDialog" style="padding: 10px !important;" id="txtDireccion" size="50" max="50" maxlength="50" onkeyup="campoDiligenciado('Direccion');">
                         <label class="formulario__labelDialogEmp" id="lblDireccion">Dirección</label>
                         <input type="text" class="formulario__inputDialog" style="padding: 10px !important;" id="txtCelularX" size="10" max="10" maxlength="10" onkeyup="valCellNumber(2); campoDiligenciado('CelularX');">
@@ -183,5 +183,41 @@
                     </div>
                 </div>
            </dialog>
+
+
+
+
+
+
+            <dialog id="m-ListUsersRouteEnt" class="site-dialog">
+                <div class="headerForm">
+                    <div class="headerDialog">
+                        <div class="headerImage">
+                            <img src="img/android/drawable-mdpi/logoapprutas.png" height="51" width="51">
+                        </div>
+                        <div class="headerTitle">
+                            <h1><p class="textoHeader">Lista de Usuarios</p></h1>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="formularioDialog">
+                        <br/>
+                        <input type="text" class="formulario__inputDialog" style="padding: 10px !important;" id="txtUserNameCns" size="40" max="40" maxlength="40" onkeyup="campoDiligenciado('UserNameCns'); getFilterList('txtUserNameCns');">
+                        <label  class="formulario__labelDialogEmp" id="lblUserNameCns">Nombre Usuario</label>
+                        <br/>
+                        <input type="text" class="formulario__inputDialog" style="padding: 10px !important;" id="txtCelularX" size="10" max="10" maxlength="10" onkeyup="campoDiligenciado('UserNameCns'); valCellNumber(2); getFilterList('txtCelularX');">
+                        <label  class="formulario__labelDialogEmp" id="lblCelularX">Celular Usuario</label>
+                        <div class="btn-group cf">
+                            <button class="btn_cancel" onclick="closePopUp('m-ListUsersRouteEnt');">Cerrar</button>
+                        </div>
+                    </div>
+                    <div>
+                        <ul id="listaUsuariosCns" style="overflow: auto;">
+                            <li id="tituloCnsUsu"><b>Usuarios</b></li>
+                            <li id="columnasCnsUsu"><b>Nombre - Celular</b></li>
+                        </ul>
+                    </div>
+                </div>
+            </dialog>
       </body>
 </html>

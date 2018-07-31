@@ -10,6 +10,7 @@ var regDateDriver = "";
 var plateRoute = "";
 var nameRoute = "";
 var codDriverRoute = "";
+var codDriverKey;
 var intCnsRoute = 0;
 var lastRouteAdded = "";
 var latLocal;
@@ -168,8 +169,9 @@ function cnsUsuarioEmpresa() {
     registrado = 0;
     initApp();
     if (entUser != "" && entUser != undefined) return;
+
     var datos = conn.database().ref("entUser/" + myUserId );
-    console.log("datos: " + datos);
+
     datos.orderByValue().on("value", function(snapshot) {
         snapshot.forEach(function(data) {
             registrado++;
@@ -930,7 +932,7 @@ function setPositionPoint(address, nameEmp, cellPhone) {
         msjAlert("12 Error al guardar los datos: " + error, 2);
         return;
     });
-    msjAlert('<lu><li>' + "El empleado: " + $("#txtEmpleado").val() + '</li><li>' + ", dirección: " + $("#txtDireccion").val()+ ", Celular: " + $("#txtCelularX").val() + ", ha sido registrado correctamente", 1);
+    msjAlert("El usuario: " + $("#txtEmpleado").val() + ", dirección: " + $("#txtDireccion").val()+ ", Celular: " + $("#txtCelularX").val() + ", ha sido registrado correctamente", 1);
     $("#txtEmpleado").val("");
     $("#txtDireccion").val("");
     $("#txtCelularX").val("");
@@ -981,5 +983,219 @@ function setStopped() {
         console.log("Paradas guardadas");
     }).catch(function (error) {
         console.log("Error al actualizar las paradas: " + error);
+    });
+}
+
+function getDataCar(urlCarSel) {
+
+    var indOf = urlCarSel.indexOf('Placa: ');
+
+    plateRouteSel = "";
+    codDriverKey = "";
+    document.getElementById('codePlaca').innerHTML = "";
+
+    if (indOf != -1) {
+        indOf = indOf + 7;
+        plateRouteSel = urlCarSel.substr(indOf, 6);
+        document.getElementById('codePlaca').innerHTML = plateRouteSel;
+        var datos = conn.database().ref(tblRtAlt[7] + "/" + plateRouteSel);
+        datos.orderByValue().on( "value", function( snapshot ) {
+            snapshot.forEach( function( data ) {
+                if (data.key == "keyid") {
+                    codDriverKey = data.val();
+                    getDataDriver();
+                    getDataRoutes();
+                }
+            } );
+        } );
+    }
+
+}
+
+function getDataDriver() {
+
+    var datos = conn.database().ref(tblRtAlt[13] + "/" + codDriverKey);
+
+    var datos = conn.database().ref(tblRtAlt[13] + "/" + codDriverKey);
+
+    document.getElementById('nombreConductor').innerHTML = '<b>' + "Nombre Conductor: " + '</b>' + "Sin definir";
+    document.getElementById('telefonoConductor').innerHTML = '<b>' + "Telefono Conductor: " + '</b>' + "Sin definir";
+    document.getElementById('fechaConductor').innerHTML = '<b>' + "Fecha Vinculación: " + '</b>' + "Sin definir";
+    document.getElementById('documentoConductor').innerHTML = '<b>' + "Documento Conductor: " + '</b>' + "Sin definir";
+        datos.orderByValue().on( "value", function( snapshot ) {
+        snapshot.forEach( function( data ) {
+            var datos = data.val();
+            var llave = data.key;
+            if( llave == "nombreconductor" ) document.getElementById('nombreConductor').innerHTML = '<b>' + "Nombre Conductor: " + '</b>' + datos;
+            if( llave == "telefonoconductor" ) document.getElementById('telefonoConductor').innerHTML = '<b>' + "Telefono Conductor: " + '</b>' + datos;
+            if( llave == "fecharegistro" ) document.getElementById('fechaConductor').innerHTML = '<b>' + "Fecha Vinculación: " + '</b>' + datos;
+            if( llave == "docconductor" ) document.getElementById('documentoConductor').innerHTML = '<b>' + "Documento Conductor: " + '</b>' + datos;
+        } );
+    } );
+
+}
+
+function getStateRoute(obj) {
+
+    var datos = conn.database().ref(tblRtAlt[1] + '/' + obj.id);
+    datos.orderByValue().on("value", function (snapshot) {
+        snapshot.forEach(function (data) {
+//            var obj = new Object();
+            var dat = data.val();
+            if (data.key == "estado") {
+                if (dat == 0)
+                    obj.estado = "Inactivo";
+                else
+                    obj.estado = "Activo";
+                return obj;
+            }
+        });
+    });
+}
+
+function getDataRoutes() {
+
+    var dataRoutes = [];
+    var datos = conn.database().ref(tblRtAlt[5] + "/" + codDriverKey);
+    var ventanaCns = "'" + "m-CnsRouteDetailEnt" + "'";
+
+    deleteLi("listaRutas");
+    datos.orderByValue().on( "value", function( snapshot ) {
+        snapshot.forEach( function( data ) {
+
+            var inf = data.val();
+            if (plateRouteSel == inf.placa) {
+//                console.log(plateRouteSel + " Hola: " + inf.placa);
+                var obj = new Object();
+                obj.id = inf.id;
+                obj.nombre = inf.name;
+                obj.placa = inf.placa;
+                getStateRoute(obj);
+                dataRoutes.push(obj);
+            }
+
+        } );
+    } );
+
+    for (var x = 0; x < dataRoutes.length; x++) {
+
+        var liNew = document.createElement("li");
+        var variables = "'" + dataRoutes[x].placa + "', '" + dataRoutes[x].id + "', '" + dataRoutes[x].nombre + "'";
+        var textLi = dataRoutes[x].id + " - " + dataRoutes[x].nombre + " - " + dataRoutes[x].estado;
+        var btnClick = '<button class="btn_add spaceList" onclick="closePopUp(' + ventanaCns + '); startSelectRoute(' + variables + ');">Ver Usuarios</button>';
+        liNew.id = dataRoutes[x].id + "" + x;
+        liNew.innerHTML = "<div style=\"display: table-cell; width: 270px; padding: 10px;\">&nbsp;" + textLi + '</div><div style="display: table-cell; width: 40%; padding: 5px;">' + btnClick + '</div>';
+        document.getElementById("listaRutas").appendChild(liNew);
+
+    }
+    applyStyle("listaRutas");
+}
+
+function getFilterList(fieldText) {
+    var texto = "";
+    if (fieldText == 'txtRouteCns') {
+        console.log('Aqui vamos: ' + fieldText);
+        $("#txtRouteCns").keyup(function () {
+            texto = minToMayus($("#txtRouteCns").val());
+            $('#listaVehiculosCns li').css("display", "block");
+            $('#listaVehiculosCns li').each(function () {
+                if ($(this).text().search(texto) != -1)
+                    $(this).css("display", "block");
+                else
+                    $(this).css("display", "none");
+                if ($(this).text() == "Vehiculos") $(this).css("display", "block");
+                if ($(this).text() == "Placa - Ruta - Nombre") $(this).css("display", "block");
+            });
+        });
+    }
+    if (fieldText == 'txtRutaRem') {
+        $("#txtRutaRem").keyup(function () {
+            texto = minToMayus($("#txtRutaRem").val());
+            $('#listaVehiculosDel li').css("display", "block");
+            $('#listaVehiculosDel li').each(function () {
+                if ($(this).text().search(texto) != -1)
+                    $(this).css("display", "block");
+                else
+                    $(this).css("display", "none");
+                if ($(this).text() == "Vehiculos") $(this).css("display", "block");
+                if ($(this).text() == "Placa - Ruta - Nombre Ruta") $(this).css("display", "block");
+            });
+        });
+    }
+    if (fieldText == 'txtRuta') {
+        $("#txtRuta").keyup(function () {
+            texto = minToMayus($("#txtRuta").val());
+            $('#listaVehiculos li').css("display", "block");
+            $('#listaVehiculos li').each(function () {
+                if ($(this).text().search(texto) != -1)
+                    $(this).css("display", "block");
+                else
+                    $(this).css("display", "none");
+                if ($(this).text() == "Vehiculos") $(this).css("display", "block");
+                if ($(this).text() == "Placa - Ruta - Nombre") $(this).css("display", "block");
+            });
+        });
+    }
+    if (fieldText == 'txtUserNameCns') {
+        $("#txtUserNameCns").keyup(function () {
+            texto = minToMayus($("#txtUserNameCns").val());
+            $('#listaUsuariosCns li').css("display", "block");
+            $('#listaUsuariosCns li').each(function () {
+                if ($(this).text().search(texto) != -1)
+                    $(this).css("display", "block");
+                else
+                    $(this).css("display", "none");
+                if ($(this).text() == "Usuarios") $(this).css("display", "block");
+                if ($(this).text() == "Nombre - Celular") $(this).css("display", "block");
+            });
+        });
+    }
+    if (fieldText == 'txtCelularX') {
+        $("#txtCelularX").keyup(function () {
+            texto = $("#txtCelularX").val();
+            $('#listaUsuariosCns li').css("display", "block");
+            $('#listaUsuariosCns li').each(function () {
+                if ($(this).text().search(texto) != -1)
+                    $(this).css("display", "block");
+                else
+                    $(this).css("display", "none");
+                if ($(this).text() == "Usuarios") $(this).css("display", "block");
+                if ($(this).text() == "Nombre - Celular") $(this).css("display", "block");
+            });
+        });
+    }
+}
+
+function getDataUserRoute() {
+
+    var datos = conn.database().ref(tblRtAlt[11] + "/" + codeRouteSel);
+    datos.orderByValue().on("value", function (snapshot) {
+        snapshot.forEach(function (data) {
+
+            var datosU = conn.database().ref(tblRtAlt[11] + "/" + codeRouteSel + "/" + data.key);
+            console.log("datos: " + datosU);
+            var childname = "", phone = "";
+            datosU.orderByValue().on("value", function (snapshot) {
+                snapshot.forEach(function (dataU) {
+                    var liNew = document.createElement("li");
+                    var info = dataU.val();
+                    console.log("infor:" + info);
+                    if (dataU.key == 'childname') childname = info;
+                    if (dataU.key == 'phone') phone = info;
+                    var variables;
+                    if (childname != "" && phone != "") {
+                        variables = "'" + childname + "' - '" + phone + "'";
+                        console.log(variables);
+                        var textLi = variables;
+                        //            var btnClick = '<button class="btn_add spaceList" onclick="closePopUp(' + ventanaCns + '); startSelectRoute(' + variables + ');">Ver Usuarios</button>';
+                        liNew.id = data.code;
+                        liNew.innerHTML = "<div style=\"display: table-cell; width: 270px; padding: 10px;\">&nbsp;" + textLi + '</div>';
+                        document.getElementById("listaUsuariosCns").appendChild(liNew);
+                        childname = "";
+                        phone = "";
+                    }
+                });
+            });
+        });
     });
 }
