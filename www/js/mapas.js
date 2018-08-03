@@ -317,6 +317,7 @@ function posicionActual() {
 }
 
 function listVehicle() {
+    $('#txtRuta').val("");
     markers = [];
     rutas = [];
     routeNP = [];
@@ -326,13 +327,13 @@ function listVehicle() {
     var liNew;
     var j = 0;
     for( var x = 0; x < markers.length; x++ ) {
-        var textLi = markers[x].placa + " - " + markers[x].ruta + " - " + markers[x].nombre;
+        var textLi = markers[x].placa + " - " + markers[x].nombre;
         if(find_li(textLi, "listaVehiculos")) {
             liNew = document.createElement("li");
             liNew.id = markers[x].ruta + "la";
             j = x + 1;
-            textLi = "&nbsp;" + j + " - " + textLi;
-            liNew.innerHTML = textLi;
+            var btnClick = "";//'<button class="btn_add spaceList"><img src="../img/drawable/usuario.png"></button>';
+            liNew.innerHTML = "<div style=\"display: table-cell; width: 270px; padding: 10px;\">&nbsp;" + textLi + '</div><div style="display: table-cell; width: 40%; padding: 5px; text-align: right;">' + btnClick + '</div>';
             document.getElementById("listaVehiculos").appendChild(liNew);
         }
     }
@@ -349,11 +350,11 @@ function listVehicleCns() {
         var textLi = markers[x].placa + " - " + markers[x].ruta + " - " + markers[x].nombre;
         var variables = "'" + markers[x].placa + "', '" + markers[x].ruta + "', '" + markers[x].nombre + "'";
         var ventanaCns = "'" + "m-SearchRoute" + "'";
-        var btnClick = '<button class="btn_add spaceList" id="' + markers[x].ruta + '" onclick="closePopUp(' + ventanaCns + '); startSelectRoute(' + variables + ');">Ver Usuarios</button>';
+        var btnClick = '<button class="btn_add spaceList" id="' + markers[x].ruta + '" onclick="closePopUp(' + ventanaCns + '); startSelectRoute(' + variables + ');"><img src="../img/drawable/usuario.png"></button>';
         if(find_li(textLi, "listaVehiculosCns")) {
             liNew = document.createElement("li");
             liNew.id = markers[x].ruta + "Cn";
-            textLi = '<div style="display: table-cell; width: 270px; padding: 10px;">' + "&nbsp;" + textLi + '</div><div style="display: table-cell; width: 40%; padding: 5px;">'+ btnClick + '</div>';
+            textLi = '<div style="display: table-cell; width: 270px; padding: 10px;">' + "&nbsp;" + textLi + '</div><div style="display: table-cell; width: 40%; padding: 5px; text-align: right;">'+ btnClick + '</div>';
             liNew.innerHTML = textLi;
             document.getElementById("listaVehiculosCns").appendChild(liNew);
         }
@@ -364,7 +365,7 @@ function listVehicleCns() {
 function applyStyle(list) {
     var estilo;
     var lista = document.getElementById(list).getElementsByTagName("li");
-    for ( var i = 2; i < lista.length; i++ ) {
+    for ( var i = 1; i < lista.length; i++ ) {
         lista[i].removeAttribute("style");
         if (( i % 2 ) == 0) {
             estilo = "text-align: left; font-size: 12px; background-color: #333333; color: #FFFFFF;";
@@ -372,7 +373,7 @@ function applyStyle(list) {
         else {
             estilo = "text-align: left; font-size: 12px; background-color: #FFFFFF; color: #333333;";
         }
-        estilo = "text-align: left; font-size: 12px; background-color: #FFFFFF; color: #333333;";
+        estilo = "text-align: left; font-size: 12px; background-color: #FFFFFF; color: #333333; border: groove 1px #E6E6E6;";
         lista[i].setAttribute("style", estilo);
     }
 }
@@ -387,9 +388,9 @@ function listVehicleDelete() {
         var liNew = document.createElement("li");
         liNew.id = markers[x].ruta + "ld";
         var textLi = markers[x].ruta + " - " + markers[x].nombre;
-        var btnClick = "<button class='btn_add spaceList' id='" + markers[x].placa + "' onclick='remRouteList(this.id)'>Eliminar</button>";
+        var btnClick = "<button class='btn_add spaceList' id='" + markers[x].placa + "' onclick='remRouteList(this.id)'><img src='../img/drawable/delete.png'></button>";
         if(find_li(textLi, "listaVehiculosDel")) {
-            liNew.innerHTML = "<div style=\"display: table-cell; width: 270px; padding: 10px;\">&nbsp;" + markers[x].placa + x + " - " + textLi + '</div><div style="display: table-cell; width: 40%; padding: 5px;">' + btnClick + '</div>';
+            liNew.innerHTML = "<div style=\"display: table-cell; width: 270px; padding: 10px;\">&nbsp;" + markers[x].placa + x + " - " + textLi + '</div><div style="display: table-cell; width: 40%; padding: 5px; text-align: right;">' + btnClick + '</div>';
             document.getElementById("listaVehiculosDel").appendChild(liNew);
         }
     }

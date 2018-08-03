@@ -235,23 +235,23 @@ function csnRouteEnt(ruta) {
 //            console.log("Lo encontre " + ruta);
             var elem = document.getElementById("routeFind");
             elem.textContent = "Vehiculo encontrado: " + ruta;
-            elem.setAttribute("style", "color: #000000");
+            elem.setAttribute("style", "color: #000000; margin-top: 10px; margin-bottom: 5px;");
             var elemB = document.getElementById("btnARDialog");
             if( elemB != undefined ) elemB.removeAttribute("disabled");
             var elemR = document.getElementById("routeFindRem");
             if( elemR != undefined ) elemR.textContent = "Vehiculo encontrado: " + ruta;
-            if( elemR != undefined ) elemR.setAttribute("style", "color: #000000");
+            if( elemR != undefined ) elemR.setAttribute("style", "color: #000000; margin-top: 10px; margin-bottom: 5px;");
         } );
     } );    
     if( srRoute == 0 ) {
         var elemD = document.getElementById("routeFind");
         elemD.textContent = "Vehiculo no encontrado";
-        elemD.setAttribute("style", "color: #DF0101");
+        elemD.setAttribute("style", "color: #DF0101; margin-top: 10px; margin-bottom: 5px;");
         var elemB = document.getElementById("btnARDialog");
         elemB.setAttribute("disabled", "true");
         var elemDR = document.getElementById("routeFindRem");
         elemDR.textContent = "Vehiculo no encontrado";
-        elemDR.setAttribute("style", "color: #DF0101");
+        elemDR.setAttribute("style", "color: #DF0101; margin-top: 10px; margin-bottom: 5px;");
         abrirOpcionModal('m-CnfAddRoute');
     }
 }
@@ -1084,9 +1084,8 @@ function getDataRoutes() {
         var textLi = dataRoutes[x].id + " - " + dataRoutes[x].nombre + " - " + dataRoutes[x].estado;
         var btnClick = '<button class="btn_add spaceList" onclick="closePopUp(' + ventanaCns + '); startSelectRoute(' + variables + ');">Ver Usuarios</button>';
         liNew.id = dataRoutes[x].id + "" + x;
-        liNew.innerHTML = "<div style=\"display: table-cell; width: 270px; padding: 10px;\">&nbsp;" + textLi + '</div><div style="display: table-cell; width: 40%; padding: 5px;">' + btnClick + '</div>';
+        liNew.innerHTML = "<div style=\"display: table-cell; width: 270px; padding: 10px;\">&nbsp;" + textLi + '</div><div style="display: table-cell; width: 40%; padding: 5px; text-align: right;">' + btnClick + '</div>';
         document.getElementById("listaRutas").appendChild(liNew);
-
     }
     applyStyle("listaRutas");
 }
@@ -1099,11 +1098,11 @@ function getFilterList(fieldText) {
             texto = minToMayus($("#txtRouteCns").val());
             $('#listaVehiculosCns li').css("display", "block");
             $('#listaVehiculosCns li').each(function () {
-                if ($(this).text().search(texto) != -1)
+                if (minToMayus($(this).text()).search(texto) != -1)
                     $(this).css("display", "block");
                 else
                     $(this).css("display", "none");
-                if ($(this).text() == "Vehiculos") $(this).css("display", "block");
+                if ($(this).text() == "Listado de Vehiculos") $(this).css("display", "block");
                 if ($(this).text() == "Placa - Ruta - Nombre") $(this).css("display", "block");
             });
         });
@@ -1113,11 +1112,11 @@ function getFilterList(fieldText) {
             texto = minToMayus($("#txtRutaRem").val());
             $('#listaVehiculosDel li').css("display", "block");
             $('#listaVehiculosDel li').each(function () {
-                if ($(this).text().search(texto) != -1)
+                if (minToMayus($(this).text()).search(texto) != -1)
                     $(this).css("display", "block");
                 else
                     $(this).css("display", "none");
-                if ($(this).text() == "Vehiculos") $(this).css("display", "block");
+                if ($(this).text() == "Listado de Vehiculos a Cargo") $(this).css("display", "block");
                 if ($(this).text() == "Placa - Ruta - Nombre Ruta") $(this).css("display", "block");
             });
         });
@@ -1127,11 +1126,11 @@ function getFilterList(fieldText) {
             texto = minToMayus($("#txtRuta").val());
             $('#listaVehiculos li').css("display", "block");
             $('#listaVehiculos li').each(function () {
-                if ($(this).text().search(texto) != -1)
+                if (minToMayus($(this).text()).search(texto) != -1)
                     $(this).css("display", "block");
                 else
                     $(this).css("display", "none");
-                if ($(this).text() == "Vehiculos") $(this).css("display", "block");
+                if ($(this).text() == "Listado de Vehiculos a Cargo") $(this).css("display", "block");
                 if ($(this).text() == "Placa - Ruta - Nombre") $(this).css("display", "block");
             });
         });
@@ -1141,7 +1140,7 @@ function getFilterList(fieldText) {
             texto = minToMayus($("#txtUserNameCns").val());
             $('#listaUsuariosCns li').css("display", "block");
             $('#listaUsuariosCns li').each(function () {
-                if ($(this).text().search(texto) != -1)
+                if (minToMayus($(this).text()).search(texto) != -1)
                     $(this).css("display", "block");
                 else
                     $(this).css("display", "none");
@@ -1150,9 +1149,9 @@ function getFilterList(fieldText) {
             });
         });
     }
-    if (fieldText == 'txtCelularX') {
-        $("#txtCelularX").keyup(function () {
-            texto = $("#txtCelularX").val();
+    if (fieldText == 'txtCelularC') {
+        $("#txtCelularC").keyup(function () {
+            texto = $("#txtCelularC").val();
             $('#listaUsuariosCns li').css("display", "block");
             $('#listaUsuariosCns li').each(function () {
                 if ($(this).text().search(texto) != -1)
@@ -1168,27 +1167,26 @@ function getFilterList(fieldText) {
 
 function getDataUserRoute() {
 
+    deleteLi("listaUsuariosCns");
     var datos = conn.database().ref(tblRtAlt[11] + "/" + codeRouteSel);
     datos.orderByValue().on("value", function (snapshot) {
         snapshot.forEach(function (data) {
 
             var datosU = conn.database().ref(tblRtAlt[11] + "/" + codeRouteSel + "/" + data.key);
-            console.log("datos: " + datosU);
-            var childname = "", phone = "";
+            var childname = "", phone = "", idLi = "";
             datosU.orderByValue().on("value", function (snapshot) {
                 snapshot.forEach(function (dataU) {
                     var liNew = document.createElement("li");
                     var info = dataU.val();
-                    console.log("infor:" + info);
                     if (dataU.key == 'childname') childname = info;
                     if (dataU.key == 'phone') phone = info;
+                    if (dataU.key == 'code') idLi = info;
                     var variables;
                     if (childname != "" && phone != "") {
-                        variables = "'" + childname + "' - '" + phone + "'";
-                        console.log(variables);
+                        variables = childname + " - " + phone;
                         var textLi = variables;
-                        //            var btnClick = '<button class="btn_add spaceList" onclick="closePopUp(' + ventanaCns + '); startSelectRoute(' + variables + ');">Ver Usuarios</button>';
-                        liNew.id = data.code;
+                        //var btnClick = '<button class="btn_add spaceList" onclick="closePopUp(' + ventanaCns + '); startSelectRoute(' + variables + ');">Ver Usuarios</button>';
+                        liNew.id = idLi;
                         liNew.innerHTML = "<div style=\"display: table-cell; width: 270px; padding: 10px;\">&nbsp;" + textLi + '</div>';
                         document.getElementById("listaUsuariosCns").appendChild(liNew);
                         childname = "";
@@ -1198,4 +1196,5 @@ function getDataUserRoute() {
             });
         });
     });
+    applyStyle("listaUsuariosCns");
 }

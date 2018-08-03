@@ -19,7 +19,7 @@ var codRuta;
 var registrado = 0;
 var intentos = 0;
 var distancia = 0;
-var iconoSel = "", entUser = "", entRoute = "" 
+var iconoSel = "", entUser = "", entRoute = ""
 var entCode = "";
 var alphaLow = "abcdefghijklmnopqrstuvwxyz";
 var alphaUp = "abcdefghijklmnopqrstuvwxyz".toLocaleUpperCase();
@@ -52,7 +52,7 @@ function cambioPagina(pagina){
 }
 function inicio(){
     cambioPagina("login.html");
-//    cambioPagina("mapaRuta.html");    
+//    cambioPagina("mapaRuta.html");
 }
 function transicion(){
     cambioPagina("telefonoConductor.html");
@@ -92,9 +92,9 @@ function ocultarMenu() {
     });
 }
 
-function openPopUp(pagina) { 
-    open(pagina,'','top=300,left=300,width=300,height=300') ; 
-} 
+function openPopUp(pagina) {
+    open(pagina,'','top=300,left=300,width=300,height=300') ;
+}
 
 var inputs = document.getElementsByClassName('formulario__input');
 for (var i = 0; i < inputs.length; i++) {
@@ -136,6 +136,7 @@ function campoDiligenciado(etiqueta) {
 //    $("formulario__label").css("margin-top", "-125px");
 //    $("#" + etiqueta).css("margin-top", "-125px");
 //    alert("etiqueta:" + $('#txt' + etiqueta ).val().length);
+    console.log(etiqueta);
     if( $('#txt' + etiqueta ).val().length > 0 ) {
         if( etiqueta == "Celular" ) {
             $('#lbl' + etiqueta ).removeClass("formulario__label_cel");
@@ -143,7 +144,7 @@ function campoDiligenciado(etiqueta) {
         } else if( etiqueta.substr(0,4).trim() == "Ruta" ) {
             $('#lbl' + etiqueta ).removeClass("formulario__labelDialog");
             $('#lbl' + etiqueta ).addClass("formulario__labelDialog_lleno");
-        } else if( etiqueta.trim() == "Empleado" || etiqueta.trim() == "Direccion" || etiqueta.trim() == "CelularX") {
+        } else if( etiqueta.trim() == "Empleado" || etiqueta.trim() == "Direccion" || etiqueta.trim() == "CelularC" || etiqueta.trim() == "UserNameCns") {
             $('#lbl' + etiqueta ).removeClass("formulario__labelDialogEmp");
             $('#lbl' + etiqueta ).addClass("formulario__labelDialogEmp_lleno");
         } else {
@@ -157,13 +158,13 @@ function campoDiligenciado(etiqueta) {
         } else if( etiqueta.substr(0,4).trim() == "Ruta" ) {
             $('#lbl' + etiqueta ).removeClass("formulario__labelDialog_lleno");
             $('#lbl' + etiqueta ).addClass("formulario__labelDialog");
-        } else if( etiqueta.trim() == "Empleado" || etiqueta.trim() == "Direccion" || etiqueta.trim() == "CelularX") {
+        } else if( etiqueta.trim() == "Empleado" || etiqueta.trim() == "Direccion" || etiqueta.trim() == "CelularC" || etiqueta.trim() == "UserNameCns") {
             $('#lbl' + etiqueta ).removeClass("formulario__labelDialogEmp_lleno");
             $('#lbl' + etiqueta ).addClass("formulario__labelDialogEmp");
         } else {
             $('#lbl' + etiqueta ).removeClass("formulario__label_lleno");
             $('#lbl' + etiqueta ).addClass("formulario__label");
-        }        
+        }
     }
 //    console.log($('#txt' + etiqueta ).val() + " - " + etiqueta.substr(0,4).trim());
     if( $('#txt' + etiqueta ).val().length > 5 && etiqueta.substr(0,4).trim() == "Ruta" ) {
@@ -184,7 +185,7 @@ function campoDiligenciado(etiqueta) {
                 if( letra == alphaUp.charAt(j) ) {
                     tmpLetra = letra;
                 }
-            }            
+            }
             for( var j = 0; j < number.length; j++ ) {
                 if( letra == number.charAt(j) ) {
                     tmpLetra = letra;
@@ -281,7 +282,7 @@ function minToMayus(textMin) {
             if( letra == alphaUp.charAt(j) ) {
                 tmpLetra = letra;
             }
-        }            
+        }
         for( var j = 0; j < number.length; j++ ) {
             if( letra == number.charAt(j) ) {
                 tmpLetra = letra;
@@ -307,6 +308,8 @@ function valCellNumber(option) {
     var cellNumber = ""
     if (option == 1) cellNumber = $("#txtCelular").val();
     if (option == 2) cellNumber = $("#txtCelularX").val();
+    if (option == 3) cellNumber = $("#txtCelularC").val();
+    console.log(option + "=" + cellNumber);
     var tmpCellNumer = "";
     var number = "0123456789";
     for (var i = 0; i < cellNumber.length; i++) {
@@ -317,4 +320,5 @@ function valCellNumber(option) {
     }
     if (option == 1) $("#txtCelular").val(tmpCellNumer);
     if (option == 2) $("#txtCelularX").val(tmpCellNumer);
+    if (option == 3) $("#txtCelularC").val(tmpCellNumer);
 }

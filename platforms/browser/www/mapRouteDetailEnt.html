@@ -37,7 +37,7 @@
                         </a>
                     </li>
                     <li onclick="abrirOpcionModal('m-ListUsersRouteEnt'); getDataUserRoute();">
-                        <a href="#"><img src="img/drawable/change.png" width="60" height="60">
+                        <a href="#"><img src="img/drawable/menuusers.png" width="60" height="60">
                             <p class="letraMenu">Lista Usuarios</p>
                         </a>
                     </li>
@@ -81,8 +81,8 @@
                     </div>
                     <div>
                         <ul id="listaVehiculosCns" style="overflow: auto;">
-                            <li id="tituloCns"><b>VEHICULOS</b></li>
-                            <li id="columnasCns"><b>Placa - Ruta - Nombre</b></li>
+                            <li id="tituloCns" class="tituloLista"><b>Vehiculos</b></li>
+                            <li id="columnasCns" class="subTituloLista"><b>Placa - Ruta - Nombre</b></li>
                         </ul>
                     </div>
                 </div>
@@ -202,19 +202,19 @@
                     <br/>
                     <div class="formularioDialog">
                         <br/>
-                        <input type="text" class="formulario__inputDialog" style="padding: 10px !important;" id="txtUserNameCns" size="40" max="40" maxlength="40" onkeyup="campoDiligenciado('UserNameCns'); getFilterList('txtUserNameCns');">
-                        <label  class="formulario__labelDialogEmp" id="lblUserNameCns">Nombre Usuario</label>
+                        <input type="text" class="formulario__inputDialog" style="padding: 10px !important;" id="txtUserNameCns" size="40" max="40" maxlength="40" onkeyup="getFilterList('txtUserNameCns'); campoDiligenciado('UserNameCns');">
+                        <label  class="formulario__labelDialogEmp" id="lblUserNameCns">Nombre</label>
                         <br/>
-                        <input type="text" class="formulario__inputDialog" style="padding: 10px !important;" id="txtCelularX" size="10" max="10" maxlength="10" onkeyup="campoDiligenciado('UserNameCns'); valCellNumber(2); getFilterList('txtCelularX');">
-                        <label  class="formulario__labelDialogEmp" id="lblCelularX">Celular Usuario</label>
+                        <input type="text" class="formulario__inputDialog" style="padding: 10px !important;" id="txtCelularC" size="10" max="10" maxlength="10" onkeyup="valCellNumber(3); getFilterList('txtCelularC'); campoDiligenciado('CelularC');">
+                        <label  class="formulario__labelDialogEmp" id="lblCelularC">Celular</label>
                         <div class="btn-group cf">
                             <button class="btn_cancel" onclick="closePopUp('m-ListUsersRouteEnt');">Cerrar</button>
                         </div>
                     </div>
                     <div>
                         <ul id="listaUsuariosCns" style="overflow: auto;">
-                            <li id="tituloCnsUsu"><b>Usuarios</b></li>
-                            <li id="columnasCnsUsu"><b>Nombre - Celular</b></li>
+                            <li id="tituloCnsUsu" class="tituloLista">Usuarios</li>
+                            <li id="columnasCnsUsu" class="subTituloLista">Nombre - Celular</li>
                         </ul>
                     </div>
                 </div>

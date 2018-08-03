@@ -79,7 +79,6 @@
                     <input type="text" class="formulario__inputDialog" id="txtRuta" size="6" max="6" maxlength="6" onkeyup="campoDiligenciado('Ruta'); getFilterList('txtRuta')">
                     <label class="formulario__labelDialog" id="lblRuta">Placa</label>
                     <div id="routeFind"></div>
-                    <br/>
                     <div class="btn-group cf">
                         <button class="btn_add" id="btnARDialog" onclick="addRouteEnt(); return listVehicle();">Vincular</button>
                         <button class="btn_cancel" onclick="closePopUp('m-AddRoute')">Cancelar</button>
@@ -87,8 +86,7 @@
                 </div>
                 <div>
                     <ul id="listaVehiculos" style="overflow: auto";>
-                        <li id="titulo"><b>Vehiculos</b></li>
-                        <li id="columnas"><b>Placa - Ruta - Nombre</b></li>
+                        <li id="titulo" class="subTituloLista">Listado de Vehiculos a Cargo</li>
                     </ul>
                 </div>
             </div>
@@ -109,7 +107,6 @@
                     <input type="text" class="formulario__inputDialog" id="txtRutaRem" size="6" max="6" maxlength="6" onkeyup="campoDiligenciado('RutaRem'); getFilterList('txtRutaRem');">
                     <label class="formulario__labelDialog" id="lblRutaRem">Placa</label>
                     <div id="routeFindRem"></div>
-                    <br/>
                     <div class="btn-group cf">
                         <button class="btn_add" id="btnRmDialog" onclick="remRoute()">Desvincular</button>
                         <button class="btn_cancel" onclick="closePopUp('m-RemoveRoute')">Cancelar</button>
@@ -117,8 +114,7 @@
                 </div>
                 <div>
                     <ul id="listaVehiculosDel">
-                        <li id="tituloDel"><b>Vehiculos</b></li>
-                        <li id="columnasDel">Placa - Ruta - Nombre Ruta</li>
+                        <li id="tituloDel" class="subTituloLista">Listado de Vehiculos a Cargo</li>
                     </ul>
                 </div>
             </div>
@@ -130,7 +126,7 @@
 <!--                        <img src="img/android/drawable-mdpi/logoapprutas.png" height="51" width="51"> -->
                     </div>
                     <div class="headerTitle">
-                    <h1><p class="textoHeader">Consultar Detalle Vehículo</p></h1>
+                    <h1><p class="textoHeader">Consultar Vehículo</p></h1>
                     </div>
                 </div>
                 <br/>
@@ -146,8 +142,7 @@
                 </div>
                 <div>
                     <ul id="listaVehiculosCns" style="overflow: auto;">
-                        <li id="tituloCns"><b>Vehiculos</b></li>
-                        <li id="columnasCns"><b>Placa - Ruta - Nombre</b></li>
+                        <li id="tituloCns" class="subTituloLista">Listado de Vehiculos</li>
                     </ul>
                 </div>
             </div>
@@ -204,19 +199,9 @@
 
         <dialog id="m-CnfAddRoute" class="site-dialog">
             <div class="headerFormPopUp">
-                <div class="headerDialog">
-                    <div class="headerImage">
-<!--                        <img src="img/android/drawable-mdpi/logoapprutas.png" height="51" width="51"> -->
-                    </div>
-                    <div class="headerTitle">
-                        <h1><p class="textoHeader">Confirmación</p></h1>
-                    </div>
-                </div>
-                <br/>
                 <div class="formularioDialogAlert">
                     <br/>
-                    <div style="text-align: center; color: #000000;">Desea vincular el vehiculo</div>
-                    <div style="text-align: center; color: #000000;">y su primera ruta?</div>
+                    <div style="text-align: center; color: #000000;">Desea vincular el vehiculo?</div>
                     <br/>
                     <div style="text-align: center; color: #000000;">Para continuar ingrese el nombre de la ruta</div>
                     <div style="text-align: center; color: #000000;"><input type="text" style="margin-bottom: 0px !important; width: 100% !important; background: #FFFFFF !important; padding: 10px !important; text-align: center;" class="formulario__input" id="txtNewRoute" size="40" maxlength="40"></div>
@@ -231,15 +216,6 @@
 
         <dialog id="m-MsjAds" class="site-dialog">
             <div class="headerFormPopUp">
-                <div class="headerDialog">
-                    <div class="headerImage">
-<!--                        <img src="img/android/drawable-mdpi/logoapprutas.png" height="51" width="51"> -->
-                    </div>
-                    <div class="headerTitle">
-                    <h1><p class="textoHeader">Advertencia</p></h1>
-                    </div>
-                </div>
-                <br/>
                 <div class="formularioDialogAlert">
                     <br/>
                     <b><div id="msjAds"></div></b>
@@ -277,21 +253,21 @@
                 </div>
                 <br/>
                 <div class="formularioDialog" style="color: black; text-align: left; font-size: 16px;">
+                    <div style="padding: 10px;">
+                        <div id="nombreConductor"></div>
+                        <div id="documentoConductor"></div>
+                        <div id="telefonoConductor"></div>
+                        <div id="fechaConductor"></div>
+                    </div>
                     <br/>
-                    <div id="nombreConductor"></div>
-                    <div id="documentoConductor"></div>
-                    <div id="telefonoConductor"></div>
-                    <div id="fechaConductor"></div>
-                    <br/>
-                    <div class="btn-group cf" style="text-align: right;">
+                    <div class="btn-group cf" style="text-align: center;">
                         <button class="btn_cancel" onclick="abrirOpcionModal('m-CnfAddNewRoute')">Agregar Ruta</button>
                         <button class="btn_cancel" onclick="closePopUp('m-CnsRouteDetailEnt')">Cerrar</button>
                     </div>
                 </div>
                 <div>
                     <ul id="listaRutas" style="overflow: auto";>
-                        <li id="tituloVin"><b>Rutas Vinculadas</b></li>
-                        <li id="columnasVin"><b>Código - Nombre - Estado</b></li>
+                        <li id="tituloVin" class="subTituloLista">Rutas Asignadas al Vehículo</li>
                     </ul>
                 </div>
             </div>

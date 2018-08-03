@@ -239,20 +239,21 @@ header:hover {
     top: 0%;
     height: 100%;
 	width: 25%;
-    background: #333333;
+/*    background: #333333; */
+    background: #FFFFFF;
     text-align: center;
     left: 0;
     right: 0;
     margin-left: auto;
     position: fixed;
     opacity: 1;
-    color: white;
+    color: #333333;
 }
 
 .headerFormPopUp {
     top: 25%;
     width: 30%;
-    background: #333333;
+    background: #FFFFFF;
     text-align: center;
     left: 0;
     right: 0;
@@ -260,7 +261,7 @@ header:hover {
     margin-right: auto;
     position: fixed;
     opacity: 1;
-    color: white;
+    color: #333333;
 }
 
 .headerFormBottom {
