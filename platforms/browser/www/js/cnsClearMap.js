@@ -240,7 +240,7 @@ function addRoute() {
             var datosX = conn.database().ref("entRoute/" + entUser + "/" + routeCode );
             datosX.set({ date : fecha,
                          user : myUserId,
-                         routeCode: routeCode,
+                         plateCode: routeCode,
                          entCode: entUser
                       }).then( function() {
                             msjAlert("dato almacenado correctamente", 1);

@@ -1,7 +1,7 @@
 'use strict';
 
 var myUserId = "";
-var tokenSesion;
+var tokenSesion = 0;
 var myUser;
 var miToken;
 var contador = 0;
@@ -23,7 +23,7 @@ var iconoSel = "", entUser = "", entRoute = ""
 var entCode = "";
 var alphaLow = "abcdefghijklmnopqrstuvwxyz";
 var alphaUp = "abcdefghijklmnopqrstuvwxyz".toLocaleUpperCase();
-var tblRtAlt = ['alert', 'starandfinish', 'entRoute', 'datacar', 'datacars', 'drivervstravel', 'starandfinish', 'placavskey', 'entUser', 'entGroup', 'uservscode', 'usersvstravel', 'mensaje', 'datadriver'];
+var tblRtAlt = ['alert', 'starandfinish', 'entRoute', 'datacar', 'datacars', 'drivervstravel', 'starandfinish', 'placavskey', 'entUser', 'entGroup', 'uservscode', 'usersvstravel', 'mensaje', 'datadriver', 'schGroup', 'listvstravel', 'logerrdata', 'docs', 'contact'];
 var objCnx = [];
 var enterpriseUser = "";
 var entChoose = "";
@@ -136,15 +136,16 @@ function campoDiligenciado(etiqueta) {
 //    $("formulario__label").css("margin-top", "-125px");
 //    $("#" + etiqueta).css("margin-top", "-125px");
 //    alert("etiqueta:" + $('#txt' + etiqueta ).val().length);
-    console.log(etiqueta);
-    if( $('#txt' + etiqueta ).val().length > 0 ) {
-        if( etiqueta == "Celular" ) {
+//    var elem = document.getElementById("routeFind");
+//    elem.textContent = "";
+    if ($('#txt' + etiqueta ).val().length > 0) {
+        if (etiqueta == "Celular") {
             $('#lbl' + etiqueta ).removeClass("formulario__label_cel");
             $('#lbl' + etiqueta ).addClass("formulario__label_cel_lleno");
-        } else if( etiqueta.substr(0,4).trim() == "Ruta" ) {
+        } else if (etiqueta.substr(0,4).trim() == "Ruta") {
             $('#lbl' + etiqueta ).removeClass("formulario__labelDialog");
             $('#lbl' + etiqueta ).addClass("formulario__labelDialog_lleno");
-        } else if( etiqueta.trim() == "Empleado" || etiqueta.trim() == "Direccion" || etiqueta.trim() == "CelularC" || etiqueta.trim() == "UserNameCns") {
+        } else if (etiqueta.trim() == "Ciudad" || etiqueta.trim() == "Empleado" || etiqueta.trim() == "Direccion" || etiqueta.trim() == "CelularC" || etiqueta.trim() == "UserNameCns" || etiqueta.trim() == "CelularX") {
             $('#lbl' + etiqueta ).removeClass("formulario__labelDialogEmp");
             $('#lbl' + etiqueta ).addClass("formulario__labelDialogEmp_lleno");
         } else {
@@ -152,13 +153,13 @@ function campoDiligenciado(etiqueta) {
             $('#lbl' + etiqueta ).addClass("formulario__label_lleno");
         }
     } else {
-        if( etiqueta == "Celular" ) {
+        if (etiqueta == "Celular") {
             $('#lbl' + etiqueta ).removeClass("formulario__label_cel_lleno");
             $('#lbl' + etiqueta ).addClass("formulario__label_cel");
-        } else if( etiqueta.substr(0,4).trim() == "Ruta" ) {
+        } else if (etiqueta.substr(0,4).trim() == "Ruta") {
             $('#lbl' + etiqueta ).removeClass("formulario__labelDialog_lleno");
             $('#lbl' + etiqueta ).addClass("formulario__labelDialog");
-        } else if( etiqueta.trim() == "Empleado" || etiqueta.trim() == "Direccion" || etiqueta.trim() == "CelularC" || etiqueta.trim() == "UserNameCns") {
+        } else if(etiqueta.trim() == "Ciudad" || etiqueta.trim() == "Empleado" || etiqueta.trim() == "Direccion" || etiqueta.trim() == "CelularC" || etiqueta.trim() == "UserNameCns" || etiqueta.trim() == "CelularX") {
             $('#lbl' + etiqueta ).removeClass("formulario__labelDialogEmp_lleno");
             $('#lbl' + etiqueta ).addClass("formulario__labelDialogEmp");
         } else {
@@ -167,33 +168,32 @@ function campoDiligenciado(etiqueta) {
         }
     }
 //    console.log($('#txt' + etiqueta ).val() + " - " + etiqueta.substr(0,4).trim());
-    if( $('#txt' + etiqueta ).val().length > 5 && etiqueta.substr(0,4).trim() == "Ruta" ) {
+    if ($('#txt' + etiqueta ).val().length > 5 && etiqueta.substr(0,4).trim() == "Ruta") {
+        if (etiqueta == 'RutaRem') return;
         var alphaLow = "abcdefghijklmnopqrstuvwxyz";
         var alphaUp = "abcdefghijklmnopqrstuvwxyz".toLocaleUpperCase();
         var number = "0123456789";
         var routeCode = "";
         var tmpLetra = ""
         var texto = $('#txt' + etiqueta ).val();
-        for( var i = 0; i < texto.length; i++ ) {
+        for (var i = 0; i < texto.length; i++) {
             var letra = texto.charAt(i);
-            for( var j = 0; j < alphaLow.length; j++ ) {
+            for (var j = 0; j < alphaLow.length; j++) {
                 if( letra == alphaLow.charAt(j) ) {
                     tmpLetra = letra.toLocaleUpperCase();
                 }
             }
-            for( var j = 0; j < alphaUp.length; j++ ) {
-                if( letra == alphaUp.charAt(j) ) {
+            for (var j = 0; j < alphaUp.length; j++) {
+                if (letra == alphaUp.charAt(j)) {
                     tmpLetra = letra;
                 }
             }
-            for( var j = 0; j < number.length; j++ ) {
-                if( letra == number.charAt(j) ) {
+            for (var j = 0; j < number.length; j++) {
+                if (letra == number.charAt(j))
                     tmpLetra = letra;
-                }
             }
             routeCode += tmpLetra;
         }
-//        console.log("Segundo intento");
         csnRouteEnt(routeCode);
     }
 }
@@ -293,6 +293,51 @@ function minToMayus(textMin) {
     return routeCode;
 }
 
+function getCapitalLetter(textMin) {
+
+    var listNumber = "0123456789";
+    var returnText = "";
+    var tmpLetra = "";
+    var texto = textMin;
+
+    if (texto.length <= 0) return;
+
+    for (var i = 0; i < texto.length; i++) {
+        tmpLetra = "";
+        var letra = texto.charAt(i);
+        for( var j = 0; j < listNumber.length; j++ ) {
+            if (letra == listNumber.charAt(j)) {
+                tmpLetra = letra;
+                j = listNumber.length + 1;
+                returnText += tmpLetra;
+            }
+        }
+        if (tmpLetra != "") continue;
+        if (i == 0)
+            tmpLetra = texto.charAt(0).toLocaleUpperCase();
+        else if (tmpLetra == "" && letra == " " && texto.length > i + 1) {
+//            console.log('getCapitalLetterB ' + texto.charAt(i) + ' ' + letra);
+            for( var j = 0; j < listNumber.length; j++ ) {
+                if (texto.charAt(i + 1) == listNumber.charAt(j)) {
+                    tmpLetra = texto.charAt(i + 1);
+                    j = listNumber.length + 1;
+                    i++;
+                    returnText += letra + tmpLetra;
+                }
+            }
+            if (tmpLetra != "") continue;
+            tmpLetra = " " + texto.charAt(i + 1).toLocaleUpperCase();
+            i++;
+        }
+        else
+            tmpLetra = texto.charAt(i);
+        returnText += tmpLetra;
+//        console.log('getCapitalLetterC ' + returnText);
+    }
+
+    return returnText;
+}
+
 function getCodRoute() {
     codRuta = "";
     codRuta += String.fromCharCode(Math.floor((Math.random() * (122 - 97)+97) + 1));
@@ -301,7 +346,7 @@ function getCodRoute() {
     codRuta += String.fromCharCode(Math.floor((Math.random() * (122 - 97)+97) + 1));
     codRuta += String.fromCharCode(Math.floor((Math.random() * (122 - 97)+97) + 1));
     codRuta = codRuta.toUpperCase();
-    console.log("codRuta: " + codRuta);
+//    console.log("codRuta: " + codRuta);
 }
 
 function valCellNumber(option) {
@@ -309,7 +354,7 @@ function valCellNumber(option) {
     if (option == 1) cellNumber = $("#txtCelular").val();
     if (option == 2) cellNumber = $("#txtCelularX").val();
     if (option == 3) cellNumber = $("#txtCelularC").val();
-    console.log(option + "=" + cellNumber);
+//    console.log(option + "=" + cellNumber);
     var tmpCellNumer = "";
     var number = "0123456789";
     for (var i = 0; i < cellNumber.length; i++) {
@@ -321,4 +366,16 @@ function valCellNumber(option) {
     if (option == 1) $("#txtCelular").val(tmpCellNumer);
     if (option == 2) $("#txtCelularX").val(tmpCellNumer);
     if (option == 3) $("#txtCelularC").val(tmpCellNumer);
+}
+
+function getMoveImage() {
+//    console.log('getMoveImage:' + screen.width + " - " + screen.height);
+//    for (var i = 0; i < screen.width;) {
+    return;
+    var i = 0;
+        setInterval(function() {
+            document.getElementById("imagen").style.marginLeft = String(i) + "px";
+            i++;
+        }, 10);
+//    }
 }

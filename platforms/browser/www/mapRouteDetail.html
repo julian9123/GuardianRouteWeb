@@ -26,17 +26,17 @@
         <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQ7J6-8VbDMfg12nPmEiNrvgbEhZGvIyA&callback=initMap"></script>
         <script type="text/javascript" src="js/mapas.js"></script>
       </head>
-      <body onload="initMap();">
-        <header style="width: 15%;">
+      <body onload="abrirOpcionModal('m-WaitRoute'); getMoveImage(); initMap();">
+        <header class="headerDetail">
             <nav>
                 <ul>
                     <li onclick="abrirOpcionModal('m-NotifyRoute');">
-                        <a href="javascript:void(0)"><img src="img/drawable/BtnAlerta.png" width="60" height="60">
+                        <a href="javascript:void(0)"><img src="img/drawable/BtnAlerta.png" class="iconHeader">
                             <p class="letraMenu">Enviar Notificación</p>
                         </a>
                     </li>
                     <li onclick="window.close();">
-                        <a href="javascript:void(0)"><img src="img/drawable/back-web.png" width="60" height="60">
+                        <a href="javascript:void(0)"><img src="img/drawable/back-web.png" class="iconHeader">
                             <p class="letraMenu">Volver</p>
                         </a>
                     </li>
@@ -44,17 +44,14 @@
             </nav>
         </header>
         <div id="map" class="map"></div>
-        <div id="footer" style="display: none"></div>
-        <div id="dtsVehiculo" style="display: none"></div>
-        <div id="dtsAlertParent" style="display: none"></div>
+        <div id="footer" class="invisible"></div>
+        <div id="dtsVehiculo" class="invisible"></div>
+        <div id="dtsAlertParent" class="invisible"></div>
         <dialog id="m-SearchRoute" class="site-dialog">
             <div class="headerForm">
                 <div class="headerDialog">
-                    <div class="headerImage">
-<!--                        <img src="img/android/drawable-mdpi/logoapprutas.png" height="51" width="51"> -->
-                    </div>
                     <div class="headerTitle">
-                    <h1><p class="textoHeader">Consultar Detalle Vehículo</p></h1>
+                        <h1><p class="textoHeader">Consultar Detalle Vehículo</p></h1>
                     </div>
                 </div>
                 <br/>
@@ -69,7 +66,7 @@
                     </div>
                 </div>
                 <div>
-                    <ul id="listaVehiculosCns" style="overflow: auto;">
+                    <ul id="listaVehiculosCns" class="listaVe">
                         <li id="tituloCns" class="tituloLista">Vehiculos</li>
                         <li id="columnasCns" class="subTituloLista">Placa - Ruta - Nombre</li>
                     </ul>
@@ -78,15 +75,6 @@
         </dialog>  
         <dialog id="m-MsjAds" class="site-dialog">
             <div class="headerFormPopUp">
-                <div class="headerDialog">
-                    <div class="headerImage">
-<!--                        <img src="img/android/drawable-mdpi/logoapprutas.png" height="51" width="51"> -->
-                    </div>
-                    <div class="headerTitle">
-                    <h1><p class="textoHeader">Confirmación</p></h1>
-                    </div>
-                </div>
-                <br/>
                 <div class="formularioDialogAlert">
                     <br/>
                     <b><div id="msjAds"></div></b>
@@ -99,15 +87,19 @@
         </dialog>
         <dialog id="m-NotifyRoute" class="site-dialog">
             <div class="headerFormBottom">
-                <p class="textoHeader" style="font-size: 15px;"><strong>Notificaciones</strong></p>
+                <p class="textoHeader"><strong>Notificaciones</strong></p>
                 <div class="formularioDialogNotify">
-                    <img src="img/android/drawable-mdpi/logoapprutas.png" height="51" width="51">
                     <input type="text" id="notificacion" class="textoNotify" maxlength="40">
-                    <div class="btn-group cf" style="margin-left: 1%; display: inline-flex;">
-                        <button class="btn_add" onclick="sendNotification('forMe'); closePopUp('m-NotifyRoute')" style="margin: 7px;">Enviar</button>
-                        <button class="btn_cancel" onclick="closePopUp('m-NotifyRoute')" style="margin: 7px;">Cancelar</button>
+                    <div class="btn-group cf btnNotificaciones">
+                        <button class="btn_add btnNotifica" onclick="sendNotification('forMe'); closePopUp('m-NotifyRoute')">Enviar</button>
+                        <button class="btn_cancel btnNotifica" onclick="closePopUp('m-NotifyRoute')" >Cancelar</button>
                     </div>
                 </div>
+            </div>
+        </dialog>
+        <dialog id="m-WaitRoute" class="site-dialog">
+            <div id="myBus" class="myBus">
+                <img src="img/drawable/gifcarga.gif" id="imagen"/>
             </div>
         </dialog>
       </body>

@@ -14,45 +14,48 @@
         <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.1/material.teal-red.min.css" />
         <script src="https://storage.googleapis.com/code.getmdl.io/1.0.1/material.min.js"></script>
         <script src="https://apis.google.com/js/platform.js" async defer></script>
-        <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-auth.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-database.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-messaging.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-messaging.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-storage.js"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="cordova.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<!--        <script type="text/javascript" src="cordova.js"></script> -->
         <script type="text/javascript" src="js/index.js"></script>  
         <script type="text/javascript" src="js/conectar.js"></script>
         <script type="text/javascript" src="js/consultar.js"></script>
         <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQ7J6-8VbDMfg12nPmEiNrvgbEhZGvIyA&callback=initMap"></script>
         <script type="text/javascript" src="js/mapas.js"></script>
       </head>
-      <body>
-        <header style="width: 45%;">
+        <body onload="getMoveImage(); getEventWindow(); getDataRoutes();">
+        <header>
             <nav>
                 <ul>
-                    <li onclick="listVehicle(); abrirOpcionModal('m-AddRoute');">
-                        <a href="#"><img src="img/drawable/plus.png" width="60" height="60">
+                    <li onclick="listVehicle(); abrirOpcionModal('m-AddRoute'); setwinStateTime(1);">
+                        <a href="#"><img src="img/drawable/plus.png" class="iconHeader">
                             <p class="letraMenu">Vincular Vehículo</p>
                         </a>
                     </li>
-                    <li onclick="listVehicleDelete(); strDataRoute(); abrirOpcionModal('m-RemoveRoute');">
-                        <a href="#"><img src="img/drawable/minus.png" width="60" height="60">
+                    <li onclick="listVehicleDelete(); strDataRoute(); abrirOpcionModal('m-RemoveRoute'); setwinStateTime(1);">
+                        <a href="#"><img src="img/drawable/minus.png" class="iconHeader">
                             <p class="letraMenu">Desvincular Vehículo</p>
                         </a>
                     </li>
-                    <li onclick="strDataRoute(); abrirOpcionModal('m-NotifyRoute');">
-                        <a href="#"><img src="img/drawable/BtnAlerta.png" width="60" height="60">
+                    <li onclick="strDataRoute(); abrirOpcionModal('m-NotifyRoute'); setwinStateTime(1);">
+                        <a href="#"><img src="img/drawable/BtnAlerta.png" class="iconHeader">
                             <p class="letraMenu">Enviar Notificación</p>
                         </a>
                     </li>
                     <li onclick="abrirOpcionModal('m-SearchRoute'); listVehicleCns();">
-                        <a href="#"><img src="img/drawable/btnbuscar.png" width="60" height="60">
+                        <a href="#"><img src="img/drawable/btnbuscar.png" class="iconHeader">
                             <p class="letraMenu">Consultar Vehículo</p>
                         </a>
                     </li>
                     <li>
-                        <a href="cerrarSesion.html"><img src="img/drawable/logging-out.png"  width="60" height="60">
+                        <a href="cerrarSesion.html"><img src="img/drawable/logging-out.png"  class="iconHeader">
                             <p class="letraMenu">Cerrar Sesión</p>
                         </a>
                     </li>
@@ -60,15 +63,12 @@
             </nav>
         </header>
         <div id="map" class="map"></div>
-        <div id="footer" style="display: none"></div>
-        <div id="dtsVehiculo" style="display: none"></div>
-        <ul id="dtsAlertParent" style="display: none"></ul>
+        <div id="footer" class="invisible"></div>
+        <div id="dtsVehiculo" class="invisible"></div>
+        <ul id="dtsAlertParent" class="invisible"></ul>
         <dialog id="m-AddRoute" class="site-dialog">
             <div class="headerForm">
                 <div class="headerDialog">
-                    <div class="headerImage">
-<!--                        <img src="img/android/drawable-mdpi/logoapprutas.png" height="51" width="51"> -->
-                    </div>
                     <div class="headerTitle">
                     <h1><p class="textoHeader">Vincular Vehículo</p></h1>
                     </div>
@@ -76,22 +76,23 @@
                 <br/>
                 <div class="formularioDialog">
                     <br/>
-                    <input type="text" class="formulario__inputDialog" id="txtRuta" size="6" max="6" maxlength="6" onkeyup="campoDiligenciado('Ruta'); getFilterList('txtRuta')">
+                    <input type="text" class="formulario__inputDialog" id="txtRuta" size="6" max="6" maxlength="6" onkeyup="campoDiligenciado('Ruta'); getFilterList('txtRuta');">
                     <label class="formulario__labelDialog" id="lblRuta">Placa</label>
                     <div id="routeFind"></div>
                     <div class="btn-group cf">
-                        <button class="btn_add" id="btnARDialog" onclick="addRouteEnt(); return listVehicle();">Vincular</button>
-                        <button class="btn_cancel" onclick="closePopUp('m-AddRoute')">Cancelar</button>
+                        <button class="btn_add" onclick="validatePlate('txtRuta'); campoDiligenciado('Ruta'); setwinStateTime(1);">Vincular</button>
+                        <button class="btn_cancel" onclick="closePopUp('m-AddRoute'); setwinStateTime(0);">Cancelar</button>
                     </div>
                 </div>
+                <br/>
                 <div>
-                    <ul id="listaVehiculos" style="overflow: auto";>
+                    <ul id="listaVehiculos" class="listaVe">
                         <li id="titulo" class="subTituloLista">Listado de Vehiculos a Cargo</li>
                     </ul>
                 </div>
             </div>
-        </dialog>
-        <dialog id="m-RemoveRoute" class="site-dialog">
+       </dialog>
+       <dialog id="m-RemoveRoute" class="site-dialog">
             <div class="headerForm">
                 <div class="headerDialog">
                     <div class="headerImage">
@@ -108,18 +109,19 @@
                     <label class="formulario__labelDialog" id="lblRutaRem">Placa</label>
                     <div id="routeFindRem"></div>
                     <div class="btn-group cf">
-                        <button class="btn_add" id="btnRmDialog" onclick="remRoute()">Desvincular</button>
-                        <button class="btn_cancel" onclick="closePopUp('m-RemoveRoute')">Cancelar</button>
+                        <button class="btn_cancel" onclick="closePopUp('m-RemoveRoute'); setwinStateTime(0);">Cerrar</button>
                     </div>
                 </div>
+                <br/>
                 <div>
                     <ul id="listaVehiculosDel">
                         <li id="tituloDel" class="subTituloLista">Listado de Vehiculos a Cargo</li>
                     </ul>
                 </div>
             </div>
-        </dialog>
-        <dialog id="m-SearchRoute" class="site-dialog">
+       </dialog>
+<!-- Formulario para consultar los vehiculos registrados -->
+       <dialog id="m-SearchRoute" class="site-dialog">
             <div class="headerForm">
                 <div class="headerDialog">
                     <div class="headerImage">
@@ -133,21 +135,21 @@
                 <div class="formularioDialog">
                     <br/>
                     <input type="text" class="formulario__inputDialog" id="txtRouteCns" size="6" max="6" maxlength="6" onkeyup="campoDiligenciado('RouteCns'); getFilterList('txtRouteCns');">
-                    <label  class="formulario__labelDialog" id="lblRutaCns">Ruta</label>
+                    <label  class="formulario__labelDialog" id="lblRutaCns">Placa</label>
                     <br/>
                     <div class="btn-group cf">
-                        <button class="btn_add" id="btnCnsDialog" onclick="listVehicleCns()">Consultar</button>
-                        <button class="btn_cancel" onclick="strDataRoute(); closePopUp('m-SearchRoute');">Cancelar</button>
+                        <button class="btn_cancel" onclick="strDataRoute(); closePopUp('m-SearchRoute');">Cerrar</button>
                     </div>
                 </div>
+                <br/>
                 <div>
-                    <ul id="listaVehiculosCns" style="overflow: auto;">
+                    <ul id="listaVehiculosCns" class="listaVe">
                         <li id="tituloCns" class="subTituloLista">Listado de Vehiculos</li>
                     </ul>
                 </div>
             </div>
-        </dialog>
-        <dialog id="m-ChangeRoute" class="site-dialog">
+       </dialog>
+       <dialog id="m-ChangeRoute" class="site-dialog">
             <div class="headerFormVideo">
                 <div class="headerDialog">
                     <div class="headerImage">
@@ -170,51 +172,74 @@
                     </div>
                 </div>
             </div>
-        </dialog>
-        <dialog id="m-CnfRemRoute" class="site-dialog">
-            <div class="headerForm">
-                <div class="headerDialog">
-                    <div class="headerImage">
-<!--                        <img src="img/android/drawable-mdpi/logoapprutas.png" height="51" width="51"> -->
-                    </div>
-                    <div class="headerTitle">
-                    <h1><p class="textoHeader">Confirmación</p></h1>
-                    </div>
-                </div>
-                <br/>
+       </dialog>
+       <dialog id="m-CnfRemRoute" class="site-dialog">
+            <div class="headerFormPopUp">
                 <div class="formularioDialogAlert">
                     <br/>
-                    <div style="text-align: center; color: #000000;">Recuerde que una vez efectuado el proceso</div>
-                    <div style="text-align: center; color: #000000;">Los datos de la ruta relacionada a la empresa</div>
-                    <div style="text-align: center; color: #000000;">No se podran recuperar</div>
-                    <div style="text-align: center; color: #000000;">Desea desvincular la ruta?</div>
+                    <div class="textoDesvincula">Recuerde que una vez efectuada la desvinculación</div>
+                    <div class="textoDesvincula">Los datos de la ruta no se podrán recuperar</div>
+                    <div class="textoDesvincula">Desea desvincular la ruta?</div>
                     <br/>
                     <div class="btn-group cf">
-                        <button class="btn_add" id="btnCnfDialog" onclick="confirmaAddRouteEnt(); closePopUp('CnfRemRoute');">Desvincular</button>
+                        <button class="btn_add" id="btnCnfDialog" onclick="confirmaRemRoute();">Desvincular</button>
                         <button class="btn_cancel" onclick="closePopUp('m-CnfRemRoute')">Cancelar</button>
                     </div>
                 </div>
             </div>
-        </dialog>
+       </dialog>
 
-        <dialog id="m-CnfAddRoute" class="site-dialog">
+       <dialog id="m-CnfAddRoute" class="site-dialog">
             <div class="headerFormPopUp">
                 <div class="formularioDialogAlert">
                     <br/>
-                    <div style="text-align: center; color: #000000;">Desea vincular el vehiculo?</div>
+                    <div class="textoDesvincula">Desea vincular el vehiculo?</div>
                     <br/>
-                    <div style="text-align: center; color: #000000;">Para continuar ingrese el nombre de la ruta</div>
-                    <div style="text-align: center; color: #000000;"><input type="text" style="margin-bottom: 0px !important; width: 100% !important; background: #FFFFFF !important; padding: 10px !important; text-align: center;" class="formulario__input" id="txtNewRoute" size="40" maxlength="40"></div>
+                    <div class="textoDesvincula">Para continuar ingrese nombre de la ruta y seleccione el tipo</div>
+                    <div class="textoDesvincula">
+                        <input type="text" class="textoNuevaRuta" class="formulario__input" id="txtNewRouteV" size="40" maxlength="40">
+                    </div>
                     <br/>
+                    <select id="txtOptEnt1" class="formulario__input" class="tipoRuta">
+                        <option value="">Tipo de Ruta</option>
+                        <option value="escolar">Escolar</option>
+                        <option value="empresarial">Empresarial</option>
+                    </select>
                     <div class="btn-group cf">
-                        <button class="btn_add" id="btnCnfAddDialog" onclick="confirmaAddRouteEnt(); closePopUp('m-CnfAddRoute'); msjAlert('Ruta ' + $('#txtNewRoute').val() + ' creada', 1);">Crear</button>
+                        <button class="btn_add" id="btnCnfAddDialog" onclick="confirmaAddRouteEnt();">Vincular</button>
                         <button class="btn_cancel" onclick="closePopUp('m-CnfAddRoute')">Cancelar</button>
                     </div>
                 </div>
             </div>
-        </dialog>
+       </dialog>
 
-        <dialog id="m-MsjAds" class="site-dialog">
+
+       <dialog id="m-CnfAddNewRoute" class="site-dialog">
+            <div class="headerFormPopUp">
+                <div class="formularioDialogAlert">
+                    <br/>
+                    <div class="textoNuevaRuta">Desea crear una nueva ruta?</div>
+                    <br/>
+                    <div class="textoDesvincula">Para continuar por favor ingrese nombre de ruta y seleccione el tipo de ruta</div>
+                    <div class="textoDesvincula"><input type="text" class="textoNuevaRuta" class="formulario__input" id="txtNewRoute" size="40" maxlength="40"></div>
+                    <br/>
+                    <select id="txtOptEnt" class="formulario__input" class="textoNuevaRuta">
+                        <option value="">Tipo de Ruta</option>
+                        <option value="escolar">Escolar</option>
+                        <option value="empresarial">Empresarial</option>
+                    </select>
+                    <div class="btn-group cf">
+                        <button class="btn_add" id="btnCnfAddDialogNR" onclick="complementData(2);">Crear</button>
+                        <button class="btn_cancel" onclick="closePopUp('m-CnfAddNewRoute')">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+       </dialog>
+
+
+
+
+       <dialog id="m-MsjAds" class="site-dialog">
             <div class="headerFormPopUp">
                 <div class="formularioDialogAlert">
                     <br/>
@@ -225,77 +250,477 @@
                     </div>
                 </div>
             </div>
-        </dialog>
+       </dialog>
        <dialog id="m-NotifyRoute" class="site-dialog">
             <div class="headerFormBottom">
-                <p class="textoHeader" style="font-size: 15px;"><strong>Notificaciones</strong></p>
+                <p class="textoHeader"><strong>Notificaciones</strong></p>
                 <div class="formularioDialogNotify">
-                    <img src="img/android/drawable-mdpi/logoapprutas.png" height="51" width="51">
                     <input type="text" id="notificacion" class="textoNotify" maxlength="40">
-                    <div class="btn-group cf" style="margin-left: 1%; display: inline-flex;">
-                        <button class="btn_add" onclick="sendNotification('forAll'); closePopUp('m-NotifyRoute')" style="margin: 7px;">Enviar</button>
-                        <button class="btn_cancel" onclick="closePopUp('m-NotifyRoute')" style="margin: 7px;">Cancelar</button>
+                    <div class="btn-group cf btnNotificaciones">
+                        <button class="btn_add btnNotifica" onclick="sendNotification('forAll'); closePopUp('m-NotifyRoute'); setwinStateTime(0);" class="btnNotifica">Enviar</button>
+                        <button class="btn_cancel btnNotifica" onclick="closePopUp('m-NotifyRoute'); setwinStateTime(0);" class="btnNotifica">Cancelar</button>
                     </div>
                 </div>
             </div>
-        </dialog>
-        <dialog id="m-CnsRouteDetailEnt" class="site-dialog">
+       </dialog>
+       <dialog id="m-CnsRouteDetailEnt" class="site-dialog">
             <div class="headerForm">
                 <div class="headerDialog">
-        <!--
-                            <div class="headerImage">
-                                <img src="img/android/drawable-mdpi/logoapprutas.png" height="51" width="51">
-                            </div>
-        -->
-                    <div class="headerTitle" style="margin-left: auto; margin-right: auto;">
+                    <div class="headerTitle centrarObjeto">
                         <h1><p class="textoHeader">Información del Vehículo<div class="textoHeader" id="codePlaca"></div></p></h1>
                     </div>
                 </div>
                 <br/>
-                <div class="formularioDialog" style="color: black; text-align: left; font-size: 16px;">
-                    <div style="padding: 10px;">
+                <div class="formularioDialog infoConductor">
+                    <div class="bordesDiv">
                         <div id="nombreConductor"></div>
                         <div id="documentoConductor"></div>
                         <div id="telefonoConductor"></div>
                         <div id="fechaConductor"></div>
                     </div>
                     <br/>
-                    <div class="btn-group cf" style="text-align: center;">
+                    <div class="btn-group cf textoDesvincula">
                         <button class="btn_cancel" onclick="abrirOpcionModal('m-CnfAddNewRoute')">Agregar Ruta</button>
                         <button class="btn_cancel" onclick="closePopUp('m-CnsRouteDetailEnt')">Cerrar</button>
                     </div>
                 </div>
                 <div>
-                    <ul id="listaRutas" style="overflow: auto";>
+                    <ul id="listaRutas" class="listaVe">
                         <li id="tituloVin" class="subTituloLista">Rutas Asignadas al Vehículo</li>
                     </ul>
                 </div>
             </div>
-        </dialog>
-        <dialog id="m-CnfAddNewRoute" class="site-dialog">
-            <div class="headerFormPopUp">
+       </dialog>
+<!-- Imagen de espera -->
+       <dialog id="m-WaitRoute" class="site-dialog">
+            <div id="myBus" class="myBus">
+                <img src="img/drawable/gifcarga.gif" id="imagen"/>
+            </div>
+       </dialog>
+<!-- Formulario registro documentos vehiculo -->
+       <dialog id="m-RegistryDocumentCar" class="site-dialog">
+            <div class="headerForm">
                 <div class="headerDialog">
-                    <div class="headerImage">
-                        <img src="img/android/drawable-mdpi/logoapprutas.png" height="51" width="51">
-                    </div>
                     <div class="headerTitle">
-                        <h1><p class="textoHeader">Confirmación</p></h1>
+                        <h1><p class="textoHeader">Registrar Documentos<br/>Vehiculo</p></h1>
                     </div>
                 </div>
                 <br/>
-                <div class="formularioDialogAlert">
+                <div class="formularioDialog">
+                    <div class="listDetailWithOutButton" style="text-align: center !important;">
+                        Vehiculo de Placa <b><div id="placaVehiculoDoc"></div></b>
+                    </div>
                     <br/>
-                    <div style="text-align: center; color: #000000;">Desea crear una nueva ruta?</div>
-                    <br/>
-                    <div style="text-align: center; color: #000000;">Para continuar ingrese el nombre de la ruta</div>
-                    <div style="text-align: center; color: #000000;"><input type="text" style="margin-bottom: 0px !important; width: 100% !important; background: #FFFFFF !important; padding: 10px !important; text-align: center;" class="formulario__input" id="txtNewRoute" size="40" maxlength="40"></div>
                     <br/>
                     <div class="btn-group cf">
-                        <button class="btn_add" id="btnCnfAddDialog" onclick="complementData(2); closePopUp('m-CnfAddNewRoute'); msjAlert('Ruta ' + $('#txtNewRoute').val() + ' creada', 1);">Crear</button>
-                        <button class="btn_cancel" onclick="closePopUp('m-CnfAddNewRoute')">Cancelar</button>
+                        <button class="btn_cancel" onclick="closePopUp('m-RegistryDocumentCar');">Cerrar</button>
+                    </div>
+                    <br/>
+                    <div class="subTitleForm labelCnsCarTitle">
+                        <b class="margenTexto">Soat</b>
+                        <button id="btnSoatCar" class="listDetailImg" onclick="setTextMsgCnf('Soat'); abrirOpcionModal('m-CnfUpLoadFile'); getReference('docs', '/' + plateRouteSel + '/soat', 'Soat'); setwinStateTime(1);"><img src="img/drawable/icons8-document-30.png" class="imgButton"></button>
+                    </div>
+                    <div class="listDetailWithOutButton dataForm">
+                        <input id="txtSoatDocCar" type="text" class="textData txtNameDriver" placeholder="No se ha cargado documento" readonly>
+                    </div>
+                    <div class="listDetailWithOutButton dataForm">
+                        <input id="fecInicioSoat" type="date" class="textData margenTextoDate" placeholder="Inicio">
+                        <input id="fecVenSoat" type="date" class="textData margenTextoDate" placeholder="Vencimiento">
+                        <input id="txtNumeroSoat" type="text" class="textData margenTextoForm" placeholder="Numero">
+                    </div>
+                    <br/><br/>
+                    <div class="subTitleForm labelCnsCarTitle">
+                        <b class="margenTexto">Matricula</b>
+                        <button id="btnMatriculaCar" class="listDetailImg" onclick="setTextMsgCnf('Matricula'); abrirOpcionModal('m-CnfUpLoadFile'); getReference('docs', '/' + plateRouteSel + '/matricula', 'Matricula'); setwinStateTime(1);"><img src="img/drawable/icons8-document-30.png" class="imgButton"></button>
+                    </div>
+                    <div class="listDetailWithOutButton dataForm">
+                        <input id="txtMatriculaDocCar" type="text" class="textData txtNameDriver" placeholder="No se ha cargado documento" readonly>
+                    </div>
+                    <div class="listDetailWithOutButton dataForm">
+                        <input id="fecInicioMatricula" type="date" class="textData margenTextoDate" placeholder="Inicio">
+                        <input id="fecVenMatricula" type="date" class="textData margenTextoDate" placeholder="Vencimiento">
+                        <input id="txtNumeroMatricula" type="text" class="textData margenTextoForm" placeholder="Numero">
+                    </div>
+                    <br/><br/>
+                    <div class="subTitleForm labelCnsCarTitle">
+                        <b class="margenTexto">Tecnomecanica</b>
+                        <button id="btnTecnoCar" class="listDetailImg" onclick="setTextMsgCnf('Tecnomecanica'); abrirOpcionModal('m-CnfUpLoadFile'); getReference('docs', '/' + plateRouteSel + '/tecnomecanica', 'Tecnomecanica'); setwinStateTime(1);"><img src="img/drawable/icons8-document-30.png" class="imgButton"></button>
+                    </div>
+                    <div class="listDetailWithOutButton dataForm">
+                        <input id="txtTecnoDocCar" type="text" class="textData txtNameDriver" placeholder="No se ha cargado documento" readonly>
+                    </div>
+                    <div class="listDetailWithOutButton dataForm">
+                        <input id="fecInicioTecnomecanica" type="date" class="textData margenTextoDate" placeholder="Inicio">
+                        <input id="fecVenTecnomecanica" type="date" class="textData margenTextoDate" placeholder="Vencimiento">
+                        <input id="txtNumeroTecnomecanica" type="text" class="textData margenTextoForm" placeholder="Numero">
+                    </div>
+                    <br/><br/>
+                    <div class="subTitleForm labelCnsCarTitle">
+                        <b class="margenTexto">Tarjeta de Funcionamiento</b>
+                        <button id="btnFuncCar" class="listDetailImg" onclick="setTextMsgCnf('Tarjeta de Funcionamiento'); abrirOpcionModal('m-CnfUpLoadFile'); getReference('docs', '/' + plateRouteSel + '/funcionamiento', 'Funcionamiento'); setwinStateTime(1);"><img src="img/drawable/icons8-document-30.png" class="imgButton"></button>
+                    </div>
+                    <div class="listDetailWithOutButton dataForm">
+                        <input id="txtFuncDocCar" type="text" class="textData txtNameDriver" placeholder="No se ha cargado documento" readonly>
+                    </div>
+                    <div class="listDetailWithOutButton dataForm">
+                        <input id="fecInicioFuncionamiento" type="date" class="textData margenTextoDate" placeholder="Inicio">
+                        <input id="fecVenFuncionamiento" type="date" class="textData margenTextoDate" placeholder="Vencimiento">
+                        <input id="txtNumeroFuncionamiento" type="text" class="textData margenTextoForm" placeholder="Numero">
+                    </div><br/>
+                    <div class="subTitleForm labelCnsCarTitle"></div>
+                </div>
+            </div>
+       </dialog>
+<!-- Formulario para subir archivos -->
+        <dialog id="m-LoadFile" class="site-dialog">
+            <div class="headerFormPopUp">
+                <p class="textoHeader"><strong>Subir Archivo<br/>
+                    <div id="txtLoadFile"></div></strong>
+                </p>
+                <div class="formularioDialogUpLoad">
+                    <br/>
+                    <div class="btn-group cf btnNotificaciones">
+                        <div id="confirmUpload"></div>
+                    </div>
+                    <br/><br/>
+                    <div class="btn-group cf btnNotificaciones">
+                        <input type="file" id="btnUpload" onchange="setUploadFile(event);">
+                    </div>
+                    <br/><br/>
+                    <div id="myProgress">
+                        <div id="myBar">0%</div>
+                    </div>
+                    <br/><br/>
+                    <div class="btn-group cf">
+                        <button class="btn_cancel" onclick="closePopUp('m-LoadFile'); setwinStateTime(0);">Cerrar</button>
                     </div>
                 </div>
             </div>
         </dialog>
-      </body>
+<!-- Formulario consulta documentos vehiculo -->
+        <dialog id="m-SearchDocumentCar" class="site-dialog">
+            <div class="headerForm">
+                <div class="headerDialog">
+                    <div class="headerTitle">
+                        <h1><p class="textoHeader">Consultar Documentos<br/>Vehiculo</p></h1>
+                    </div>
+                </div>
+                <div class="formularioDialog">
+                    <div class="listDetailWithOutButton" style="text-align: center !important;">
+                        Vehiculo de Placa <b><div id="placaVehiculoCns"></div></b>
+                    </div>
+                    <br/>
+                    <br/>
+                    <div class="btn-group cf">
+                        <button class="btn_cancel" onclick="closePopUp('m-SearchDocumentCar');">Cerrar</button>
+                    </div>
+                    <br/>
+                    <div class="subTitleForm labelCnsCarTitle">
+                        <b class="margenTexto">Soat</b>
+                        <button id="btnGetSoatCar" class="listDetailImg"><img src="img/drawable/icons8-document-30.png" class="imgButton"></button>
+                    </div>
+                    <br/>
+                    <div class="listDetailWithOutButton dataForm">
+                        <input id="fecIniSoat" type="text" class="textData margenTextoDateView" placeholder="aaaa/mm/dd" readonly>
+                        <input id="fecVencSoat" type="text" class="textData margenTextoDateView" placeholder="aaaa/mm/dd" readonly>
+                        <input id="txtNumSoat" type="text" class="textData margenTextoForm" placeholder="###" readonly>
+                    </div>
+                    <br/><br/>
+                    <div class="subTitleForm labelCnsCarTitle">
+                        <b class="margenTexto">Matricula</b>
+                        <button id="btnGetMatriculaCar" class="listDetailImg"><img src="img/drawable/icons8-document-30.png" class="imgButton"></button>
+                    </div>
+                    <br/>
+                    <div class="listDetailWithOutButton dataForm">
+                        <input id="fecIniMatricula" type="text" class="textData margenTextoDateView" placeholder="aaaa/mm/dd" readonly>
+                        <input id="fecVencMatricula" type="text" class="textData margenTextoDateView" placeholder="aaaa/mm/dd" readonly>
+                        <input id="txtNumMatricula" type="text" class="textData margenTextoForm" placeholder="###" readonly>
+                    </div>
+                    <br/><br/>
+                    <div class="subTitleForm labelCnsCarTitle">
+                        <b class="margenTexto">Tecnomecanica</b>
+                        <button id="btnGetTecnomecanicaCar" class="listDetailImg"><img src="img/drawable/icons8-document-30.png" class="imgButton"></button>
+                    </div>
+                    <br/>
+                    <div class="listDetailWithOutButton dataForm">
+                        <input id="fecIniTecnomecanica" type="text" class="textData margenTextoDateView" placeholder="aaaa/mm/dd" readonly>
+                        <input id="fecVencTecnomecanica" type="text" class="textData margenTextoDateView" placeholder="aaaa/mm/dd" readonly>
+                        <input id="txtNumTecnomecanica" type="text" class="textData margenTextoForm" placeholder="###" readonly>
+                    </div>
+                    <br/><br/>
+                    <div class="subTitleForm labelCnsCarTitle">
+                        <b class="margenTexto">Tarjeta de Funcionamiento</b>
+                        <button id="btnGetFuncionamientoCar" class="listDetailImg"><img src="img/drawable/icons8-document-30.png" class="imgButton"></button>
+                    </div>
+                    <br/>
+                    <div class="listDetailWithOutButton dataForm">
+                        <input id="fecIniFuncionamiento" type="text" class="textData margenTextoDateView" placeholder="aaaa/mm/dd" readonly>
+                        <input id="fecVencFuncionamiento" type="text" class="textData margenTextoDateView" placeholder="aaaa/mm/dd" readonly>
+                        <input id="txtNumFuncionamiento" type="text" class="textData margenTextoForm" placeholder="###" readonly>
+                    </div>
+                    <br/>
+                    <div class="subTitleForm labelCnsCarTitle"></div>
+                </div>
+            </div>
+        </dialog>
+<!-- Formulario registro documentos conductor -->
+        <dialog id="m-RegistryDriverData" class="site-dialog">
+            <div class="headerForm">
+                <div class="headerDialog">
+                    <div class="headerTitle">
+                        <h1><p class="textoHeader">Registrar Documentos<br/>Conductor</p></h1>
+                    </div>
+                </div>
+                <div class="formularioDialog">
+                    <div class="listDetailWithOutButton" style="text-align: center !important;">
+                        Vehiculo de Placa <b><div id="placaVehiculoDriver"></div></b>
+                    </div>
+                    <br/><br/>
+                    <div class="btn-group cf">
+                        <button class="btn_cancel" onclick="closePopUp('m-RegistryDriverData');">Cerrar</button>
+                    </div>
+                    <br/>
+                    <div class="subTitleForm labelCnsCarTitle">
+                        <b class="margenLeft">Datos Personales</b>
+                        <button id="btnPersonalData" class="listDetailImg" onclick="setTextMsgCnf('Cedula de Ciudadania'); abrirOpcionModal('m-CnfUpLoadFile'); getReferenceDriver('docs', '/' + plateRouteSel + '/personal', 'Personal', 1); setwinStateTime(1);"><img src="img/drawable/icons8-document-30.png" class="imgButton"></button>
+                    </div>
+                    <br/>
+                    <div class="listDetailWithOutButton dataForm">
+                        <!--div id="txtNomDocDriver" class="textData txtNameDriver"></div-->
+                        <input id="txtNomDocDriver" type="text" class="textData txtNameDriver" placeholder="No se ha cargado documento" readonly>
+                    </div>
+                    <div class="listDetailWithOutButton dataForm">
+                        <input id="txtDocumento" type="text" class="textData txtDocumentDriver" placeholder="Documento">
+                        <select id="txtTipoDoc" class="textData txtTypeDocDriver">
+                            <option value="">Tipo</option>
+                            <option value="CC">CC</option>
+                            <option value="CE">CE</option>
+                        </select>
+                        <!--input id="txtTipoDoc" type="text" class="textData txtTypeDocDriver" placeholder="Tipo"-->
+                        <!--input id="txtRh" type="text" class="textData txtRHDriver" placeholder="RH"-->
+                        <select id="txtRh" class="textData txtRHDriver">
+                            <option value="">RH</option>
+                            <option value="O-">O-</option>
+                            <option value="O+">O+</option>
+                            <option value="A-">A-</option>
+                            <option value="A+">A+</option>
+                            <option value="B-">B-</option>
+                            <option value="B+">B+</option>
+                            <option value="AB-">AB-</option>
+                            <option value="AB+">AB+</option>
+                        </select>
+                        <input id="txtEps" type="text" class="textData txtEPSDriver" placeholder="EPS">
+                    </div>
+                    <div class="listDetailWithOutButton dataForm">
+                        <input id="txtNombres" type="text" class="textData txtNameDriver" placeholder="Nombres">
+                    </div>
+                    <br/>
+                    <div class="listDetailWithOutButton dataForm">
+                        <input id="txtApellidos" type="text" class="textData txtNameDriver" placeholder="Apellidos">
+                    </div>
+                    <div class="listDetailWithOutButton dataForm">
+                        <!--input id="txtFechaNac" type="text" class="textData txtEPSDriver" placeholder="Fecha Nacimiento"-->
+                        <input id="txtFechaNac" type="date" class="headerImage textData txtEPSDriver margenTextoDate" placeholder="Fecha Nacimiento">
+                        <!--input id="txtEstadoCivil" type="text" class="textData txtCivilStateDriver" placeholder="Estado Civil"-->
+                        <select id="txtEstadoCivil" class="textData txtCivilStateDriver">
+                            <option value="">Estado Civíl</option>
+                            <option value="Casado">Casado</option>
+                            <option value="Separado">Separado</option>
+                            <option value="Soltero">Soltero</option>
+                            <option value="Unión Libre">Unión Libre</option>
+                        </select>
+                    </div>
+                    <br/>
+                    <div class="subTitleForm labelCnsCarTitle">
+                        <b class="margenLeft">Tercero de Contacto</b>
+                        <button id="btnTirthContact" class="listDetailImg" onclick="setTextMsgCnf('Contacto'); abrirOpcionModal('m-CnfUpLoadFile'); getReferenceDriver('docs', '/' + plateRouteSel + '/contacto', 'Contacto', 4); setwinStateTime(1);"><img src="img/drawable/icons8-document-30.png" class="imgButton"></button>
+                    </div>
+                    <br/>
+                    <div class="listDetailWithOutButton dataForm">
+                        <input id="txtNombreContacto" type="text" class="textData txtNameDriver" placeholder="Nombres">
+                    </div>
+                    <br/>
+                    <div class="listDetailWithOutButton dataForm">
+                        <input id="txtApellidoContacto" type="text" class="textData txtNameDriver" placeholder="Apellidos">
+                    </div>
+                    <div class="listDetailWithOutButton dataForm">
+                        <input id="txtTelContacto" type="text" class="textData txtEPSDriver" placeholder="Telefono">
+                    </div>
+                    <br/>
+                    <div class="subTitleForm labelCnsCarTitle">
+                        <b class="margenLeft">Licencia de Conducción</b>
+                        <button id="btnDriverDocument" class="listDetailImg" onclick="setTextMsgCnf('Licencia de Conducción'); abrirOpcionModal('m-CnfUpLoadFile'); getReferenceDriver('docs', '/' + plateRouteSel + '/licencia', 'Licencia', 2); setwinStateTime(1);"><img src="img/drawable/icons8-document-30.png" class="imgButton"></button>
+                    </div>
+                    <br/>
+                    <div class="listDetailWithOutButton dataForm">
+                        <input id="txtLicDocDriver" type="text" class="textData txtNameDriver" placeholder="No se ha cargado documento" readonly>
+                    </div>
+                    <div class="listDetailWithOutButton dataForm">
+                        <!--input id="txtFechaLicencia" type="text" class="textData txtDateDriver" placeholder="Fecha"-->
+                        <input id="txtFechaLicencia" type="date" class="headerImage textData txtDateDriver margenTextoDate" placeholder="Fecha">
+                        <!--input id="txtVencimiento" type="text" class="textData txtDateDriver" placeholder="Vencimiento"-->
+                        <input id="txtVencimiento" type="date" class="headerImage textData txtDateDriver margenTextoDate" placeholder="Vencimiento">
+                        <!--input id="txtTipoLicencia" type="text" class="textData txtRHDriver" placeholder="Tipo"-->
+                        <select id="txtTipoLicencia" class="textData txtRHDriver">
+                            <option value="">Tipo</option>
+                            <option value="A1">A1</option>
+                            <option value="A2">A2</option>
+                            <option value="B1">B1</option>
+                            <option value="B2">B2</option>
+                            <option value="B3">B3</option>
+                            <option value="C1">C1</option>
+                            <option value="C2">C2</option>
+                            <option value="C3">C3</option>
+                        </select>
+
+                        <input id="txtumeroLicencia" type="text" class="textData txtNumberDriver" placeholder="Numero">
+                    </div>
+                    <br/>
+                    <div class="subTitleForm labelCnsCarTitle">
+                        <b class="margenLeft">Hoja de Vida</b>
+                        <button id="btnCurriculum" class="listDetailImg" onclick="setTextMsgCnf('Hoja de Vida'); abrirOpcionModal('m-CnfUpLoadFile'); getReferenceDriver('docs', '/' + plateRouteSel + '/cv', 'Curriculum', 3); setwinStateTime(1);"><img src="img/drawable/icons8-document-30.png" class="imgButton"></button>
+                    </div>
+                    <div class="listDetailWithOutButton dataForm">
+                        <input id="txtCVDocDriver" type="text" class="textData txtNameDriver" placeholder="No se ha cargado documento" readonly>
+                    </div>
+                </div>
+            </div>
+        </dialog>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Formulario consulta documentos conductor -->
+        <dialog id="m-CnsDriverData" class="site-dialog">
+            <div class="headerForm">
+                <div class="headerDialog">
+                    <div class="headerTitle">
+                        <h1><p class="textoHeader">Consultar Documentos<br/>Conductor</p></h1>
+                    </div>
+                </div>
+                <div class="formularioDialog">
+                    <div class="listDetailWithOutButton" style="text-align: center !important;">
+                        Vehiculo de Placa <b><div id="placaVehiculoDriverCns"></div></b>
+                    </div>
+                    <br/><br/>
+                    <div class="btn-group cf">
+                        <button class="btn_cancel" onclick="closePopUp('m-CnsDriverData');">Cerrar</button>
+                    </div>
+                    <br/>
+                    <div class="subTitleForm labelCnsCarTitle">
+                        <b class="margenLeft">Datos Personales</b>
+                        <button id="btnPersonalDataCns" class="listDetailImg"><img src="img/drawable/icons8-document-30.png" class="imgButton"></button>
+                    </div>
+                    <br/>
+                    <div class="listDetailWithOutButton dataForm">
+                        <input id="txtNomDocDriverCns" type="text" class="textData txtNameDriver" placeholder="No se ha cargado documento" readonly>
+                    </div>
+                    <div class="listDetailWithOutButton dataForm">
+                        <input id="txtDocumentoCns" type="text" class="textData txtDocumentDriver" placeholder="Documento" readonly>
+                        <input id="txtTipoDocCns" type="text" class="textData txtTypeDocDriver" placeholder="tipo" readonly>
+                        <input id="txtRhCns" type="text" class="textData txtRHDriver" placeholder="RH" readonly>
+                        <input id="txtEpsCns" type="text" class="textData txtEPSDriver" placeholder="EPS" readonly>
+                    </div>
+                    <div class="listDetailWithOutButton dataForm">
+                        <input id="txtNombresCns" type="text" class="textData txtNameDriver" placeholder="Nombres" readonly>
+                    </div>
+                    <br/>
+                    <div class="listDetailWithOutButton dataForm">
+                        <input id="txtApellidosCns" type="text" class="textData txtNameDriver" placeholder="Apellidos" readonly>
+                    </div>
+                    <div class="listDetailWithOutButton dataForm">
+                        <input id="txtFechaNacCns" type="text" class="headerImage textData txtEPSDriver margenTextoDateView" placeholder="Fecha Nacimiento" readonly>
+                        <input id="txtEstadoCivilCns" type="text" placeholder="Estado Civíl" class="textData txtCivilStateDriver" readonly>
+                    </div>
+                    <br/>
+                    <div class="subTitleForm labelCnsCarTitle">
+                        <b class="margenLeft">Tercero de Contacto</b>
+                        <!--button id="btnTirthContactCns" class="listDetailImg"><img src="img/drawable/icons8-document-30.png" class="imgButton"></button-->
+                    </div>
+                    <br/>
+                    <div class="listDetailWithOutButton dataForm">
+                        <input id="txtNombreContactoCns" type="text" class="textData txtNameDriver" placeholder="Nombres" readonly>
+                    </div>
+                    <br/>
+                    <div class="listDetailWithOutButton dataForm">
+                        <input id="txtApellidoContactoCns" type="text" class="textData txtNameDriver" placeholder="Apellidos" readonly>
+                    </div>
+                    <div class="listDetailWithOutButton dataForm">
+                        <input id="txtTelContactoCns" type="text" class="textData txtEPSDriver" placeholder="Telefono" readonly>
+                    </div>
+                    <br/>
+                    <div class="subTitleForm labelCnsCarTitle">
+                        <b class="margenLeft">Licencia de Conducción</b>
+                        <button id="btnDriverDocumentCns" class="listDetailImg"><img src="img/drawable/icons8-document-30.png" class="imgButton"></button>
+                    </div>
+                    <br/>
+                    <div class="listDetailWithOutButton dataForm">
+                        <input id="txtLicDocDriverCns" type="text" class="textData txtNameDriver" placeholder="No se ha cargado documento" readonly>
+                    </div>
+                    <div class="listDetailWithOutButton dataForm">
+                        <input id="txtFechaLicenciaCns" type="text" class="headerImage textData txtDateDriver margenTextoDateView" placeholder="Fecha" readonly>
+                        <input id="txtVencimientoCns" type="text" class="headerImage textData txtDateDriver margenTextoDateView" placeholder="Vencimiento" readonly>
+                        <input id="txtTipoLicenciaCns" type="text" class="textData txtRHDriver" placeholder="Tipo" readonly>
+                        <input id="txtumeroLicenciaCns" type="text" class="textData txtNumberDriver" placeholder="Numero" readonly>
+                    </div>
+                    <br/>
+                    <div class="subTitleForm labelCnsCarTitle">
+                        <b class="margenLeft">Hoja de Vida</b>
+                        <button id="btnCurriculumCns" class="listDetailImg"><img src="img/drawable/icons8-document-30.png" class="imgButton"></button>
+                    </div>
+                    <div class="listDetailWithOutButton dataForm">
+                        <input id="txtCVDocDriverCns" type="text" class="textData txtNameDriver" placeholder="No se ha cargado documento" readonly>
+                    </div>
+                </div>
+            </div>
+        </dialog>
+<!--Formulario para cargar y/o guardar la informacion del conductor -->
+        <dialog id="m-CnfUpLoadFile" class="site-dialog">
+            <div class="headerFormPopUp">
+                <div class="formularioDialogAlert">
+                    <br/>
+                    <div id="divCnfUpLoadFile" class="textoDesvincula"></div>
+                    <br/>
+                    <div class="btn-group cf">
+                        <button id="btnUpLoadData" class="btn_add" onclick="setOnlySave(1); abrirOpcionModal('m-LoadFile'); closePopUp('m-CnfUpLoadFile');">Cargar Archivo/Guardar Datos</button>
+                    </div>
+                    <br/>
+                    <div class="btn-group cf">
+                        <button class="btn_add" onclick="setOnlySave(0); setUploadFile(null); setDownloadURL(null); closePopUp('m-CnfUpLoadFile');">Guardar Datos</button>
+                    </div>
+                    <br/>
+                    <div class="btn-group cf">
+                        <button class="btn_cancel" onclick="closePopUp('m-CnfUpLoadFile');">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </dialog>
+<!--Formulario para cargar y/o guardar la informacion del conductor -->
+        <dialog id="m-CnsFileDownLoad" class="site-dialog">
+            <div class="headerFormPopUpDL">
+                <div class="formularioDialogAlertDL">
+                    <iframe id="iFrameImagen" class="borderIFrame"></iframe>
+                    <br/>
+                    <div class="btn-group cf">
+                        <button class="btn_cancel" onclick="setRemoveDocument(); closePopUp('m-CnsFileDownLoad');">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </dialog>
+    </body>
 </html>

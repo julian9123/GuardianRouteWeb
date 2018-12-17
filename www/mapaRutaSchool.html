@@ -27,23 +27,23 @@
         <script type="text/javascript" src="js/mapas.js"></script>
       </head>
       <body>
-        <header style="width: 26%;">
+        <header class="headerSchool">
             <nav>
                 <ul>
 <!--                    <li onmouseover="menuSeleccionado('notifRuta')" onmouseout="menuNoSeleccionado('notifRuta')" onclick="abrirOpcionModal('m-NotifyRoute')"> -->
                     <li onclick="abrirOpcionModal('m-NotifyRoute')">
-                        <a href="#"><img src="img/drawable/BtnAlerta.png" width="80" height="80">
+                        <a href="#"><img src="img/drawable/BtnAlerta.png" class="iconHeader">
                             <p class="letraMenu">Enviar Notificación</p>
                         </a>
                     </li>                                        
 <!--                    <li onmouseover="menuSeleccionado('consultaRuta')" onmouseout="menuNoSeleccionado('consultaRuta')" onclick="abrirOpcionModal('m-SearchRoute')"> -->
-                    <li onclick="abrirOpcionModal('m-SearchRoute')">                    
-                        <a href="#"><img src="img/drawable/btnbuscar.png" width="80" height="80">
+                    <li onclick="listVehicleCns(); abrirOpcionModal('m-SearchRoute');">
+                        <a href="#"><img src="img/drawable/btnbuscar.png" class="iconHeader">
                             <p class="letraMenu">Consultar Vehículo</p>
                         </a>
                     </li>
                     <li>
-                        <a href="cerrarSesion.html"><img src="img/drawable/logging-out.png"  width="80" height="80">
+                        <a href="cerrarSesion.html"><img src="img/drawable/logging-out.png" class="iconHeader">
                             <p class="letraMenu">Cerrar Sesión</p>
                         </a>
                     </li>
@@ -51,15 +51,12 @@
             </nav>
         </header>
         <div id="map" class="map"></div>
-        <div id="footer" style="display: none"></div>
-        <div id="dtsVehiculo" style="display: none"></div>
-        <div id="dtsAlertParent" style="display: none"></div>
+        <div id="footer" class="invisible"></div>
+        <div id="dtsVehiculo" class="invisible"></div>
+        <div id="dtsAlertParent" class="invisible"></div>
         <dialog id="m-SearchRoute" class="site-dialog">
             <div class="headerForm">
                 <div class="headerDialog">
-                    <div class="headerImage">
-<!--                        <img src="img/android/drawable-mdpi/logoapprutas.png" height="51" width="51"> -->
-                    </div>
                     <div class="headerTitle">
                     <h1><p class="textoHeader">Consultar Detalle Vehículo</p></h1>
                     </div>
@@ -77,7 +74,7 @@
                     </div>
                 </div>
                 <div>
-                    <ul id="listaVehiculosCns" style="overflow: auto;">
+                    <ul id="listaVehiculosCns" class="listaVe">
                         <li id="tituloCns"><b>VEHICULOS</b></li>
                         <li id="columnasCns"><b>Placa - Ruta - Nombre</b></li>
                     </ul>
@@ -86,15 +83,6 @@
         </dialog>  
        <dialog id="m-MsjAds" class="site-dialog">
             <div class="headerFormPopUp">
-                <div class="headerDialog">
-                    <div class="headerImage">
-<!--                        <img src="img/android/drawable-mdpi/logoapprutas.png" height="51" width="51"> -->
-                    </div>
-                    <div class="headerTitle">
-                    <h1><p class="textoHeader">Advertencia</p></h1>
-                    </div>
-                </div>
-                <br/>
                 <div class="formularioDialogAlert">
                     <br/>
                     <b><div id="msjAds"></div></b>
@@ -107,16 +95,21 @@
         </dialog>
        <dialog id="m-NotifyRoute" class="site-dialog">
             <div class="headerFormBottom">
-                <p class="textoHeader" style="font-size: 15px;"><strong>Notificaciones</strong></p>
+                <p class="textoHeader"><strong>Notificaciones</strong></p>
                 <div class="formularioDialogNotify">
                     <img src="img/android/drawable-mdpi/logoapprutas.png" height="51" width="51">
                     <input type="text" id="notificacion" class="textoNotify" maxlength="40">
-                    <div class="btn-group cf" style="margin-left: 1%; display: inline-flex;">
-                        <button class="btn_add" onclick="sendNotification('forAll'); closePopUp('m-NotifyRoute')" style="margin: 7px;">Enviar</button>
-                        <button class="btn_cancel" onclick="closePopUp('m-NotifyRoute')" style="margin: 7px;">Cancelar</button>
+                    <div class="btn-group cf btnNotificaciones">
+                        <button class="btn_add btnNotifica" onclick="sendNotification('forAll'); closePopUp('m-NotifyRoute')">Enviar</button>
+                        <button class="btn_cancel btnNotifica" onclick="closePopUp('m-NotifyRoute')">Cancelar</button>
                     </div>
                 </div>
             </div>
-        </dialog>          
+        </dialog>
+        <dialog id="m-WaitRoute" class="site-dialog">
+            <div id="myBus" class="myBus">
+                <img src="img/drawable/gifcarga.gif" id="imagen"/>
+            </div>
+        </dialog>
       </body>
 </html>

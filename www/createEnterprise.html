@@ -22,7 +22,7 @@
         <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-database.js"></script>
         <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-messaging.js"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="cordova.js"></script>
+<!--        <script type="text/javascript" src="cordova.js"></script> -->
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript" src="js/conectar.js"></script>
         <script type="text/javascript" src="js/consultar.js"></script>
@@ -36,9 +36,9 @@
             <div class="textoRegistro">
                 <form action="" class="formulario">
                     <input type="text" class="formulario__input" id="txtNombres" maxlength="50" size="50" onkeyup="campoDiligenciado('Nombres')">
-                    <label for="" class="formulario__label" id="lblNombres">Nombres</label>
+                    <label class="formulario__label" id="lblNombres">Nombres</label>
                     <input type="text" class="formulario__input" id="txtApellidos" maxlength="50" size="50" onkeyup="campoDiligenciado('Apellidos')">
-                    <label for="" class="formulario__label" id="lblApellidos">Apellidos</label>
+                    <label class="formulario__label" id="lblApellidos">Apellidos</label>
                     <select id="paisCelular" class="formulario__input_pais">
                         <option value="">Indicativo</option>
                         <script language=javascript>
@@ -48,58 +48,31 @@
                         </script>
                     </select>
                     <input type="text" class="formulario__input_cel" id="txtCelular" size="10" maxlength="10" onkeyup="campoDiligenciado('Celular'); valCellNumber(1);">
-                    <label for="" class="formulario__label_cel" id="lblCelular">Celular</label>
+                    <label class="formulario__label_cel" id="lblCelular">Celular</label>
                     <input type="text" class="formulario__input" id="txtCodRuta" size="11" max="11" maxlength="11" onkeyup="campoDiligenciado('CodRuta')">
-                    <label for="" class="formulario__label" id="lblCodRuta">Ruta Empresa</label>
+                    <label class="formulario__label" id="lblCodRuta">Ruta Empresa</label>
                 </form>
                 <dialog id="m-msjError" class="site-dialog">
                     <div class="headerFormPopUp">
                         <div class="headerDialog">
-                            <div class="headerImage">
-                                <img src="img/android/drawable-mdpi/logoapprutas.png" height="51" width="51">
-                            </div>
                             <div class="headerTitle">
                                 <h1><p class="textoHeader">Faltan Datos</p></h1>
                             </div>
                         </div>
                         <div class="formularioDialog">
-                        <br/>
-                            <br/>
-                            <div id="dataError1" style="visibility: hidden; display:inline;"></div>
-                            <div id="dataError2" style="visibility: hidden; display:inline;"></div>
-                            <div id="dataError3" style="visibility: hidden; display:inline;"></div>
-                            <div id="dataError4" style="visibility: hidden; display:inline;"></div>
-                            <div id="dataError5" style="visibility: hidden; display:inline;"></div>
-                            <div id="dataError6" style="visibility: hidden; display:inline;"></div>
+                            <div id="dataError1" class="msjErrorForm"></div>
                             <br/>
                             <div class="btn-group cf">
                                 <button class="btn_add" id="btnContinuar" onclick="closePopUp('m-msjError')">Continuar</button>
                             </div>
                         </div>
                     </div>
-<!--                    
-                    <header class="dialog-header">
-                        <img src="img/android/drawable-mdpi/logoapprutas.png" height="51" width="51" style="display: in-line" class="imagen">
-                        <b><p class="texto">Faltan Datos</p></b>
-                    </header>
-                    <div class="dialog-content">
-                        <output id="estadoFormulario"></output>
-                    </div>
-                    <div class="btn-group cf">
-                        <button id="cancel" onclick="cerrarPopUp()">Continuar</button>
-                    </div>
--->
                 </dialog>
             </div>
         </div>
         <div class="pieRecorridoBoton">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect boton-stilo" onclick="registroDatos()">Continuar</button>
-<!--
-                <button class="mdl-button mdl-button--fab mdl-button--darkgray" ><i class="material-icons">forward</i></button>
--->
-<!--                    <button class="mdl-button mdl-button--fab mdl-button--colored"><i class="material-icons">mode_edit</i></button> -->
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect boton-stilo" onclick="registroDatos();">Continuar</button>
         </div>
-<!--            </main> -->
         </div>
         <script>
         </script>

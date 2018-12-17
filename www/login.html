@@ -6,14 +6,18 @@
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,500,400italic,700,700italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" type="text/css" href="css/menu.css">
         <script src="https://apis.google.com/js/platform.js" async defer></script>
-        <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-auth.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-database.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-messaging.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-messaging.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-storage.js"></script>
         <script src="https://cdn.firebase.com/libs/firebaseui/2.6.1/firebaseui.js"></script>
         <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.6.1/firebaseui.css" />
         <script src="https://www.gstatic.com/firebasejs/ui/2.6.1/firebase-ui-auth__es.js"></script>
@@ -23,19 +27,19 @@
         <script type="text/javascript" src="js/consultar.js"></script>
         <title>Guardian Rutas</title>
     </head>
-    <body onload="conectar('')">
+    <body onload="conectar('');">
         <div id="fondoGuardian2" class="fondoGuardian2">
             <div class="fondoIntermedio">
                 <div id="logoGuardianTexto2" class="logoGuardianTexto2">
                     <div id="imgDivImg" class="imgDivImages">
                         <div class="imgDivSchool" onclick="conectar('Ent');">
-                            <img src="img/images/EnterpriseRoute.png" width="245" height="93" style="border: 5px solid #FFF; border-radius: 10px; padding: 3px; cursor: pointer;">
+                            <img src="img/images/EnterpriseRoute1.jpeg" width="318" height="120" style="border: 5px solid #FFF; border-radius: 10px; padding: 3px; cursor: pointer;">
 <!--                            <br/><br/>
                             Colegios
 -->
                         </div>
                         <div class="imgDivEnterprise" onclick="conectar('Sch');">
-                            <img src="img/images/School.png" width="245" height="93" style="border: 5px solid #FFF; border-radius: 10px; padding: 3px; cursor: pointer;">
+                            <img src="img/images/School1.jpeg" width="318" height="120" style="border: 5px solid #FFF; border-radius: 10px; padding: 3px; cursor: pointer;">
 <!--                            <br/>
                             Empresa <br/>de Transporte
 -->
@@ -50,9 +54,14 @@
                     </div>
                     <div id="termino" class="terminos"><div class="texto-terminos"><b>Al registrarme, declaro que soy mayor de edad y acepto las</b></div></div>
                     <br>
-                    <div id="condicion" class="condiciones"><div class="texto-terminos"><b><a href="http://guardianrutas.com/politicas-y-condiciones-de-uso-guardian-app-padres/"><u>Políticas de privacidad, Terminos y Condiciones de uso</u></a></b></div></div>
+                    <div id="condicion" class="condiciones"><div class="texto-terminos"><b><a id="condicionesHref" href="http://guardianrutas.com/politicas-y-condiciones-de-uso-guardian-app-padres/"><u>Políticas de privacidad, Terminos y Condiciones de uso</u></a></b></div></div>
                 </div>
             </div>
         </div>
+        <dialog id="m-WaitRoute" class="site-dialog" style="margin: 0; padding: 0;">
+            <div id="myBus" class="myBus">
+                <img src="img/drawable/gifcarga.gif" id="imagen"/>
+            </div>
+        </dialog>
     </body>
 </html>

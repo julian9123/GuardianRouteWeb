@@ -1,6 +1,7 @@
 'use strict';
 
 var map;
+var winStateTime = 0;
 var myLat = 4.7513308,
     myLong = -74.0651812;
 var infoWindow;
@@ -9,7 +10,7 @@ var markers = [];
 var markersDup = [];
 var varUrlRet = [];
 var rutas = [];
-var errorMap = 0;
+var controlCenter = 0;
 var centerMap = 0;
 var indexLine = 0;
 var typeRouteMap = 0;
@@ -19,21 +20,24 @@ var nameRouteSel = "";
 var limitLoops = 3;
 var direcciones = [];
 var msgAlerts = [];
+var timer = 3000;
+var myRouteUsers = 0;
 var alertas = ['¡Estamos en un congestión vehicular grave!', '¡Sufrimos un accidente!', '¡Tenemos un daño mecánico!'];
 var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
 var shape = {coords: [0, 0, 50], type: 'circle'};
 var starandfinish = [];
 var routeNP = [];
 
-$(document).ready(function() {
+//$(window).load(function() {
+    //$(".loader").fadeOut("slow");
+//});
 
-});
 var app = {
     initialize: function() {
         document.addEventListener('deviceready', function () {
             cordova.plugins.backgroundMode.setEnabled(true);
             cordova.plugins.backgroundMode.onactivate = function() {
-                setInterval(posicionActual, 3000);
+//                setInterval(posicionActual, timer);
             };
         });
     },
@@ -47,52 +51,73 @@ var app = {
 app.initialize();
 
 function initMap() {
+
+    abrirOpcionModal('m-WaitRoute');
     map = null;
     map = new google.maps.Map( document.getElementById('map'),
                                { center: {lat: myLat, lng: myLong},
-                                  zoom: 10,
-                                  mapTypeId: google.maps.MapTypeId.ROADMAP } );
+                                 zoom: 10,
+                                 mapTypeId: google.maps.MapTypeId.ROADMAP } );
     options = { enableHighAccuracy: true, maximumAge: 100, timeout: 100000 };
     infoWindow = new google.maps.InfoWindow({map: map});
-    setInterval(posicionActual, 3000);
-    if( entUser == "" ) { cnsUsuarioEmpresa(); }
+
+    var getVar = getGET();
+
+    if (getVar == undefined)
+        timer = 3000;
+    else
+        timer = 5000;
+
+    if (entUser == "") cnsUsuarioEmpresa();
+
+    setInterval(posicionActual, timer);
+    setInterval(getReloadWindow, 180000);
     distancia = 1;
+
 }
 
 function myRoutes() {
-    if (rutas.length <= 0) {
-        var datosE = conn.database().ref("entRoute/" + entUser);
-        datosE.orderByValue().on("value", function (snapshot) {
-            snapshot.forEach(function (data) {
-                var x = data.val();
-                var ruta = x.routeCode;
-                var objE = new Object();
-                if (ruta != "") {
-                    objE = ruta;
-                    rutas.push(objE);
-                }
-            });
+
+    rutas = [];
+
+    if (entCode == "") cnsUserEnt();
+
+    var datosE = conn.database().ref(tblRtAlt[2] + "/" + entCode);
+    datosE.orderByValue().on("value", function (snapshot) {
+        snapshot.forEach(function (data) {
+            var x = data.val();
+            var ruta = x.plateCode;
+            var objE = new Object();
+            if (ruta != "" && ruta != undefined) {
+                objE = ruta;
+                rutas.push(objE);
+            }
         });
-    }
+    });
 }
 
 function driversNRoutes() {
+
     if( routeNP.length <= 0 ) {
+
         var markTemp = [];
         var drivers = [];
+        var conductor;
         var datos = conn.database().ref("drivervstravel");
+
         datos.orderByValue().on("value", function (snapshot) {
             snapshot.forEach(function (data) {
                 var rutaCns = data.key;
                 drivers.push(rutaCns);
             });
         });
-        var conductor;
+
         for (var i = 0; i < drivers.length; i++) {
+
+            var obj = new Object();
             conductor = drivers[i];
-            if (conductor == '[object Object]') {
-                continue;
-            }
+
+            if (conductor == '[object Object]') continue;
             var datos = conn.database().ref("drivervstravel/" + conductor);
             datos.orderByValue().on("value", function (snapshot) {
                 snapshot.forEach(function (data) {
@@ -105,32 +130,31 @@ function driversNRoutes() {
                 });
             });
         }
+
+        if (rutas.length > 0 && markTemp.length < 1) {
+            for (var i = 0; i < rutas.length; i++) {
+                var obj = new Object();
+                obj.id = rutas;
+                obj.name = "Sin asignar";
+                obj.placa = rutas;
+                markTemp.push(obj);
+            }
+        }
         routeNP = markTemp;
     }
 }
 
-
 function myPositions() {
+
     infoWindow = new google.maps.InfoWindow({map: map});
-    var markTemp = [];
-    markTemp = routeNP;
+    var markTemp = routeNP;
     var markTempX = [];
     for (var i = 0; i < markTemp.length; i++) {
-        //console.log("obj.id: " + markTemp[i].id + " obj.placa: " + markTemp[i].placa);
-/*
-        var jsonString = Object.keys(markTemp[i]);
-        var indice = jsonString[0];
-        var jsonString = JSON.stringify(markTemp[i], [indice, 'id', 'placa', 'name']);
-        var res = JSON.parse(jsonString);
-*/
         for (var j = 0; j < rutas.length; j++) {
-//            if (res[indice]['placa'] == rutas[j]) {
             if (markTemp[i].placa == rutas[j]) {
-//                console.log("starandfinish.length: " + starandfinish.length);
                 var objT = new Object();
                 for(var l = 0; l < starandfinish.length; l++) {
                     if( markTemp[i].id == starandfinish[l].ruta ) {
-//                        console.log("Ruta Si: " + starandfinish[l].ruta + " Nombre: " + markTemp[i].name + " Placa: " + markTemp[i].placa);
                         objT.ruta = markTemp[i].id;
                         objT.placa = markTemp[i].placa;
                         objT.nombre = markTemp[i].name;
@@ -142,6 +166,7 @@ function myPositions() {
             }
         }
     }
+//    console.log("myPositions termine 1");
     var ofCourse = 'no';
     for (var i = 0; i < rutas.length; i++) {
         ofCourse = 'no';
@@ -152,12 +177,6 @@ function myPositions() {
         }
         if( ofCourse == 'no' ) {
             for (var l = 0; l < markTemp.length; l++) {
-/*
-                var jsonString = Object.keys(markTemp[l]);
-                var indice = jsonString[0];
-                var jsonString = JSON.stringify(markTemp[l], [indice, 'id', 'placa', 'name']);
-                var res = JSON.parse(jsonString);
-*/
                 if (markTemp[l].placa == rutas[i]) {
                     var objT = new Object();
                     objT.ruta = markTemp[l].id;
@@ -170,6 +189,7 @@ function myPositions() {
             }
         }
     }
+//    console.log("myPositions termine 2");
     var datos = conn.database().ref("datacar");
     datos.orderByValue().on("value", function (snapshot) {
         snapshot.forEach(function (data) {
@@ -209,49 +229,6 @@ function myPositions() {
         google.maps.event.addDomListener(window, 'load', initMap);
     });
 }
-/*
-    var datos = conn.database().ref("travel");
-    datos.orderByValue().on("value", function(snapshot) {
-        snapshot.forEach(function(data) {
-            var rutaCns = data.key;
-            rutaCns = rutaCns;//.toUpperCase();
-            if( rutas.includes(rutaCns) ) {
-                var obj = new Object();
-                obj.ruta = data.key;
-                var reg = data.val();
-                obj.longitud = reg.longitud + ( distancia / 10000 );
-                obj.latitud = reg.latitud + ( distancia / 30000 );
-                obj.nombre = reg.nombre;
-                obj.url = "https://www.youtube.com/watch?v=bmtbg5b7_Aw";
-                markers.push(obj);
-/*
-                marcador = new google.maps.Marker({ position: new google.maps.LatLng(obj.latitud, obj.longitud),
-                                                    map: map,
-                                                    title: 'Ruta:' + obj.nombre,
-                                                    icon: image,
-                                                    shape: shape,
-                                                    animation: google.maps.Animation.DROP });
-                google.maps.event.addListener(marcador, 'click', (function(marker, i) {
-                    return function() {
-                        infowindow.setContent('Ruta:' + obj.nombre);
-
-//                        infowindow.open(map, marker);
-//                        console.log("obj.nombre:" + JSON.stringify(marker) + " i:" + i);
-                    }
-                })(marcador, i));
-*/
-/*
-            }
-            distancia++;
-        } );
-    } );
-    markers = eliminarObjetosDuplicados(markers, "ruta");
-    setMapOnAll();
-    myPositionsRefresh(markers);
-    if( rutas.length <= 0 ){ return; }
-    google.maps.event.addDomListener(window, 'load', initMap);
-}
-*/
 
 function eliminarObjetosDuplicados(arr, prop) {
      var nuevoArray = [];
@@ -270,41 +247,71 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 //    if( errorMap > 1 ) { return; }
 //    infoWindow.setPosition(pos);
 //    infoWindow.setContent(browserHasGeolocation ? 'Servicio de Geolocation Fallo' : 'Error: Your browser doesn\'t support geolocation.');
+/* Eliminado para optimizar codigo. 21082018
     errorMap++;
     document.location.reload();
     console.log("Recargar Pagina");
     initMap();
+*/
 }
 
 function posicionActual() {
-    var getVar = {};
-    getVar = getGET();
-    cnsDtStrFnsh();
-    myRoutes();
-    driversNRoutes();
-    if (getVar != undefined) {
+
+    if (document.visibilityState == 'hidden') return;
+
+    cnsUserEnt();
+/*
+    if (entUser == "" || entUser == undefined || entUser == null) {
+        msjAlert('Usted no esta autorizado para ingresar a esta opción', 2);
+        cambioPagina('index.html');
+        return;
+    }
+*/
+    var getVar = getGET();
+
+    if (getVar == undefined) {
+        cnsDtStrFnsh();
+        myRoutes();
+        driversNRoutes();
+        typeRouteMap = 0;
+    } else {
         var dataUrl = getVar;
         if( dataUrl[0] != undefined ) codeRouteSel = dataUrl[0];
         if( dataUrl[1] != undefined ) nameRouteSel = dataUrl[1];
         if( dataUrl[2] != undefined ) plateRouteSel = dataUrl[2];
         if( dataUrl[3] != undefined ) typeRouteMap = dataUrl[3];
-    } else {
-        typeRouteMap = 0;
     }
     centerMap++;
     if( typeRouteMap == 0 ) {
         myPositions();
-    } else {
+    } else
         mapUsersRoute();
-    }
-    cnsAlerts();
+
+
+    
+
+
+
+
+
+
+
+
+//    cnsAlerts();
+
+
+
+
+
+
+
+
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
             var pos = {
                   lat: position.coords.latitude,
                   lng: position.coords.longitude
             };
-//            guardarPosicion(pos);
             if( contador < 3 ){ map.setCenter(pos); }
             contador++;
         },
@@ -314,15 +321,17 @@ function posicionActual() {
     } else {
         handleLocationError(false, infoWindow, map.getCenter());
     }
+    closePopUp('m-WaitRoute');
 }
 
 function listVehicle() {
     $('#txtRuta').val("");
+    deleteLi("listaVehiculos");
     markers = [];
     rutas = [];
     routeNP = [];
     myRoutes();
-    driversNRoutes();
+//    driversNRoutes();
     posicionActual();
     var liNew;
     var j = 0;
@@ -331,12 +340,36 @@ function listVehicle() {
         if(find_li(textLi, "listaVehiculos")) {
             liNew = document.createElement("li");
             liNew.id = markers[x].ruta + "la";
+            var ventanaCns = "'" + "m-AddRoute" + "'";
+            var rutaCns = "'Placa: " + markers[x].placa + "'";
+            var placa = "'" + markers[x].placa + "'"
+            var ventanaDoc = "'" + "m-RegistryDocumentCar" + "'";
+            var ventanaCon = "'" + "m-RegistryDriverData" + "'";
             j = x + 1;
-            var btnClick = "";//'<button class="btn_add spaceList"><img src="../img/drawable/usuario.png"></button>';
-            liNew.innerHTML = "<div style=\"display: table-cell; width: 270px; padding: 10px;\">&nbsp;" + textLi + '</div><div style="display: table-cell; width: 40%; padding: 5px; text-align: right;">' + btnClick + '</div>';
+//            var btnClick = "";//'<button class="btn_add spaceList"><img src="../img/drawable/usuario.png"></button>';
+//            var btnClick = '<button class="btn_add" id="' + markers[x].ruta + 'AddDoc" onclick=""><img src="../img/drawable/icons8-add-file-filled-50.png"; class="listIcon" title="Adicionar Documentos"></button>';
+            var btnClick = '<button class="btn_add" id="' + markers[x].ruta + 'AddDoc" onclick="closePopUp(' + ventanaCns + '); getDataCar(' + rutaCns + '); getDataDriverUpLoad(' + placa + ', \'\'); setIdRegDoc(\'placaVehiculoDriver\', \'fecInicio\', \'fecVen\', \'txtNumero\', \'upload\'); getDataDoc(' + placa + '); abrirOpcionModal(' + ventanaCon + ');"><img src="../img/drawable/icons8-contact-filled-50.png"; class="listIcon" title="Adicionar Documentos Conductor"></button>';
+            btnClick += '<button class="btn_add" id="' + markers[x].ruta + 'AddDoc" onclick="closePopUp(' + ventanaCns + '); getDataCar(' + rutaCns + '); setIdRegDoc(\'placaVehiculoDoc\', \'fecInicio\', \'fecVen\', \'txtNumero\', \'upload\'); getDataDoc(' + placa + '); abrirOpcionModal(' + ventanaDoc + ');"><img src="../img/drawable/icons8-add-file-filled-50.png"; class="listIcon" title="Adicionar Documentos Vehículo"></button>';
+            textLi = "<div class='listLeftText'>" + "&nbsp;" + textLi + "</div><div class='listRightButton'>"+ btnClick + "</div>";
+            liNew.innerHTML = textLi; //"<div class='listLeftText'>&nbsp;" + textLi + "</div><div class='listRightButton'" + btnClick + "</div>";
             document.getElementById("listaVehiculos").appendChild(liNew);
         }
     }
+
+    if (markers.length <= 0 && rutas.length > 0) {
+        for (var x = 0; x < rutas.length; x++) {
+            var textLi = rutas[x] + " - " + "Sin asignar ruta";
+            if (find_li(textLi, "listaVehiculos")) {
+                liNew = document.createElement("li");
+                liNew.id = rutas[x] + "la";
+                j = x + 1;
+                var btnClick = "";//'<button class="btn_add spaceList"><img src="../img/drawable/usuario.png"></button>';
+                liNew.innerHTML = "<div class='listLeftText'>&nbsp;" + textLi + "</div><div class='listRightButton'>" + btnClick + "</div>";
+                document.getElementById("listaVehiculos").appendChild(liNew);
+            }
+        }
+    }
+
     applyStyle("listaVehiculos");
 }
 
@@ -344,21 +377,47 @@ function listVehicleCns() {
     markers = [];
     rutas = [];
     routeNP = [];
+    deleteLi("listaVehiculosCns");
+    myRoutes();
     posicionActual();
     var liNew;
     for( var x = 0; x < markers.length; x++ ) {
-        var textLi = markers[x].placa + " - " + markers[x].ruta + " - " + markers[x].nombre;
+        var textLi = markers[x].placa + " - " + markers[x].nombre;
         var variables = "'" + markers[x].placa + "', '" + markers[x].ruta + "', '" + markers[x].nombre + "'";
         var ventanaCns = "'" + "m-SearchRoute" + "'";
-        var btnClick = '<button class="btn_add spaceList" id="' + markers[x].ruta + '" onclick="closePopUp(' + ventanaCns + '); startSelectRoute(' + variables + ');"><img src="../img/drawable/usuario.png"></button>';
+        var ventanaDtl = "'" + "m-CnsRouteDetailEnt" + "'";
+//        var ventanaDoc = "'" + "m-RegistryDocumentCar" + "'";
+        var ventanaCon = "'" + "m-RegistryDocumentSriver" + "'";
+        var ventanaDet = "'" + "m-SearchDocumentCar" + "'";
+        var rutaCns = "'Placa: " + markers[x].placa + "'";
+        var placa = "'" + markers[x].placa + "'"
+//        var btnClick = '<button class="btn_add spaceList" id="' + markers[x].ruta + '" onclick="closePopUp(' + ventanaCns + '); startSelectRoute(' + variables + ');"><img src="../img/drawable/bus.png"; style="height: 26px; width: 26px;"></button>';
+//        var btnClick = '<button class="btn_add" id="' + markers[x].ruta + 'AddDoc" onclick="closePopUp(' + ventanaCns + '); getDataCar(' + rutaCns + '); setIdRegDoc(\'placaVehiculoDoc\', \'fecInicio\', \'fecVen\', \'txtNumero\', \'upload\'); getDataDoc(' + placa + '); abrirOpcionModal(' + ventanaDoc + ');"><img src="../img/drawable/icons8-add-file-30.png"; class="listIcon" title="Adicionar Documentos"></button>';
+        var btnClick = '<button class="btn_add" id="' + markers[x].ruta + 'CnsDoc" onclick="closePopUp(' + ventanaCns + '); getDataCar(' + rutaCns + '); setIdRegDoc(\'placaVehiculoDriverCns\', \'fecIni\', \'fecVenc\', \'txtNum\', \'download\'); getDataDriverCns(' + placa + '); getDataDriverUpLoad(' + placa + ', \'Cns\'); abrirOpcionModal(\'m-CnsDriverData\');"><img src="../img/drawable/icons8-driver-filled-50.png"; class="listIcon" title="Ver Documentos Conductor"></button>';
+        btnClick += '<button class="btn_add" id="' + markers[x].ruta + 'CnsDoc" onclick="closePopUp(' + ventanaCns + '); getDataCar(' + rutaCns + '); setIdRegDoc(\'placaVehiculoCns\', \'fecIni\', \'fecVenc\', \'txtNum\', \'download\'); getDataDoc(' + placa + '); abrirOpcionModal(' + ventanaDet + ');"><img src="../img/drawable/icons8-documents-24.png"; class="listIcon" title="Ver Documentos Vehículo"></button>';
+        btnClick += '<button class="btn_add" id="' + markers[x].ruta + '" onclick="closePopUp(' + ventanaCns + '); getDataCar(' + rutaCns + '); abrirOpcionModal(' + ventanaDtl + ');"><img src="../img/drawable/bus.png"; class="listIcon" title="Ver Rutas"></button>';
         if(find_li(textLi, "listaVehiculosCns")) {
             liNew = document.createElement("li");
             liNew.id = markers[x].ruta + "Cn";
-            textLi = '<div style="display: table-cell; width: 270px; padding: 10px;">' + "&nbsp;" + textLi + '</div><div style="display: table-cell; width: 40%; padding: 5px; text-align: right;">'+ btnClick + '</div>';
+            textLi = "<div class='listLeftText'>" + "&nbsp;" + textLi + "</div><div class='listRightButton'>"+ btnClick + "</div>";
             liNew.innerHTML = textLi;
             document.getElementById("listaVehiculosCns").appendChild(liNew);
         }
     }
+
+    if (markers.length <= 0 && rutas.length > 0) {
+        for (var x = 0; x < rutas.length; x++) {
+            var textLi = rutas[x] + " - " + "Sin asignar ruta";
+            if (find_li(textLi, "listaVehiculosCns")) {
+                liNew = document.createElement("li");
+                liNew.id = rutas[x] + "la";
+                var btnClick = '';
+                liNew.innerHTML = "<div class='listLeftText'>&nbsp;" + textLi + "</div><div class='listRightButton'>" + btnClick + "</div>";
+                document.getElementById("listaVehiculosCns").appendChild(liNew);
+            }
+        }
+    }
+
     applyStyle("listaVehiculosCns");
 }
 
@@ -366,34 +425,50 @@ function applyStyle(list) {
     var estilo;
     var lista = document.getElementById(list).getElementsByTagName("li");
     for ( var i = 1; i < lista.length; i++ ) {
-        lista[i].removeAttribute("style");
+        lista[i].removeAttribute("class");
         if (( i % 2 ) == 0) {
             estilo = "text-align: left; font-size: 12px; background-color: #333333; color: #FFFFFF;";
         }
         else {
             estilo = "text-align: left; font-size: 12px; background-color: #FFFFFF; color: #333333;";
         }
-        estilo = "text-align: left; font-size: 12px; background-color: #FFFFFF; color: #333333; border: groove 1px #E6E6E6;";
-        lista[i].setAttribute("style", estilo);
+        estilo = "listRowRight";
+        lista[i].setAttribute("class", estilo);
     }
 }
 function listVehicleDelete() {
     markers = [];
     rutas = [];
     routeNP = [];
+    deleteLi("listaVehiculosDel");
     posicionActual();
     var j = 0;
     for(var x = 0; x < markers.length; x++ ) {
         j = x + 1;
         var liNew = document.createElement("li");
         liNew.id = markers[x].ruta + "ld";
-        var textLi = markers[x].ruta + " - " + markers[x].nombre;
-        var btnClick = "<button class='btn_add spaceList' id='" + markers[x].placa + "' onclick='remRouteList(this.id)'><img src='../img/drawable/delete.png'></button>";
+        var textLi = markers[x].placa + " - " + markers[x].nombre;
+        var btnClick = "<button class='btn_add spaceList' id='" + markers[x].placa + "' onclick='remRouteList(this.id)'><img src='../img/drawable/delete.png' class='listIcon'></button>";
         if(find_li(textLi, "listaVehiculosDel")) {
-            liNew.innerHTML = "<div style=\"display: table-cell; width: 270px; padding: 10px;\">&nbsp;" + markers[x].placa + x + " - " + textLi + '</div><div style="display: table-cell; width: 40%; padding: 5px; text-align: right;">' + btnClick + '</div>';
+            liNew.innerHTML = "<div class='listLeftText'>&nbsp;" + textLi + "</div><div class='listRightButton'>" + btnClick + "</div>";
             document.getElementById("listaVehiculosDel").appendChild(liNew);
         }
     }
+
+    if (markers.length <= 0 && rutas.length > 0) {
+        for (var x = 0; x < rutas.length; x++) {
+            var textLi = rutas[x] + " - " + "Sin asignar ruta";
+            if (find_li(textLi, "listaVehiculosDel")) {
+                liNew = document.createElement("li");
+                liNew.id = rutas[x] + "la";
+                j = x + 1;
+                var btnClick = "<button class='btn_add spaceList' id='" + rutas[x] + "' onclick='remRouteList(this.id)'><img src='../img/drawable/delete.png' class='listIcon'></button>";
+                liNew.innerHTML = "<div class='listLeftText'>&nbsp;" + textLi + "</div><div class='listRightButton'>" + btnClick + "</div>";
+                document.getElementById("listaVehiculosDel").appendChild(liNew);
+            }
+        }
+    }
+
     applyStyle("listaVehiculosDel");
 }
 
@@ -413,9 +488,11 @@ function find_li(content, list) {
 }
 
 function myPositionsRefresh(positions) {
-//    var shape = {coords: [1, 1, 1, 20, 18, 20, 18, 1], type: 'poly'};
+
     var limites = new google.maps.LatLngBounds();
+
     for (var i = 0; i < positions.length; i++) {
+
         var pos = positions[i];
         var image = {
             url: '../img/android/drawable-mdpi/' + pos.imagen + '.png',
@@ -427,7 +504,7 @@ function myPositionsRefresh(positions) {
         var myLatlng = new google.maps.LatLng(pos.latitud, pos.longitud);
         geocodeLatLng(geocoder, myLatlng, i);
         var act = 'En transito';
-        if(positions.act == 'ok' ) { act = 'Activa'; }
+        if (positions.act == 'ok' ) { act = 'Activa'; }
         var marcador = new google.maps.Marker( {
                 position: myLatlng,
                 map: map,
@@ -440,24 +517,34 @@ function myPositionsRefresh(positions) {
         marcador.addListener('dblclick', function() {
             getDataCar(this.title);
             abrirOpcionModal('m-CnsRouteDetailEnt');
-            //abrirOpcionModal('m-SearchRoute');
-            //listVehicleCns();
         });
         marcador.addListener('mouseover', function() {
             document.getElementById('dtsVehiculo').innerHTML = '<strong>&nbsp;&nbsp;' + this.title + '&nbsp;&nbsp;<strong>';
-            document.getElementById('dtsVehiculo').style.display='block';
-            setTimeout("document.getElementById('dtsVehiculo').style.display='none';", 5000);
+            document.getElementById('dtsVehiculo').setAttribute('class', 'visible');
         });
+        marcador.addListener('mouseout', function() {
+            document.getElementById('dtsVehiculo').innerHTML = '<strong>&nbsp;&nbsp;' + this.title + '&nbsp;&nbsp;<strong>';
+            document.getElementById('dtsVehiculo').setAttribute('class', 'invisible');
+        });
+
         markersDup.push(marcador);
-        if(centerMap == 10) {
-            limites.extend(marcador.position);
+
+        if (controlCenter == 0) {
+            centerMap = 8;
+            controlCenter = 1;
+//            console.log("myPositionsRefresh: " + controlCenter);
+        }
+
+        if (centerMap == 10) {
+//            limites.extend(marcador.position);
+            limites.extend(myLatlng);
+//            console.log("myPositionsRefresh: " + marcador.position + " " + direcciones[i]);
         }
     }
-//    centerMap++;
-//    console.log("CentrarMap:" + centerMap  + "   " + markersDup.length);
-    if(centerMap == 10 && markersDup.length > 0) {
-        console.log("Centrar Rutas: " + centerMap);
+
+    if (centerMap == 10 && markersDup.length > 0) {
         map.fitBounds(limites);
+//        console.log("myPositionsRefresh: " + centerMap);
         centerMap = 0;
     }
 }
@@ -476,78 +563,96 @@ function leyendMap(pos, marcador) {
 }
 
 function setMapOnAll() {
-    for (var i = 0; i < markersDup.length; i++) {
+
+    for (var i = 0; i < markersDup.length; i++)
         markersDup[i].setMap(null);
-    }
     markersDup = [];
 }
 
 function setMapOnSelRoute() {
     for (var i = 0; i < markersDup.length; i++) {
-        if( markersDup[i].ruta == codeRouteSel ) {
+        if( markersDup[i].ruta == codeRouteSel )
             markersDup[i].setMap(null);
-            console.log("Borrando:" + codeRouteSel);
-        }
     }
 }
 
 function deleteLi(list) {
 
     var lista = document.getElementById(list).getElementsByTagName("li");
-    if (lista.length < 3) return;
-    for (var i = lista.length; i > 1; i-- ) {
+    if (lista.length < 2) return;
+    for (var i = lista.length; i > 0; i-- ) {
         lista = document.getElementById(list).getElementsByTagName("li");
         if( lista[i] == undefined ) continue;
         var nodo = lista[i].getAttribute("id");
         var child = document.getElementById(nodo);
 //        console.log("nodo " + nodo + " " + i);
+        if (child == null) continue;
         child.parentNode.removeChild(child);
     }
 
 }
 
 function mapUsersRoute() {
+
     typeRouteMap++;
     infoWindow = new google.maps.InfoWindow({map: map});
     var datos = conn.database().ref("usersvstravel/" + codeRouteSel);
     datos.orderByValue().on("value", function (snapshot) {
-        snapshot.forEach(function (data) {
-            var dataUsers = data.val();
-            var obj = new Object();
-            obj.nombre = dataUsers.childname;
-            obj.icon = dataUsers.icon;
-            if(obj.icon == undefined){
-                obj.icon = 'marketend';
-            }
-            obj.latitud = dataUsers.latitud;
-            obj.longitud = dataUsers.longitud;
-            obj.phone = dataUsers.phone;
-            obj.id = dataUsers.id;
-            obj.stoped = dataUsers.stoped;
-            markers.push(obj);
-        });
+        var myLocalUsers = snapshot.numChildren();
+        if (myLocalUsers != myRouteUsers) {
+            snapshot.forEach(function (data) {
+                var dataUsers = data.val();
+                var obj = new Object();
+                obj.nombre = dataUsers.childname;
+                obj.icon = dataUsers.icon;
+
+                if (obj.icon == undefined) obj.icon = 'marketend';
+
+                obj.latitud = dataUsers.latitud;
+                obj.longitud = dataUsers.longitud;
+                obj.phone = dataUsers.phone;
+                obj.id = dataUsers.id;
+                obj.stoped = dataUsers.stoped;
+                markers.push(obj);
+                myRouteUsers++;
+//                console.log("mapUsersRoute: " + obj.icon + " " + dataUsers.childname);
+            });
+        }
     });
-    if (markers.length <= 0) {
-        return;
-    }
-    if( centerMap < limitLoops ) {
+
+    if (markers.length <= 0) return;
+
+//    if (centerMap < limitLoops) {
+//    if (centerMap == 0) {
+//        console.log("myRouteUsers: " + centerMap + " " + limitLoops);
         setMapOnAll();
         myPositionsRefreshChild(markers);
-    }
+//    }
+
     myPositionRefreshRoute();
     google.maps.event.addDomListener(window, 'load', initMap);
 }
 
 function myPositionsRefreshChild(positions) {
+
     for (var i = 0; i < positions.length; i++) {
         var pos = positions[i];
-        var image = {
-            url: '../img/android/drawable-mdpi/' + pos.icon + '.png',
-//            url: '../img/android/drawable-mdpi/avatarcir5.png',
-            size: new google.maps.Size(39, 39),
-            origin: new google.maps.Point(0, 0),
-            anchor: new google.maps.Point(0, 39)
-        };
+        if (pos.icon == 'schoolmarket') {
+            var image = {
+                url: '../img/android/drawable-mdpi/' + pos.icon + '.png',
+                size: new google.maps.Size(39, 39),
+                origin: new google.maps.Point(0, 0),
+                anchor: new google.maps.Point(0, 39)
+            };
+        }
+        else {
+            var image = {
+                url: '../img/android/drawable-mdpi/' + pos.icon + '.png',
+                size: new google.maps.Size(39, 39),
+                origin: new google.maps.Point(0, 0),
+                anchor: new google.maps.Point(0, 39)
+            };
+        }
         var myLatlng = new google.maps.LatLng(pos.latitud, pos.longitud);
         var marcador = new google.maps.Marker( {
             position: myLatlng,
@@ -562,6 +667,9 @@ function myPositionsRefreshChild(positions) {
 }
 
 function myPositionRefreshRoute() {
+
+    var obj = new Object();
+    var myLatlng;
     var shape = {coords: [0, 0, 50], type: 'circle'};
     var image = {
         url: '../img/android/drawable-mdpi/marcaruta.png',
@@ -570,47 +678,39 @@ function myPositionRefreshRoute() {
         anchor: new google.maps.Point(0, 39)
     };
     setMapOnSelRoute();
-    var obj = new Object();
     var datos = conn.database().ref("datacar/" + plateRouteSel);
     datos.orderByValue().on("value", function (snapshot) {
-        snapshot.forEach(function (data) {
-            var reg = data.val();
-            if( data.key == 'longitud' ) { obj.longitud = reg }
-            if( data.key == 'latitud' ) { obj.latitud = reg }
-            if( data.key == 'marca' ) { obj.phone = reg }
-            if( data.key == 'velocidad' ) { obj.id = reg }
-            obj.nombre = nameRouteSel;
-            obj.icon = 'marcaruta.png';
+        obj.longitud = snapshot.child('longitud').val();
+        obj.latitud = snapshot.child('latitud').val();
+        obj.marca = snapshot.child('marca').val();
+        obj.velocidad = snapshot.child('velocidad').val();
+        obj.nombre = nameRouteSel;
+        obj.icon = 'marcaruta.png';
+
+        if (obj.latitud == undefined) return;
+
+        myLatlng = new google.maps.LatLng(obj.latitud, obj.longitud);
+        var marcador = new google.maps.Marker({
+            position: myLatlng,
+            map: map,
+            title: 'Ruta: ' + codeRouteSel + ', Nombre: ' + nameRouteSel + ', Placa: ' + plateRouteSel,
+            icon: image,
+            shape: shape,
+            zIndex: 999
         });
+        markersDup.push(marcador);
     });
-    if( obj.latitud == undefined ){ return; }
-    var myLatlng = new google.maps.LatLng(obj.latitud, obj.longitud);
-    var marcador = new google.maps.Marker({
-        position: myLatlng,
-        map: map,
-        title: 'Ruta: ' + codeRouteSel + ', Nombre: ' + nameRouteSel + ', Placa: ' + plateRouteSel,
-        icon: image,
-        shape: shape,
-        zIndex: 999
-    });
-    markersDup.push(marcador);
+
+    if (obj.latitud == undefined) return;
+
     markersDup = eliminarObjetosDuplicados(markersDup, "nombre");
     limitLoops = 10;
-    if(centerMap > limitLoops && markersDup.length > 0) {
+//    if(centerMap == limitLoops && markersDup.length > 0) {
+        map.setZoom(15);
         map.setCenter(myLatlng);
-        console.log("Centrar Detalle Rutas");
-/*
-        var limites = new google.maps.LatLngBounds();
-        for (var i = 0; i < markersDup.length; i++) {
-//            console.log("Titulo:" + markersDup[i].title + ":" + i);
-            limites.extend(markersDup[i].position);
-        }
-        map.fitBounds(limites);
-*/
-        centerMap = 0;
-    }
-
-//    centerMap++;
+//        console.log("Centrar Detalle Rutas child");
+//        centerMap = 0;
+//    }
 }
 
 function startSelectRoute(plateRoute, codeRoute, nameRoute) {
@@ -729,7 +829,7 @@ function cnsAlerts() {
             }
         }
     }
-    setTimeout("document.getElementById('dtsAlertParent').style.display='none';", 10000);
+    setTimeout("document.getElementById('dtsAlertParent').setAttribute('class', 'invisible');", 10000);
     setInterval(function() {
     for(var j = 0; j < msgAlerts.length; j++) {
         var list = document.getElementById("dtsAlertParent").getElementsByTagName("li");
@@ -738,21 +838,34 @@ function cnsAlerts() {
 }
 
 function cnsDtStrFnsh() {
+
     var datos = conn.database().ref(tblRtAlt[1]);
     starandfinish = [];
     datos.orderByValue().on("value", function (snapshot) {
         snapshot.forEach(function (data) {
+
             var obj = new Object();
             var dat = data.val();
+
             if (dat.estado == 1) {
                 obj.ruta = data.key;
                 obj.estado = dat.estado;
                 obj.tipo = "";
-                if( dat.tipo == 1 ){ obj.tipo = "Colegio" }
-                if( dat.tipo == 2 ){ obj.tipo = "Entrega" }
-//            console.log('Estado: ' + dat.estado + ', Ruta: ' + obj.ruta);
+
+                if (dat.tipo == 1) obj.tipo = "Colegio";
+                if (dat.tipo == 2) obj.tipo = "Entrega";
                 starandfinish.push(obj);
             }
         });
     });
+}
+
+function getReloadWindow() {
+    if (winStateTime == 0)
+        document.location.reload();
+}
+
+function setwinStateTime(opt) {
+    winStateTime = opt;
+
 }

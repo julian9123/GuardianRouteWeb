@@ -14,40 +14,42 @@
         <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.1/material.teal-red.min.css" />
         <script src="https://storage.googleapis.com/code.getmdl.io/1.0.1/material.min.js"></script>
         <script src="https://apis.google.com/js/platform.js" async defer></script>
-        <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-auth.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-database.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-messaging.js"></script>
+          <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+          <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-app.js"></script>
+          <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-auth.js"></script>
+          <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-database.js"></script>
+          <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-firestore.js"></script>
+          <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-messaging.js"></script>
+          <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-storage.js"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="cordova.js"></script>
+<!--        <script type="text/javascript" src="cordova.js"></script> -->
         <script type="text/javascript" src="js/index.js"></script>  
         <script type="text/javascript" src="js/conectar.js"></script>
         <script type="text/javascript" src="js/consultar.js"></script>
         <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQ7J6-8VbDMfg12nPmEiNrvgbEhZGvIyA&callback=initMap"></script>
         <script type="text/javascript" src="js/mapas.js"></script>
       </head>
-      <body onload="initMap();">
-        <header style="width: 30%;">
+      <body onload="abrirOpcionModal('m-WaitRoute'); getMoveImage(); getEventWindow();">
+        <header class="headerDetailEnt">
             <nav>
                 <ul>
-                    <li onclick="abrirOpcionModal('m-AddRouteEnt');">
-                        <a href="#"><img src="img/drawable/change.png" width="60" height="60">
-                            <p class="letraMenu">Agregar Puntos Ruta</p>
+                    <li onclick="abrirOpcionModal('m-AddRouteEnt'); setwinStateTime(1);">
+                        <a href="#"><img src="img/drawable/addUser.png" class="iconHeader">
+                            <p class="letraMenu">Agregar Usuarios</p>
                         </a>
                     </li>
                     <li onclick="abrirOpcionModal('m-ListUsersRouteEnt'); getDataUserRoute();">
-                        <a href="#"><img src="img/drawable/menuusers.png" width="60" height="60">
+                        <a href="#"><img src="img/drawable/userList.png" class="iconHeader">
                             <p class="letraMenu">Lista Usuarios</p>
                         </a>
                     </li>
-                    <li onclick="abrirOpcionModal('m-NotifyRoute');">
-                        <a href="javascript:void(0)"><img src="img/drawable/BtnAlerta.png" width="60" height="60">
+                    <li onclick="abrirOpcionModal('m-NotifyRoute'); setwinStateTime(1);">
+                        <a href="javascript:void(0)"><img src="img/drawable/BtnAlerta.png" class="iconHeader">
                             <p class="letraMenu">Enviar Notificación</p>
                         </a>
                     </li>
                     <li onclick="window.close();">
-                        <a href="javascript:void(0)"><img src="img/drawable/back-web.png" width="60" height="60">
+                        <a href="javascript:void(0)"><img src="img/drawable/back-web.png" class="iconHeader">
                             <p class="letraMenu">Volver</p>
                         </a>
                     </li>
@@ -55,15 +57,12 @@
             </nav>
         </header>
         <div id="map" class="map"></div>
-        <div id="footer" style="display: none"></div>
-        <div id="dtsVehiculo" style="display: none"></div>
-        <div id="dtsAlertParent" style="display: none"></div>
+        <div id="footer" class="invisible"></div>
+        <div id="dtsVehiculo" class="invisible"></div>
+        <div id="dtsAlertParent" class="invisible"></div>
            <dialog id="m-SearchRoute" class="site-dialog">
                 <div class="headerForm">
                     <div class="headerDialog">
-                        <div class="headerImage">
-                            <img src="img/android/drawable-mdpi/logoapprutas.png" height="51" width="51">
-                        </div>
                         <div class="headerTitle">
                         <h1><p class="textoHeader">Consultar Detalle Vehículo</p></h1>
                         </div>
@@ -80,7 +79,7 @@
                         </div>
                     </div>
                     <div>
-                        <ul id="listaVehiculosCns" style="overflow: auto;">
+                        <ul id="listaVehiculosCns" class="listaVe">
                             <li id="tituloCns" class="tituloLista"><b>Vehiculos</b></li>
                             <li id="columnasCns" class="subTituloLista"><b>Placa - Ruta - Nombre</b></li>
                         </ul>
@@ -89,15 +88,6 @@
            </dialog>
            <dialog id="m-MsjAds" class="site-dialog">
                 <div class="headerFormPopUp">
-                    <div class="headerDialog">
-                        <div class="headerImage">
-                            <img src="img/android/drawable-mdpi/logoapprutas.png" height="51" width="51">
-                        </div>
-                        <div class="headerTitle">
-                        <h1><p class="textoHeader">Confirmación</p></h1>
-                        </div>
-                    </div>
-                    <br/>
                     <div class="formularioDialogAlert">
                         <br/>
                         <b><div id="msjAds"></div></b>
@@ -110,34 +100,24 @@
            </dialog>
            <dialog id="m-NotifyRoute" class="site-dialog">
                 <div class="headerFormBottom">
-                    <p class="textoHeader" style="font-size: 15px;"><strong>Notificaciones</strong></p>
+                    <p class="textoHeader"><strong>Notificaciones</strong></p>
                     <div class="formularioDialogNotify">
-                        <img src="img/android/drawable-mdpi/logoapprutas.png" height="51" width="51">
                         <input type="text" id="notificacion" class="textoNotify" maxlength="40">
-                        <div class="btn-group cf" style="margin-left: 1%; display: inline-flex;">
-                            <button class="btn_add" onclick="sendNotification('forMe'); closePopUp('m-NotifyRoute')" style="margin: 7px;">Enviar</button>
-                            <button class="btn_cancel" onclick="closePopUp('m-NotifyRoute')" style="margin: 7px;">Cancelar</button>
+                        <div class="btn-group cf btnNotificaciones">
+                            <button class="btn_add btnNotifica" onclick="sendNotification('forMe'); closePopUp('m-NotifyRoute'); setwinStateTime(0);">Enviar</button>
+                            <button class="btn_cancel btnNotifica" onclick="closePopUp('m-NotifyRoute'); setwinStateTime(0);">Cancelar</button>
                         </div>
                     </div>
                 </div>
            </dialog>
            <dialog id="m-CnfAddRoute" class="site-dialog">
                 <div class="headerFormPopUp">
-                    <div class="headerDialog">
-                        <div class="headerImage">
-                            <img src="img/android/drawable-mdpi/logoapprutas.png" height="51" width="51">
-                        </div>
-                        <div class="headerTitle">
-                            <h1><p class="textoHeader">Confirmación</p></h1>
-                        </div>
-                    </div>
-                    <br/>
                     <div class="formularioDialogAlert">
                         <br/>
-                        <div style="text-align: center; color: #000000;">Desea crear una nueva ruta?</div>
+                        <div class="textoDesvincula">Desea crear una nueva ruta?</div>
                         <br/>
-                        <div style="text-align: center; color: #000000;">Para continuar ingrese el nombre de la ruta</div>
-                        <div style="text-align: center; color: #000000;"><input type="text" style="margin-bottom: 0px !important; width: 100% !important; background: #FFFFFF !important; padding: 10px !important; text-align: center;" class="formulario__input" id="txtNewRoute" size="40" maxlength="40"></div>
+                        <div class="textoDesvincula">Para continuar ingrese el nombre de la ruta</div>
+                        <div class="textoDesvincula"><input type="text" class="formulario__input textoNuevaRuta" id="txtNewRoute" size="40" maxlength="40"></div>
                         <br/>
                         <div class="btn-group cf">
                             <button class="btn_add" id="btnCnfAddDialog" onclick="complementData(2); closePopUp('m-CnfAddRoute'); msjAlert('Ruta ' + $('#txtNewRoute').val() + ' creada', 1);">Crear</button>
@@ -149,74 +129,59 @@
            <dialog id="m-AddRouteEnt" class="site-dialog">
                 <div class="headerForm">
                     <div class="headerDialog">
-                        <div class="headerImage">
-                            <img src="img/android/drawable-mdpi/logoapprutas.png" height="51" width="51">
-                        </div>
                         <div class="headerTitle">
-                            <h1><p class="textoHeader">Modificar Ruta</p></h1>
+                            <h1><p class="textoHeader">Agregar Usuarios</p></h1>
                         </div>
                     </div>
-                    <br/>
                     <div class="formularioDialog">
                         <br/>
-                        <input type="text" class="formulario__inputDialog" style="padding: 10px !important;" id="txtEmpleado" size="40" max="40" maxlength="40" onkeyup="campoDiligenciado('Empleado')">
+                        <input type="text" class="formulario__inputDialog tipoRuta" id="txtEmpleado" size="40" max="40" maxlength="40" onkeyup="campoDiligenciado('Empleado')">
                         <label class="formulario__labelDialogEmp" id="lblEmpleado">Usuario</label>
-                        <input type="text" class="formulario__inputDialog" style="padding: 10px !important;" id="txtDireccion" size="50" max="50" maxlength="50" onkeyup="campoDiligenciado('Direccion');">
+                        <input type="text" class="formulario__inputDialog tipoRuta" id="txtDireccion" size="50" max="50" maxlength="50" onkeyup="campoDiligenciado('Direccion');">
                         <label class="formulario__labelDialogEmp" id="lblDireccion">Dirección</label>
-                        <input type="text" class="formulario__inputDialog" style="padding: 10px !important;" id="txtCelularX" size="10" max="10" maxlength="10" onkeyup="valCellNumber(2); campoDiligenciado('CelularX');">
+                        <input type="text" class="formulario__inputDialog tipoRuta" id="txtCiudad" size="50" max="50" maxlength="50" onkeyup="campoDiligenciado('Ciudad');">
+                        <label class="formulario__labelDialogEmp" id="lblCiudad">Ciudad</label>
+                        <input type="text" class="formulario__inputDialog tipoRuta" id="txtCelularX" size="10" max="10" maxlength="10" onkeyup="valCellNumber(2); campoDiligenciado('CelularX');">
                         <label class="formulario__labelDialogEmp" id="lblCelularX">Celular</label>
-                        <p style="color: rgba(0,0,0,0.5); font-size: 1.3em !important;">Es el punto de Llegada?&nbsp;<input type="checkbox" class="checkmark" id="ckbPuntoLlegada"></p>
+                        <p class="puntoLlegada">Es el punto de Llegada?&nbsp;<input type="checkbox" class="checkmark" id="ckbPuntoLlegada"></p>
                         <div id="routeFind"></div>
                         <br/>
                         <div class="btn-group cf">
                             <button class="btn_add" id="btnARDialogX" onclick="setNewAccessPoint(); setStopped();">Adicionar</button>
-                            <button class="btn_cancel" onclick="closePopUp('m-AddRouteEnt')">Cancelar</button>
+                            <button class="btn_cancel" onclick="$('#txtEmpleado').val(''); $('#txtDireccion').val(''); $('#txtCelularX').val(''); closePopUp('m-AddRouteEnt'); setwinStateTime(0);">Cerrar</button>
                         </div>
-                    </div>
-                    <div>
-<!--
-                        <ul id="listaVehiculos" style="overflow: auto";>
-                            <li id="titulo"><b>VEHICULOS</b></li>
-                            <li id="columnas"><b>Placa - Ruta - Nombre</b></li>
-                        </ul>
--->
                     </div>
                 </div>
            </dialog>
-
-
-
-
-
-
             <dialog id="m-ListUsersRouteEnt" class="site-dialog">
                 <div class="headerForm">
                     <div class="headerDialog">
-                        <div class="headerImage">
-                            <img src="img/android/drawable-mdpi/logoapprutas.png" height="51" width="51">
-                        </div>
                         <div class="headerTitle">
                             <h1><p class="textoHeader">Lista de Usuarios</p></h1>
                         </div>
                     </div>
-                    <br/>
                     <div class="formularioDialog">
                         <br/>
-                        <input type="text" class="formulario__inputDialog" style="padding: 10px !important;" id="txtUserNameCns" size="40" max="40" maxlength="40" onkeyup="getFilterList('txtUserNameCns'); campoDiligenciado('UserNameCns');">
+                        <input type="text" class="formulario__inputDialog tipoRuta" id="txtUserNameCns" size="40" max="40" maxlength="40" onkeyup="getFilterList('txtUserNameCns'); campoDiligenciado('UserNameCns');">
                         <label  class="formulario__labelDialogEmp" id="lblUserNameCns">Nombre</label>
                         <br/>
-                        <input type="text" class="formulario__inputDialog" style="padding: 10px !important;" id="txtCelularC" size="10" max="10" maxlength="10" onkeyup="valCellNumber(3); getFilterList('txtCelularC'); campoDiligenciado('CelularC');">
+                        <input type="text" class="formulario__inputDialog tipoRuta" id="txtCelularC" size="10" max="10" maxlength="10" onkeyup="valCellNumber(3); getFilterList('txtCelularC'); campoDiligenciado('CelularC');">
                         <label  class="formulario__labelDialogEmp" id="lblCelularC">Celular</label>
                         <div class="btn-group cf">
                             <button class="btn_cancel" onclick="closePopUp('m-ListUsersRouteEnt');">Cerrar</button>
                         </div>
                     </div>
+                    <br/>
                     <div>
-                        <ul id="listaUsuariosCns" style="overflow: auto;">
-                            <li id="tituloCnsUsu" class="tituloLista">Usuarios</li>
-                            <li id="columnasCnsUsu" class="subTituloLista">Nombre - Celular</li>
+                        <ul id="listaUsuariosCns" class="listaVe">
+                            <li id="tituloCnsUsu" class="subTituloLista">Datos Usuarios</li>
                         </ul>
                     </div>
+                </div>
+            </dialog>
+            <dialog id="m-WaitRoute" class="site-dialog">
+                <div id="myBus" class="myBus">
+                    <img src="img/drawable/gifcarga.gif" id="imagen"/>
                 </div>
             </dialog>
       </body>

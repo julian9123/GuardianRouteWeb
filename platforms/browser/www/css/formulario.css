@@ -46,14 +46,14 @@ body {
     font-size: 1.3em;
 }
 .formulario__input {
-    padding: 20px;
+    padding: 2%;
     background: rgba(0,0,0,0.1);
     border: 1px solid rgba(0,0,0,0.3);
     margin-bottom: 40px;
-    width: 93%;
+    width: 100%;
 }
 .formulario__input_pais {
-    padding: 20px;
+    padding: 2%;
     display: inline-block;
     background: rgba(0,0,0,0.1);
     border: 1px solid rgba(0,0,0,0.3);
@@ -127,7 +127,7 @@ body {
   margin-top: -125px;
 }
 .formulario__divoutput {
-    padding: 20px;
+    padding: 2%;
     background: rgba(0,0,0,0.1);
     border: 1px solid rgba(0,0,0,0.3);
     height: 70%;
@@ -135,7 +135,7 @@ body {
     display: block;
 }
 .formulario__divconsulta {
-    padding: 20px;
+    padding: 2%;
     background: rgba(0,0,0,0.1);
     border: 1px solid rgba(0,0,0,0.3);
     height: 20%;
@@ -193,13 +193,13 @@ body {
 }
 
 .formulario__labelDialogEmp {
-    padding-left: 25px;
+    padding-left: 50px;
     position: absolute;
     margin-top: -80px;
     color: rgba(0,0,0,0.5);
     transition: all 0.2s;
     width: 100%;
-    left: -40%;
+    left: -35%;
 }
 
 .formulario__inputDialog {
@@ -222,12 +222,12 @@ body {
 }
 
 .formulario__labelDialogEmp_lleno {
-    padding-left: 25px;
+    padding-left: 50px;
     position: absolute;
     margin-top: -105px;
     color: rgba(0,0,0,0.5);
     width: 100%;
-    left: -40%;
+    left: -35%;
 }
 
 .headerDialog {
@@ -256,13 +256,26 @@ body {
 /*    background: #BDBDBD; */
 }
 
+.formularioDialogAlertDL {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    margin: auto;
+    padding: 35px;
+    box-shadow: 0 0 20px 1px rgba(0,0,0,0.3);
+    position: relative;
+    padding: 10px;
+    /*    background: #BDBDBD; */
+}
+
 .formularioDialogNotify {
     width: 100%;
     max-width: 100%;
     box-shadow: 0 0 20px 1px rgba(0,0,0,0.3);
     position: relative;
     padding: 10px;
-    background: #BDBDBD;
+/*    background: #BDBDBD;*/
+    background: #FFFFFF;
     display: inline-flex;
 }
 
@@ -286,3 +299,192 @@ body {
     padding: 10px;
     text-align: left;
 }
+
+.myBus {
+    margin-left: auto;
+    left: 0;
+    margin-right: auto;
+    position: fixed;
+    right: 0;
+    text-align: center;
+    top: 30%;
+}
+
+.listLeftText {
+    display: inline-block;
+    padding: 3%;
+}
+
+.listRightButton {
+    display: inline-flex;
+    padding: 1% 3%;
+    float: right;
+}
+
+.listRowRight {
+    text-align: left;
+    font-size: 12px;
+    background-color: #FFFFFF;
+    color: #333333;
+    border: groove 1px #E6E6E6;
+}
+
+.listIcon {
+    height: 26px;
+    width: 26px;
+}
+
+.textFormatoError {
+    margin-left: 1%;
+    visibility: visible;
+    display:block;
+    color: #333333;
+    text-align: left;
+}
+
+.textConfirmVehicleTrue {
+    color: #000000;
+    margin: 3%;
+}
+
+.textConfirmVehicleFalse {
+    margin: 3%;
+    color: #DF0101;
+}
+
+.btnNotificaciones {
+    margin-left: 1%;
+    display: inline-flex;
+}
+
+.btnNotificacionesLeft {
+    margin-left: 6%;
+    display: inline-flex;
+}
+
+.centrarObjeto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.msjErrorForm {
+    margin-left: 1%;
+    visibility: hidden;
+    display:inline;
+}
+
+.msjErrorFormDet {
+    visibility: hidden;
+    display: inline;
+}
+
+.puntoLlegada {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 1.3em !important;
+}
+
+.subTitleForm {
+    padding: 2% 0% 2% 0%;
+}
+
+.labelCnsCarTitle {
+    text-align: left;
+    border-top: 2px solid #333333;
+}
+
+.listDetailImg {
+    display: inline-block;
+    padding: 0% 2%;
+    background-color: gainsboro;
+    border-radius: 10%;
+    border: 1px solid;
+    float: right;
+    margin-top: -1%;
+    margin-right: 2%;
+}
+
+.listDetailWithOutButton {
+    width: 100%;
+    text-align: left;
+    margin-left: 2%;
+    display: inline-block;
+}
+
+.dataForm {
+    padding: 1% 0%;
+}
+
+.textData {
+    background-color: lightgray;
+    border-radius: 5%;
+    border: 1px solid gray;
+    padding: 1% 0%;
+}
+
+.textData::-webkit-input-placeholder {
+    text-align: center;
+    line-height: 100px;
+}
+
+.margenTexto {
+    margin-left: 2%;
+}
+
+
+.margenTextoForm {
+    padding: 1% 0%;
+    width: 34%;
+}
+
+.margenTextoDate {
+    padding: 0.5% 0%;
+    width: 30%;
+}
+
+.margenTextoDateView {
+    padding: 1% 0%;
+    width: 30%;
+}
+
+.textLargeComplete {
+    width: 100%;
+}
+
+.formularioDialogUpLoad {
+    box-shadow: 0 0 20px 1px rgba(0,0,0,0.3);
+    position: relative;
+    padding: 10px;
+    background: #FFFFFF;
+    display: block;
+}
+
+#myProgress {
+    width: 100%;
+    background-color: rgba(0,0,0,0.1);
+}
+#myBar {
+    width: 1%;
+    height: 30px;
+    background-color: #333333;
+    color: #FFFFFF;
+}
+
+.txtDocumentDriver { width: 30%; }
+
+.txtTypeDocDriver { width: 17%; }
+
+.txtRHDriver { width: 15%; }
+
+.txtEPSDriver { width: 30%; }
+
+.txtNameDriver { width: 95%; }
+
+.txtCivilStateDriver { width: 64%; }
+
+.txtDateDriver { width: 28%; }
+
+.txtNumberDriver { width: 22%; }
+
+.margenLeft { padding: 3%; }
+
+.borderIFrame { height: 93%; }

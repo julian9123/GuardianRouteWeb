@@ -1,6 +1,180 @@
 {
   "rules": {
-    ".read": "auth != null",
-    ".write": "auth != null"
-  }
-}
+    "alert": {
+		".write": "auth.uid != null",
+		".read": "auth.uid != null"	
+	},
+	"checkconfirm": {
+		".write": "auth.uid != null",
+		".read": "auth.uid != null"			
+	},
+	"contadorref": {
+		".write": "auth.uid != '126YlYLCJuhTKut8CwO2nlOas8g2' || auth.uid === 'ouVjlaAL6wevw5uHT7LaRkYxkGL2'",
+		".read": "auth.uid != null"	
+	},
+	"datacar": {
+		".write": "auth.uid != null",
+		".read": "auth.uid != null"	
+	},
+	"datacars": {
+		".write": "auth.uid != null",
+		".read": "auth.uid != null"		
+	},
+	"datadriver": {
+		".write": "auth.uid != null",
+		".read": "auth.uid != null"		
+	},
+	"drivervstravel": {
+		".write": "auth.uid != null",
+		".read": "auth.uid != null"				
+	},
+    "entGroup": {
+		".write": "auth.uid === '126YlYLCJuhTKut8CwO2nlOas8g2' || auth.uid === 'ouVjlaAL6wevw5uHT7LaRkYxkGL2'",
+		".read": "auth.uid != null"
+    },
+    "schGroup": {
+		".write": "auth.uid === '126YlYLCJuhTKut8CwO2nlOas8g2' || auth.uid === 'ouVjlaAL6wevw5uHT7LaRkYxkGL2'",
+		".read": "auth.uid != null"
+    },	
+    "entRoute": {
+		".write": "auth.uid != null",
+		".read": "auth.uid != null"
+    },
+    "entUser": {
+		".write": "auth.uid != null",
+		".read": "auth.uid != null"
+    },	
+    "historial": {
+		"$codruta": {
+			".write": "auth.uid != null && $codruta != null",
+			".read": "auth.uid === '126YlYLCJuhTKut8CwO2nlOas8g2' || auth.uid === 'ouVjlaAL6wevw5uHT7LaRkYxkGL2'"
+		}
+    },	
+    "historicoabordaje": {
+		"$codruta": {
+			".write": "auth.uid != null && $codruta != null",
+			".read": "auth.uid != null"
+		}
+    },	
+    "historicodescenso": {
+		"$codruta": {
+			".write": "auth.uid != null && $codruta != null",
+			".read": "auth.uid != null"
+		}
+	},	
+    "historicofinalizacion": {
+		"$codruta": {
+			".write": "auth.uid != null && $codruta != null",
+			".read": "auth.uid != null"
+		}
+    },	
+    "historicoiniciacion": {
+		"$codruta": {
+			".write": "auth.uid != null && $codruta != null",
+			".read": "auth.uid === '126YlYLCJuhTKut8CwO2nlOas8g2' || auth.uid === 'ouVjlaAL6wevw5uHT7LaRkYxkGL2'"
+		}
+    },
+    "keyvsplaca": {
+		".write": "auth.uid != null",
+		".read": "auth.uid != null"
+    },	
+    "login": {
+		"$uid": {
+			".write": "auth.uid != null && auth.uid === $uid",
+			".read": "auth.uid != null"
+		}
+    },
+    "mensaje": {
+		".write": "auth.uid != null",
+		".read": "auth.uid != null"
+    },	
+    "placavskey": {
+		".write": "auth.uid != null",
+		".read": "auth.uid != null"
+    },	
+    "starandfinish": {
+		".write": "auth.uid != null",
+		".read": "auth.uid != null"
+    },	
+    "ultima": {
+		".write": "auth.uid != null",
+		".read": "auth.uid != null"
+    },	
+    "usersvstravel": {
+		".write": "auth.uid != null",
+		".read": "auth.uid != null"
+    },	
+    "uservscode": {
+		".write": "auth.uid != null",
+		".read": "auth.uid != null"
+    },
+	"logerrdata": {
+		".write": "auth.uid != null",
+		".read": "auth.uid === '126YlYLCJuhTKut8CwO2nlOas8g2'"	
+	},
+	"dtsadmin": {
+		".write": "auth.uid === '126YlYLCJuhTKut8CwO2nlOas8g2'",
+		".read": "auth.uid === '126YlYLCJuhTKut8CwO2nlOas8g2' || auth.uid === 'ouVjlaAL6wevw5uHT7LaRkYxkGL2'"	
+	},
+	"historicopagos": {
+		"$codruta": {
+			".write": "auth.uid != null && $codruta != null",
+			".read": "auth.uid === '126YlYLCJuhTKut8CwO2nlOas8g2' || auth.uid === 'ouVjlaAL6wevw5uHT7LaRkYxkGL2'"	
+		}
+	},
+    "historicoalertas": {
+		"$codruta": {
+			".write": "auth.uid != null && $codruta != null",
+			".read": "auth.uid === '126YlYLCJuhTKut8CwO2nlOas8g2' || auth.uid === 'ouVjlaAL6wevw5uHT7LaRkYxkGL2'"
+		}
+    },	
+    "loginuser": {
+		".write": "auth.uid != null",
+		".read": "auth.uid != null"
+	},
+	"userlistroute": {
+		".write": "auth.uid != null",
+		".read": "auth.uid != null"
+	},
+  "listcheck": {
+		".write": "auth.uid != null",
+		".read": "auth.uid != null"
+	},
+    "controlusuarios": {
+		".write": "auth.uid != null",
+		".read": "auth.uid != null"
+	},  
+  "historicopartida": {
+		".write": "auth.uid != null",
+		".read": "auth.uid != null"
+	},
+	"historicocalificacion": {
+		".write": "auth.uid != null",
+		".read": "auth.uid != null"
+	},
+	"historicorecorridos": {
+		".write": "auth.uid != null",
+		".read": "auth.uid != null"
+  },
+	"schoollistroute": {
+		".write": "auth.uid != null",
+		".read": "auth.uid != null"  
+  },
+	"schoolvskey": {
+		".write": "auth.uid != null",
+		".read": "auth.uid != null"    
+	},
+  	"dataschool": {
+		".write": "auth.uid != null",
+		".read": "auth.uid != null"    
+	},   
+  "uservskey": {
+  ".write": "auth.uid != null",
+  ".read": "auth.uid != null"      
+  },
+  "docs": {
+		".write": "auth.uid != null",
+		".read": "auth.uid != null"	
+	}    
+ }    
+}  

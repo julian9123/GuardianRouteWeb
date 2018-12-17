@@ -6,7 +6,7 @@
 	box-sizing: border-box;
 }
 
-body {background:#333333;}
+body {background: #FFFFFF;}
 
 .menu_bar {
 	display:none;
@@ -16,7 +16,7 @@ body {background:#333333;}
 }
 
 header {
-	width: 65%;
+	width: 45%;
     background: #333333;
     text-align: center;
     left: 0;
@@ -262,13 +262,30 @@ header:hover {
     position: fixed;
     opacity: 1;
     color: #333333;
+    padding: 1% 0%;
+}
+
+.headerFormPopUpDL {
+    top: 2%;
+    width: 80%;
+    height: 95%;
+    background: #FFFFFF;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    position: fixed;
+    opacity: 1;
+    color: #333333;
+    padding: 1% 0%;
 }
 
 .headerFormBottom {
     bottom: 0%;
     height: 14%;
 	width: 40%;
-    background: #333333;
+/*    background: #333333; */
     text-align: center;
     left: 0;
     right: 0;
@@ -276,7 +293,7 @@ header:hover {
     margin-right: auto;
     position: fixed;
     opacity: 1;
-    color: white;
+/*    color: white; */
 }
 
 .letraMenu {
@@ -375,4 +392,70 @@ header:hover {
     border-width: 1px;
     border-style: solid;
     border-radius: 5px;
+}
+
+.invisible {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+.listaVe {
+    overflow: auto;
+}
+
+.textoDesvincula {
+    text-align: center;
+    color: #000000;
+}
+
+.textoNuevaRuta {
+    margin-bottom: 0px !important;
+    width: 100% !important;
+    background: #FFFFFF !important;
+    padding: 10px !important;
+    text-align: center;
+}
+
+.tipoRuta {
+    padding: 10px !important;
+    text-transform: capitalize;
+    width: 100%;
+}
+
+.infoConductor {
+    color: black;
+    text-align: left;
+    font-size: 16px;
+}
+
+.bordesDiv {
+    padding: 3%;
+}
+
+.btnNotifica {
+    margin: 3%;
+}
+
+.headerSchool {
+    width: 26%;
+}
+
+.headerMapaRuta {
+    width: 45%;
+}
+
+.iconHeader {
+    width: 40px;
+    height: 40px
+}
+
+.headerDetail {
+    width: 15%;
+}
+
+.headerDetailEnt {
+    width: 30%;
 }
