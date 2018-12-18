@@ -1481,10 +1481,7 @@ function setDataDocsView(src, fecIni, fecFin, number, download, doc) {
 
 }
 
-function getDataDriverCns(plate) {
-    console.log("getDataDriver: " + titlePlate);
-    document.getElementById(titlePlate).innerHTML = '<b>' + plate + '</b>';
-}
+function getDataDriverCns(plate) { document.getElementById(titlePlate).innerHTML = '<b>' + plate + '</b>'; }
 
 function getDataDoc(plate) {
     if (entUser == "") cnsUsuarioEmpresa();
@@ -1904,7 +1901,7 @@ function upLoadDocument(event) {
         return;
     }
 
-    const metadata = {contentType: file.type, groupId: entUser};
+    var metadata = {contentType: file.type, groupId: entUser};
     var task = storageRef.child(name).put(file, metadata);
 
     nameDocument = name;

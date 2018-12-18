@@ -98,8 +98,8 @@ function guardarPosicion(position) {
                 latitud : position.lat + ( distancia / 100000 ),
                 longitud : position.lng + ( distancia / 100000 ),
                 precision : distancia
-              }).then(function() { console.log('dato almacenado correctamente'); })
-                .catch(function(error) { alert('detectado un error', error); });    
+    }).then(function() { console.log('dato almacenado correctamente'); })
+    .catch(function(error) { alert('detectado un error', error); });
 }
 
 function formatoMsjDialog(etiqueta, msjError) {
@@ -678,7 +678,8 @@ function createEnterprise() {
         msjAlert("dato almacenado correctamente", 1);
         $("#txtRuta").val("");
     }).catch(function(error) {
-            msjAlert("Error al guardar los datos: " + error, 2);
+        msjAlert("Error al guardar los datos: " + error, 2);
+        setLogErrorData('Error: ' + error, 'Insertar', entGroup, 'createEnterprise');
     });
 }
 
@@ -1480,10 +1481,7 @@ function setDataDocsView(src, fecIni, fecFin, number, download, doc) {
 
 }
 
-function getDataDriverCns(plate) {
-    console.log("getDataDriver: " + titlePlate);
-    document.getElementById(titlePlate).innerHTML = '<b>' + plate + '</b>';
-}
+function getDataDriverCns(plate) { document.getElementById(titlePlate).innerHTML = '<b>' + plate + '</b>'; }
 
 function getDataDoc(plate) {
     if (entUser == "") cnsUsuarioEmpresa();
@@ -1679,7 +1677,6 @@ function getnameDocument() {
 function setDownloadURL(url) {
     formatoFecha();
     if (onlySave == 0) nameDocument = getnameDocument();
-    console.log("setDownloadURL:" + docDriver);
     switch(docDriver) {
         case 0:
 //Informacion de los documentos del vehiculo
@@ -1698,6 +1695,7 @@ function setDownloadURL(url) {
                 if (onlySave == 0) msjAlert("Datos guardados exitosamente", 1);
             }).catch(function (error) {
                 console.log("Error al guardar los datos: " + error);
+                setLogErrorData('Error: ' + error, 'Insertar', tableRef + '/' + entUser + '/' + refStorages, 'setDownloadURL');
             });
             break;
         case 1:
@@ -1722,6 +1720,7 @@ function setDownloadURL(url) {
                 if (onlySave == 0) msjAlert("Datos guardados exitosamente", 1);
             }).catch(function (error) {
                 console.log("Error al guardar datos: " + error + ", caso: " + docDriver);
+                setLogErrorData('Error: ' + error, 'Insertar', tblRtAlt[13], 'setDownloadURL');
             });
             break;
         case 2:
@@ -1742,6 +1741,7 @@ function setDownloadURL(url) {
                 if (onlySave == 0) msjAlert("Datos guardados exitosamente", 1);
             }).catch(function (error) {
                 console.log("Error al guardar datos: " + error + ", caso: " + docDriver);
+                setLogErrorData('Error: ' + error, 'Insertar', tableRef + '/' + entUser + '/' + refStorages, 'setDownloadURL');
             });
             break;
         case 3:
@@ -1757,6 +1757,7 @@ function setDownloadURL(url) {
                 if (onlySave == 0) msjAlert("Datos guardados exitosamente", 1);
             }).catch(function (error) {
                 console.log("Error al guardar datos: " + error + ", caso: " + docDriver);
+                setLogErrorData('Error: ' + error, 'Insertar', tableRef + '/' + entUser + '/' + refStorages, 'setDownloadURL');
             });
             break;
         case 4:
@@ -1773,6 +1774,7 @@ function setDownloadURL(url) {
                 if (onlySave == 0) msjAlert("Datos guardados exitosamente", 1);
             }).catch(function (error) {
                 console.log("Error al guardar datos: " + error + ", caso: " + docDriver);
+                setLogErrorData('Error: ' + error, 'Insertar', tblRtAlt[18], 'setDownloadURL');
             });
             break;
     }
@@ -1899,7 +1901,7 @@ function upLoadDocument(event) {
         return;
     }
 
-    const metadata = {contentType: file.type, groupId: entUser};
+    var metadata = {contentType: file.type, groupId: entUser};
     var task = storageRef.child(name).put(file, metadata);
 
     nameDocument = name;
